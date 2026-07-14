@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المهارات التعليمية | محبة الحكمة</title>
+    <meta name="description" content="مهارات Claude جاهزة للمعلم والمتعلم — باني الدروس الفلسفية، STORM Research، وTeach.">
+    <link rel="icon" type="image/svg+xml" href="assets/logo/logo-mark.svg">
+    <link rel="apple-touch-icon" href="assets/logo/logo-mark.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Tajawal', 'sans-serif'], serif: ['Amiri', 'serif'] },
+                    colors: {
+                        primary: { DEFAULT: '#0f766e', light: '#14b8a6', dark: '#0d5f58' },
+                        secondary: { DEFAULT: '#7c3aed', light: '#a78bfa', dark: '#5b21b6' },
+                        accent: { DEFAULT: '#d97706', light: '#fbbf24', dark: '#b45309' },
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #fcfbf7; }
+        .glass { background: rgba(255,255,255,0.8); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.3); }
+        .card-hover { transition: all 0.35s cubic-bezier(0.4,0,0.2,1); }
+        .card-hover:hover { transform: translateY(-6px); box-shadow: 0 25px 50px -15px rgba(0,0,0,0.12); }
+
+        .modal-overlay { position: fixed; inset: 0; z-index: 100; background: rgba(15,23,42,0.75); backdrop-filter: blur(6px); display: flex; align-items: flex-start; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.25s ease; overflow-y: auto; padding: 2rem 1rem; }
+        .modal-overlay.open { opacity: 1; pointer-events: auto; }
+        .modal-box { transform: scale(0.96) translateY(10px); transition: transform 0.25s ease; }
+        .modal-overlay.open .modal-box { transform: scale(1) translateY(0); }
+    </style>
+</head>
+<body class="font-sans text-slate-900 pb-20">
+
+    <!-- Back nav -->
+    <nav class="sticky top-0 z-50 glass">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="flex justify-between h-16 items-center">
+                <a href="index.html" class="flex items-center gap-2 text-slate-500 hover:text-slate-900 transition-colors">
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i> عودة
+                </a>
+                <h1 class="text-xl font-black text-slate-900 flex items-center gap-2">
+                    <i data-lucide="graduation-cap" class="w-6 h-6 text-primary"></i> المهارات التعليمية
+                </h1>
+                <div class="w-16"></div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="max-w-3xl mx-auto px-4 pt-10 pb-4 text-center space-y-4">
+        <div class="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full text-primary font-bold text-sm">
+            <i data-lucide="sparkles" class="w-4 h-4"></i> Edu Skills
+        </div>
+        <h2 class="text-3xl md:text-4xl font-black">مهارات جاهزة تُشغَّل داخل Claude</h2>
+        <p class="text-slate-500 font-medium leading-relaxed">
+            كل بطاقة أدناه هي "مهارة" (Skill) جاهزة — ملف تعليمات ترفعه إلى Claude، فيتقن مهمة محددة فوراً بلا حاجة لكتابة طلب طويل في كل مرة. اضغط على أي بطاقة لتتعرف عليها، وكيف تستخدمها، وكيف تفيدك كمعلم أو كمتعلم.
+        </p>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 py-10">
+        <div id="skills-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </main>
+
+    <!-- Detail Modal -->
+    <div class="modal-overlay" id="skill-modal">
+        <div class="modal-box bg-white rounded-3xl w-full max-w-2xl my-8 overflow-hidden shadow-2xl">
+            <div id="modal-header" class="p-6 text-white relative">
+                <button onclick="closeSkillModal()" class="absolute top-4 left-4 w-9 h-9 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-colors">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+                <div class="flex items-center gap-4">
+                    <div id="modal-icon-wrap" class="w-14 h-14 rounded-2xl bg-white/20 flex items-center justify-center flex-shrink-0">
+                        <i id="modal-icon" data-lucide="sparkles" class="w-7 h-7"></i>
+                    </div>
+                    <div>
+                        <h3 id="modal-title" class="text-2xl font-black"></h3>
+                        <p id="modal-subtitle" class="text-sm font-bold opacity-80"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="p-6 space-y-6 max-h-[60vh] overflow-y-auto">
+                <div>
+                    <h4 class="font-black text-slate-900 flex items-center gap-2 mb-2"><i data-lucide="info" class="w-4 h-4 text-primary"></i> ما هي هذه المهارة؟</h4>
+                    <p id="modal-explain" class="text-slate-600 leading-relaxed text-sm"></p>
+                </div>
+                <div>
+                    <h4 class="font-black text-slate-900 flex items-center gap-2 mb-2"><i data-lucide="list-ordered" class="w-4 h-4 text-primary"></i> كيف تستخدمها؟</h4>
+                    <ol id="modal-usage" class="list-decimal list-inside space-y-1.5 text-slate-600 text-sm leading-relaxed"></ol>
+                </div>
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <div class="bg-primary/5 rounded-2xl p-4">
+                        <h4 class="font-black text-primary flex items-center gap-2 mb-2 text-sm"><i data-lucide="user-check" class="w-4 h-4"></i> فائدتها للمعلم</h4>
+                        <p id="modal-teacher" class="text-slate-600 text-sm leading-relaxed"></p>
+                    </div>
+                    <div class="bg-secondary/5 rounded-2xl p-4">
+                        <h4 class="font-black text-secondary flex items-center gap-2 mb-2 text-sm"><i data-lucide="user" class="w-4 h-4"></i> فائدتها للمتعلم</h4>
+                        <p id="modal-student" class="text-slate-600 text-sm leading-relaxed"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="p-6 pt-0 space-y-3">
+                <a id="modal-example" href="#" target="_blank" rel="noopener noreferrer" class="hidden w-full bg-primary/10 text-primary py-3.5 rounded-xl font-bold hover:bg-primary/20 transition-colors items-center justify-center gap-2">
+                    <i data-lucide="eye" class="w-4 h-4"></i> شاهد مثالاً حياً لدرس مبني بهذه المهارة
+                </a>
+                <a id="modal-download" href="#" download class="w-full bg-slate-900 text-white py-3.5 rounded-xl font-bold hover:bg-slate-800 transition-colors flex items-center justify-center gap-2">
+                    <i data-lucide="download" class="w-4 h-4"></i> تحميل ملف المهارة (ZIP)
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        const USAGE_STEPS = [
+            'فعّل خاصية "تنفيذ الكود وإنشاء الملفات" من الإعدادات (Settings ← Capabilities) في حسابك على Claude.ai.',
+            'اذهب إلى Customize ← Skills، اضغط "+" ثم "Create skill"، وارفع ملف الـ ZIP الخاص بهذه المهارة (زرّ التحميل أسفله).',
+            'ابدأ محادثة جديدة واكتب طلبك مباشرة — Claude يكتشف المهارة تلقائياً من نوع الطلب.',
+        ];
+
+        const SKILLS = [
+            {
+                id: 'aflatoon',
+                title: 'باني الدروس الفلسفية',
+                subtitle: 'aflatoon skill',
+                icon: 'brain-circuit',
+                gradient: 'from-primary to-primary-dark',
+                file: 'assets/skills/aflatoon_skill.zip',
+                example: 'examples/aflatoon-freedom-programming/index.html',
+                explain: 'تحوّل سؤالاً فلسفياً مجرداً (الحرية، العدالة، الوعي...) إلى درس تفاعلي واحد ينطلق من اهتمام المتعلم الشخصي (برمجة، فن، رياضة، موسيقى...)، ثم تعرض آراء ثلاثة فلاسفة حقيقيين ملوّنة حسب أركان الحجاج (الدعوى، المقدمات، البينة، المجيز)، وتنتهي بتمرين يبني فيه المتعلم خلاصته الخاصة — عبر أربعة أطوار داخل ملف HTML واحد جاهز للمشاركة.',
+                usage: [
+                    ...USAGE_STEPS,
+                    'اكتب مثلاً: "ابنِ لي درساً فلسفياً حول الحرية يناسب اهتمامي بكرة القدم" وأجب عن 3 أسئلة توجيهية قصيرة.',
+                    'ستحصل على ملف HTML واحد قائم بذاته يحتوي الدرس كاملاً — احفظه أو شاركه مع تلاميذك.',
+                ],
+                teacher: 'يوفر درساً جاهزاً ومخصصاً لكل تلميذ أو فوج دون إعداد يدوي مطوّل، مع عدّة حجاج واضحة يمكن اعتمادها كمعيار للتصحيح والتقييم.',
+                student: 'يجعل المتعلم يكتشف السؤال الفلسفي من باب اهتمامه الخاص بدل حفظه جاهزاً، ويتدرب فعلياً على بناء حجة عبر تمرين "ما رأيك أنت؟".',
+            },
+            {
+                id: 'storm',
+                title: 'STORM Research',
+                subtitle: 'storm-research skill',
+                icon: 'telescope',
+                gradient: 'from-secondary to-secondary-dark',
+                file: 'assets/skills/storm-research-SKILL.zip',
+                explain: 'خط بحث من أربع مراحل يحوّل أي موضوع إلى تقرير HTML واحد موثّق: يحاكي خمس زوايا خبرة مختلفة (الممارس، الأكاديمي، المتشكك، الاقتصادي، المؤرخ)، يرسم خريطة تناقضاتها، يؤلّف منها تقريراً واحداً متكاملاً، ثم يراجعه مراجعة خصومية ويتحقق من كل استشهاد من مصدره الأصلي قبل تسليمه.',
+                usage: [
+                    ...USAGE_STEPS,
+                    'اكتب: "شغّل STORM Research حول [الموضوع الذي تريد بحثه]".',
+                    'انتظر حتى تكتمل المراحل الأربع (بحث الزوايا ← التناقضات ← التقرير ← التحقق)، فهذا أعمق من بحث سريع.',
+                    'ستستلم ملف HTML واحداً قابلاً للمشاركة مع نسبة التحقق من الاستشهادات.',
+                ],
+                teacher: 'أداة إعداد بحثي رصين عند تحضير درس أو ورقة أكاديمية — استُخدمت فعلياً لإعداد بحث حول تدريس الحجاج بالذكاء الاصطناعي، وتمنح مصادر موثقة بدل الاعتماد على معرفة عامة غير مؤكدة.',
+                student: 'تعلّم المتعلم أن أي قضية معقدة تُنظر من زوايا متعددة قد تتعارض، وتدربه على تمييز قوة الأدلة (دراسة محكّمة أقوى من استطلاع أو قياس).',
+            },
+            {
+                id: 'teach',
+                title: 'Teach — علّمني',
+                subtitle: 'teach skill',
+                icon: 'compass',
+                gradient: 'from-accent to-accent-dark',
+                file: 'assets/skills/teach.zip',
+                explain: 'مساحة تعلّم تفاعلية متعددة الجلسات، يكون فيها Claude معلماً شخصياً: يبني معك "مهمة تعلّم" توضح لماذا تريد تعلّم هذا الموضوع، يتتبع تقدّمك عبر سجلات تعلّم، ويصمم لك دروساً قصيرة وجميلة (ملف HTML واحد لكل درس) مضبوطة بدقة على المستوى الذي تحتاجه بالضبط — لا سهلة جداً فتُنسى، ولا صعبة جداً فتُحبط.',
+                usage: [
+                    ...USAGE_STEPS,
+                    'اكتب: "علّمني عن [الموضوع]" واذكر باختصار لماذا تريد تعلّمه.',
+                    'أجب عن أسئلة Claude حول هدفك، ثم تلقَّ درساً قصيراً واحداً في كل مرة.',
+                    'عد لاحقاً لمتابعة نفس المسار — Claude يتذكر ما تعلمته سابقاً ويبني عليه.',
+                ],
+                teacher: 'يمكن للمعلم استخدامها لتعلّم مهارة تقنية جديدة (كتوظيف الذكاء الاصطناعي في التدريس) بخطوات صغيرة مرتبطة بهدفه الفعلي، بدل مقرر عام لا يلامس حاجته.',
+                student: 'يمنح المتعلم مساراً تدريجي الصعوبة مبنياً على الاسترجاع الفعّال (وليس الحفظ السلبي)، مع مسرد مصطلحات ومراجع سريعة يعود إليها لاحقاً.',
+            },
+        ];
+
+        function renderGrid() {
+            const grid = document.getElementById('skills-grid');
+            grid.innerHTML = SKILLS.map(s => `
+                <div class="card-hover bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm cursor-pointer" onclick="openSkillModal('${s.id}')">
+                    <div class="h-28 bg-gradient-to-br ${s.gradient} flex items-center justify-center">
+                        <i data-lucide="${s.icon}" class="w-12 h-12 text-white"></i>
+                    </div>
+                    <div class="p-6 space-y-2">
+                        <h3 class="text-lg font-black">${s.title}</h3>
+                        <p class="text-slate-500 text-sm font-medium line-clamp-2">${s.explain}</p>
+                        <div class="pt-2 text-primary font-bold text-sm flex items-center gap-1">
+                            التفاصيل <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+            lucide.createIcons();
+        }
+
+        function openSkillModal(id) {
+            const s = SKILLS.find(x => x.id === id);
+            if (!s) return;
+            document.getElementById('modal-header').className = `p-6 text-white relative bg-gradient-to-br ${s.gradient}`;
+            document.getElementById('modal-icon').setAttribute('data-lucide', s.icon);
+            document.getElementById('modal-title').textContent = s.title;
+            document.getElementById('modal-subtitle').textContent = s.subtitle;
+            document.getElementById('modal-explain').textContent = s.explain;
+            document.getElementById('modal-usage').innerHTML = s.usage.map(step => `<li>${step}</li>`).join('');
+            document.getElementById('modal-teacher').textContent = s.teacher;
+            document.getElementById('modal-student').textContent = s.student;
+            document.getElementById('modal-download').href = s.file;
+            const exampleBtn = document.getElementById('modal-example');
+            if (s.example) {
+                exampleBtn.href = s.example;
+                exampleBtn.classList.remove('hidden');
+                exampleBtn.classList.add('flex');
+            } else {
+                exampleBtn.classList.add('hidden');
+                exampleBtn.classList.remove('flex');
+            }
+            document.getElementById('skill-modal').classList.add('open');
+            lucide.createIcons();
+        }
+
+        function closeSkillModal() {
+            document.getElementById('skill-modal').classList.remove('open');
+        }
+        document.getElementById('skill-modal').addEventListener('click', function (e) {
+            if (e.target === this) closeSkillModal();
+        });
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') closeSkillModal();
+        });
+
+        renderGrid();
+    </script>
+</body>
+</html>

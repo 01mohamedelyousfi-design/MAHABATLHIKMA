@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>أفلاطون — الحرية عبر البرمجة</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#F5F1E8',
+            ink: '#1F1F1F',
+            teal: '#0F4C5C',
+            amber: '#E36414',
+            border: '#D4CFC4',
+            // Argumentation colors
+            claim: '#E53935',      // red - دعوى
+            premise: '#1E88E5',    // blue - مقدمات
+            evidence: '#43A047',   // green - بينة
+            warrant: '#B7791F',    // gold - مجيز
+          },
+          fontFamily: {
+            sans: ['Cairo', 'system-ui', 'sans-serif'],
+            serif: ['Amiri', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #F5F1E8; color: #1F1F1F; font-family: 'Cairo', sans-serif; }
+    .philosopher-text { font-family: 'Amiri', serif; font-size: 1.15rem; line-height: 2.2; }
+    .philosopher-text p { margin-bottom: 1.2rem; text-align: justify; text-justify: inter-word; }
+    .transition-phrase { 
+      color: #6B6B6B; font-style: italic; 
+      border-right: 3px solid #E36414; padding-right: 1rem; margin: 2rem 0;
+    }
+    .nav-tab { transition: all 0.3s ease; }
+    .nav-tab.active { background-color: #0F4C5C; color: white; }
+    .nav-tab:not(.active):hover { background-color: #E5E0D5; }
+    .phase-section { display: none; }
+    .phase-section.active { display: block; }
+    .modal { display: none; }
+    .modal.open { display: flex; }
+    .color-key span { font-weight: 600; }
+    details summary { cursor: pointer; font-weight: 600; color: #0F4C5C; }
+    details[open] summary { margin-bottom: 0.75rem; }
+    .game-frame { width: 100%; min-height: 500px; border: 1px solid #D4CFC4; border-radius: 12px; }
+    @media print {
+      .nav-bar, .tools-btn { display: none; }
+      .phase-section { display: block !important; page-break-after: always; }
+    }
+  </style>
+</head>
+<body class="min-h-screen">
+
+<!-- ===== HEADER ===== -->
+<header class="bg-teal text-cream py-6 shadow-md">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="flex justify-between items-center mb-2">
+      <h1 class="text-2xl font-bold">أفلاطون للتعليم الفلسفي</h1>
+      <span class="text-sm opacity-80">درس مُخصّص · الحرية</span>
+    </div>
+    <p class="text-sm opacity-90">درس فلسفي مُخصّص لمبرمج مبتدئ — هل نحن أحرار في عالم تحدّده الخوارزميات؟</p>
+  </div>
+</header>
+
+<!-- ===== NAV TABS ===== -->
+<nav class="bg-cream border-b border-border sticky top-0 z-10">
+  <div class="max-w-4xl mx-auto px-4 flex gap-2 py-3 overflow-x-auto">
+    <button class="nav-tab active px-4 py-2 rounded-lg font-semibold whitespace-nowrap" data-phase="1">١. الإشكالية</button>
+    <button class="nav-tab px-4 py-2 rounded-lg font-semibold whitespace-nowrap" data-phase="2">٢. آراء الفلاسفة</button>
+    <button class="nav-tab px-4 py-2 rounded-lg font-semibold whitespace-nowrap" data-phase="3">٣. الخلاصة</button>
+    <button class="nav-tab tools-btn px-4 py-2 rounded-lg font-semibold whitespace-nowrap mr-auto bg-amber text-white" onclick="openTools()">🛠 أدوات الحجاج</button>
+  </div>
+</nav>
+
+<main class="max-w-4xl mx-auto px-4 py-8">
+
+  <!-- ===== PHASE 1: BUILDING THE PROBLEM ===== -->
+  <section class="phase-section active" data-phase="1">
+    <h2 class="text-3xl font-bold text-teal mb-2">الطور الأول: بناء الإشكالية</h2>
+    <p class="text-gray-600 mb-8">قبل أن نُقدّم الإجابات، لنَعِش السؤال عبر مجالك المُحبب: البرمجة</p>
+
+    <!-- Section 1.1: Visual context -->
+    <div class="bg-white rounded-xl shadow-sm border border-border p-6 mb-6">
+      <h3 class="text-xl font-bold text-amber mb-4">١.١ السياق البصري للإشكالية</h3>
+      <div class="text-center">
+        <!-- __IMAGE_PLACEHOLDER__ — replace with <img> tag pointing to generated image -->
+        <img src="assets/freedom_intro.png" alt="صورة الإشكالية" class="mx-auto rounded-lg max-w-full mb-4">
+        <p class="text-sm text-gray-700 italic">الإنسان بين الخوارزمية والاختيار — عُقدة من الكود والأسئلة.</p>
+      </div>
+    </div>
+
+    <!-- Section 1.2: Story in user's world -->
+    <div class="bg-white rounded-xl shadow-sm border border-border p-6 mb-6">
+      <h3 class="text-xl font-bold text-amber mb-4">١.٢ الإشكالية في عالمك</h3>
+      <div class="philosopher-text">
+        
+        <p>كان سليم مبرمجًا شابًا يكتب خوارزميات التوصية لمستخدمي تطبيق موسيقي. كل يوم، كان يُحسّن الدالة التي تتوقّع ذوق المستخدم التالي. كل نقرة "أعجبني" كانت تُغذّي الخوارزمية، فتُحدّد لاحقًا ما سيستمع إليه ملايين المستخدمين.</p>
+        <p>ذات مساء، أدرك سليم أن مستخدمًا واحدًا — اسمه كريم — لم يَعُد يستمع إلا لفنان واحد. حين حاول كريم البحث عن شيء مختلف، أعادت الخوارزمية توجيهه إلى نفس الفنان. كانت الفقاعة تُغلق ببطء.</p>
+        <p>حينها تردد سليم بين خيارين: أن يُعدّل الخوارزمية لِتُظهر تنوّعًا عشوائيًا (فيُخرج كريمًا من فقاعته ولو رغمًا عنه)، أو أن يتركها كما هي (فيحترم "اختيار" كريم، وإن كان مُهندَسًا). في تلك اللحظة، سأل سليم نفسه: <strong>هل حرية كريم حقيقية إن كانت خياراته مُهندَسة مسبقًا؟</strong></p>
+    
+      </div>
+    </div>
+
+    <!-- Section 1.3: Interactive game -->
+    <div class="bg-white rounded-xl shadow-sm border border-border p-6 mb-6">
+      <h3 class="text-xl font-bold text-amber mb-4">١.٣ جرّب بنفسك</h3>
+      <p class="text-sm text-gray-600 mb-4">اِختر موقفًا، وشاهد التبعات. لا توجد إجابة "صحيحة" — الهدف أن تُفكّر.</p>
+      <!-- Game HTML injected inline -->
+      <div class="trolley-game" style="font-family: 'Cairo', sans-serif;">
+  <style>
+    .trolley-game { 
+      background: #FAF8F2; 
+      border-radius: 16px; 
+      padding: 24px; 
+      border: 1px solid #D4CFC4;
+    }
+    .trolley-game h4 { color: #0F4C5C; font-size: 1.25rem; font-weight: 700; margin-bottom: 12px; }
+    .trolley-game .scenario { 
+      background: white; 
+      border-radius: 12px; 
+      padding: 16px; 
+      margin-bottom: 16px; 
+      line-height: 1.8;
+      border-right: 4px solid #E36414;
+    }
+    .trolley-game .choices { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+    @media (max-width: 640px) { .trolley-game .choices { grid-template-columns: 1fr; } }
+    .trolley-game .choice {
+      background: white;
+      border: 2px solid #D4CFC4;
+      border-radius: 12px;
+      padding: 16px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: right;
+    }
+    .trolley-game .choice:hover { border-color: #E36414; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+    .trolley-game .choice.selected { border-color: #E36414; background: #FFF8F0; }
+    .trolley-game .choice h5 { color: #E36414; font-weight: 700; margin-bottom: 8px; font-size: 1.05rem; }
+    .trolley-game .choice p { color: #555; font-size: 0.9rem; line-height: 1.6; }
+    .trolley-game .consequence {
+      display: none;
+      background: #F5F1E8;
+      border-radius: 12px;
+      padding: 16px;
+      margin-top: 12px;
+      line-height: 1.8;
+      border-right: 4px solid #0F4C5C;
+    }
+    .trolley-game .consequence.show { display: block; animation: fadeIn 0.4s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    .trolley-game .reflection {
+      display: none;
+      background: #0F4C5C;
+      color: white;
+      border-radius: 12px;
+      padding: 16px;
+      margin-top: 16px;
+      font-style: italic;
+      line-height: 1.8;
+    }
+    .trolley-game .reflection.show { display: block; animation: fadeIn 0.4s ease; }
+    .trolley-game .reset-btn {
+      background: transparent;
+      color: #0F4C5C;
+      border: 1px solid #0F4C5C;
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      margin-top: 12px;
+    }
+    .trolley-game .reset-btn:hover { background: #0F4C5C; color: white; }
+  </style>
+
+  <h4>مفترق الخوارزمية</h4>
+  
+  <div class="scenario">
+    أنت مبرمج خوارزمية توصية لموسيقى. أمامك مليون مستخدم. اكتشفت أن خوارزميتك تُحوّل المستخدمين إلى «فقاعات» — لا يسمعون إلا ما يحبون. عليك أن تختار بين نسختين:
+  </div>
+
+  <p style="font-weight: 600; color: #0F4C5C; margin-bottom: 8px;">اِختر موقفًا:</p>
+
+  <div class="choices">
+    <div class="choice" data-choice="A" onclick="trolleyChoose('A')">
+      <h5>الخوارزمية «الأمينة»</h5>
+      <p>تُظهر للمستخدم ما يحب (تردّدًا لتفضيلاته السابقة). تحترم «اختياره»، لكن تُغلقه في فقاعة لا يخرج منها.</p>
+    </div>
+    <div class="choice" data-choice="B" onclick="trolleyChoose('B')">
+      <h5>الخوارزمية «المُ扰َشة»</h5>
+      <p>تُظهر تنوّعًا عشوائيًا (تُدخل 20% محتوى خارج فقاعتهم). تُخرجهم من الفقاعة، لكن رغمًا عنهم أحيانًا.</p>
+    </div>
+  </div>
+
+  <div class="consequence" id="trolleyConsequence-A">
+    <strong>النتيجة:</strong> المستخدمون سعداء في المدى القصير. لكن بعد سنة، 80% منهم لم يَعُد يستمعون إلا لنوع موسيقي واحد. ماتت فضولهم. الخوارزمية «احترمت» خيارهم، لكنها صنعته أيضًا. هل كان لهم خيار حقيقي؟
+  </div>
+  <div class="consequence" id="trolleyConsequence-B">
+    <strong>النتيجة:</strong> المستخدمون منزعجون في البداية (خوارزمية «لا تفهمني»). لكن بعد سنة، اكتشف 30% منهم أنواعًا جديدة أحبّوها. لقد وسّعت الخوارزمية اختياراتهم. لكن هل كانوا «أحرارًا» في هذا الاكتشاف، أم أن الخوارزمية فرضته عليهم؟
+  </div>
+
+  <div class="reflection" id="trolleyReflection">
+    <strong>سؤال للتأمّل:</strong> أيّ الخيارين يحترم حرية المستخدم أكثر: أن نعطيه ما يريد، أم أن نُوسّع ما يمكنه أن يريد؟ وما الفرق بين «الحرية» و«الاختيار»؟
+  </div>
+
+  <button class="reset-btn" onclick="trolleyReset()">↺ إعادة المحاولة</button>
+</div>
+
+<script>
+  function trolleyChoose(choice) {
+    // Mark selected
+    document.querySelectorAll('.trolley-game .choice').forEach(c => {
+      c.classList.toggle('selected', c.dataset.choice === choice);
+    });
+    // Hide all consequences
+    document.querySelectorAll('.trolley-game .consequence').forEach(c => c.classList.remove('show'));
+    // Show selected consequence
+    const cons = document.getElementById('trolleyConsequence-' + choice);
+    if (cons) cons.classList.add('show');
+    // Show reflection
+    const refl = document.getElementById('trolleyReflection');
+    if (refl) refl.classList.add('show');
+  }
+
+  function trolleyReset() {
+    document.querySelectorAll('.trolley-game .choice').forEach(c => c.classList.remove('selected'));
+    document.querySelectorAll('.trolley-game .consequence').forEach(c => c.classList.remove('show'));
+    const refl = document.getElementById('trolleyReflection');
+    if (refl) refl.classList.remove('show');
+  }
+</script>
+    </div>
+
+    <div class="text-center mt-8">
+      <button class="bg-teal text-cream px-6 py-3 rounded-lg font-bold hover:bg-opacity-90" onclick="goToPhase(2)">الانتقال إلى آراء الفلاسفة ←</button>
+    </div>
+  </section>
+
+  <!-- ===== PHASE 2: PHILOSOPHERS' OPINIONS ===== -->
+  <section class="phase-section" data-phase="2">
+    <h2 class="text-2xl font-bold text-teal mb-2">الطور الثاني: آراء الفلاسفة</h2>
+    
+    <!-- Preamble -->
+    <div class="bg-amber bg-opacity-10 border-r-4 border-amber p-5 rounded-lg mb-6">
+      <p class="text-ink leading-relaxed">
+        الإنسان يميل بطبعه إلى الإجابة. جرب أن تطرح أي سؤال على أي واحد من معارفك، في الغالب لن يقول لك "لا أعلم"، بل سيبادر لتقديم إجابة ويصرّ على أنها الإجابة الأصح، هذا ولو كان السؤال خارج مجال تخصصه. لهذا، لا بد أن تحمل معك عدة الحجاج الفلسفي أينما ذهبت، لكي لا تُخدع بأقوال الناس ولا تندفع إلى الاعتقاد بما هو باطل.
+      </p>
+    </div>
+
+    <!-- Color key -->
+    <div class="color-key bg-white border border-border rounded-xl p-5 mb-6">
+      <h3 class="font-bold mb-3 text-teal">مفتاح القراءة</h3>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+        <div><span class="text-claim">■</span> <strong>الدعوى</strong>: الفكرة الرئيسية</div>
+        <div><span class="text-premise">■</span> <strong>المقدمات</strong>: ما يُبنى عليه</div>
+        <div><span class="text-evidence">■</span> <strong>البينة</strong>: الأدلة</div>
+        <div><span class="text-warrant">■</span> <strong>المجيز</strong>: الرابط المنطقي</div>
+      </div>
+    </div>
+
+    <!-- Philosopher 1 -->
+    <div class="bg-white rounded-xl shadow-sm border border-border p-6 mb-6">
+      <h3 class="text-2xl font-bold text-teal">الفيلسوف الأول: أفلاطون</h3>
+      <p class="text-sm text-gray-600 mb-4">
+        <i>المرجع: كتاب «الجمهورية»، الكتاب السابع (أسطورة الكهف)</i> · 
+        <span class="text-gray-500">(Plato)</span>
+      </p>
+      <div class="philosopher-text">
+        
+        <p>الناس كأسرى في كهف، مُقيّدون منذ الطفولة، لا يرون إلا ظلالًا تتحرك على الجدار أمامهم. هذه الظلال هي عالمهم، وهي ما يعتبرونه "حقيقة". <span style="color:#1E88E5;">الذي يرى الظلال لا يعرف أنها ظلال</span>، فلا يبحث عن أصلها خلفه. <span style="color:#43A047;">والدليل على ذلك أن الأسير المُحرَّر، حين يخرج من الكهف، يُذهله النور، ولا يصدّق أن ما رآه في الكهف كان مجرّد ظلال</span>. <span style="color:#B7791F; font-style:italic;">وبما أن ما نراه في حياتنا العادية يشبه الظلال في حدّه وتغيّره</span>، فإن <span style="color:#E53935; font-weight:700;">معرفتنا العادية مُقيَّدة، وحريتنا الحقيقية لا تتحقق إلا بالخروج من الكهف نحو المعرفة</span>.</p>
+    
+      </div>
+      <details class="mt-4 bg-cream p-3 rounded-lg">
+        <summary>التحليل الحجاجي</summary>
+        <ul class="space-y-1 mt-2">
+          <li><strong class="text-claim">الدعوى</strong>: حريتنا الحقيقية لا تتحقق إلا بالخروج من الكهف (الجهل) نحو المعرفة</li>
+          <li><strong class="text-premise">المقدمات</strong>: معرفتنا العادية مُقيَّدة كظلال الكهف؛ الأسير لا يعرف أنه أسير</li>
+          <li><strong class="text-evidence">البينة</strong>: تجربة الأسير المُحرَّر: يُذهله النور، يكتشف أن ما رآه كان ظلالًا</li>
+          <li><strong class="text-warrant">المجيز</strong>: ما يتغيّر ويحدّ كالظلال لا يمكن أن يكون حقيقة كاملة، فالمعرفة الكاملة هي شرط الحرية الكاملة</li>
+        </ul>
+      </details>
+    </div>
+
+    <!-- Transition 1 → 2 -->
+    <p class="transition-phrase">
+      لكننا نرى أن أفلاطون ركّز على الجهل كسبب القيد، وأغفل أن الإنسان قد يكون عالِمًا ومُقيَّدًا في آن — فالعالِم قد تُحدّد خياراته بنى خارجية. وبهذا نمرّ إلى فيلسوفنا الثاني سبينوزا، والذي كتب هو الآخر في كتابه «الأخلاق» حيث يقول:
+    </p>
+
+    <!-- Philosopher 2 -->
+    <div class="bg-white rounded-xl shadow-sm border border-border p-6 mb-6">
+      <h3 class="text-2xl font-bold text-teal">الفيلسوف الثاني: سبينوزا</h3>
+      <p class="text-sm text-gray-600 mb-4">
+        <i>المرجع: كتاب «الأخلاق» (Ethica)، الجزء الخامس</i> · 
+        <span class="text-gray-500">(Baruch Spinoza)</span>
+      </p>
+      <div class="philosopher-text">
+        
+        <p>الإنسان الحر هو الذي يفهم ضرورة الأشياء، لا الذي يهرب منها. <span style="color:#1E88E5;">نظن أننا أحرار حين نفعل ما نريد، لكننا لا نعرف أسباب رغباتنا</span>. <span style="color:#43A047;">فالطفل يظن أنه حر في طلب الحليب، والغاضب يظن أنه حر في انتقامه، وكلاهما مدفوع بأسباب لا يعرفها</span>. <span style="color:#B7791F; font-style:italic;">وبما أن فهم الأسباب هو ما يُحرّر من الانفعال الأعمى</span>، فإن <span style="color:#E53935; font-weight:700;">الحرية ليست فعل الاختيار، بل هي فهم الضرورة — فما فُهم لم يَعُد يسودنا</span>.</p>
+    
+      </div>
+      <details class="mt-4 bg-cream p-3 rounded-lg">
+        <summary>التحليل الحجاجي</summary>
+        <ul class="space-y-1 mt-2">
+          <li><strong class="text-claim">الدعوى</strong>: الحرية هي فهم الضرورة، لا فعل الاختيار</li>
+          <li><strong class="text-premise">المقدمات</strong>: نظن أننا أحرار حين نفعل ما نريد، لكننا لا نعرف أسباب رغباتنا</li>
+          <li><strong class="text-evidence">البينة</strong>: الطفل والغاضب يظنان أنهما حرّان، وكلاهما مدفوع بأسباب لا يعرفها</li>
+          <li><strong class="text-warrant">المجيز</strong>: فهم الأسباب يُحرّر من الانفعال الأعمى، فما فُهم لم يَعُد يسودنا</li>
+        </ul>
+      </details>
+    </div>
+
+    <!-- Transition 2 → 3 -->
+    <p class="transition-phrase">
+      لكن سبينوزا أغفل أن فهم الضرورة لا يكفي إن كانت الضرورة خارجية مفروضة — فالمبرمج قد يفهم الخوارزمية تمامًا، ويظل مُلزَمًا بكتابتها. وبهذا نمرّ إلى فيلسوفنا الثالث كانط، والذي كتب هو الآخر في كتابه «نقد العقل العملي» حيث يقول:
+    </p>
+
+    <!-- Philosopher 3 -->
+    <div class="bg-white rounded-xl shadow-sm border border-border p-6 mb-6">
+      <h3 class="text-2xl font-bold text-teal">الفيلسوف الثالث: كانط</h3>
+      <p class="text-sm text-gray-600 mb-4">
+        <i>المرجع: كتاب «نقد العقل العملي» (Kritik der praktischen Vernunft)</i> · 
+        <span class="text-gray-500">(Immanuel Kant)</span>
+      </p>
+      <div class="philosopher-text">
+        
+        <p>الحرية هي شرط الإمكان للأخلاق، لا ظاهرة نُشاهدها. <span style="color:#1E88E5;">لو لم نكن أحرارًا، لما كان للواجب معنى، ولا للمسؤولية وجه</span>. <span style="color:#43A047;">فنحن حين نُحاسب المذنب على فعله، نفترض ضمنيًا أنه كان يستطيع أن يفعل غيره، وإلا لما استحق العقاب</span>. <span style="color:#B7791F; font-style:italic;">وبما أن الأخلاق قائمة فعلاً في حياتنا (نُحاسب ونُمدح ونذم)</span>، فإن <span style="color:#E53935; font-weight:700;">الحرية حقيقة عملية ثابتة، وإن لم نستطع إثباتها نظريًا — فنحن أحرار لأن علينا أن نكون كذلك</span>.</p>
+    
+      </div>
+      <details class="mt-4 bg-cream p-3 rounded-lg">
+        <summary>التحليل الحجاجي</summary>
+        <ul class="space-y-1 mt-2">
+          <li><strong class="text-claim">الدعوى</strong>: نحن أحرار لأن علينا أن نكون كذلك (الحرية حقيقة عملية ثابتة)</li>
+          <li><strong class="text-premise">المقدمات</strong>: لو لم نكن أحرارًا، لما كان للواجب معنى ولا للمسؤولية وجه</li>
+          <li><strong class="text-evidence">البينة</strong>: نُحاسب المذنب لأنه كان يستطيع أن يفعل غيره، وإلا لما استحق العقاب</li>
+          <li><strong class="text-warrant">المجيز</strong>: الأخلاق قائمة فعلاً في حياتنا (نُحاسب ونُمدح ونذم)، وما قام فعلاً يفترض شرطه</li>
+        </ul>
+      </details>
+    </div>
+
+    <p class="text-center text-gray-600 italic mt-8 mb-4">
+      ثلاثة مواقف: حرية كمعرفة (أفلاطون)، حرية كفهم (سبينوزا)، حرية كمسلّمة أخلاقية (كانط). فأيها يُجيب عن سؤال سليم المبرمج؟
+    </p>
+
+    <div class="text-center mt-8">
+      <button class="bg-teal text-cream px-6 py-3 rounded-lg font-bold hover:bg-opacity-90" onclick="goToPhase(3)">الانتقال إلى الخلاصة ←</button>
+    </div>
+  </section>
+
+  <!-- ===== PHASE 3: CONCLUSION ===== -->
+  <section class="phase-section" data-phase="3">
+    <h2 class="text-2xl font-bold text-teal mb-2">الطور الثالث: الخلاصة</h2>
+    <p class="text-gray-600 mb-8">اِنسخ المواقف الثلاثة في جدول واحد، ثم اِتخذ موقفك أنت.</p>
+
+    <!-- Comparative table -->
+    <div class="bg-white rounded-xl shadow-sm border border-border p-6 mb-6">
+      <h3 class="text-xl font-bold text-amber mb-4">الجدول المقارن</h3>
+      <div class="overflow-x-auto">
+        <table class="w-full border-collapse text-sm">
+          <thead>
+            <tr class="bg-teal text-cream">
+              <th class="border border-border p-3 text-right">البُعد</th>
+              <th class="border border-border p-3 text-right">أفلاطون</th>
+              <th class="border border-border p-3 text-right">سبينوزا</th>
+              <th class="border border-border p-3 text-right">كانط</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border border-border p-3 font-bold bg-cream">الموقف الجوهري</td>
+              <td class="border border-border p-3">الحرية = خروج من الجهل إلى المعرفة</td>
+              <td class="border border-border p-3">الحرية = فهم الضرورة</td>
+              <td class="border border-border p-3">الحرية = مسلّمة عملية ضرورية للأخلاق</td>
+            </tr>
+            <tr>
+              <td class="border border-border p-3 font-bold bg-cream">الدعوى المركزية</td>
+              <td class="border border-border p-3">الحرية تتحقق بالمعرفة، لا بالاختيار العادي</td>
+              <td class="border border-border p-3">حرّية فهم الأسباب لا حرّية فعل ما نشاء</td>
+              <td class="border border-border p-3">أحرار لأن علينا أن نكون كذلك</td>
+            </tr>
+            <tr>
+              <td class="border border-border p-3 font-bold bg-cream">أقوى دليل</td>
+              <td class="border border-border p-3">أسطورة الكهف — تجربة الخروج من الظلال</td>
+              <td class="border border-border p-3">تمييزه بين الرغبة الواعية والرغبة العمياء</td>
+              <td class="border border-border p-3">الحساب الأخلاقي يفترض حرية الفاعل</td>
+            </tr>
+            <tr>
+              <td class="border border-border p-3 font-bold bg-cream">أضعف نقطة</td>
+              <td class="border border-border p-3">يفترض ثنائية حادّة بين ظلال وحقيقة، لكن الحقيقة قد تكون متدرّجة لا مطلقة</td>
+              <td class="border border-border p-3">يفترض أن الفهم وحده كافٍ للتحرر، لكن قد نفهم ولا نزال مُقيَّدين</td>
+              <td class="border border-border p-3">حجّة «دلالية-عملية» لا تُثبت الحرية كحقيقة ميتافيزيقية، بل كضرورة منطقية للأخلاق</td>
+            </tr>
+            <tr>
+              <td class="border border-border p-3 font-bold bg-cream">نقاط الالتقاء</td>
+              <td colspan="3" class="border border-border p-3 italic">الثلاثة يتفقون أن الحرية ليست مجرد «فعل ما نشاء» — هناك بُعد أعمق: المعرفة (أفلاطون)، الفهم (سبينوزا)، أو الالتزام الأخلاقي (كانط).</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- User's position exercise -->
+    <div class="bg-white rounded-xl shadow-sm border border-border p-6 mb-6">
+      <h3 class="text-xl font-bold text-amber mb-4">مواقف أنت</h3>
+      <p class="text-sm text-gray-600 mb-4">الآن بعد أن رأيت 3 مواقف، ما موقف أنت من الإشكالية؟ اِملأ الحجة بأركانها الأربعة.</p>
+      
+      <div class="space-y-4">
+        <div>
+          <label class="block font-semibold mb-1"><span class="text-claim">■</span> دعواك (الفكرة المركزية):</label>
+          <textarea class="w-full border border-border rounded-lg p-3 focus:outline-none focus:border-amber" rows="2" placeholder="ما الذي تدّعيه؟"></textarea>
+        </div>
+        <div>
+          <label class="block font-semibold mb-1"><span class="text-premise">■</span> مقدماتك (الأفكار التي تبني عليها):</label>
+          <textarea class="w-full border border-border rounded-lg p-3 focus:outline-none focus:border-amber" rows="3" placeholder="ما القضايا التي تسلّم بها وتنبني عليها دعواك؟"></textarea>
+        </div>
+        <div>
+          <label class="block font-semibold mb-1"><span class="text-evidence">■</span> بنتك (الأدلة):</label>
+          <textarea class="w-full border border-border rounded-lg p-3 focus:outline-none focus:border-amber" rows="3" placeholder="ما الأدلة العقلية أو الواقعية الداعمة؟"></textarea>
+        </div>
+        <div>
+          <label class="block font-semibold mb-1"><span class="text-warrant">■</span> مجيزك (الرابط المنطقي):</label>
+          <textarea class="w-full border border-border rounded-lg p-3 focus:outline-none focus:border-amber" rows="2" placeholder="كيف تنتقل من المقدمات إلى الدعوى؟"></textarea>
+        </div>
+        <button class="bg-amber text-white px-6 py-2 rounded-lg font-semibold hover:bg-opacity-90" onclick="alert('سيُتاح فحص الموقف في الإصدار القادم')">فحص موقفي</button>
+      </div>
+    </div>
+
+    <!-- Open question / closing -->
+    <div class="bg-teal bg-opacity-5 border-r-4 border-teal p-5 rounded-lg">
+      <h3 class="font-bold text-teal mb-2">سؤال يبقى مفتوحًا</h3>
+      <p class="text-ink leading-relaxed italic">
+        في عالم تُحدّد فيه الخوارزميات خياراتنا قبل أن نختار، أيّ هذه الحرّيات تحتاجها أنت؟ حرية أن تعرف؟ حرية أن تفهم؟ أم حرية أن تُطالَب بالمسؤولية؟
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="bg-teal text-cream py-4 mt-12 text-center text-sm opacity-90">
+  <p>درس مُولّد بواسطة مهارة "أفلاطون للتعليم الفلسفي" — 2026-07-01</p>
+</footer>
+
+<!-- ===== TOOLS MODAL (Argumentation Reference) ===== -->
+<div id="toolsModal" class="modal fixed inset-0 bg-black bg-opacity-50 z-50 items-center justify-center p-4">
+  <div class="bg-cream rounded-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 relative">
+    <button onclick="closeTools()" class="absolute top-4 left-4 bg-amber text-white w-8 h-8 rounded-full font-bold hover:bg-opacity-90">×</button>
+    
+    <h2 class="text-2xl font-bold text-teal mb-4">🛠 عدّة الحجاج — المرجع</h2>
+    
+    <!-- Preamble -->
+    <div class="bg-amber bg-opacity-10 border-r-4 border-amber p-4 rounded-lg mb-6 text-sm leading-relaxed">
+      الإنسان يميل بطبعه إلى الإجابة... (لهذا لا بد أن تحمل معك عدة الحجاج الفلسفي أينما ذهبت، لكي لا تُخدع بأقوال الناس ولا تندفع إلى الاعتقاد بما هو باطل.)
+    </div>
+
+    <!-- 1. الاستدلال -->
+    <div class="bg-white border border-border rounded-lg p-4 mb-4">
+      <h3 class="font-bold text-teal mb-2">١. الاستدلال</h3>
+      <p class="text-sm leading-relaxed">لا يوجد استدلال من دون حقيقة. الاستدلال هو <strong>انتقال من حقيقة إلى حقيقة أخرى</strong>.</p>
+    </div>
+
+    <!-- 2. فرز المعلومات -->
+    <div class="bg-white border border-border rounded-lg p-4 mb-4">
+      <h3 class="font-bold text-teal mb-2">٢. فرز المعلومات</h3>
+      <p class="text-sm leading-relaxed mb-2">البيانات والحقائق والمنطق الخام تُصبح "معلومات" بعد الفرز. ليست كل المعلومات مفيدة:</p>
+      <ul class="text-sm space-y-1 mr-4">
+        <li>● <strong class="text-evidence">المعلومات المفيدة</strong>: تساعدك على اتخاذ قرارات صحيحة</li>
+        <li>● <strong>المعلومات غير المفيدة</strong>: لا تؤثر على قراراتك</li>
+        <li>● <strong class="text-claim">المعلومات المضلِّلة</strong>: تؤثر على قراراتك بشكل خاطئ</li>
+      </ul>
+      <p class="text-sm mt-2 italic">عندما تتمكن من فرز المعلومات بشكل صحيح، تكون قد وصلت إلى مرحلة التفكير النقدي.</p>
+    </div>
+
+    <!-- 3. أركان الحجاج الثلاثة -->
+    <div class="bg-white border border-border rounded-lg p-4 mb-4">
+      <h3 class="font-bold text-teal mb-2">٣. أركان الحجاج الثلاثة</h3>
+      <table class="text-sm w-full">
+        <tr><td class="font-bold p-2">الأساس</td><td class="p-2">ما يُبنى عليه الحجاج (الإشكالية)</td></tr>
+        <tr><td class="font-bold p-2">الاستدلال</td><td class="p-2">الانتقال من حقيقة إلى حقيقة</td></tr>
+        <tr><td class="font-bold p-2">الخلاف</td><td class="p-2">ما يختلف فيه الناس (موضع النزاع)</td></tr>
+      </table>
+    </div>
+
+    <!-- 4. الأخطاء vs الصواب -->
+    <div class="bg-white border border-border rounded-lg p-4 mb-4">
+      <h3 class="font-bold text-teal mb-2">٤. أخطاء vs صواب الحجاج</h3>
+      <table class="text-sm w-full border-collapse">
+        <thead>
+          <tr><th class="border border-border p-2 bg-claim text-white">الخطأ</th><th class="border border-border p-2 bg-evidence text-white">الصواب</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="border border-border p-2">الاستدلال بالأمور غير المألوفة</td><td class="border border-border p-2">الاستدلال بالأمور المألوفة</td></tr>
+          <tr><td class="border border-border p-2">الاعتماد على الحوادث العرضية</td><td class="border border-border p-2">الاعتماد على الحوادث الدائمة</td></tr>
+          <tr><td class="border border-border p-2">الاعتماد على الأمور النادرة</td><td class="border border-border p-2">الاعتماد على الأمور الشائعة</td></tr>
+          <tr><td class="border border-border p-2">الاعتماد على ما لا يُدرك من غيرها</td><td class="border border-border p-2">الاعتماد على ما يُدرك بذاته</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 5. أركان الحجة -->
+    <div class="bg-white border border-border rounded-lg p-4 mb-4">
+      <h3 class="font-bold text-teal mb-2">٥. أركان الحجة</h3>
+      <ul class="text-sm space-y-1">
+        <li>● <strong>المقدمات</strong>: الأفكار التي تعتمد عليها الحجة</li>
+        <li>● <strong>النتيجة</strong>: الفكرة التي تصل إليها من خلال المقدمات</li>
+        <li>● <strong>الأساس</strong>: السبب الذي يجعل الحجة صحيحة (الرابط المنطقي)</li>
+      </ul>
+      <p class="text-sm mt-2 italic">حجة صحيحة = مقدمات صحيحة + نتيجة صحيحة + أساس صحيح</p>
+    </div>
+
+    <!-- 6. البنية البلاغية -->
+    <div class="bg-white border border-border rounded-lg p-4 mb-4">
+      <h3 class="font-bold text-teal mb-2">٦. البنية البلاغية للحجة</h3>
+      <ul class="text-sm space-y-1">
+        <li>● <strong>المقدمة</strong>: إطار الحجة</li>
+        <li>● <strong>الجذب</strong>: لفت انتباه الجمهور</li>
+        <li>● <strong>الاستنتاج</strong>: عرض الحجة</li>
+        <li>● <strong>الخاتمة</strong>: حصد النتيجة</li>
+      </ul>
+    </div>
+
+    <!-- Dynamic examples from current lesson -->
+    <div class="bg-amber bg-opacity-10 border border-amber rounded-lg p-4">
+      <h3 class="font-bold text-amber mb-2">أمثلة من درسنا الحالي</h3>
+      
+        <div style="margin-bottom: 12px;">
+            <strong>من موقف أفلاطون:</strong>
+            <ul style="font-size: 0.85rem; margin-top: 4px;">
+                <li><span style="color:#E53935;">الدعوى</span>: حريتنا الحقيقية تتحقق بالمعرفة</li>
+                <li><span style="color:#1E88E5;">المقدمة</span>: معرفتنا العادية مُقيَّدة كظلال الكهف</li>
+                <li><span style="color:#43A047;">البينة</span>: تجربة الأسير المُحرَّر يُذهله النور</li>
+                <li><span style="color:#B7791F;">المجيز</span>: ما يتغيّر ويحدّ لا يكون حقيقة كاملة</li>
+            </ul>
+        </div>
+        <div style="margin-bottom: 12px;">
+            <strong>من موقف سبينوزا:</strong>
+            <ul style="font-size: 0.85rem; margin-top: 4px;">
+                <li><span style="color:#E53935;">الدعوى</span>: الحرية هي فهم الضرورة</li>
+                <li><span style="color:#1E88E5;">المقدمة</span>: نظن أننا أحرار حين نفعل ما نريد، لكن لا نعرف أسباب رغباتنا</li>
+                <li><span style="color:#43A047;">البينة</span>: الطفل والغاضب يظنان أنهما حرّان</li>
+                <li><span style="color:#B7791F;">المجيز</span>: فهم الأسباب يُحرّر من الانفعال الأعمى</li>
+            </ul>
+        </div>
+        <div>
+            <strong>من موقف كانط:</strong>
+            <ul style="font-size: 0.85rem; margin-top: 4px;">
+                <li><span style="color:#E53935;">الدعوى</span>: نحن أحرار لأن علينا أن نكون كذلك</li>
+                <li><span style="color:#1E88E5;">المقدمة</span>: لو لم نكن أحرارًا، لما كان للواجب معنى</li>
+                <li><span style="color:#43A047;">البينة</span>: نُحاسب المذنب لأنه كان يستطيع غيره</li>
+                <li><span style="color:#B7791F;">المجيز</span>: الأخلاق قائمة فعلاً، وما قام يفترض شرطه</li>
+            </ul>
+        </div>
+    
+    </div>
+
+  </div>
+</div>
+
+<script>
+  // Tab navigation
+  document.querySelectorAll('.nav-tab[data-phase]').forEach(tab => {
+    tab.addEventListener('click', () => {
+      const phase = tab.dataset.phase;
+      goToPhase(phase);
+    });
+  });
+
+  function goToPhase(phase) {
+    // Update tabs
+    document.querySelectorAll('.nav-tab[data-phase]').forEach(t => {
+      t.classList.toggle('active', t.dataset.phase === String(phase));
+    });
+    // Update sections
+    document.querySelectorAll('.phase-section').forEach(s => {
+      s.classList.toggle('active', s.dataset.phase === String(phase));
+    });
+    // Scroll to top
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // Tools modal
+  function openTools() {
+    document.getElementById('toolsModal').classList.add('open');
+  }
+  function closeTools() {
+    document.getElementById('toolsModal').classList.remove('open');
+  }
+  document.getElementById('toolsModal').addEventListener('click', (e) => {
+    if (e.target.id === 'toolsModal') closeTools();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeTools();
+  });
+</script>
+
+</body>
+</html>

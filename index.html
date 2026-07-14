@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محبة الحكمة | Mahabat Lhikma — نشارك محبة الحكمة بلغة العصر</title>
+    <meta name="description" content="منصة تحوّل الفلسفة لتجربة تفاعلية ممتعة. تعلّم، العب، واستمع إلى الحكمة بلغة العصر.">
+    <link rel="icon" type="image/svg+xml" href="assets/logo/logo-mark.svg">
+    <link rel="apple-touch-icon" href="assets/logo/logo-mark.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Tajawal', 'sans-serif'],
+                        serif: ['Amiri', 'serif'],
+                    },
+                    colors: {
+                        primary: { DEFAULT: '#0f766e', light: '#14b8a6', dark: '#0d5f58' },
+                        secondary: { DEFAULT: '#7c3aed', light: '#a78bfa', dark: '#5b21b6' },
+                        accent: { DEFAULT: '#d97706', light: '#fbbf24', dark: '#b45309' },
+                        surface: '#fcfbf7',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { scroll-behavior: smooth; }
+        body { background-color: #fcfbf7; overflow-x: hidden; }
+
+        /* Glassmorphism */
+        .glass { background: rgba(255,255,255,0.72); backdrop-filter: blur(16px) saturate(180%); border: 1px solid rgba(255,255,255,0.35); }
+        .glass-dark { background: rgba(15,23,42,0.85); backdrop-filter: blur(16px) saturate(180%); border: 1px solid rgba(255,255,255,0.08); }
+
+        /* Hero gradient */
+        .hero-bg {
+            background:
+                radial-gradient(ellipse 80% 60% at 20% 20%, rgba(15,118,110,0.12), transparent),
+                radial-gradient(ellipse 60% 50% at 80% 80%, rgba(124,58,237,0.08), transparent),
+                radial-gradient(ellipse 40% 40% at 50% 50%, rgba(217,119,6,0.05), transparent);
+        }
+
+        /* Floating particles */
+        .particle {
+            position: absolute; border-radius: 50%; pointer-events: none;
+            animation: floatUp linear infinite;
+        }
+        @keyframes floatUp {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+        }
+
+        /* Card hover glow */
+        .card-glow { transition: all 0.5s cubic-bezier(0.4,0,0.2,1); }
+        .card-glow:hover { transform: translateY(-8px); box-shadow: 0 25px 60px -12px rgba(0,0,0,0.12); }
+
+        /* Section reveal */
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.16,1,0.3,1); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* Gradient text */
+        .gradient-text {
+            background: linear-gradient(135deg, #0f766e 0%, #7c3aed 50%, #d97706 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Sidebar */
+        .sidebar-overlay { opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+        .sidebar-overlay.open { opacity: 1; pointer-events: all; }
+        .sidebar { transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.4,0,0.2,1); }
+        .sidebar.open { transform: translateX(0); }
+
+        /* Navbar scroll */
+        .nav-scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.06); }
+
+        /* Pulse ring */
+        .pulse-ring { animation: pulseRing 2s cubic-bezier(0.4,0,0.6,1) infinite; }
+        @keyframes pulseRing {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0; transform: scale(1.5); }
+        }
+
+        /* Counter animation */
+        .counter { display: inline-block; }
+
+        /* Marquee */
+        .marquee { animation: marquee 30s linear infinite; }
+        @keyframes marquee { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+    </style>
+</head>
+<body class="font-sans text-slate-900 antialiased">
+
+    <!-- ========== NAVBAR ========== -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 glass transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <img src="assets/logo/logo-mark.svg" alt="محبة الحكمة" class="w-11 h-11 flex-shrink-0 group-hover:scale-105 transition-transform duration-300">
+                    <div>
+                        <h1 class="text-2xl font-black tracking-tight text-primary leading-none">محبة الحكمة</h1>
+                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] leading-none mt-1">Mahabat Lhikma</p>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav -->
+                <div class="hidden lg:flex items-center gap-1">
+                    <a href="index.html" class="px-4 py-2 rounded-xl text-primary font-bold text-sm bg-primary/5 transition-all">الرئيسية</a>
+                    <a href="philomedia.html" class="px-4 py-2 rounded-xl text-slate-600 font-bold text-sm hover:text-primary hover:bg-primary/5 transition-all">فيلوميديا</a>
+                    <a href="prompts.html" class="px-4 py-2 rounded-xl text-slate-600 font-bold text-sm hover:text-primary hover:bg-primary/5 transition-all">أدوات الذكاء الفلسفي</a>
+                    <a href="skills.html" class="px-4 py-2 rounded-xl text-slate-600 font-bold text-sm hover:text-primary hover:bg-primary/5 transition-all">المهارات التعليمية</a>
+                    <a href="games.html" class="px-4 py-2 rounded-xl text-slate-600 font-bold text-sm hover:text-primary hover:bg-primary/5 transition-all">الألعاب</a>
+                    <a href="notebooklm.html" class="px-4 py-2 rounded-xl text-slate-600 font-bold text-sm hover:text-primary hover:bg-primary/5 transition-all">دليل NotebookLM</a>
+                    <a href="feedback.html" class="px-4 py-2 rounded-xl text-slate-600 font-bold text-sm hover:text-rose-500 hover:bg-rose-50 transition-all flex items-center gap-1.5">
+                        <i data-lucide="message-square-heart" class="w-4 h-4"></i>شاركنا رأيك
+                    </a>
+                </div>
+
+                <!-- Mobile Toggle -->
+                <button onclick="toggleSidebar()" class="lg:hidden p-2.5 rounded-xl text-slate-600 hover:bg-slate-100 transition-colors" id="menu-toggle">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========== MOBILE SIDEBAR ========== -->
+    <div id="sidebar-overlay" class="fixed inset-0 z-[60] bg-black/40 sidebar-overlay" onclick="toggleSidebar()"></div>
+    <aside id="sidebar" class="fixed top-0 right-0 z-[70] w-80 h-full bg-white shadow-2xl sidebar">
+        <div class="p-6 space-y-6">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <img src="assets/logo/logo-mark.svg" alt="محبة الحكمة" class="w-8 h-8">
+                    <span class="text-xl font-black text-primary">محبة الحكمة</span>
+                </div>
+                <button onclick="toggleSidebar()" class="p-2 rounded-xl hover:bg-slate-100"><i data-lucide="x" class="w-5 h-5 text-slate-500"></i></button>
+            </div>
+            <div class="space-y-1">
+                <a href="index.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-primary bg-primary/5 font-bold"><i data-lucide="home" class="w-5 h-5"></i>الرئيسية</a>
+                <a href="philomedia.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-50 font-bold transition-colors"><i data-lucide="video" class="w-5 h-5"></i>فيلوميديا</a>
+                <a href="prompts.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-50 font-bold transition-colors"><i data-lucide="wand-2" class="w-5 h-5"></i>أدوات الذكاء الفلسفي</a>
+                <a href="skills.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-50 font-bold transition-colors"><i data-lucide="graduation-cap" class="w-5 h-5"></i>المهارات التعليمية</a>
+                <a href="games.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-50 font-bold transition-colors"><i data-lucide="gamepad-2" class="w-5 h-5"></i>الألعاب</a>
+                <a href="notebooklm.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-50 font-bold transition-colors"><i data-lucide="notebook-pen" class="w-5 h-5"></i>دليل NotebookLM</a>
+                <a href="feedback.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-white bg-gradient-to-r from-primary to-primary-dark font-bold mt-4 shadow-lg shadow-primary/20"><i data-lucide="message-square-heart" class="w-5 h-5"></i>شاركنا رأيك</a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- ========== HERO ========== -->
+    <header class="relative min-h-screen flex items-center hero-bg overflow-hidden pt-20">
+        <!-- Particles -->
+        <div id="particles" class="absolute inset-0 pointer-events-none overflow-hidden"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20">
+            <div class="text-center space-y-8 max-w-4xl mx-auto">
+                <!-- Badge -->
+                <div class="inline-flex items-center gap-2 bg-white/80 backdrop-blur px-5 py-2.5 rounded-full text-primary font-bold text-sm border border-primary/15 shadow-sm">
+                    <span class="relative flex h-2.5 w-2.5">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary/60"></span>
+                        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
+                    </span>
+                    نشارك محبة الحكمة بلغة العصر
+                </div>
+
+                <!-- Main Heading -->
+                <h2 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-slate-900 leading-[1.1] tracking-tight">
+                    رحلتك لإعادة اكتشاف
+                    <br>
+                    <span class="gradient-text">الفلسفة</span>
+                    تبدأ من هنا
+                </h2>
+
+                <!-- Subtitle -->
+                <p class="text-xl md:text-2xl text-slate-500 font-medium leading-relaxed max-w-2xl mx-auto">
+                    منصة متكاملة تحوّل الفلسفة إلى تجربة تفاعلية ممتعة — تعلّم، العب، واستمع إلى الحكمة
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row justify-center gap-4 pt-4">
+                    <a href="#sections" class="group bg-gradient-to-r from-primary to-primary-dark text-white px-10 py-5 rounded-2xl text-xl font-black shadow-xl shadow-primary/25 hover:shadow-primary/40 hover:scale-105 transition-all flex items-center justify-center gap-3">
+                        ابدأ رحلة الاكتشاف
+                        <i data-lucide="arrow-left" class="w-6 h-6 group-hover:-translate-x-1 transition-transform"></i>
+                    </a>
+                    <a href="philomedia.html" class="bg-white text-slate-900 border-2 border-slate-200 px-10 py-5 rounded-2xl text-xl font-black hover:border-secondary hover:text-secondary hover:shadow-lg transition-all flex items-center justify-center gap-3">
+                        <i data-lucide="play-circle" class="w-6 h-6"></i>
+                        شاهد المحاورات
+                    </a>
+                </div>
+
+                <!-- Stats -->
+                <div class="flex flex-wrap justify-center gap-8 pt-8">
+                    <div class="text-center px-6">
+                        <div class="text-3xl font-black text-primary">٥</div>
+                        <div class="text-sm font-bold text-slate-400 mt-1">أقسام تفاعلية</div>
+                    </div>
+                    <div class="w-px h-12 bg-slate-200 hidden sm:block"></div>
+                    <div class="text-center px-6">
+                        <div class="text-3xl font-black text-secondary">٥</div>
+                        <div class="text-sm font-bold text-slate-400 mt-1">فلاسفة رقميين</div>
+                    </div>
+                    <div class="w-px h-12 bg-slate-200 hidden sm:block"></div>
+                    <div class="text-center px-6">
+                        <div class="text-3xl font-black text-accent">∞</div>
+                        <div class="text-sm font-bold text-slate-400 mt-1">حكمة بلا حدود</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Decorative blobs -->
+        <div class="absolute top-20 right-0 w-[500px] h-[500px] bg-primary/8 rounded-full blur-[100px] -z-[1]"></div>
+        <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-secondary/6 rounded-full blur-[120px] -z-[1]"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-accent/5 rounded-full blur-[80px] -z-[1]"></div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-400 animate-bounce">
+            <span class="text-xs font-bold">اكتشف المزيد</span>
+            <i data-lucide="chevron-down" class="w-5 h-5"></i>
+        </div>
+    </header>
+
+    <!-- ========== FEATURES GRID ========== -->
+    <main id="sections" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <!-- Section Header -->
+        <div class="text-center space-y-4 mb-16 reveal">
+            <div class="inline-flex items-center gap-2 bg-secondary/10 px-4 py-2 rounded-full text-secondary font-bold text-sm">
+                <i data-lucide="layout-grid" class="w-4 h-4"></i>
+                استكشف عالم محبة الحكمة
+            </div>
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900">كل ما تحتاجه في مكان واحد</h2>
+            <p class="text-lg text-slate-500 font-medium max-w-2xl mx-auto">خمسة أقسام تفاعلية صُممت لتقريب الفلسفة من الشباب العربي بأدوات عصرية</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Card: Philomedia -->
+            <div class="reveal card-glow group relative bg-white rounded-[32px] p-8 border border-slate-100 shadow-sm overflow-hidden">
+                <div class="relative z-10 space-y-5">
+                    <div class="w-14 h-14 bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-2xl flex items-center justify-center text-secondary group-hover:scale-110 transition-transform shadow-sm">
+                        <i data-lucide="clapperboard" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-black text-slate-900">فيلوميديا</h3>
+                    <p class="text-slate-500 font-medium leading-relaxed">مكتبة بصرية غنية — محاورات، مقاطع فيديو، ريلز، وأغانٍ فلسفية تأخذك في رحلة فكرية.</p>
+                    <a href="philomedia.html" class="inline-flex items-center gap-2 text-secondary font-black hover:gap-4 transition-all">
+                        شاهد المحتوى <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                    </a>
+                </div>
+                <div class="absolute -bottom-6 -left-6 w-40 h-40 bg-secondary/5 rounded-full blur-2xl group-hover:bg-secondary/10 transition-colors"></div>
+            </div>
+
+            <!-- Card: Edu Prompts (AI tools) -->
+            <div class="reveal card-glow group relative bg-gradient-to-br from-slate-900 to-slate-800 rounded-[32px] p-8 shadow-2xl overflow-hidden text-white">
+                <div class="relative z-10 space-y-5">
+                    <div class="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center text-teal-400 group-hover:scale-110 transition-transform border border-white/10">
+                        <i data-lucide="wand-2" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-black">أدوات الذكاء الفلسفي</h3>
+                    <p class="text-slate-400 font-medium leading-relaxed">
+                        حوّل أي أداة ذكاء اصطناعي إلى معلّم فلسفة أو خصم مناظرة: Philosophy Mode ومدرّب المناظرة الفلسفية.
+                    </p>
+                    <a href="prompts.html" class="inline-flex items-center gap-2 text-teal-400 font-black hover:gap-4 transition-all">
+                        استكشف الأدوات <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                    </a>
+                </div>
+                <div class="absolute top-0 right-0 w-64 h-64 bg-teal-500/10 rounded-full blur-[80px]"></div>
+                <div class="absolute bottom-0 left-0 w-48 h-48 bg-purple-500/10 rounded-full blur-[60px]"></div>
+            </div>
+
+            <!-- Card: Edu Skills -->
+            <div class="reveal card-glow group relative bg-white rounded-[32px] p-8 border border-slate-100 shadow-sm overflow-hidden">
+                <div class="relative z-10 space-y-5">
+                    <div class="w-14 h-14 bg-gradient-to-br from-amber-50 to-amber-100 rounded-2xl flex items-center justify-center text-accent group-hover:scale-110 transition-transform shadow-sm">
+                        <i data-lucide="graduation-cap" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-black text-slate-900">المهارات التعليمية</h3>
+                    <p class="text-slate-500 font-medium leading-relaxed">مهارات جاهزة تُشغَّل داخل Claude: باني الدروس الفلسفية، STORM Research، وTeach.</p>
+                    <a href="skills.html" class="inline-flex items-center gap-2 text-accent font-black hover:gap-4 transition-all">
+                        اكتشف المهارات <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                    </a>
+                </div>
+                <div class="absolute -bottom-6 -left-6 w-40 h-40 bg-accent/5 rounded-full blur-2xl group-hover:bg-accent/10 transition-colors"></div>
+            </div>
+
+            <!-- Card: Games -->
+            <div class="reveal card-glow group relative bg-white rounded-[32px] p-8 border border-slate-100 shadow-sm overflow-hidden">
+                <div class="relative z-10 space-y-5">
+                    <div class="w-14 h-14 bg-gradient-to-br from-amber-50 to-amber-100 rounded-2xl flex items-center justify-center text-accent group-hover:scale-110 transition-transform shadow-sm">
+                        <i data-lucide="gamepad-2" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-black text-slate-900">ألعاب فلسفية</h3>
+                    <p class="text-slate-500 font-medium leading-relaxed">العب "إلى الفلاسفة" أو "تحدث لفيلسوف" — تعلّم الفلسفة بالتجربة والمغامرة.</p>
+                    <a href="games.html" class="inline-flex items-center gap-2 text-accent font-black hover:gap-4 transition-all">
+                        استكشف الألعاب <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                    </a>
+                </div>
+                <div class="absolute -bottom-6 -left-6 w-40 h-40 bg-accent/5 rounded-full blur-2xl group-hover:bg-accent/10 transition-colors"></div>
+            </div>
+
+            <!-- Card: NotebookLM Guide -->
+            <div class="reveal card-glow group relative bg-white rounded-[32px] p-8 border border-slate-100 shadow-sm overflow-hidden">
+                <div class="relative z-10 space-y-5">
+                    <div class="w-14 h-14 bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl flex items-center justify-center text-secondary group-hover:scale-110 transition-transform shadow-sm">
+                        <i data-lucide="notebook-pen" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-black text-slate-900">دليل NotebookLM</h3>
+                    <p class="text-slate-500 font-medium leading-relaxed">دليل عملي للمعلم: حوّل نصوصك إلى صور، عروض تقديمية، وفيديوهات حجاجية جاهزة.</p>
+                    <a href="notebooklm.html" class="inline-flex items-center gap-2 text-secondary font-black hover:gap-4 transition-all">
+                        اكتشف الدليل <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                    </a>
+                </div>
+                <div class="absolute -bottom-6 -left-6 w-40 h-40 bg-secondary/5 rounded-full blur-2xl group-hover:bg-secondary/10 transition-colors"></div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ========== ABOUT / PHILOSOPHY QUOTE ========== -->
+    <section class="relative py-24 overflow-hidden reveal">
+        <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-10 right-10 w-96 h-96 bg-primary rounded-full blur-[120px]"></div>
+            <div class="absolute bottom-10 left-10 w-96 h-96 bg-secondary rounded-full blur-[120px]"></div>
+        </div>
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-10">
+            <div class="inline-flex items-center gap-2 bg-white/10 px-5 py-2.5 rounded-full text-white/70 font-bold text-sm border border-white/10">
+                <i data-lucide="quote" class="w-4 h-4"></i>
+                من نحن
+            </div>
+            <blockquote class="text-3xl md:text-5xl font-black text-white leading-[1.3]">
+                "الفلسفة ليست ترفاً فكرياً، بل هي <span class="text-teal-400">ضرورة</span> لكل إنسان يريد أن يعيش حياة <span class="text-purple-400">واعية</span>"
+            </blockquote>
+            <p class="text-xl text-slate-400 font-medium max-w-3xl mx-auto leading-relaxed">
+                مشروع <strong class="text-white">محبة الحكمة</strong> يسعى لتقريب الفلسفة من الشباب العربي عبر أدوات حديثة وتجارب تفاعلية تجمع بين الفن والعلم والفلسفة. نؤمن بأن الفلسفة يمكن أن تعيش في عالمنا الرقمي.
+            </p>
+            <div class="flex flex-wrap justify-center gap-6 pt-6">
+                <div class="flex items-center gap-3 bg-white/5 border border-white/10 px-6 py-3 rounded-2xl">
+                    <i data-lucide="heart" class="w-5 h-5 text-rose-400"></i>
+                    <span class="text-white font-bold">دافئ وملهم</span>
+                </div>
+                <div class="flex items-center gap-3 bg-white/5 border border-white/10 px-6 py-3 rounded-2xl">
+                    <i data-lucide="shield-check" class="w-5 h-5 text-teal-400"></i>
+                    <span class="text-white font-bold">أصيل وصادق</span>
+                </div>
+                <div class="flex items-center gap-3 bg-white/5 border border-white/10 px-6 py-3 rounded-2xl">
+                    <i data-lucide="sparkles" class="w-5 h-5 text-amber-400"></i>
+                    <span class="text-white font-bold">نابض وعصري</span>
+                </div>
+            </div>
+
+            <div class="pt-10 mt-10 border-t border-white/10 flex flex-col sm:flex-row items-center gap-6 text-right max-w-2xl mx-auto">
+                <div class="w-20 h-20 rounded-full bg-gradient-to-tr from-primary to-secondary p-0.5 flex-shrink-0">
+                    <img src="assets/profile/mohamed.jpg" alt="محمد اليوسفي" class="w-full h-full rounded-full object-cover">
+                </div>
+                <div class="space-y-1.5">
+                    <p class="text-white font-black">محمد اليوسفي</p>
+                    <p class="text-slate-400 text-sm font-medium leading-relaxed">
+                        حاصل على الإجازة في التربية والتكوين تخصص فلسفة من المدرسة العليا للأساتذة بمكناس، ومؤسس مشروع محبة الحكمة. يعمل على بناء جسر بين الفلسفة والذكاء الاصطناعي لخدمة تعليم الفلسفة في المدرسة المغربية.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CLOSING SECTION ========== -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 reveal">
+        <div class="relative bg-gradient-to-br from-primary via-primary-dark to-teal-900 rounded-[40px] p-12 md:p-20 text-center text-white overflow-hidden">
+            <div class="relative z-10 space-y-8 max-w-3xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-black leading-tight">الفلسفة تنتظرك في كل قسم</h2>
+                <p class="text-xl text-teal-100 font-medium">جرّب أدوات الذكاء الفلسفي، اكتشف المهارات التعليمية، أو استمتع بالمحاورات في فيلوميديا</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#sections" class="bg-white text-primary px-10 py-5 rounded-2xl text-xl font-black shadow-xl hover:scale-105 transition-all flex items-center justify-center gap-3">
+                        <i data-lucide="compass" class="w-6 h-6"></i>
+                        تصفح الأقسام
+                    </a>
+                    <a href="feedback.html" class="bg-white/10 text-white border border-white/20 px-10 py-5 rounded-2xl text-xl font-black hover:bg-white/20 transition-all flex items-center justify-center gap-3">
+                        شاركنا رأيك
+                    </a>
+                </div>
+            </div>
+            <div class="absolute top-0 right-0 w-80 h-80 bg-teal-400/20 rounded-full blur-[100px]"></div>
+            <div class="absolute bottom-0 left-0 w-80 h-80 bg-primary-light/10 rounded-full blur-[100px]"></div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="bg-slate-900 text-white pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 pb-16 border-b border-white/10">
+                <!-- Brand -->
+                <div class="lg:col-span-1 space-y-6">
+                    <div class="flex items-center gap-3">
+                        <img src="assets/logo/logo-mark-white.svg" alt="محبة الحكمة" class="w-10 h-10">
+                        <div>
+                            <h3 class="text-xl font-black text-white">محبة الحكمة</h3>
+                            <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Mahabat Lhikma</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 font-medium leading-relaxed text-sm">
+                        مشروع طموح يسعى لتقريب الفلسفة من الشباب العربي عبر أدوات حديثة وتجارب تفاعلية.
+                    </p>
+                </div>
+
+                <!-- Sections -->
+                <div class="space-y-6">
+                    <h4 class="font-black text-white uppercase tracking-widest text-xs">الأقسام</h4>
+                    <ul class="space-y-3 text-slate-400 font-bold text-sm">
+                        <li><a href="philomedia.html" class="hover:text-teal-400 transition-colors flex items-center gap-2"><i data-lucide="video" class="w-4 h-4"></i>فيلوميديا</a></li>
+                        <li><a href="prompts.html" class="hover:text-teal-400 transition-colors flex items-center gap-2"><i data-lucide="wand-2" class="w-4 h-4"></i>أدوات الذكاء الفلسفي</a></li>
+                        <li><a href="skills.html" class="hover:text-teal-400 transition-colors flex items-center gap-2"><i data-lucide="graduation-cap" class="w-4 h-4"></i>المهارات التعليمية</a></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-6">
+                    <h4 class="font-black text-white uppercase tracking-widest text-xs">المزيد</h4>
+                    <ul class="space-y-3 text-slate-400 font-bold text-sm">
+                        <li><a href="games.html" class="hover:text-teal-400 transition-colors flex items-center gap-2"><i data-lucide="gamepad-2" class="w-4 h-4"></i>الألعاب</a></li>
+                        <li><a href="notebooklm.html" class="hover:text-teal-400 transition-colors flex items-center gap-2"><i data-lucide="notebook-pen" class="w-4 h-4"></i>دليل NotebookLM</a></li>
+                        <li><a href="feedback.html" class="hover:text-teal-400 transition-colors flex items-center gap-2"><i data-lucide="message-square-heart" class="w-4 h-4"></i>شاركنا رأيك</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="space-y-6">
+                    <h4 class="font-black text-white uppercase tracking-widest text-xs">ابقَ على اطلاع</h4>
+                    <p class="text-slate-400 font-medium text-sm leading-relaxed">اشترك ليصلك كل جديد عن محبة الحكمة</p>
+                    <div class="flex gap-2">
+                        <input id="newsletter-email" type="email" placeholder="بريدك الإلكتروني" class="flex-1 px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white text-sm font-medium placeholder:text-slate-500 focus:outline-none focus:border-teal-400 transition-colors">
+                        <button id="newsletter-btn" class="bg-gradient-to-r from-primary to-teal-400 px-5 py-3 rounded-xl font-bold text-sm hover:scale-105 transition-transform">اشترك</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-10 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 font-bold text-sm text-center md:text-right">
+                    جميع الحقوق محفوظة © ٢٠٢٦ محبة الحكمة. صُنع بشغف لنشر النور والمعرفة.
+                </p>
+                <div class="flex items-center gap-2 text-slate-500 text-sm font-bold">
+                    <span>صُنع بـ</span>
+                    <i data-lucide="heart" class="w-4 h-4 text-rose-500 fill-current"></i>
+                    <span>وحب الحكمة</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== SCRIPTS ========== -->
+    <script>
+        // Initialize Lucide
+        lucide.createIcons();
+
+        // Sidebar
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('open');
+            document.getElementById('sidebar-overlay').classList.toggle('open');
+            document.body.style.overflow = document.getElementById('sidebar').classList.contains('open') ? 'hidden' : '';
+        }
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('nav-scrolled', window.scrollY > 50);
+        });
+
+        // Scroll reveal
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 100);
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // Particles
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const colors = ['rgba(15,118,110,0.15)', 'rgba(124,58,237,0.1)', 'rgba(217,119,6,0.1)'];
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                const size = Math.random() * 6 + 3;
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.bottom = '-20px';
+                particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+                particle.style.animationDuration = (Math.random() * 15 + 10) + 's';
+                particle.style.animationDelay = (Math.random() * 10) + 's';
+                container.appendChild(particle);
+            }
+        }
+        createParticles();
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Newsletter
+        // Reuses the same Google Apps Script Web App as the feedback form
+        // (see Code.gs) — no Cloudflare Function needed, since drag-and-drop
+        // deploys can't serve those anyway. Add the same deployed /exec URL
+        // used in feedback.html below.
+        const NEWSLETTER_ENDPOINT = 'PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE';
+
+        document.getElementById('newsletter-btn').addEventListener('click', async () => {
+            const email = document.getElementById('newsletter-email').value.trim();
+            if (!email) { alert('يرجى إدخال البريد الإلكتروني'); return; }
+
+            if (!NEWSLETTER_ENDPOINT || NEWSLETTER_ENDPOINT.includes('PASTE_YOUR')) {
+                alert('الاشتراك غير مفعّل بعد على هذه الصفحة.');
+                return;
+            }
+
+            const btn = document.getElementById('newsletter-btn');
+            const original = btn.textContent;
+            btn.textContent = 'جاري...';
+            btn.disabled = true;
+            try {
+                const formData = new FormData();
+                formData.append('form_type', 'newsletter');
+                formData.append('email', email);
+                formData.append('timestamp', new Date().toISOString());
+                await fetch(NEWSLETTER_ENDPOINT, {
+                    method: 'POST',
+                    mode: 'no-cors', // Apps Script doesn't return CORS headers; can't read the response, only confirm the request went out
+                    body: formData,
+                });
+                alert('شكراً لاشتراكك!');
+                document.getElementById('newsletter-email').value = '';
+            } catch {
+                alert('تعذّر الإرسال — تحقق من اتصالك بالإنترنت وحاول مرة أخرى.');
+            } finally {
+                btn.textContent = original;
+                btn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>
