@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شاركنا رأيك | محبة الحكمة</title>
+    <meta name="description" content="رأيك يشكّل محبة الحكمة — شاركنا ملاحظاتك عن المشروع أو عن أي قسم بعينه.">
+    <link rel="icon" type="image/svg+xml" href="assets/logo/logo-mark.svg">
+    <link rel="apple-touch-icon" href="assets/logo/logo-mark.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Tajawal', 'sans-serif'], serif: ['Amiri', 'serif'] },
+                    colors: {
+                        primary: { DEFAULT: '#0f766e', light: '#14b8a6', dark: '#0d5f58' },
+                        secondary: { DEFAULT: '#7c3aed', light: '#a78bfa', dark: '#5b21b6' },
+                        accent: { DEFAULT: '#d97706', light: '#fbbf24', dark: '#b45309' },
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #fcfbf7; }
+        .glass { background: rgba(255,255,255,0.8); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.3); }
+        select, textarea, input[type="email"], input[type="text"] {
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        select:focus, textarea:focus, input:focus {
+            outline: none; border-color: #0f766e; box-shadow: 0 0 0 4px rgba(15,118,110,0.1);
+        }
+        .star { transition: transform 0.15s ease, color 0.15s ease; cursor: pointer; }
+        .star:hover, .star.active { color: #d97706; transform: scale(1.15); }
+        .spinner { border: 3px solid rgba(255,255,255,0.3); border-top-color: white; border-radius: 999px; width: 18px; height: 18px; animation: spin 0.7s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+    </style>
+</head>
+<body class="font-sans text-slate-900 pb-20">
+
+    <!-- Back nav -->
+    <nav class="sticky top-0 z-50 glass">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="flex justify-between h-16 items-center">
+                <a href="index.html" class="flex items-center gap-2 text-slate-500 hover:text-slate-900 transition-colors">
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i> عودة
+                </a>
+                <h1 class="text-xl font-black text-slate-900 flex items-center gap-2">
+                    <i data-lucide="message-square-heart" class="w-6 h-6 text-rose-500"></i> شاركنا رأيك
+                </h1>
+                <div class="w-16"></div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="max-w-2xl mx-auto px-4 pt-10 pb-4 text-center space-y-4">
+        <div class="inline-flex items-center gap-2 bg-rose-500/10 px-4 py-2 rounded-full text-rose-600 font-bold text-sm">
+            <i data-lucide="heart" class="w-4 h-4"></i> Community Feedback
+        </div>
+        <h2 class="text-3xl md:text-4xl font-black">رأيك يصنع محبة الحكمة</h2>
+        <p class="text-slate-500 font-medium leading-relaxed">
+            سواء كانت ملاحظة عن المشروع ككل أو عن قسم بعينه — رأيك يصل مباشرة إلينا ويُقرأ.
+        </p>
+    </header>
+
+    <main class="max-w-xl mx-auto px-4 py-8">
+
+        <!-- Form -->
+        <form id="feedback-form" class="bg-white rounded-3xl border border-slate-100 shadow-sm p-6 md:p-8 space-y-6">
+
+            <!-- Which section -->
+            <div class="space-y-2">
+                <label class="font-black text-sm text-slate-900 flex items-center gap-2">
+                    <i data-lucide="target" class="w-4 h-4 text-primary"></i> ملاحظتك تخص
+                </label>
+                <select name="page" id="page-select" required class="w-full border-2 border-slate-200 rounded-xl px-4 py-3 font-bold text-slate-700 bg-white">
+                    <option value="" disabled selected>اختر القسم...</option>
+                    <option value="المشروع ككل">المشروع ككل (فكرة عامة)</option>
+                    <option value="الرئيسية">الرئيسية</option>
+                    <option value="فيلوميديا">فيلوميديا</option>
+                    <option value="أدوات الذكاء الفلسفي">أدوات الذكاء الفلسفي (Edu Prompts)</option>
+                    <option value="المهارات التعليمية">المهارات التعليمية (Edu Skills)</option>
+                    <option value="الألعاب">الألعاب</option>
+                    <option value="أخرى">شيء آخر</option>
+                </select>
+            </div>
+
+            <!-- Feedback type -->
+            <div class="space-y-2">
+                <label class="font-black text-sm text-slate-900 flex items-center gap-2">
+                    <i data-lucide="tag" class="w-4 h-4 text-primary"></i> نوع الملاحظة
+                </label>
+                <div class="grid grid-cols-2 gap-2" id="type-group">
+                    <label class="type-option flex items-center gap-2 border-2 border-slate-200 rounded-xl px-4 py-3 cursor-pointer font-bold text-sm text-slate-600 has-[:checked]:border-primary has-[:checked]:bg-primary/5 has-[:checked]:text-primary transition-colors">
+                        <input type="radio" name="type" value="اقتراح" class="accent-primary" required> اقتراح
+                    </label>
+                    <label class="type-option flex items-center gap-2 border-2 border-slate-200 rounded-xl px-4 py-3 cursor-pointer font-bold text-sm text-slate-600 has-[:checked]:border-primary has-[:checked]:bg-primary/5 has-[:checked]:text-primary transition-colors">
+                        <input type="radio" name="type" value="إعجاب" class="accent-primary"> إعجاب
+                    </label>
+                    <label class="type-option flex items-center gap-2 border-2 border-slate-200 rounded-xl px-4 py-3 cursor-pointer font-bold text-sm text-slate-600 has-[:checked]:border-primary has-[:checked]:bg-primary/5 has-[:checked]:text-primary transition-colors">
+                        <input type="radio" name="type" value="مشكلة تقنية" class="accent-primary"> مشكلة تقنية
+                    </label>
+                    <label class="type-option flex items-center gap-2 border-2 border-slate-200 rounded-xl px-4 py-3 cursor-pointer font-bold text-sm text-slate-600 has-[:checked]:border-primary has-[:checked]:bg-primary/5 has-[:checked]:text-primary transition-colors">
+                        <input type="radio" name="type" value="أخرى" class="accent-primary"> أخرى
+                    </label>
+                </div>
+            </div>
+
+            <!-- Rating -->
+            <div class="space-y-2">
+                <label class="font-black text-sm text-slate-900 flex items-center gap-2">
+                    <i data-lucide="star" class="w-4 h-4 text-primary"></i> تقييمك العام <span class="font-normal text-slate-400">(اختياري)</span>
+                </label>
+                <div class="flex gap-2" id="star-rating">
+                    <i data-lucide="star" data-value="1" class="star w-8 h-8 text-slate-300"></i>
+                    <i data-lucide="star" data-value="2" class="star w-8 h-8 text-slate-300"></i>
+                    <i data-lucide="star" data-value="3" class="star w-8 h-8 text-slate-300"></i>
+                    <i data-lucide="star" data-value="4" class="star w-8 h-8 text-slate-300"></i>
+                    <i data-lucide="star" data-value="5" class="star w-8 h-8 text-slate-300"></i>
+                </div>
+                <input type="hidden" name="rating" id="rating-input" value="">
+            </div>
+
+            <!-- Message -->
+            <div class="space-y-2">
+                <label class="font-black text-sm text-slate-900 flex items-center gap-2">
+                    <i data-lucide="message-circle" class="w-4 h-4 text-primary"></i> ملاحظتك
+                </label>
+                <textarea name="message" required minlength="5" rows="5" placeholder="اكتب رأيك بحرية هنا..." class="w-full border-2 border-slate-200 rounded-xl px-4 py-3 font-medium text-slate-700"></textarea>
+            </div>
+
+            <!-- Optional contact -->
+            <div class="grid sm:grid-cols-2 gap-4">
+                <div class="space-y-2">
+                    <label class="font-bold text-xs text-slate-500">اسمك <span class="font-normal">(اختياري)</span></label>
+                    <input type="text" name="name" placeholder="اسمك" class="w-full border-2 border-slate-200 rounded-xl px-4 py-2.5 font-medium text-slate-700 text-sm">
+                </div>
+                <div class="space-y-2">
+                    <label class="font-bold text-xs text-slate-500">بريدك الإلكتروني <span class="font-normal">(إن أردت رداً)</span></label>
+                    <input type="email" name="email" placeholder="you@example.com" class="w-full border-2 border-slate-200 rounded-xl px-4 py-2.5 font-medium text-slate-700 text-sm" dir="ltr">
+                </div>
+            </div>
+
+            <button type="submit" id="submit-btn" class="w-full bg-primary text-white py-4 rounded-xl font-black text-lg hover:bg-primary-dark transition-colors flex items-center justify-center gap-2">
+                <i data-lucide="send" class="w-5 h-5"></i> أرسل ملاحظتك
+            </button>
+        </form>
+
+        <!-- Success state -->
+        <div id="success-box" class="hidden bg-white rounded-3xl border border-slate-100 shadow-sm p-10 text-center space-y-4">
+            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
+                <i data-lucide="check-circle-2" class="w-9 h-9 text-primary"></i>
+            </div>
+            <h3 class="text-2xl font-black">شكراً لك!</h3>
+            <p class="text-slate-500 font-medium">وصلتنا ملاحظتك، وهي تُقرأ فعلاً وتساهم في تطوير محبة الحكمة.</p>
+            <button onclick="resetForm()" class="text-primary font-black hover:gap-3 flex items-center gap-2 justify-center mx-auto transition-all">
+                إرسال ملاحظة أخرى <i data-lucide="arrow-left" class="w-4 h-4"></i>
+            </button>
+        </div>
+
+        <!-- Error state -->
+        <div id="error-box" class="hidden mt-4 bg-rose-50 border border-rose-200 text-rose-700 rounded-2xl p-4 text-sm font-bold text-center"></div>
+    </main>
+
+    <script>
+        lucide.createIcons();
+
+        /* -----------------------------------------------------------------
+         * TODO(Mohamed): paste your Google Apps Script Web App URL below.
+         * See the setup instructions I gave you in chat — in short:
+         *  1) Open the Sheet → Extensions → Apps Script
+         *  2) Paste the doPost script, Deploy → New deployment → Web app
+         *     → Execute as: Me → Who has access: Anyone
+         *  3) Copy the resulting URL (ends in /exec) and paste it here.
+         * ------------------------------------------------------------------ */
+        const FEEDBACK_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyruJh6yTr_cln2_y9k3ZPCw7r_srjGwd8a8tRXRY3Yjpj-iSzheD5PgRAmtk1qEhVS/exec';
+
+        // Star rating
+        let currentRating = 0;
+        const stars = document.querySelectorAll('#star-rating .star');
+        stars.forEach(star => {
+            star.addEventListener('click', () => {
+                currentRating = parseInt(star.dataset.value);
+                document.getElementById('rating-input').value = currentRating;
+                paintStars(currentRating);
+            });
+        });
+        function paintStars(value) {
+            stars.forEach(s => {
+                const v = parseInt(s.dataset.value);
+                s.classList.toggle('active', v <= value);
+                s.classList.toggle('text-accent', v <= value);
+                s.classList.toggle('text-slate-300', v > value);
+            });
+        }
+
+        // Submit
+        const form = document.getElementById('feedback-form');
+        const submitBtn = document.getElementById('submit-btn');
+        const errorBox = document.getElementById('error-box');
+
+        form.addEventListener('submit', async function (e) {
+            e.preventDefault();
+            errorBox.classList.add('hidden');
+
+            if (!FEEDBACK_ENDPOINT || FEEDBACK_ENDPOINT.includes('PASTE_YOUR')) {
+                errorBox.textContent = 'لم يتم تفعيل استقبال الملاحظات بعد على هذه الصفحة (الرابط غير مضبوط) — تواصل مع فريق الموقع.';
+                errorBox.classList.remove('hidden');
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<div class="spinner"></div> جارٍ الإرسال...';
+
+            const formData = new FormData(form);
+            formData.append('timestamp', new Date().toISOString());
+            formData.append('source_page', document.referrer || 'مباشر');
+
+            try {
+                await fetch(FEEDBACK_ENDPOINT, {
+                    method: 'POST',
+                    mode: 'no-cors', // Apps Script doesn't return CORS headers; we can't read the response, only confirm the request went out
+                    body: formData,
+                });
+                form.classList.add('hidden');
+                document.getElementById('success-box').classList.remove('hidden');
+                lucide.createIcons();
+            } catch (err) {
+                errorBox.textContent = 'تعذّر الإرسال — تحقق من اتصالك بالإنترنت وحاول مرة أخرى.';
+                errorBox.classList.remove('hidden');
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i data-lucide="send" class="w-5 h-5"></i> أرسل ملاحظتك';
+                lucide.createIcons();
+            }
+        });
+
+        function resetForm() {
+            form.reset();
+            currentRating = 0;
+            paintStars(0);
+            document.getElementById('rating-input').value = '';
+            document.getElementById('success-box').classList.add('hidden');
+            form.classList.remove('hidden');
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = '<i data-lucide="send" class="w-5 h-5"></i> أرسل ملاحظتك';
+            lucide.createIcons();
+        }
+    </script>
+</body>
+</html>

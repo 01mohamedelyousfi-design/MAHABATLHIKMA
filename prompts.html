@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أدوات الذكاء الفلسفي | محبة الحكمة</title>
+    <meta name="description" content="أدوات جاهزة لتخصيص أي نموذج ذكاء اصطناعي كمعلّم أو مدرّب فلسفي — Philosophy Mode ومدرّب المناظرة الفلسفية.">
+    <link rel="icon" type="image/svg+xml" href="assets/logo/logo-mark.svg">
+    <link rel="apple-touch-icon" href="assets/logo/logo-mark.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Tajawal', 'sans-serif'], serif: ['Amiri', 'serif'] },
+                    colors: {
+                        primary: { DEFAULT: '#0f766e', light: '#14b8a6', dark: '#0d5f58' },
+                        secondary: { DEFAULT: '#7c3aed', light: '#a78bfa', dark: '#5b21b6' },
+                        accent: { DEFAULT: '#d97706', light: '#fbbf24', dark: '#b45309' },
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #fcfbf7; }
+        .glass { background: rgba(255,255,255,0.8); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.3); }
+        .card-hover { transition: all 0.35s cubic-bezier(0.4,0,0.2,1); }
+        .card-hover:hover { transform: translateY(-6px); box-shadow: 0 25px 50px -15px rgba(0,0,0,0.12); }
+
+        .modal-overlay { position: fixed; inset: 0; z-index: 100; background: rgba(15,23,42,0.75); backdrop-filter: blur(6px); display: flex; align-items: flex-start; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.25s ease; overflow-y: auto; padding: 2rem 1rem; }
+        .modal-overlay.open { opacity: 1; pointer-events: auto; }
+        .modal-box { transform: scale(0.96) translateY(10px); transition: transform 0.25s ease; }
+        .modal-overlay.open .modal-box { transform: scale(1) translateY(0); }
+    </style>
+</head>
+<body class="font-sans text-slate-900 pb-20">
+
+    <!-- Back nav -->
+    <nav class="sticky top-0 z-50 glass">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="flex justify-between h-16 items-center">
+                <a href="index.html" class="flex items-center gap-2 text-slate-500 hover:text-slate-900 transition-colors">
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i> عودة
+                </a>
+                <h1 class="text-xl font-black text-slate-900 flex items-center gap-2">
+                    <i data-lucide="wand-2" class="w-6 h-6 text-secondary"></i> أدوات الذكاء الفلسفي
+                </h1>
+                <div class="w-16"></div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="max-w-3xl mx-auto px-4 pt-10 pb-4 text-center space-y-4">
+        <div class="inline-flex items-center gap-2 bg-secondary/10 px-4 py-2 rounded-full text-secondary font-bold text-sm">
+            <i data-lucide="sparkles" class="w-4 h-4"></i> Edu Prompts
+        </div>
+        <h2 class="text-3xl md:text-4xl font-black">حوّل أي أداة ذكاء اصطناعي إلى معلّم فلسفة</h2>
+        <p class="text-slate-500 font-medium leading-relaxed">
+            كل بطاقة أدناه أداة جاهزة تولّد لك System Prompt جاهزاً — تخصّصه بضغطات قليلة، ثم تلصقه في ChatGPT أو Claude أو Gemini، فيتحول النموذج فوراً إلى معلّم فلسفة منهجي أو خصم مناظرة. اضغط على البطاقة للتفاصيل، أو "جرّب الأداة" للانتقال إليها مباشرة.
+        </p>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-10">
+        <div id="tools-grid" class="grid sm:grid-cols-2 gap-6"></div>
+    </main>
+
+    <!-- Detail Modal -->
+    <div class="modal-overlay" id="tool-modal">
+        <div class="modal-box bg-white rounded-3xl w-full max-w-2xl my-8 overflow-hidden shadow-2xl">
+            <div id="modal-header" class="p-6 text-white relative">
+                <button onclick="closeToolModal()" class="absolute top-4 left-4 w-9 h-9 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-colors">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+                <div class="flex items-center gap-4">
+                    <div class="w-14 h-14 rounded-2xl bg-white/20 flex items-center justify-center flex-shrink-0">
+                        <i id="modal-icon" data-lucide="wand-2" class="w-7 h-7"></i>
+                    </div>
+                    <div>
+                        <h3 id="modal-title" class="text-2xl font-black"></h3>
+                        <p id="modal-subtitle" class="text-sm font-bold opacity-80"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="p-6 space-y-6 max-h-[60vh] overflow-y-auto">
+                <div>
+                    <h4 class="font-black text-slate-900 flex items-center gap-2 mb-2"><i data-lucide="info" class="w-4 h-4 text-primary"></i> ما هي هذه الأداة؟</h4>
+                    <p id="modal-explain" class="text-slate-600 leading-relaxed text-sm"></p>
+                </div>
+                <div>
+                    <h4 class="font-black text-slate-900 flex items-center gap-2 mb-2"><i data-lucide="list-ordered" class="w-4 h-4 text-primary"></i> كيف تستخدمها؟</h4>
+                    <ol id="modal-usage" class="list-decimal list-inside space-y-1.5 text-slate-600 text-sm leading-relaxed"></ol>
+                </div>
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <div class="bg-primary/5 rounded-2xl p-4">
+                        <h4 class="font-black text-primary flex items-center gap-2 mb-2 text-sm"><i data-lucide="user-check" class="w-4 h-4"></i> فائدتها للمعلم</h4>
+                        <p id="modal-teacher" class="text-slate-600 text-sm leading-relaxed"></p>
+                    </div>
+                    <div class="bg-secondary/5 rounded-2xl p-4">
+                        <h4 class="font-black text-secondary flex items-center gap-2 mb-2 text-sm"><i data-lucide="user" class="w-4 h-4"></i> فائدتها للمتعلم</h4>
+                        <p id="modal-student" class="text-slate-600 text-sm leading-relaxed"></p>
+                    </div>
+                </div>
+                <div id="modal-examples-wrap" class="hidden">
+                    <h4 class="font-black text-slate-900 flex items-center gap-2 mb-2"><i data-lucide="images" class="w-4 h-4 text-primary"></i> أمثلة على ما يمكن إنتاجه</h4>
+                    <div id="modal-examples" class="grid grid-cols-2 gap-3"></div>
+                </div>
+            </div>
+            <div class="p-6 pt-0">
+                <a id="modal-try" href="#" target="_blank" rel="noopener noreferrer" class="w-full bg-slate-900 text-white py-3.5 rounded-xl font-bold hover:bg-slate-800 transition-colors flex items-center justify-center gap-2">
+                    <i data-lucide="external-link" class="w-4 h-4"></i> جرّب الأداة الآن
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Example image lightbox -->
+    <div class="modal-overlay" id="example-lightbox">
+        <div class="modal-box text-center my-8">
+            <button onclick="closeExampleLightbox()" class="absolute -top-12 left-0 w-9 h-9 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-colors">
+                <i data-lucide="x" class="w-5 h-5 text-white"></i>
+            </button>
+            <img id="lightbox-img" src="" alt="" class="max-h-[80vh] max-w-full mx-auto rounded-2xl shadow-2xl">
+            <p id="lightbox-caption" class="text-white font-bold mt-3"></p>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        const TOOLS = [
+            {
+                id: 'philosophy-mode',
+                title: 'Philosophy Mode',
+                subtitle: 'منشئ System Prompt الفلسفي المنهجي',
+                icon: 'brain-circuit',
+                gradient: 'from-primary to-primary-dark',
+                url: 'https://philosophy-mode.pages.dev/',
+                explain: 'أداة تولّد System Prompt جاهزاً يجعل أي نموذج ذكاء اصطناعي يشرح الفلسفة وفق بنية منهجية من 8 خطوات على مستوى الباكالوريا: تمهيد إشكالي بلا مصطلحات، تصعيد الأسئلة، تعريف المفاهيم، أطروحة أولى، فقرة انتقالية، أطروحة مضادة، مقارنة وتركيب، ثم خلاصة مفتوحة بلا حسم. تلتزم الأداة أيضاً بـ8 قواعد ثابتة (مثل: عدم البدء بتعريف قاموسي، مثال بعد كل فكرة مجردة، اعتماد ابن رشد وابن سينا وابن خلدون كمرجعيات أساسية لا هوامش).',
+                usage: [
+                    'افتح الأداة واختر مستوى "باكالوريا" (أو اترك الإعداد الافتراضي).',
+                    'اختر سؤالاً فلسفياً من المقترحات أو اكتب سؤالك الخاص (اختياري).',
+                    'خصّص الأقسام الثمانية والقواعد الأساسية حسب حاجتك، ويمكن إضافة قاعدة خاصة بك (R-09).',
+                    'اضغط "نسخ System Prompt" أو "تحميل الملف".',
+                    'ألصق النص في خانة System/دور النظام داخل ChatGPT أو Claude أو Gemini، ثم اطرح السؤال كرسالة مستخدم عادية.',
+                ],
+                teacher: 'يمنح المعلم "معياراً" جاهزاً لأي شرح فلسفي يطلبه من نموذج ذكاء اصطناعي، فتُصبح إجابات النموذج منظمة تربوياً (تمهيد، إشكال، أطروحة، نقيض، تركيب) بدل نص عشوائي — يصلح مباشرة كسند درس.',
+                student: 'يتيح للمتعلم أن يطلب شرحاً لأي إشكالية فلسفية فيحصل دائماً على نفس البنية المنهجية التي يُطلب منه اتباعها في الامتحان (طرح الإشكال، أطروحة، نقيض، تركيب، خلاصة)، فيتدرب على الشكل والمضمون معاً.',
+            },
+            {
+                id: 'debate-trainer',
+                title: 'مدرّب المناظرة الفلسفية',
+                subtitle: 'philosophy-debate-trainer',
+                icon: 'swords',
+                gradient: 'from-secondary to-secondary-dark',
+                url: 'https://philosophy-debate-trainer.pages.dev/',
+                explain: 'أداة تخصيص System Prompt تحوّل أي نموذج ذكاء اصطناعي إلى خصم مناظرة فلسفي. تختار المدرسة الفكرية (وجودية، عقلانية، تجريبية، مثالية، براغماتية، ماركسية، ظاهراتية، تحليلية، ما بعد حداثة، أو فلسفة إسلامية)، وموضوع النقاش، ومستوى الصعوبة (من سهل إلى خبير)، وأسلوب الحجاج (افتراضياً: أسئلة استفهامية موجّهة على الطريقة السقراطية/المايوتيك)، فتحصل على System Prompt جاهز لمناظرة حقيقية.',
+                usage: [
+                    'افتح الأداة واختر المدرسة الفلسفية التي تريد مناظرتها (مثلاً: الوجودية أو الفلسفة الإسلامية).',
+                    'اكتب موضوع النقاش أو اخترْه من المواضيع المقترحة.',
+                    'حدّد مستوى الصعوبة المناسب للتلميذ (سهل / متوسط / صعب / خبير) وأسلوب الحجاج.',
+                    'انسخ أو حمّل System Prompt الناتج.',
+                    'ألصقه في أي أداة ذكاء اصطناعي، ثم اطلب من التلميذ بدء المناقشة مباشرة مع النموذج.',
+                ],
+                teacher: 'يوفر للمعلم خصم مناظرة متدرّج الصعوبة لكل تلميذ أو فوج، بمدرسة فكرية محددة بدقة — تدريب على الحجاج الشفوي والكتابي دون الحاجة لإعداد يدوي لكل حصة.',
+                student: 'يمنح المتعلم مساحة آمنة لممارسة الحجاج والدفاع عن رأيه أمام "خصم" فلسفي متسق (مثلاً وجودي أو عقلاني)، عبر أسئلة سقراطية تدفعه للتفكير بدل تلقّي الإجابة جاهزة.',
+            },
+            {
+                id: 'philosimage',
+                title: 'PhilosImage AI',
+                subtitle: 'من الفكرة الفلسفية إلى صورة رمزية',
+                icon: 'image',
+                gradient: 'from-accent to-accent-dark',
+                url: 'https://philosimage-ai.vercel.app',
+                explain: 'أداة تبني الصورة على ثلاث خطوات لا خطوة واحدة: تبدأ بسؤال فلسفي وأطروحة (مثلاً: سبينوزا يرى الإنسان خاضعاً للضرورة)، ثم تفكّكها إلى عناصر رمزية محددة المعنى (مطعم = خيار ظاهري، صندوق شفاف = الضرورة البيولوجية، سبينوزا = الحتمية)، وأخيراً تولّد تلقائياً Prompt احترافياً ثم الصورة نفسها. الفرق الجوهري: كل عنصر في الصورة له معنى فلسفي مقصود تختاره أنت، لا رسم عشوائي — بالضبط كما في مثال سبينوزا والمطاعم أعلاه.',
+                usage: [
+                    'افتح الأداة، واكتب السؤال الفلسفي الذي تريد تصويره (مثلاً: هل الإنسان حر أم خاضع للضرورة؟).',
+                    'حدد الأطروحة والموقف الفلسفي (اختر فيلسوفاً كسبينوزا أو كانط، أو صغ موقفك الخاص).',
+                    'أضف العناصر الرمزية واحداً تلو الآخر مع معنى كل عنصر — يمكن طلب اقتراحات جاهزة من المساعد الذكي داخل الأداة إن توفر.',
+                    'ولّد الـ Prompt الاحترافي تلقائياً، ثم ولّد الصورة.',
+                    'ألصقه prompt في أي أداة ذكاء اصطناعي لتنشأ صورتك.',
+                ],
+                teacher: 'يتيح بناء نشاط صفي كامل حول مفهوم واحد: كل عنصر في الصورة قابل للمناقشة ("لماذا صندوق شفاف لا قفص؟")، بدل عرض صورة جاهزة بلا تفكيك يفهمه التلميذ فقط بالنظر.',
+                student: 'يدرّب المتعلم على أهم مهارة في التحليل الفلسفي: ترجمة فكرة مجردة إلى رمز ملموس ومعلَّل — وهي نفس مهارة بناء المثال أو التشبيه في الإنشاء الفلسفي.',
+                examples: [
+                    { src: 'assets/examples/philosimage/example-descartes.png', caption: 'منهج الشك عند ديكارت' },
+                    { src: 'assets/examples/philosimage/example-spinoza.png', caption: 'الحرية والضرورة عند سبينوزا' },
+                ],
+            },
+        ];
+
+        function renderGrid() {
+            const grid = document.getElementById('tools-grid');
+            grid.innerHTML = TOOLS.map(t => `
+                <div class="card-hover bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm cursor-pointer" onclick="openToolModal('${t.id}')">
+                    <div class="h-28 bg-gradient-to-br ${t.gradient} flex items-center justify-center">
+                        <i data-lucide="${t.icon}" class="w-12 h-12 text-white"></i>
+                    </div>
+                    <div class="p-6 space-y-2">
+                        <h3 class="text-lg font-black">${t.title}</h3>
+                        <p class="text-slate-500 text-sm font-medium">${t.subtitle}</p>
+                        <div class="pt-2 text-primary font-bold text-sm flex items-center gap-1">
+                            التفاصيل <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+            lucide.createIcons();
+        }
+
+        function openToolModal(id) {
+            const t = TOOLS.find(x => x.id === id);
+            if (!t) return;
+            document.getElementById('modal-header').className = `p-6 text-white relative bg-gradient-to-br ${t.gradient}`;
+            document.getElementById('modal-icon').setAttribute('data-lucide', t.icon);
+            document.getElementById('modal-title').textContent = t.title;
+            document.getElementById('modal-subtitle').textContent = t.subtitle;
+            document.getElementById('modal-explain').textContent = t.explain;
+            document.getElementById('modal-usage').innerHTML = t.usage.map(step => `<li>${step}</li>`).join('');
+            document.getElementById('modal-teacher').textContent = t.teacher;
+            document.getElementById('modal-student').textContent = t.student;
+            document.getElementById('modal-try').href = t.url;
+
+            const examplesWrap = document.getElementById('modal-examples-wrap');
+            const examplesGrid = document.getElementById('modal-examples');
+            if (t.examples && t.examples.length) {
+                examplesGrid.innerHTML = t.examples.map(ex => `
+                    <div class="cursor-pointer group" onclick="openExampleLightbox('${ex.src}', '${ex.caption.replace(/'/g, "\\'")}')">
+                        <img src="${ex.src}" alt="${ex.caption}" class="w-full rounded-xl border border-slate-200 group-hover:opacity-90 transition-opacity">
+                        <p class="text-xs text-slate-500 font-bold mt-1 text-center">${ex.caption}</p>
+                    </div>
+                `).join('');
+                examplesWrap.classList.remove('hidden');
+            } else {
+                examplesWrap.classList.add('hidden');
+            }
+
+            document.getElementById('tool-modal').classList.add('open');
+            lucide.createIcons();
+        }
+
+        function openExampleLightbox(src, caption) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox-img').alt = caption;
+            document.getElementById('lightbox-caption').textContent = caption;
+            document.getElementById('example-lightbox').classList.add('open');
+        }
+        function closeExampleLightbox() {
+            document.getElementById('example-lightbox').classList.remove('open');
+        }
+
+        function closeToolModal() {
+            document.getElementById('tool-modal').classList.remove('open');
+        }
+        document.getElementById('tool-modal').addEventListener('click', function (e) {
+            if (e.target === this) closeToolModal();
+        });
+        document.getElementById('example-lightbox').addEventListener('click', function (e) {
+            if (e.target === this) closeExampleLightbox();
+        });
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') { closeToolModal(); closeExampleLightbox(); }
+        });
+
+        renderGrid();
+    </script>
+</body>
+</html>

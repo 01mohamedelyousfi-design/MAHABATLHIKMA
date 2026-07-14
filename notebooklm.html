@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليل NotebookLM للمعلم | محبة الحكمة</title>
+    <meta name="description" content="دليل عملي للمعلم لاستخدام NotebookLM وGemini وChatGPT في بناء دروس فلسفية: صور، عروض تقديمية، مدخل إشكالي، وحجة مقابل حجة.">
+    <link rel="icon" type="image/svg+xml" href="assets/logo/logo-mark.svg">
+    <link rel="apple-touch-icon" href="assets/logo/logo-mark.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Tajawal', 'sans-serif'], serif: ['Amiri', 'serif'] },
+                    colors: {
+                        primary: { DEFAULT: '#0f766e', light: '#14b8a6', dark: '#0d5f58' },
+                        secondary: { DEFAULT: '#7c3aed', light: '#a78bfa', dark: '#5b21b6' },
+                        accent: { DEFAULT: '#d97706', light: '#fbbf24', dark: '#b45309' },
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #fcfbf7; }
+        .glass { background: rgba(255,255,255,0.8); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.3); }
+        .card-hover { transition: all 0.35s cubic-bezier(0.4,0,0.2,1); }
+        .card-hover:hover { transform: translateY(-6px); box-shadow: 0 25px 50px -15px rgba(0,0,0,0.12); }
+
+        .modal-overlay { position: fixed; inset: 0; z-index: 100; background: rgba(15,23,42,0.75); backdrop-filter: blur(6px); display: flex; align-items: flex-start; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.25s ease; overflow-y: auto; padding: 2rem 1rem; }
+        .modal-overlay.open { opacity: 1; pointer-events: auto; }
+        .modal-box { transform: scale(0.96) translateY(10px); transition: transform 0.25s ease; }
+        .modal-overlay.open .modal-box { transform: scale(1) translateY(0); }
+
+        .prompt-box { background: #0f172a; color: #e2e8f0; border-radius: 12px; padding: 1rem; font-family: monospace; font-size: 0.8rem; line-height: 1.6; white-space: pre-wrap; position: relative; direction: ltr; text-align: left; }
+        .copy-btn { position: absolute; top: 0.5rem; left: 0.5rem; background: rgba(255,255,255,0.1); }
+    </style>
+</head>
+<body class="font-sans text-slate-900 pb-20">
+
+    <!-- Back nav -->
+    <nav class="sticky top-0 z-50 glass">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="flex justify-between h-16 items-center">
+                <a href="index.html" class="flex items-center gap-2 text-slate-500 hover:text-slate-900 transition-colors">
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i> عودة
+                </a>
+                <h1 class="text-xl font-black text-slate-900 flex items-center gap-2">
+                    <i data-lucide="notebook-pen" class="w-6 h-6 text-secondary"></i> دليل NotebookLM
+                </h1>
+                <div class="w-16"></div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="max-w-3xl mx-auto px-4 pt-10 pb-4 text-center space-y-4">
+        <div class="inline-flex items-center gap-2 bg-secondary/10 px-4 py-2 rounded-full text-secondary font-bold text-sm">
+            <i data-lucide="graduation-cap" class="w-4 h-4"></i> دليل للمعلم
+        </div>
+        <h2 class="text-3xl md:text-4xl font-black">من النص إلى الدرس الجاهز</h2>
+        <p class="text-slate-500 font-medium leading-relaxed">
+            NotebookLM يحوّل مصادرك (نص، PDF، رابط) إلى عروض تقديمية وفيديوهات وحوارات — كل ذلك مبني فعلياً على مصادرك أنت، لا على معرفة عامة. هذا الدليل يشرح 4 استخدامات عملية لدرس فلسفي: من الصورة البسيطة إلى محاورة حجاجية كاملة.
+        </p>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 py-10">
+        <div id="cards-grid" class="grid sm:grid-cols-2 gap-6"></div>
+    </main>
+
+    <footer class="max-w-3xl mx-auto px-4 pb-16">
+        <div class="bg-slate-50 rounded-2xl p-5 text-xs text-slate-400 space-y-2">
+            <p class="font-bold text-slate-500">مصادر رسمية للتحقق والمتابعة:</p>
+            <p>
+                <a href="https://support.google.com/notebooklm/answer/16757456" target="_blank" rel="noopener" class="hover:text-primary underline">دليل Slide Deck الرسمي</a> ·
+                <a href="https://support.google.com/notebooklm/answer/16454555" target="_blank" rel="noopener" class="hover:text-primary underline">دليل Video Overview الرسمي</a> ·
+                <a href="https://support.google.com/notebooklm/answer/16212820" target="_blank" rel="noopener" class="hover:text-primary underline">دليل Audio Overview الرسمي</a> ·
+                <a href="https://openai.com/academy/image-generation/" target="_blank" rel="noopener" class="hover:text-primary underline">دليل توليد الصور في ChatGPT</a>
+            </p>
+            <p>الميزات (خاصة Cinematic Video وبعض الصيغ) قد تتطلب اشتراكاً مدفوعاً أو تقتصر على الإنجليزية أو على مستخدمين +18 — تحقق من التوفر داخل حسابك.</p>
+        </div>
+    </footer>
+
+    <!-- Detail Modal -->
+    <div class="modal-overlay" id="card-modal">
+        <div class="modal-box bg-white rounded-3xl w-full max-w-2xl my-8 overflow-hidden shadow-2xl">
+            <div id="modal-header" class="p-6 text-white relative">
+                <button onclick="closeCardModal()" class="absolute top-4 left-4 w-9 h-9 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-colors">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+                <div class="flex items-center gap-4">
+                    <div class="w-14 h-14 rounded-2xl bg-white/20 flex items-center justify-center flex-shrink-0">
+                        <i id="modal-icon" data-lucide="sparkles" class="w-7 h-7"></i>
+                    </div>
+                    <div>
+                        <h3 id="modal-title" class="text-2xl font-black"></h3>
+                        <p id="modal-subtitle" class="text-sm font-bold opacity-80"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="p-6 space-y-6 max-h-[65vh] overflow-y-auto">
+                <div>
+                    <h4 class="font-black text-slate-900 flex items-center gap-2 mb-2"><i data-lucide="info" class="w-4 h-4 text-primary"></i> الفكرة</h4>
+                    <p id="modal-idea" class="text-slate-600 leading-relaxed text-sm"></p>
+                </div>
+                <div>
+                    <h4 class="font-black text-slate-900 flex items-center gap-2 mb-2"><i data-lucide="list-ordered" class="w-4 h-4 text-primary"></i> خطوات الاستخدام</h4>
+                    <ol id="modal-steps" class="list-decimal list-inside space-y-1.5 text-slate-600 text-sm leading-relaxed"></ol>
+                </div>
+                <div>
+                    <h4 class="font-black text-slate-900 flex items-center gap-2 mb-2"><i data-lucide="terminal" class="w-4 h-4 text-primary"></i> مثال جاهز للنسخ</h4>
+                    <div class="prompt-box">
+                        <button class="copy-btn text-white/70 hover:text-white text-xs font-bold px-2 py-1 rounded-md bg-white/10" onclick="copyPrompt(this)">
+                            <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                        </button>
+                        <span id="modal-prompt"></span>
+                    </div>
+                </div>
+                <div class="bg-amber-50 border border-amber-100 rounded-2xl p-4">
+                    <h4 class="font-black text-amber-700 flex items-center gap-2 mb-1 text-sm"><i data-lucide="lightbulb" class="w-4 h-4"></i> نصيحة عملية</h4>
+                    <p id="modal-tip" class="text-amber-800 text-sm leading-relaxed"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        const CARDS = [
+            {
+                id: 'images',
+                title: 'صور ومخططات الدرس',
+                subtitle: 'عبر Gemini وChatGPT',
+                icon: 'image',
+                gradient: 'from-primary to-primary-dark',
+                idea: 'كل من Gemini وChatGPT أصبحا قادرين على رسم نص واضح ومقروء داخل الصورة نفسها (عناوين، تسميات، خانات مخطط) بدل الاكتفاء برسم شكل عام. هذا يجعلهما أداتين مباشرتين لرسم مخطط مفاهيمي أو صورة توضيحية لدرس فلسفي، دون الحاجة لأي برنامج تصميم.',
+                steps: [
+                    'افتح محادثة جديدة في Gemini أو ChatGPT.',
+                    'صف الصورة بدقة: الموضوع، الأسلوب البصري (سبورة، رسم يدوي، مخطط رسمي...)، وأي نص تريده مكتوباً داخل الصورة بالضبط.',
+                    'اطلب صراحة "اكتب النص داخل الصورة بوضوح" — بدون هذا التوضيح قد يتجاهل النموذج كتابة النص.',
+                    'إن لم تعجبك النتيجة، عدّلها بالحوار: "غيّر اللون إلى كذا"، "كبّر الخط"، "أضف خانة خامسة".',
+                    'حمّل الصورة واستخدمها مباشرة في عرضك أو ورقة العمل.',
+                ],
+                prompt: `ارسم مخططاً تعليمياً بسيطاً بعنوان "نموذج تولمين للحجاج"
+يحتوي أربع خانات متصلة بأسهم: الدعوى، البينة، الضمان، التقييد.
+أسلوب الرسم: سبورة بيضاء بخط يد واضح، ألوان محدودة (أسود، أزرق، أحمر للتنبيه).
+اكتب كل مصطلح ووصفه القصير (٣-٥ كلمات) داخل الصورة بوضوح وبالعربية الفصحى.
+لا تضف أي عناصر زخرفية غير ضرورية.`,
+                tip: 'كلما كانت أوصاف "النص المطلوب داخل الصورة" محددة كلمة كلمة (بدل "أضف تسميات مناسبة")، كانت النتيجة أدق. الأخطاء الإملائية داخل الصور صارت نادرة في النماذج الحديثة لكنها ليست معدومة — راجع النص قبل استخدامه في الدرس.',
+            },
+            {
+                id: 'slides',
+                title: 'عرض تقديمي كامل',
+                subtitle: 'Slide Deck في NotebookLM',
+                icon: 'presentation',
+                gradient: 'from-secondary to-secondary-dark',
+                idea: 'ترفع مصادر الدرس (نص فلسفي، ملخص، رابط) إلى NotebookLM، فيبني لك عرضاً تقديمياً كاملاً — عناوين وشرائح ورسوم توضيحية — في دقائق. يصلح كعرض جاهز للاستخدام مباشرة في القسم، أو كمصدر إلهام تعيد بناء عرضك الخاص عليه.',
+                steps: [
+                    'أنشئ Notebook جديداً وارفع مصادر الدرس (نص، PDF، رابط، أو حتى ملاحظاتك المكتوبة بخط اليد).',
+                    'من لوحة "Studio"، اختر "Slide Deck".',
+                    'اضغط أيقونة القلم قبل التوليد لتحديد: الجمهور، الأسلوب البصري، وعدد الشرائح تقريباً.',
+                    'اضغط توليد، وانتظر (من ثوانٍ إلى بضع دقائق حسب حجم المصادر).',
+                    'راجع العرض، وإن أردت تعديل شريحة واحدة فقط استخدم أيقونة القلم على العرض الناتج بدل توليد عرض جديد بالكامل من الصفر.',
+                    'صدّر كـ PDF أو PPTX للاستخدام في القسم.',
+                ],
+                prompt: `أنشئ عرضاً تقديمياً من 10 شرائح لتلاميذ الثانوي التأهيلي
+حول [عنوان النص الفلسفي].
+الأسلوب البصري: رسم تعليمي على سبورة بيضاء (Sketchnote)، بسيط وواضح.
+كل شريحة تحمل فكرة واحدة فقط، بعنوان يلخص الفكرة لا مجرد اسم المفهوم.
+أضف رسماً توضيحياً واحداً بسيطاً لكل شريحة، مع أمثلة من واقع التلميذ.
+اجعل الشريحة الأخيرة سؤالاً مفتوحاً للنقاش، لا خلاصة جاهزة.`,
+                tip: 'النسخة المجانية من NotebookLM محدودة بعدد شرائح لكل عرض (حوالي 8-15 شريحة). إن احتجت عدداً أكبر أو دقة أعلى، ولّد عرضاً مختصراً أولاً كمسودة إلهام، ثم أعد بناءه يدوياً في PowerPoint أو Google Slides بنفس الأسلوب.',
+            },
+            {
+                id: 'intro',
+                title: 'المدخل الإشكالي',
+                subtitle: 'فيديو قصير (Video Overview)',
+                icon: 'clapperboard',
+                gradient: 'from-accent to-accent-dark',
+                idea: 'خاصية Video Overview تحوّل مصادرك إلى فيديو مسرود بالصوت والصورة. الصيغة القصيرة (Short، حوالي 60 ثانية) مناسبة تماماً لبناء "مدخل إشكالي" يطرح التناقض أو السؤال المحيّر في بداية الحصة، دون أن يحسم الجواب — وهو جوهر المدخل الإشكالي في تدريس الفلسفة.',
+                steps: [
+                    'في نفس الـ Notebook، من لوحة Studio اختر "Video Overview".',
+                    'اختر الصيغة "Short" (حوالي دقيقة واحدة) لمدخل قصير، أو "Explainer" لعرض أشمل.',
+                    'اختر نمطاً بصرياً جاهزاً (سبورة، رسم مائي، ورق حرفي...) أو صف نمطاً مخصصاً بنفسك.',
+                    'في خانة التوجيه، وضّح أنك تريد "طرح الإشكال دون الإجابة عنه" — لا شرح الفكرة كاملة.',
+                    'اضغط توليد (قد يستغرق عدة دقائق)، وشغّل الفيديو في القسم كافتتاحية للحصة.',
+                ],
+                prompt: `ابنِ فيديو مدخل إشكالي مدته حوالي 60 ثانية حول السؤال:
+"هل يمكن أن نكون أحراراً في عالم تحكمه قوانين صارمة؟"
+لا تُجب عن السؤال إطلاقاً ولا تشرح أي موقف فلسفي.
+اعرض فقط موقفاً واقعياً بسيطاً يجعل المشاهد يشعر بالتناقض والحيرة،
+وأنهِ الفيديو بالسؤال نفسه معلّقاً بلا إجابة.
+النمط البصري: رسم سبورة أبيض وأسود، بسيط وهادئ.
+اللغة: العربية الفصحى.`,
+                tip: 'صيغة "Cinematic" (المتحركة بالكامل) أجمل بصرياً لكنها إنجليزية فقط ومخصصة للمشتركين +18 في الباقات المدفوعة — للدرس العربي التزم بصيغتي Short أو Explainer.',
+            },
+            {
+                id: 'debate',
+                title: 'حجة مقابل حجة',
+                subtitle: 'محاورة حجاجية (Debate)',
+                icon: 'swords',
+                gradient: 'from-slate-700 to-slate-900',
+                idea: 'أقرب خاصية لـ"حجة مقابل حجة" هي تنسيق Debate داخل Audio Overview: صوتان يتحاوران بشكل رسمي حول القضية من موقفين متعارضين، مبنيين فعلياً على مصادرك. إن أردت نسخة مرئية بنفس الروح، استخدم Video Overview بصيغة Explainer مع توجيه صريح يطلب نفس البنية الحجاجية.',
+                steps: [
+                    'ارفع نصوص أو ملخصات الفيلسوفين/الموقفين المتعارضين كمصدرين منفصلين في نفس الـ Notebook.',
+                    'من Studio اختر "Audio Overview"، ثم أيقونة القلم للتخصيص.',
+                    'اختر التنسيق "Debate" (محاورة رسمية بين صوتين)، وحدد اللغة والمدة.',
+                    'في خانة التوجيه، حدد بدقة: من يمثل كل موقف، وما الدليل الذي يجب أن يستشهد به كل طرف من المصادر.',
+                    'بديل مرئي: كرر نفس الخطوات مع "Video Overview" وصيغة "Explainer"، مع توجيه صريح بعرض المحتوى كحجة مقابل حجة.',
+                ],
+                prompt: `قدّم محاورة حجاجية رسمية بين صوتين حول السؤال:
+"هل يمكن التوفيق بين الفلسفة والشريعة؟"
+الصوت الأول يمثل موقف ابن رشد في "فصل المقال" (نعم، عبر التأويل عند التعارض الظاهري).
+الصوت الثاني يمثل موقف الغزالي في "تهافت الفلاسفة" (لا، خطر على أصول العقيدة).
+كل صوت يجب أن يستشهد بدليل محدد من المصادر المرفوعة فقط، لا معرفة عامة.
+لا يحسم أي صوت النقاش، واختم بترك السؤال مفتوحاً للمستمع.`,
+                tip: 'كلما رفعت نصوصاً فعلية (لا ملخصات عنك) لكل موقف، كان الحجاج أدق في الاستشهاد. اطلب أيضاً من كل صوت "الرد المباشر على آخر نقطة قالها الطرف الآخر" — هذا ما يحوّل عرضاً متوازياً إلى محاورة حقيقية.',
+            },
+        ];
+
+        function renderGrid() {
+            const grid = document.getElementById('cards-grid');
+            grid.innerHTML = CARDS.map((c, i) => `
+                <div class="card-hover bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm cursor-pointer" onclick="openCardModal('${c.id}')">
+                    <div class="h-24 bg-gradient-to-br ${c.gradient} flex items-center justify-center relative">
+                        <span class="absolute top-3 right-3 text-white/70 font-black text-xs">٠${i + 1}</span>
+                        <i data-lucide="${c.icon}" class="w-10 h-10 text-white"></i>
+                    </div>
+                    <div class="p-6 space-y-2">
+                        <h3 class="text-lg font-black">${c.title}</h3>
+                        <p class="text-slate-500 text-sm font-medium">${c.subtitle}</p>
+                        <div class="pt-2 text-primary font-bold text-sm flex items-center gap-1">
+                            التفاصيل والخطوات <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+            lucide.createIcons();
+        }
+
+        function openCardModal(id) {
+            const c = CARDS.find((x) => x.id === id);
+            if (!c) return;
+            document.getElementById('modal-header').className = `p-6 text-white relative bg-gradient-to-br ${c.gradient}`;
+            document.getElementById('modal-icon').setAttribute('data-lucide', c.icon);
+            document.getElementById('modal-title').textContent = c.title;
+            document.getElementById('modal-subtitle').textContent = c.subtitle;
+            document.getElementById('modal-idea').textContent = c.idea;
+            document.getElementById('modal-steps').innerHTML = c.steps.map((s) => `<li>${s}</li>`).join('');
+            document.getElementById('modal-prompt').textContent = c.prompt;
+            document.getElementById('modal-tip').textContent = c.tip;
+            document.getElementById('card-modal').classList.add('open');
+            lucide.createIcons();
+        }
+
+        function closeCardModal() {
+            document.getElementById('card-modal').classList.remove('open');
+        }
+        document.getElementById('card-modal').addEventListener('click', function (e) {
+            if (e.target === this) closeCardModal();
+        });
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') closeCardModal();
+        });
+
+        function copyPrompt(btn) {
+            const text = btn.parentElement.querySelector('#modal-prompt').textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                const original = btn.innerHTML;
+                btn.innerHTML = '<i data-lucide="check" class="w-3.5 h-3.5"></i>';
+                lucide.createIcons();
+                setTimeout(() => { btn.innerHTML = original; lucide.createIcons(); }, 1500);
+            });
+        }
+
+        renderGrid();
+    </script>
+</body>
+</html>

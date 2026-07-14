@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فيلوميديا | محبة الحكمة</title>
+    <link rel="icon" type="image/svg+xml" href="assets/logo/logo-mark.svg">
+    <link rel="apple-touch-icon" href="assets/logo/logo-mark.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Tajawal', 'sans-serif'],
+                        serif: ['Amiri', 'serif'],
+                    },
+                    colors: {
+                        primary: { DEFAULT: '#0f766e', light: '#14b8a6', dark: '#0d5f58' },
+                        secondary: { DEFAULT: '#7c3aed', light: '#a78bfa', dark: '#5b21b6' },
+                        accent: { DEFAULT: '#d97706', light: '#fbbf24', dark: '#b45309' },
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #fcfbf7; }
+        .glass { background: rgba(255,255,255,0.8); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.3); }
+        .tab-active { border-bottom: 2px solid #7c3aed; color: #7c3aed; font-weight: 800; }
+        .tab-inactive { color: #64748b; font-weight: 700; }
+        .tab-inactive:hover { color: #334155; }
+        .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -10px rgba(0,0,0,0.1); }
+        /* Modal */
+        .modal-overlay { position: fixed; inset: 0; z-index: 100; background: rgba(0,0,0,0.85); display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+        .modal-overlay.open { opacity: 1; pointer-events: auto; }
+        .modal-content { max-width: 90vw; max-height: 90vh; width: 100%; position: relative; }
+        .modal-close { position: absolute; top: -2.5rem; left: 0; color: white; cursor: pointer; }
+        .modal-close:hover { color: #ccc; }
+        #modal-video-container { width: 100%; }
+        #modal-video-container video, #modal-video-container iframe { width: 100%; max-height: 80vh; border-radius: 12px; border: none; }
+        #modal-video-container iframe { aspect-ratio: 16 / 9; height: auto; }
+        /* Audio bar at bottom */
+        .audio-bar { position: fixed; bottom: 0; left: 0; right: 0; z-index: 50; background: rgba(15,23,42,0.95); backdrop-filter: blur(12px); border-top: 1px solid rgba(255,255,255,0.1); padding: 0.75rem 1rem; display: none; }
+        .audio-bar.active { display: flex; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="font-sans text-slate-900 pb-24">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 glass">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="flex justify-between h-16 items-center">
+                <a href="index.html" class="flex items-center gap-2">
+                    <i data-lucide="arrow-right" class="w-5 h-5 text-slate-500 hover:text-slate-900 transition-colors"></i>
+                </a>
+                <h1 class="text-xl font-black text-slate-900">فيلوميديا</h1>
+                <div class="w-5"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="max-w-3xl mx-auto px-4 py-8">
+        <div class="flex items-start gap-6 md:gap-10">
+            <div class="w-20 h-20 md:w-32 md:h-32 rounded-full bg-gradient-to-tr from-secondary to-accent p-1 flex-shrink-0">
+                <div class="w-full h-full bg-white rounded-full flex items-center justify-center p-1">
+                    <div class="w-full h-full bg-slate-100 rounded-full flex items-center justify-center">
+                        <i data-lucide="video" class="w-8 h-8 md:w-12 md:h-12 text-secondary"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-1 space-y-4">
+                <h2 class="text-2xl font-black">فيلوميديا</h2>
+                <div class="flex gap-3 text-sm flex-wrap">
+                    <div class="font-bold bg-slate-100 px-3 py-1 rounded-lg"><span id="post-count" class="text-primary">٠</span> عنصر</div>
+                    <div class="font-bold bg-slate-100 px-3 py-1 rounded-lg">٥ أقسام</div>
+                </div>
+                <div>
+                    <p class="font-bold">محبة الحكمة ✧</p>
+                    <p class="text-slate-600 text-sm md:text-base">نشارك محبة الحكمة بلغة العصر. لحظات فلسفية، محاورات، ريلز، مانغا، وأغانٍ — بلا إعجابات وبلا تعليقات، فقط المحتوى.</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Tabs -->
+    <div class="max-w-5xl mx-auto px-4 border-t border-slate-200">
+        <div class="flex justify-start md:justify-center gap-6 md:gap-10 pt-4 overflow-x-auto pb-4 no-scrollbar" id="tabs">
+            <button class="flex items-center gap-2 pb-3 tab-active whitespace-nowrap" data-category="all">
+                <i data-lucide="grid" class="w-4 h-4"></i> الكل
+            </button>
+            <button class="flex items-center gap-2 pb-3 tab-inactive whitespace-nowrap" data-category="moments">
+                <i data-lucide="sparkles" class="w-4 h-4"></i> لحظات فلسفية
+            </button>
+            <button class="flex items-center gap-2 pb-3 tab-inactive whitespace-nowrap" data-category="conversations">
+                <i data-lucide="message-circle" class="w-4 h-4"></i> محاورات
+            </button>
+            <button class="flex items-center gap-2 pb-3 tab-inactive whitespace-nowrap" data-category="reels">
+                <i data-lucide="film" class="w-4 h-4"></i> ريلز تعليمية
+            </button>
+            <button class="flex items-center gap-2 pb-3 tab-inactive whitespace-nowrap" data-category="manga">
+                <i data-lucide="book-open" class="w-4 h-4"></i> مانغا تعليمية
+            </button>
+            <button class="flex items-center gap-2 pb-3 tab-inactive whitespace-nowrap" data-category="songs">
+                <i data-lucide="music" class="w-4 h-4"></i> أغاني فلسفية
+            </button>
+        </div>
+    </div>
+
+    <!-- Grid -->
+    <main class="max-w-5xl mx-auto px-4 py-8">
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-6" id="media-grid"></div>
+    </main>
+
+    <!-- Video Modal -->
+    <div class="modal-overlay" id="video-modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">
+                <i data-lucide="x" class="w-8 h-8"></i>
+            </button>
+            <div id="modal-video-container"></div>
+        </div>
+    </div>
+
+    <!-- Image Lightbox (Manga) -->
+    <div class="modal-overlay" id="image-modal">
+        <div class="modal-content text-center">
+            <button class="modal-close" onclick="closeImageModal()">
+                <i data-lucide="x" class="w-8 h-8"></i>
+            </button>
+            <img id="modal-image" src="" alt="" class="max-h-[80vh] max-w-full mx-auto rounded-xl">
+            <p id="modal-image-caption" class="text-white/80 text-sm font-bold mt-3"></p>
+        </div>
+    </div>
+
+    <!-- Audio Bar -->
+    <div class="audio-bar items-center gap-4" id="audio-bar">
+        <button onclick="closeAudioBar()" class="text-white/60 hover:text-white shrink-0">
+            <i data-lucide="chevron-down" class="w-5 h-5"></i>
+        </button>
+        <div class="text-white/80 text-sm font-bold truncate min-w-0 flex-1" id="audio-title">العنوان</div>
+        <audio id="audio-player" controls playsinline class="max-w-[300px] w-full" style="height: 36px;"></audio>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        let allItems = [];
+        let currentCategory = 'all';
+
+        const categoryMap = {
+            'moments': 'لحظات فلسفية',
+            'conversations': 'محاورات',
+            'reels': 'ريلز تعليمية',
+            'manga': 'مانغا تعليمية',
+            'songs': 'أغاني فلسفية',
+        };
+
+        /* -----------------------------------------------------------------
+         * FALLBACK CONTENT DATA
+         * Used until /api/philomedia (a future backend) is deployed.
+         *
+         * MEDIA SOURCING:
+         * Songs are now hosted directly as static files in assets/songs/ —
+         * Drive's direct-link format turned out to return 403 Forbidden
+         * even with correct sharing settings (Google appears to be
+         * restricting this unofficial download pattern), so audio was
+         * moved off Drive entirely for reliability.
+         *
+         * Manga still uses Google Drive's public thumbnail link (no API
+         * key needed, only "Anyone with the link" sharing):
+         *   https://drive.google.com/thumbnail?id=FILE_ID&sz=w1000
+         * If this ever breaks the same way, move the image to
+         * assets/manga/ too, following the same pattern as the songs.
+         *
+         * Moments/Dialogues videos stay on YouTube (unlisted) — too large
+         * (70-166MB each) to reasonably host as static site assets.
+         *
+         * TODO(Mohamed):
+         *  - Moments are fully wired now (real titles + all 5 video IDs,
+         *    confirmed working from your playlist's RSS feed). Dialogue is
+         *    wired to the right video, but its title is still a placeholder
+         *    — send me the real title of that one when you can.
+         *  - "reels" folder is currently empty in Drive — add files there and
+         *    a matching entry here once ready.
+         *  - All 4 songs are now live — you confirmed you hold the rights
+         *    to publish "اعطني الناي وغني" and "كن صديقي".
+         * ------------------------------------------------------------------ */
+        const FALLBACK_DATA = {
+            items: [
+                { id: 'moments-01', category: 'moments', type: 'video', title: 'سقراط الدفاع', youtubeId: 'CBYf5-4SriU' },
+                { id: 'moments-02', category: 'moments', type: 'video', title: 'محنة ابن رشد', youtubeId: '1tSBaXj3Mfk' },
+                { id: 'moments-03', category: 'moments', type: 'video', title: 'ديوجين', youtubeId: 'AG16VI7AWWE' },
+                { id: 'moments-04', category: 'moments', type: 'video', title: 'حي بن يقظان', youtubeId: 'UZp47EdBsYI' },
+                { id: 'moments-05', category: 'moments', type: 'video', title: 'كهف أفلاطون', youtubeId: 'FiHX8vJnRlA' },
+
+                { id: 'dialogue-01', category: 'conversations', type: 'video', title: 'محاورة فلسفية ١ (أضف عنواناً)', youtubeId: 'w5AZLVKXHiU' },
+
+                { id: 'manga-01', category: 'manga', type: 'image', title: 'أوطيفرون: ما هي التقوى؟', file: 'https://drive.google.com/thumbnail?id=1AOX_GMSFrFJ5c6AS6SnH6Ow-L68TQbF3&sz=w1000' },
+
+                { id: 'song-01', category: 'songs', type: 'audio', title: 'جادل', isOriginal: true, file: 'assets/songs/jadel.mp3' },
+                { id: 'song-02', category: 'songs', type: 'audio', title: 'هبطت إليك من المحل الأرفع', isOriginal: true, file: 'assets/songs/habatat-ilayka.mp3' },
+                { id: 'song-03', category: 'songs', type: 'audio', title: 'اعطني الناي وغني — فيروز', isOriginal: false, file: 'assets/songs/aatini-al-nay-fairuz.mp3' },
+                { id: 'song-04', category: 'songs', type: 'audio', title: 'كن صديقي — ماجدة الرومي', isOriginal: false, file: 'assets/songs/kun-sadiqi-majida.mp3' },
+            ]
+        };
+
+        /* -----------------------------------------------------------------
+         * YOUTUBE PLAYLIST AUTO-SYNC
+         * Whenever a new video is added to either playlist, it appears
+         * here automatically (checked at most once per hour, via the
+         * Function's cache) — no manual video-ID copying needed.
+         * Playlist IDs come from the "list=" part of the URLs you sent.
+         * ------------------------------------------------------------------ */
+        const YOUTUBE_PLAYLISTS = {
+            moments: 'PLWA-YFTjaHpM',
+            conversations: 'PLc55ao1v8yYQ',
+        };
+
+        async function fetchPlaylistVideos(category, playlistId) {
+            try {
+                const res = await fetch(`/api/youtube-playlist/${playlistId}`);
+                if (!res.ok) throw new Error('playlist endpoint not available yet');
+                const data = await res.json();
+                if (!data.videos || !data.videos.length) throw new Error('empty playlist response');
+                return data.videos.map((v, i) => ({
+                    id: `${category}-yt-${v.videoId}`,
+                    category,
+                    type: 'video',
+                    title: v.title || `${category === 'moments' ? 'لحظة فلسفية' : 'محاورة فلسفية'} ${i + 1}`,
+                    youtubeId: v.videoId,
+                }));
+            } catch (e) {
+                return null; // signal the caller to use the static fallback for this category
+            }
+        }
+
+        async function loadMedia() {
+            // 1) Try a full live backend first (not deployed yet — will fail and fall through)
+            try {
+                const res = await fetch('/api/philomedia');
+                if (res.ok) {
+                    const data = await res.json();
+                    allItems = data.items;
+                    document.getElementById('post-count').textContent = toArabicNumeral(allItems.length);
+                    renderGrid();
+                    return;
+                }
+            } catch (e) { /* fall through */ }
+
+            // 2) Live-sync moments/dialogues from YouTube; everything else from FALLBACK_DATA
+            const [momentsVideos, dialoguesVideos] = await Promise.all([
+                fetchPlaylistVideos('moments', YOUTUBE_PLAYLISTS.moments),
+                fetchPlaylistVideos('conversations', YOUTUBE_PLAYLISTS.conversations),
+            ]);
+
+            const staticRest = FALLBACK_DATA.items.filter(
+                (i) => i.category !== 'moments' && i.category !== 'conversations'
+            );
+            const staticMoments = FALLBACK_DATA.items.filter((i) => i.category === 'moments');
+            const staticDialogues = FALLBACK_DATA.items.filter((i) => i.category === 'conversations');
+
+            allItems = [
+                ...(momentsVideos || staticMoments),
+                ...(dialoguesVideos || staticDialogues),
+                ...staticRest,
+            ];
+
+            document.getElementById('post-count').textContent = toArabicNumeral(allItems.length);
+            renderGrid();
+        }
+
+        function renderGrid() {
+            const grid = document.getElementById('media-grid');
+            const filtered = currentCategory === 'all'
+                ? allItems
+                : allItems.filter(item => item.category === currentCategory);
+            if (filtered.length === 0) {
+                grid.innerHTML = `<div class="col-span-full text-center text-slate-400 py-16">
+                    <p class="font-bold">لا توجد وسائط في هذا القسم بعد</p>
+                    ${currentCategory === 'reels' ? '<p class="text-sm mt-1">الريلز التعليمية قادمة قريباً</p>' : ''}
+                </div>`;
+                return;
+            }
+            grid.innerHTML = filtered.map(item => {
+                if (item.type === 'video') return videoCard(item);
+                if (item.type === 'image') return mangaCard(item);
+                return audioCard(item);
+            }).join('');
+            lucide.createIcons();
+        }
+
+        function videoCard(item) {
+            const bg = `bg-gradient-to-br from-slate-800 to-slate-900`;
+            const thumb = item.youtubeId ? `https://i.ytimg.com/vi/${item.youtubeId}/hqdefault.jpg` : null;
+            return `
+                <div class="group relative aspect-square ${bg} rounded-xl md:rounded-2xl overflow-hidden cursor-pointer card-hover transition-all" onclick="openVideo('${escapeStr(item.id)}')">
+                    ${thumb ? `<img src="${thumb}" alt="${item.title}" class="absolute inset-0 w-full h-full object-cover" loading="lazy" onerror="this.style.display='none'">` : ''}
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40">
+                        <i data-lucide="play-circle" class="w-12 h-12 text-white"></i>
+                    </div>
+                    <div class="absolute top-3 right-3 text-white">
+                        <i data-lucide="clapperboard" class="w-5 h-5 drop-shadow-md"></i>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4 transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                        <h3 class="text-white font-black text-sm md:text-base leading-tight">${item.title}</h3>
+                        ${item.duration ? `<span class="inline-block mt-2 text-xs font-bold bg-black/50 px-2 py-1 rounded-md text-white/80">${item.duration}</span>` : ''}
+                    </div>
+                </div>
+            `;
+        }
+
+        function mangaCard(item) {
+            return `
+                <div class="group relative aspect-square bg-slate-100 rounded-xl md:rounded-2xl overflow-hidden cursor-pointer card-hover transition-all" onclick="openImageModal('${escapeStr(item.file)}', '${escapeStr(item.title)}')">
+                    <img src="${escapeStr(item.file)}" alt="${item.title}" class="w-full h-full object-cover" loading="lazy" onerror="this.style.display='none'">
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/30">
+                        <i data-lucide="expand" class="w-10 h-10 text-white"></i>
+                    </div>
+                    <div class="absolute top-3 right-3 text-white">
+                        <i data-lucide="book-open" class="w-5 h-5 drop-shadow-md"></i>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent">
+                        <h3 class="text-white font-black text-sm md:text-base leading-tight">${item.title}</h3>
+                    </div>
+                </div>
+            `;
+        }
+
+        function audioCard(item) {
+            return `
+                <div class="group relative aspect-square bg-gradient-to-br from-indigo-900 to-purple-900 rounded-xl md:rounded-2xl overflow-hidden cursor-pointer card-hover transition-all flex flex-col items-center justify-center" onclick="playAudio('${escapeStr(item.file)}', '${escapeStr(item.title)}')">
+                    <i data-lucide="disc" class="w-20 h-20 text-white/20 mb-4 animate-[spin_10s_linear_infinite]"></i>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40">
+                        <i data-lucide="music" class="w-12 h-12 text-white"></i>
+                    </div>
+                    <div class="absolute top-3 right-3 text-white">
+                        <i data-lucide="music" class="w-5 h-5 drop-shadow-md"></i>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4 transform translate-y-2 group-hover:translate-y-0 transition-transform text-center md:text-right">
+                        <h3 class="text-white font-black text-sm md:text-base leading-tight">${item.title}</h3>
+                        ${item.isOriginal ? '<span class="inline-block mt-2 text-[10px] font-black bg-primary/80 text-white px-2 py-0.5 rounded-full">تأليف أصلي</span>' : ''}
+                    </div>
+                </div>
+            `;
+        }
+
+        // Video modal
+        function openVideo(id) {
+            const item = allItems.find((i) => i.id === id);
+            if (!item) return;
+            const modal = document.getElementById('video-modal');
+            const container = document.getElementById('modal-video-container');
+
+            if (item.youtubeId) {
+                container.innerHTML = `<iframe src="https://www.youtube.com/embed/${item.youtubeId}?autoplay=1&modestbranding=1&rel=0&iv_load_policy=3" title="${item.title}" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+            } else if (item.file) {
+                container.innerHTML = `<video controls playsinline autoplay src="${item.file}"></video>`;
+            } else {
+                container.innerHTML = `<div class="aspect-video flex items-center justify-center text-white/70 text-sm p-8 text-center">لم يُضَف مصدر لهذا الفيديو بعد.</div>`;
+            }
+            modal.classList.add('open');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('video-modal');
+            modal.classList.remove('open');
+            document.getElementById('modal-video-container').innerHTML = ''; // stops playback
+        }
+
+        document.getElementById('video-modal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+
+        // Image lightbox (manga)
+        function openImageModal(src, title) {
+            document.getElementById('modal-image').src = src;
+            document.getElementById('modal-image-caption').textContent = title;
+            document.getElementById('image-modal').classList.add('open');
+        }
+        function closeImageModal() {
+            document.getElementById('image-modal').classList.remove('open');
+        }
+        document.getElementById('image-modal').addEventListener('click', function(e) {
+            if (e.target === this) closeImageModal();
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') { closeModal(); closeImageModal(); }
+        });
+
+        // Audio bar
+        function playAudio(src, title) {
+            const bar = document.getElementById('audio-bar');
+            const player = document.getElementById('audio-player');
+            const titleEl = document.getElementById('audio-title');
+            titleEl.textContent = title;
+            player.src = src;
+            bar.classList.add('active');
+            player.play().catch(() => {});
+        }
+
+        function closeAudioBar() {
+            const bar = document.getElementById('audio-bar');
+            const player = document.getElementById('audio-player');
+            player.pause();
+            player.src = '';
+            bar.classList.remove('active');
+        }
+
+        // Tab filtering
+        document.getElementById('tabs').addEventListener('click', function(e) {
+            const btn = e.target.closest('[data-category]');
+            if (!btn) return;
+            this.querySelectorAll('[data-category]').forEach(b => {
+                b.classList.remove('tab-active');
+                b.classList.add('tab-inactive');
+            });
+            btn.classList.remove('tab-inactive');
+            btn.classList.add('tab-active');
+            currentCategory = btn.dataset.category;
+            renderGrid();
+        });
+
+        // Helper
+        function escapeStr(s) {
+            if (!s) return '';
+            return s.replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+        }
+
+        function toArabicNumeral(n) {
+            const digits = '٠١٢٣٤٥٦٧٨٩';
+            return String(n).split('').map(c => digits[parseInt(c)] || c).join('');
+        }
+
+        loadMedia();
+    </script>
+</body>
+</html>
