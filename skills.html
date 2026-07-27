@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>المهارات التعليمية | محبة الحكمة</title>
-    <meta name="description" content="مهارات Claude جاهزة للمعلم والمتعلم — باني الدروس الفلسفية، STORM Research، وTeach.">
+    <meta name="description" content="مهارات Claude جاهزة للمعلم والمتعلم — من بناء الدروس والبحث الموثّق إلى التعلّم التفاعلي والتوجيه الدراسي.">
     <link rel="icon" type="image/svg+xml" href="assets/logo/logo-mark.svg">
     <link rel="apple-touch-icon" href="assets/logo/logo-mark.svg">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -92,6 +92,9 @@
                 <div>
                     <h4 class="font-black text-slate-900 flex items-center gap-2 mb-2"><i data-lucide="list-ordered" class="w-4 h-4 text-primary"></i> كيف تستخدمها؟</h4>
                     <ol id="modal-usage" class="list-decimal list-inside space-y-1.5 text-slate-600 text-sm leading-relaxed"></ol>
+                    <button onclick="openHowToVideo()" class="mt-3 w-full flex items-center justify-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-bold py-2.5 rounded-xl transition-colors">
+                        <i data-lucide="circle-play" class="w-4 h-4"></i> شاهد: كيف تفعّل أي مهارة في أقل من دقيقتين
+                    </button>
                 </div>
                 <div class="grid sm:grid-cols-2 gap-4">
                     <div class="bg-primary/5 rounded-2xl p-4">
@@ -112,6 +115,16 @@
                     <i data-lucide="download" class="w-4 h-4"></i> تحميل ملف المهارة (ZIP)
                 </a>
             </div>
+        </div>
+    </div>
+
+    <!-- How-to-add-a-skill Video Modal (shared across every skill card) -->
+    <div class="modal-overlay" id="howto-video-modal" style="z-index: 110;">
+        <div class="modal-box bg-black rounded-3xl w-full max-w-2xl my-8 overflow-hidden shadow-2xl relative">
+            <button onclick="closeHowToVideo()" class="absolute top-4 left-4 z-10 w-9 h-9 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-colors">
+                <i data-lucide="x" class="w-5 h-5 text-white"></i>
+            </button>
+            <video id="howto-video-el" src="assets/videos/how-to-add-a-skill.mp4" poster="assets/videos/how-to-add-a-skill-poster.jpg" controls playsinline preload="none" class="w-full h-auto block"></video>
         </div>
     </div>
 
@@ -193,6 +206,23 @@
                 teacher: 'يمنح المعلم إجابات يمكن التحقق منها فعلياً (مصدر لكل ادّعاء) بدل نص مقنع الشكل لكن غير موثّق — مفيد خصوصاً عند تحضير درس أو التأكد من دقة معلومة قبل تقديمها للتلاميذ.',
                 student: 'يعلّم المتعلم عادة فكرية أساسية: التمييز بين المعرفة الموثّقة والمعرفة العامة، عبر رؤية الفرق بوضوح في كل إجابة بدل تصديق كل ما يُقال دون تحقق.',
             },
+            {
+                id: 'tawjih',
+                title: 'مساعد التوجيه',
+                subtitle: 'tawjih-assistant skill',
+                icon: 'signpost',
+                gradient: 'from-accent to-accent-dark',
+                file: 'assets/skills/tawjih-assistant.zip',
+                explain: 'مساعد توجيه تفاعلي يقود تلميذ الباكالوريا عبر تقييم من ثلاث مراحل — الشخصية، الاهتمامات على طريقة Ikigai، وتأمل فلسفي في النجاح والحرية والمعنى — ثم يصدر تقريراً شخصياً بالعربية يتضمن توصيات مرتّبة بدرجة الثقة ومسندة بالدليل، مستقاة من كتالوج يضم 30 مساراً جامعياً مغربياً (الأقسام التحضيرية، المدارس الوطنية، الطب والصيدلة وطب الأسنان، التجارة والتسيير، العلوم والتقنيات، التكوين المهني، التعليم، وغيرها).',
+                usage: [
+                    ...USAGE_STEPS,
+                    'ابدأ محادثة جديدة واطلب من Claude مساعدتك في التوجيه، مثلاً: "أحتاج مساعدة في اختيار مسار ما بعد الباك".',
+                    'أجب بصدق عن أسئلة التقييم عبر المراحل الثلاث — لا توجد إجابات صحيحة أو خاطئة، فقط ما يناسبك أنت.',
+                    'ستحصل في النهاية على تقرير HTML شخصي يعرض التوصيات مرتّبة مع درجة ثقة ومصدر لكل مسار مقترح.',
+                ],
+                teacher: 'أداة يمكن لأستاذ الفلسفة أو مستشار التوجيه تقديمها مباشرة للتلاميذ المترددين قبل اختيار مسارهم، كتكملة للمقابلات الفردية لا كبديل عنها.',
+                student: 'يمنح التلميذ مساحة هادئة وخاصة يستكشف فيها شخصيته واهتماماته وتأمله الخاص في معنى النجاح، فيخرج بتوصيات مسندة لمسارات حقيقية بدل نصيحة عامة أو تخمين.',
+            },
         ];
 
         function renderGrid() {
@@ -245,8 +275,24 @@
         document.getElementById('skill-modal').addEventListener('click', function (e) {
             if (e.target === this) closeSkillModal();
         });
+
+        function openHowToVideo() {
+            document.getElementById('howto-video-modal').classList.add('open');
+            lucide.createIcons();
+        }
+        function closeHowToVideo() {
+            const vid = document.getElementById('howto-video-el');
+            vid.pause();
+            document.getElementById('howto-video-modal').classList.remove('open');
+        }
+        document.getElementById('howto-video-modal').addEventListener('click', function (e) {
+            if (e.target === this) closeHowToVideo();
+        });
+
         document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape') closeSkillModal();
+            if (e.key !== 'Escape') return;
+            if (document.getElementById('howto-video-modal').classList.contains('open')) closeHowToVideo();
+            else closeSkillModal();
         });
 
         renderGrid();

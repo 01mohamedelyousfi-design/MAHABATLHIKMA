@@ -186,8 +186,11 @@
          *    confirmed working from your playlist's RSS feed). Dialogue is
          *    wired to the right video, but its title is still a placeholder
          *    — send me the real title of that one when you can.
-         *  - "reels" folder is currently empty in Drive — add files there and
-         *    a matching entry here once ready.
+         *  - Reels: now wired the same way (live playlist sync below, with
+         *    a static fallback entry using the video ID from your message).
+         *    Its title is a placeholder too, and it's worth double-checking
+         *    the playlist ID resolves the full set you want featured —
+         *    confirm both next time you're in here.
          *  - All 4 songs are now live — you confirmed you hold the rights
          *    to publish "اعطني الناي وغني" and "كن صديقي".
          * ------------------------------------------------------------------ */
@@ -200,6 +203,8 @@
                 { id: 'moments-05', category: 'moments', type: 'video', title: 'كهف أفلاطون', youtubeId: 'FiHX8vJnRlA' },
 
                 { id: 'dialogue-01', category: 'conversations', type: 'video', title: 'محاورة فلسفية ١ (أضف عنواناً)', youtubeId: 'w5AZLVKXHiU' },
+
+                { id: 'reel-01', category: 'reels', type: 'video', title: 'ريل تعليمي ١ (أضف عنواناً)', youtubeId: 'owPYcJ_imlM' },
 
                 { id: 'manga-01', category: 'manga', type: 'image', title: 'أوطيفرون: ما هي التقوى؟', file: 'https://drive.google.com/thumbnail?id=1AOX_GMSFrFJ5c6AS6SnH6Ow-L68TQbF3&sz=w1000' },
 
@@ -220,6 +225,7 @@
         const YOUTUBE_PLAYLISTS = {
             moments: 'PLWA-YFTjaHpM',
             conversations: 'PLc55ao1v8yYQ',
+            reels: 'PLQl3r0AhUVDY',
         };
 
         async function fetchPlaylistVideos(category, playlistId) {
@@ -232,7 +238,7 @@
                     id: `${category}-yt-${v.videoId}`,
                     category,
                     type: 'video',
-                    title: v.title || `${category === 'moments' ? 'لحظة فلسفية' : 'محاورة فلسفية'} ${i + 1}`,
+                    title: v.title || `${category === 'moments' ? 'لحظة فلسفية' : category === 'reels' ? 'ريل تعليمي' : 'محاورة فلسفية'} ${i + 1}`,
                     youtubeId: v.videoId,
                 }));
             } catch (e) {
@@ -253,21 +259,24 @@
                 }
             } catch (e) { /* fall through */ }
 
-            // 2) Live-sync moments/dialogues from YouTube; everything else from FALLBACK_DATA
-            const [momentsVideos, dialoguesVideos] = await Promise.all([
+            // 2) Live-sync moments/dialogues/reels from YouTube; everything else from FALLBACK_DATA
+            const [momentsVideos, dialoguesVideos, reelsVideos] = await Promise.all([
                 fetchPlaylistVideos('moments', YOUTUBE_PLAYLISTS.moments),
                 fetchPlaylistVideos('conversations', YOUTUBE_PLAYLISTS.conversations),
+                fetchPlaylistVideos('reels', YOUTUBE_PLAYLISTS.reels),
             ]);
 
             const staticRest = FALLBACK_DATA.items.filter(
-                (i) => i.category !== 'moments' && i.category !== 'conversations'
+                (i) => i.category !== 'moments' && i.category !== 'conversations' && i.category !== 'reels'
             );
             const staticMoments = FALLBACK_DATA.items.filter((i) => i.category === 'moments');
             const staticDialogues = FALLBACK_DATA.items.filter((i) => i.category === 'conversations');
+            const staticReels = FALLBACK_DATA.items.filter((i) => i.category === 'reels');
 
             allItems = [
                 ...(momentsVideos || staticMoments),
                 ...(dialoguesVideos || staticDialogues),
+                ...(reelsVideos || staticReels),
                 ...staticRest,
             ];
 

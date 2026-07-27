@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كتيّب الذكاء الاصطناعي لأستاذ الفلسفة | محبة الحكمة</title>
+    <meta name="description" content="دليل عملي مختصر لأستاذ الفلسفة: القواعد الثلاث لاستعمال ذكي، كيف تكتب أمرًا فعالاً، ما هي «المهارة» (Skill)، وكيف تضيفها إلى Claude خطوة بخطوة.">
+    <link rel="icon" type="image/svg+xml" href="assets/logo/logo-mark.svg">
+    <link rel="apple-touch-icon" href="assets/logo/logo-mark.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Tajawal', 'sans-serif'], serif: ['Amiri', 'serif'] },
+                    colors: {
+                        primary: { DEFAULT: '#0f766e', light: '#14b8a6', dark: '#0d5f58' },
+                        secondary: { DEFAULT: '#7c3aed', light: '#a78bfa', dark: '#5b21b6' },
+                        accent: { DEFAULT: '#d97706', light: '#fbbf24', dark: '#b45309' },
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #fcfbf7; }
+        .glass { background: rgba(255,255,255,0.8); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.3); }
+        .prompt-box { background: #0f172a; color: #e2e8f0; border-radius: 12px; padding: 1rem; font-family: monospace; font-size: 0.85rem; line-height: 1.7; white-space: pre-wrap; position: relative; direction: rtl; text-align: right; }
+        .copy-btn { position: absolute; top: 0.5rem; left: 0.5rem; background: rgba(255,255,255,0.1); }
+        .rule-num { font-family: 'Amiri', serif; }
+        table.tools-table th, table.tools-table td { padding: 0.75rem 1rem; text-align: right; }
+        table.tools-table tr:not(:last-child) td, table.tools-table tr:not(:last-child) th { border-bottom: 1px solid #e2e8f0; }
+    </style>
+</head>
+<body class="font-sans text-slate-900 pb-20">
+
+    <!-- Back nav -->
+    <nav class="sticky top-0 z-50 glass">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="flex justify-between h-16 items-center">
+                <a href="index.html" class="flex items-center gap-2 text-slate-500 hover:text-slate-900 transition-colors">
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i> عودة
+                </a>
+                <h1 class="text-xl font-black text-slate-900 flex items-center gap-2">
+                    <i data-lucide="book-open-check" class="w-6 h-6 text-primary"></i> كتيّب الذكاء الاصطناعي
+                </h1>
+                <div class="w-16"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Intro -->
+    <header class="max-w-3xl mx-auto px-4 pt-10 pb-6 text-center space-y-4">
+        <div class="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full text-primary font-bold text-sm">
+            <i data-lucide="sparkles" class="w-4 h-4"></i> دليل عملي مختصر
+        </div>
+        <h2 class="text-3xl md:text-4xl font-black">كتيّب الذكاء الاصطناعي لأستاذ الفلسفة</h2>
+        <p class="text-lg font-serif text-primary font-bold">الأداة الصحيحة، في الوقت الصحيح، وبالطريقة الصحيحة</p>
+        <p class="text-slate-500 font-medium leading-relaxed">
+            لست متخصصًا في تقنيات الذكاء الاصطناعي، فهذا ليس مجال تكويني الأكاديمي. هذا الكتيّب خلاصة تجربة متواضعة راكمتها في توظيف هذه الأدوات لخدمة تدريس الفلسفة، أضعه بين يدي كل أستاذة وأستاذ فلسفة يرغب في الاستفادة من إمكانات منصة «محبة الحكمة» دون أن تقف الحواجز التقنية عائقًا أمامه. الهدف ليس أن تصبح خبيرًا في الذكاء الاصطناعي، بل أن تعرف الحد الأدنى الذي يمكّنك من استعمال الأداة الصحيحة، في الوقت الصحيح، وبالطريقة الصحيحة.
+        </p>
+        <a href="assets/guides/ai-teaching-booklet.pdf" download class="inline-flex items-center gap-2 bg-slate-900 text-white px-5 py-3 rounded-xl font-bold hover:bg-slate-800 transition-colors">
+            <i data-lucide="download" class="w-4 h-4"></i> تحميل الكتيّب (PDF)
+        </a>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-4 space-y-16 py-6">
+
+        <!-- Section 1: Three Rules -->
+        <section class="space-y-6">
+            <h3 class="text-2xl font-black flex items-center gap-2"><i data-lucide="compass" class="w-6 h-6 text-primary"></i> أولًا — القواعد الثلاث لاستعمال ذكي</h3>
+
+            <div class="grid gap-4">
+                <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-5 flex gap-4">
+                    <span class="rule-num text-3xl font-bold text-primary/30 flex-shrink-0">١</span>
+                    <div>
+                        <h4 class="font-black mb-1">الحفاظ على مجانية التكلفة مع جودة مقبولة</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">كل الأدوات المذكورة هنا متوفرة بنسخة مجانية تكفي حاجة الأستاذ العادية. لسنا بحاجة إلى اشتراكات مؤدى عنها لنستفيد من الذكاء الاصطناعي في تحضير الدروس أو إنتاج الوسائط التعليمية.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-5 flex gap-4">
+                    <span class="rule-num text-3xl font-bold text-primary/30 flex-shrink-0">٢</span>
+                    <div>
+                        <h4 class="font-black mb-1">الانتقال من «نموذج لغوي» إلى «وكيل ذكاء اصطناعي»</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">الدردشة العادية تجيبك عن سؤال، لكنها تنسى كل شيء في المحادثة التالية. أمّا «الوكيل» (Agent) فهو نموذج مزوَّد بتعليمات ومهارات (Skills) ثابتة، ينفّذ مهمة تربوية كاملة دون أن تعيد شرحها في كل مرة. هذا الكتيّب سيرافقك خطوة بخطوة نحو هذا الانتقال.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-5 flex gap-4">
+                    <span class="rule-num text-3xl font-bold text-primary/30 flex-shrink-0">٣</span>
+                    <div class="flex-1 min-w-0">
+                        <h4 class="font-black mb-1">استخدام أفضل أداة لكل مهمة</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">لا توجد أداة واحدة «تفعل كل شيء» بجودة عالية ومجانًا. هذا الجدول يلخّص أين تكمن قوة كل أداة:</p>
+                        <div class="overflow-x-auto -mx-1">
+                            <table class="tools-table w-full text-sm min-w-[420px]">
+                                <thead>
+                                    <tr class="text-slate-400 font-bold text-xs uppercase tracking-wide">
+                                        <th>الأداة</th><th>أفضل استعمال لها</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-slate-600">
+                                    <tr><td class="font-bold text-slate-900">ChatGPT</td><td>أسئلة عامة، تطوير الأفكار، وتوليد صور عالية الجودة</td></tr>
+                                    <tr><td class="font-bold text-slate-900">Gemini</td><td>توليد الصور</td></tr>
+                                    <tr><td class="font-bold text-primary">Claude</td><td>تحويل الفكرة إلى مخطط تنفيذي، صياغة الأوامر لبقية النماذج، التنفيذ، والبحث المعمَّق — بمثابة «مدير العمليات»</td></tr>
+                                    <tr><td class="font-bold text-slate-900">GLM (Z.ai)</td><td>التنفيذ منخفض التكلفة</td></tr>
+                                    <tr><td class="font-bold text-slate-900">MiniMax</td><td>بديل ثالث بقدرات مقاربة لـ Claude وGLM في البناء</td></tr>
+                                    <tr><td class="font-bold text-slate-900">NotebookLM</td><td>فهم الملفات وتحويلها إلى عروض تقديمية وخطاطات معرَّبة</td></tr>
+                                    <tr><td class="font-bold text-slate-900">Google Flow / Veo</td><td>إنشاء الفيديوهات</td></tr>
+                                    <tr><td class="font-bold text-slate-900">ElevenLabs / Google AI Studio</td><td>التعليق الصوتي</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Prompt formula -->
+        <section class="space-y-6">
+            <h3 class="text-2xl font-black flex items-center gap-2"><i data-lucide="terminal" class="w-6 h-6 text-primary"></i> ثانيًا — كيف تكتب أمرًا (Prompt) فعالاً؟</h3>
+            <p class="text-slate-600 leading-relaxed">أفضل طريقة عملية لكتابة أمر واضح للذكاء الاصطناعي أن تُجيب، قبل الكتابة، عن ثلاثة أسئلة:</p>
+
+            <div class="grid sm:grid-cols-3 gap-4">
+                <div class="bg-primary/5 rounded-2xl p-4">
+                    <h4 class="font-black text-primary mb-1">؟ لماذا</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">ما الهدف التربوي من هذا الطلب؟ <span class="block mt-1 text-xs text-slate-400">مثال: أريد شرح مفهوم الحرية عند سبينوزا لتلاميذ الثانية باكالوريا مسلك آداب</span></p>
+                </div>
+                <div class="bg-secondary/5 rounded-2xl p-4">
+                    <h4 class="font-black text-secondary mb-1">كيف؟ <span class="text-xs font-bold opacity-70">(بمساعدة Skill)</span></h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">ما الشكل الذي تريد أن يتّبعه الجواب؟ درس كامل، مخطط، أم نشاط تفاعلي؟ هنا يأتي دور «المهارة» لتوجيه النموذج نحو قالب ثابت بدل وصفه في كل مرة.</p>
+                </div>
+                <div class="bg-accent/5 rounded-2xl p-4">
+                    <h4 class="font-black text-accent mb-1">⚙ استنادًا على ماذا؟</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">ما المرجعية التي يجب أن يلتزم بها النموذج؟ المقرر المغربي، فيلسوف بعينه، أو نص رفعتَه له.</p>
+                </div>
+            </div>
+
+            <div>
+                <p class="text-slate-500 text-sm font-bold mb-2">مثال تطبيقي:</p>
+                <div class="prompt-box">
+                    <button class="copy-btn text-white/70 hover:text-white text-xs font-bold px-2 py-1 rounded-md bg-white/10" onclick="copyPrompt(this)">
+                        <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                    </button>
+                    <span id="example-prompt">اشرح مفهوم الحرية عند سبينوزا [لماذا]، باستعمال مهارة باني الدرس الفلسفي [كيف]، استنادًا إلى مقرر الثانية باكالوريا آداب في المغرب [استنادًا على ماذا]</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: What is a Skill -->
+        <section class="space-y-4">
+            <h3 class="text-2xl font-black flex items-center gap-2"><i data-lucide="package" class="w-6 h-6 text-primary"></i> ثالثًا — ما المقصود بـ«المهارة» (Skill)؟</h3>
+            <p class="text-slate-600 leading-relaxed">المهارة ملف تعليمات ترفعه مرة واحدة إلى النموذج، فيتذكّره ويطبّقه تلقائيًا كلما طلبتَ منه مهمة تخصّه، دون أن تعيد شرح الطريقة من جديد.</p>
+            <div class="bg-amber-50 border border-amber-100 rounded-2xl p-4">
+                <p class="text-amber-800 text-sm leading-relaxed">تخيّل أستاذًا بديلاً يدخل قسمك لأول مرة: إن سلّمته دفتر التحضير ومعايير التصحيح مرة واحدة، سيطبّقهما تلقائيًا في كل حصة تالية، دون أن تكرر عليه التوجيهات كل صباح. هذا بالضبط ما تفعله «المهارة» مع النموذج.</p>
+            </div>
+            <p class="text-slate-400 text-sm">مهارات منصة «محبة الحكمة» التعليمية مصمَّمة خصيصًا للعمل داخل Claude وagents GLM وMiniMax.</p>
+        </section>
+
+        <!-- Section 4: How to add a skill -->
+        <section class="space-y-5">
+            <h3 class="text-2xl font-black flex items-center gap-2"><i data-lucide="upload" class="w-6 h-6 text-primary"></i> رابعًا — كيف تضيف مهارة إلى النموذج؟</h3>
+
+            <div class="rounded-2xl overflow-hidden bg-black shadow-sm">
+                <video src="assets/videos/how-to-add-a-skill.mp4" poster="assets/videos/how-to-add-a-skill-poster.jpg" controls playsinline preload="none" class="w-full h-auto block"></video>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-5">
+                <h4 class="font-black mb-3 flex items-center gap-2"><i data-lucide="brain-circuit" class="w-4 h-4 text-primary"></i> Claude — الطريقة الكاملة والمباشرة (متوفر كتطبيق هاتف)</h4>
+                <ol class="list-decimal list-inside space-y-1.5 text-slate-600 text-sm leading-relaxed">
+                    <li>من الإعدادات (Settings)، افتح «الإمكانيات» (Capabilities) وفعّل «تنفيذ التعليمات البرمجية وإنشاء الملفات» (Code execution and file creation).</li>
+                    <li>انتقل إلى «تخصيص» (Customize) ثم «المهارات» (Skills).</li>
+                    <li>اضغط «رفع» (Upload) واختر ملف المهارة (بصيغة ZIP) الذي حمّلته من صفحة «المهارات التعليمية» في المنصة.</li>
+                    <li>افتح محادثة جديدة، واطلب مباشرة المهمة التي صُممت المهارة من أجلها — مثلًا: «أنشئ درسًا فلسفيًا حول إشكالية الغير لتلميذ شغوف بكرة القدم». سيتعرّف Claude تلقائيًا على المهارة ويستدعيها.</li>
+                </ol>
+            </div>
+
+            <p class="text-slate-500 text-sm leading-relaxed">تعمل نفس المهارات أيضًا على <span class="font-bold text-slate-700">GLM (Z.ai)</span> بالانتقال من chat mode إلى agent mode، وعلى <span class="font-bold text-slate-700">MiniMax</span> عبر تبويب skill في الشريط الجانبي — في الحالتين: ارفع ملف الـ ZIP في المحادثة، ثم اطلب مباشرة إنشاء الدرس بناءً على المهارة المرفوعة.</p>
+        </section>
+
+        <!-- Section 5: Dispatch cards -->
+        <section class="space-y-5">
+            <h3 class="text-2xl font-black flex items-center gap-2"><i data-lucide="compass" class="w-6 h-6 text-primary"></i> استكشف على المنصة</h3>
+            <p class="text-slate-500 text-sm">الأقسام أدناه تُفصَّل بالكامل في صفحاتها الخاصة — إليك موجز سريع لكل واحد:</p>
+            <div class="grid sm:grid-cols-3 gap-4">
+                <a href="prompts.html" class="group bg-white rounded-2xl border border-slate-100 shadow-sm p-5 hover:shadow-md transition-shadow">
+                    <i data-lucide="wand-2" class="w-6 h-6 text-primary mb-2"></i>
+                    <h4 class="font-black mb-1">أدوات الذكاء الفلسفي</h4>
+                    <p class="text-slate-500 text-xs leading-relaxed mb-3">أجب عن أسئلة موجّهة فتحصل على أمر جاهز: Philosophy Mode، مدرّب المناظرة، وPhilosimage.</p>
+                    <span class="text-primary font-bold text-xs flex items-center gap-1">استكشف <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i></span>
+                </a>
+                <a href="skills.html" class="group bg-white rounded-2xl border border-slate-100 shadow-sm p-5 hover:shadow-md transition-shadow">
+                    <i data-lucide="graduation-cap" class="w-6 h-6 text-accent mb-2"></i>
+                    <h4 class="font-black mb-1">مهارات تعليمية جاهزة</h4>
+                    <p class="text-slate-500 text-xs leading-relaxed mb-3">مهارات Claude جاهزة للرفع مباشرة: من بناء الدروس والبحث الموثّق إلى التعلّم التفاعلي والتوجيه الدراسي.</p>
+                    <span class="text-accent font-bold text-xs flex items-center gap-1">استكشف <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i></span>
+                </a>
+                <a href="notebooklm.html" class="group bg-white rounded-2xl border border-slate-100 shadow-sm p-5 hover:shadow-md transition-shadow">
+                    <i data-lucide="notebook-pen" class="w-6 h-6 text-secondary mb-2"></i>
+                    <h4 class="font-black mb-1">دليل NotebookLM</h4>
+                    <p class="text-slate-500 text-xs leading-relaxed mb-3">حوّل نصوصك ووثائقك إلى عروض تقديمية وفيديوهات تعليمية جاهزة للقسم.</p>
+                    <span class="text-secondary font-bold text-xs flex items-center gap-1">استكشف <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i></span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Closing -->
+        <section class="space-y-4">
+            <div class="bg-primary/5 rounded-2xl p-5">
+                <h4 class="font-black text-primary flex items-center gap-2 mb-1"><i data-lucide="footprints" class="w-4 h-4"></i> خطواتك الأولى — اجعلها بسيطة</h4>
+                <p class="text-slate-600 text-sm leading-relaxed">اختر أداة واحدة فقط للبدء (ننصح بـ Philosophy Mode لأنها الأسهل)، جرّبها على درس واحد هذا الأسبوع، لاحظ النتيجة، ثم انتقل للأداة التالية. التعلّم التدريجي أجدى من محاولة استيعاب كل شيء دفعة واحدة.</p>
+            </div>
+            <div class="bg-rose-50 rounded-2xl p-5">
+                <h4 class="font-black text-rose-600 flex items-center gap-2 mb-1"><i data-lucide="triangle-alert" class="w-4 h-4"></i> تنبيه تربوي</h4>
+                <p class="text-slate-600 text-sm leading-relaxed">الذكاء الاصطناعي أداة مساعدة، لا بديل عن التأمل الفلسفي والأستاذ. استثمروه لتوفير الوقت وإثراء الدرس، لكن حافظوا على الجوهر: التفكير النقدي، الحوار الصفي، والقراءة المباشرة للنصوص الفلسفية. التقنية في خدمة الفلسفة، لا العكس.</p>
+            </div>
+            <p class="text-center text-slate-500 text-sm pt-4">هذا الكتيّب عمل مفتوح يتطوّر مع التجربة. لأي ملاحظة أو اقتراح، <a href="feedback.html" class="text-primary font-bold hover:underline">شاركنا رأيك</a>.</p>
+        </section>
+
+    </main>
+
+    <script>
+        lucide.createIcons();
+
+        function copyPrompt(btn) {
+            const text = document.getElementById('example-prompt').textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                const original = btn.innerHTML;
+                btn.innerHTML = '<i data-lucide="check" class="w-3.5 h-3.5"></i>';
+                lucide.createIcons();
+                setTimeout(() => { btn.innerHTML = original; lucide.createIcons(); }, 1500);
+            });
+        }
+    </script>
+</body>
+</html>
