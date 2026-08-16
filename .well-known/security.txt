@@ -1,0 +1,4 @@
+Contact: mailto:mohamedelyousfi.design@gmail.com
+Expires: 2027-12-31T23:59:00.000Z
+Preferred-Languages: ar, en, fr
+Canonical: https://mahabatlhikma.pages.dev/.well-known/security.txt

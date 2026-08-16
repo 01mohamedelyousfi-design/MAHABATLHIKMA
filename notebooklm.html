@@ -5,25 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>دليل NotebookLM للمعلم | محبة الحكمة</title>
     <meta name="description" content="دليل عملي للمعلم لاستخدام NotebookLM وGemini وChatGPT في بناء دروس فلسفية: صور، عروض تقديمية، مدخل إشكالي، وحجة مقابل حجة.">
+    <link rel="canonical" href="https://mahabatlhikma.pages.dev/notebooklm">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mahabatlhikma.pages.dev/notebooklm">
+    <meta property="og:site_name" content="محبة الحكمة | Mahabat Lhikma">
+    <meta property="og:title" content="دليل NotebookLM للمعلم | محبة الحكمة">
+    <meta property="og:description" content="دليل عملي للمعلم لاستخدام NotebookLM وGemini وChatGPT في بناء دروس فلسفية: صور، عروض تقديمية، مدخل إشكالي، وحجة مقابل حجة.">
+    <meta property="og:image" content="https://mahabatlhikma.pages.dev/assets/logo/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="شعار منصة محبة الحكمة">
+    <meta property="og:locale" content="ar_AR">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://mahabatlhikma.pages.dev/notebooklm">
+    <meta name="twitter:title" content="دليل NotebookLM للمعلم | محبة الحكمة">
+    <meta name="twitter:description" content="دليل عملي للمعلم لاستخدام NotebookLM وGemini وChatGPT في بناء دروس فلسفية: صور، عروض تقديمية، مدخل إشكالي، وحجة مقابل حجة.">
+    <meta name="twitter:image" content="https://mahabatlhikma.pages.dev/assets/logo/og-image.png">
+
+    <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="assets/logo/logo-mark.svg">
     <link rel="apple-touch-icon" href="assets/logo/logo-mark.svg">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Performance & Font Resource Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Tajawal', 'sans-serif'], serif: ['Amiri', 'serif'] },
-                    colors: {
-                        primary: { DEFAULT: '#0f766e', light: '#14b8a6', dark: '#0d5f58' },
-                        secondary: { DEFAULT: '#7c3aed', light: '#a78bfa', dark: '#5b21b6' },
-                        accent: { DEFAULT: '#d97706', light: '#fbbf24', dark: '#b45309' },
-                    }
-                }
+
+    <!-- Schema.org JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "الرئيسية",
+              "item": "https://mahabatlhikma.pages.dev/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "دليل NotebookLM",
+              "item": "https://mahabatlhikma.pages.dev/notebooklm"
             }
+          ]
+        },
+        {
+          "@type": "LearningResource",
+          "@id": "https://mahabatlhikma.pages.dev/notebooklm#guide",
+          "name": "دليل NotebookLM للمعلم في تدريس الفلسفة",
+          "description": "دليل تطبيقي لأستاذ الفلسفة لتوظيف أدوات NotebookLM وChatGPT وGemini في بناء الدروس وتوليد العروض التقديمية والملخصات الحجاجية.",
+          "url": "https://mahabatlhikma.pages.dev/notebooklm",
+          "inLanguage": "ar",
+          "learningResourceType": "Teacher Guide / Pedagogical Framework",
+          "provider": {
+            "@type": "EducationalOrganization",
+            "name": "محبة الحكمة",
+            "url": "https://mahabatlhikma.pages.dev/"
+          }
         }
+      ]
+    }
     </script>
+
+    <link rel="stylesheet" href="assets/css/tailwind.css">
+    <script src="assets/js/lucide.min.js"></script>
     <style>
         body { background-color: #fcfbf7; }
         .glass { background: rgba(255,255,255,0.8); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.3); }
@@ -45,12 +99,12 @@
     <nav class="sticky top-0 z-50 glass">
         <div class="max-w-5xl mx-auto px-4">
             <div class="flex justify-between h-16 items-center">
-                <a href="index.html" class="flex items-center gap-2 text-slate-500 hover:text-slate-900 transition-colors">
+                <a href="/" class="flex items-center gap-2 text-slate-500 hover:text-slate-900 transition-colors">
                     <i data-lucide="arrow-right" class="w-5 h-5"></i> عودة
                 </a>
-                <h1 class="text-xl font-black text-slate-900 flex items-center gap-2">
+                <span class="text-xl font-black text-slate-900 flex items-center gap-2">
                     <i data-lucide="notebook-pen" class="w-6 h-6 text-secondary"></i> دليل NotebookLM
-                </h1>
+                </span>
                 <div class="w-16"></div>
             </div>
         </div>
@@ -60,7 +114,7 @@
         <div class="inline-flex items-center gap-2 bg-secondary/10 px-4 py-2 rounded-full text-secondary font-bold text-sm">
             <i data-lucide="graduation-cap" class="w-4 h-4"></i> دليل للمعلم
         </div>
-        <h2 class="text-3xl md:text-4xl font-black">من النص إلى الدرس الجاهز</h2>
+        <h1 class="text-3xl md:text-4xl font-black">دليل NotebookLM للمعلم — من النص إلى الدرس الفلسفي الجاهز</h1>
         <p class="text-slate-500 font-medium leading-relaxed">
             NotebookLM يحوّل مصادرك (نص، PDF، رابط) إلى عروض تقديمية وفيديوهات وحوارات — كل ذلك مبني فعلياً على مصادرك أنت، لا على معرفة عامة. هذا الدليل يشرح 4 استخدامات عملية لدرس فلسفي: من الصورة البسيطة إلى محاورة حجاجية كاملة.
         </p>
@@ -69,6 +123,42 @@
     <main class="max-w-5xl mx-auto px-4 py-10">
         <div id="cards-grid" class="grid sm:grid-cols-2 gap-6"></div>
     </main>
+
+    <!-- Related Sections Navigation -->
+    <section class="max-w-5xl mx-auto px-4 pt-8 pb-12 border-t border-slate-200 mt-8">
+        <h2 class="text-lg font-black text-slate-800 mb-4 flex items-center gap-2">
+            <i data-lucide="compass" class="w-5 h-5 text-primary"></i> استكشف أيضاً في منصة محبة الحكمة
+        </h2>
+        <div class="grid sm:grid-cols-3 gap-4">
+            <a href="booklet" class="group bg-white rounded-2xl border border-slate-100 p-4 shadow-sm hover:shadow-md transition-all">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-teal-50 text-primary flex items-center justify-center"><i data-lucide="book-open" class="w-5 h-5"></i></div>
+                    <div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-primary text-sm transition-colors">كتيّب الذكاء الاصطناعي</h3>
+                        <p class="text-xs text-slate-500">دليل مبسط لأستاذ الفلسفة</p>
+                    </div>
+                </div>
+            </a>
+            <a href="skills" class="group bg-white rounded-2xl border border-slate-100 p-4 shadow-sm hover:shadow-md transition-all">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-amber-50 text-accent flex items-center justify-center"><i data-lucide="graduation-cap" class="w-5 h-5"></i></div>
+                    <div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-accent text-sm transition-colors">المهارات التعليمية</h3>
+                        <p class="text-xs text-slate-500">مهارات Claude الجاهزة للأستاذ</p>
+                    </div>
+                </div>
+            </a>
+            <a href="prompts" class="group bg-white rounded-2xl border border-slate-100 p-4 shadow-sm hover:shadow-md transition-all">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-purple-50 text-secondary flex items-center justify-center"><i data-lucide="wand-2" class="w-5 h-5"></i></div>
+                    <div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-secondary text-sm transition-colors">أدوات الذكاء الفلسفي</h3>
+                        <p class="text-xs text-slate-500">System Prompts وتوليد الحجج</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
 
     <footer class="max-w-3xl mx-auto px-4 pb-16">
         <div class="bg-slate-50 rounded-2xl p-5 text-xs text-slate-400 space-y-2">
@@ -95,7 +185,7 @@
                         <i id="modal-icon" data-lucide="sparkles" class="w-7 h-7"></i>
                     </div>
                     <div>
-                        <h3 id="modal-title" class="text-2xl font-black"></h3>
+                        <h3 id="modal-title" class="text-2xl font-black">تفاصيل الدليل</h3>
                         <p id="modal-subtitle" class="text-sm font-bold opacity-80"></p>
                     </div>
                 </div>
@@ -278,5 +368,9 @@
 
         renderGrid();
     </script>
+
+    <footer class="text-center text-slate-400 text-xs py-6 border-t border-slate-100 mt-10">
+        <p>آخر تحديث: <time datetime="2026-08-15">١٥ غشت ٢٠٢٦</time> — <a href="/" class="underline hover:text-slate-600">محبة الحكمة</a></p>
+    </footer>
 </body>
 </html>

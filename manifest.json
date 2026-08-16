@@ -1,0 +1,19 @@
+{
+  "name": "محبة الحكمة",
+  "short_name": "محبة الحكمة",
+  "description": "منصة تعليمية تحوّل الفلسفة إلى تجربة تفاعلية ممتعة — تعلّم، العب، واستمع إلى الحكمة بلغة العصر",
+  "start_url": "/",
+  "display": "standalone",
+  "dir": "rtl",
+  "lang": "ar",
+  "theme_color": "#0f766e",
+  "background_color": "#fcfbf7",
+  "icons": [
+    {
+      "src": "/assets/logo/logo-mark.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

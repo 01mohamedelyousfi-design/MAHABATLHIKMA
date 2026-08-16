@@ -1,0 +1,30 @@
+# محبة الحكمة | Mahabat Lhikma
+
+> منصة تعليمية تحوّل الفلسفة إلى تجربة تفاعلية ممتعة
+
+## About
+
+Mahabat Lhikma (محبة الحكمة) is an Arabic educational platform that transforms philosophy into an engaging interactive experience. It combines AI-powered teaching tools, interactive games, media resources, and structured learning paths for philosophy educators and students.
+
+## Creator
+
+Mohamed Elyousfi — philosophy educator and AI integration specialist.
+
+## Sections
+
+- **Homepage** (https://mahabatlhikma.pages.dev/): Platform overview with all interactive sections.
+- **Philomedia** (https://mahabatlhikma.pages.dev/philomedia): Curated philosophical media library — videos, podcasts, and visual content.
+- **AI Prompts** (https://mahabatlhikma.pages.dev/prompts): Ready-to-use prompts that turn any AI model into a philosophy tutor or debate coach.
+- **Skills** (https://mahabatlhikma.pages.dev/skills): Claude-ready educational skills for lesson building, research, and interactive learning.
+- **Games** (https://mahabatlhikma.pages.dev/games): Educational games — philosophy is played, not just memorized.
+- **NotebookLM Guide** (https://mahabatlhikma.pages.dev/notebooklm): Practical guide for teachers using NotebookLM, Gemini, and ChatGPT in philosophy lessons.
+- **AI Booklet** (https://mahabatlhikma.pages.dev/booklet): Concise AI guide for philosophy teachers — the three rules, effective prompting, and skills.
+- **Feedback** (https://mahabatlhikma.pages.dev/feedback): Share your feedback and help improve the platform.
+
+## Language
+
+Arabic (ar)
+
+## License
+
+Educational content. All rights reserved.

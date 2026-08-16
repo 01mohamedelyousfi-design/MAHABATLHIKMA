@@ -3,27 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>شاركنا رأيك | محبة الحكمة</title>
+    <title>شاركنا رأيك وملاحظاتك — ساهم في تطوير المنصة | محبة الحكمة</title>
     <meta name="description" content="رأيك يشكّل محبة الحكمة — شاركنا ملاحظاتك عن المشروع أو عن أي قسم بعينه.">
+    <link rel="canonical" href="https://mahabatlhikma.pages.dev/feedback">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mahabatlhikma.pages.dev/feedback">
+    <meta property="og:site_name" content="محبة الحكمة | Mahabat Lhikma">
+    <meta property="og:title" content="شاركنا رأيك وملاحظاتك — ساهم في تطوير المنصة | محبة الحكمة">
+    <meta property="og:description" content="رأيك يشكّل محبة الحكمة — شاركنا ملاحظاتك عن المشروع أو عن أي قسم بعينه.">
+    <meta property="og:image" content="https://mahabatlhikma.pages.dev/assets/logo/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="شعار منصة محبة الحكمة">
+    <meta property="og:locale" content="ar_AR">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://mahabatlhikma.pages.dev/feedback">
+    <meta name="twitter:title" content="شاركنا رأيك وملاحظاتك — ساهم في تطوير المنصة | محبة الحكمة">
+    <meta name="twitter:description" content="رأيك يشكّل محبة الحكمة — شاركنا ملاحظاتك عن المشروع أو عن أي قسم بعينه.">
+    <meta name="twitter:image" content="https://mahabatlhikma.pages.dev/assets/logo/og-image.png">
+
+    <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="assets/logo/logo-mark.svg">
     <link rel="apple-touch-icon" href="assets/logo/logo-mark.svg">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Performance & Font Resource Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Tajawal', 'sans-serif'], serif: ['Amiri', 'serif'] },
-                    colors: {
-                        primary: { DEFAULT: '#0f766e', light: '#14b8a6', dark: '#0d5f58' },
-                        secondary: { DEFAULT: '#7c3aed', light: '#a78bfa', dark: '#5b21b6' },
-                        accent: { DEFAULT: '#d97706', light: '#fbbf24', dark: '#b45309' },
-                    }
-                }
+
+    <!-- Schema.org JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "الرئيسية",
+              "item": "https://mahabatlhikma.pages.dev/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "شاركنا رأيك",
+              "item": "https://mahabatlhikma.pages.dev/feedback"
             }
+          ]
+        },
+        {
+          "@type": "ContactPage",
+          "@id": "https://mahabatlhikma.pages.dev/feedback#contact",
+          "name": "شاركنا رأيك وملاحظاتك حول منصة محبة الحكمة",
+          "description": "استمارة للتواصل وتقديم الملاحظات والاقتراحات لتطوير مشروع محبة الحكمة لتدريس الفلسفة.",
+          "url": "https://mahabatlhikma.pages.dev/feedback",
+          "inLanguage": "ar",
+          "publisher": {
+            "@type": "EducationalOrganization",
+            "name": "محبة الحكمة",
+            "url": "https://mahabatlhikma.pages.dev/"
+          }
         }
+      ]
+    }
     </script>
+
+    <link rel="stylesheet" href="assets/css/tailwind.css">
+    <script src="assets/js/lucide.min.js"></script>
     <style>
         body { background-color: #fcfbf7; }
         .glass { background: rgba(255,255,255,0.8); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.3); }
@@ -45,12 +98,12 @@
     <nav class="sticky top-0 z-50 glass">
         <div class="max-w-5xl mx-auto px-4">
             <div class="flex justify-between h-16 items-center">
-                <a href="index.html" class="flex items-center gap-2 text-slate-500 hover:text-slate-900 transition-colors">
+                <a href="/" class="flex items-center gap-2 text-slate-500 hover:text-slate-900 transition-colors">
                     <i data-lucide="arrow-right" class="w-5 h-5"></i> عودة
                 </a>
-                <h1 class="text-xl font-black text-slate-900 flex items-center gap-2">
+                <span class="text-xl font-black text-slate-900 flex items-center gap-2">
                     <i data-lucide="message-square-heart" class="w-6 h-6 text-rose-500"></i> شاركنا رأيك
-                </h1>
+                </span>
                 <div class="w-16"></div>
             </div>
         </div>
@@ -60,7 +113,7 @@
         <div class="inline-flex items-center gap-2 bg-rose-500/10 px-4 py-2 rounded-full text-rose-600 font-bold text-sm">
             <i data-lucide="heart" class="w-4 h-4"></i> Community Feedback
         </div>
-        <h2 class="text-3xl md:text-4xl font-black">رأيك يصنع محبة الحكمة</h2>
+        <h1 class="text-3xl md:text-4xl font-black">شاركنا رأيك وملاحظاتك — رأيك يصنع محبة الحكمة</h1>
         <p class="text-slate-500 font-medium leading-relaxed">
             سواء كانت ملاحظة عن المشروع ككل أو عن قسم بعينه — رأيك يصل مباشرة إلينا ويُقرأ.
         </p>
@@ -165,6 +218,33 @@
         <div id="error-box" class="hidden mt-4 bg-rose-50 border border-rose-200 text-rose-700 rounded-2xl p-4 text-sm font-bold text-center"></div>
     </main>
 
+    <!-- Related Sections Navigation -->
+    <section class="max-w-xl mx-auto px-4 pt-6 pb-12 border-t border-slate-200 mt-6">
+        <h2 class="text-lg font-black text-slate-800 mb-4 flex items-center gap-2">
+            <i data-lucide="compass" class="w-5 h-5 text-primary"></i> استكشف منصة محبة الحكمة
+        </h2>
+        <div class="grid sm:grid-cols-2 gap-4">
+            <a href="skills" class="group bg-white rounded-2xl border border-slate-100 p-4 shadow-sm hover:shadow-md transition-all">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-amber-50 text-accent flex items-center justify-center"><i data-lucide="graduation-cap" class="w-5 h-5"></i></div>
+                    <div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-accent text-sm transition-colors">المهارات التعليمية</h3>
+                        <p class="text-xs text-slate-500">مهارات Claude الجاهزة للأستاذ</p>
+                    </div>
+                </div>
+            </a>
+            <a href="prompts" class="group bg-white rounded-2xl border border-slate-100 p-4 shadow-sm hover:shadow-md transition-all">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-teal-50 text-primary flex items-center justify-center"><i data-lucide="wand-2" class="w-5 h-5"></i></div>
+                    <div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-primary text-sm transition-colors">أدوات الذكاء الفلسفي</h3>
+                        <p class="text-xs text-slate-500">System Prompts وتوليد الحجج</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
     <script>
         lucide.createIcons();
 
@@ -249,5 +329,9 @@
             lucide.createIcons();
         }
     </script>
+
+    <footer class="text-center text-slate-400 text-xs py-6 border-t border-slate-100 mt-10">
+        <p>آخر تحديث: <time datetime="2026-08-15">١٥ غشت ٢٠٢٦</time> — <a href="/" class="underline hover:text-slate-600">محبة الحكمة</a></p>
+    </footer>
 </body>
 </html>
