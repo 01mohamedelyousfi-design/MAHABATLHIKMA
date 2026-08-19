@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>الألعاب التعليمية | محبة الحكمة</title>
-    <meta name="description" content="ألعاب تعليمية تجعل الفلسفة تُعاش لا تُحفظ — تحطيم معلومات خاطئة، البحث عن الفلسفة، وحديث مع فيلسوف.">
+    <meta name="description" content="ألعاب تعليمية تجعل الفلسفة تُعاش لا تُحفظ — تحطيم معلومات خاطئة، البحث عن الفلسفة، حديث مع فيلسوف، ومعضلات أخلاقية تفاعلية.">
     <link rel="canonical" href="https://mahabatlhikma.pages.dev/games">
 
     <!-- Open Graph / Facebook -->
@@ -12,7 +12,7 @@
     <meta property="og:url" content="https://mahabatlhikma.pages.dev/games">
     <meta property="og:site_name" content="محبة الحكمة | Mahabat Lhikma">
     <meta property="og:title" content="الألعاب التعليمية | محبة الحكمة">
-    <meta property="og:description" content="ألعاب تعليمية تجعل الفلسفة تُعاش لا تُحفظ — تحطيم معلومات خاطئة، البحث عن الفلسفة، وحديث مع فيلسوف.">
+    <meta property="og:description" content="ألعاب تعليمية تجعل الفلسفة تُعاش لا تُحفظ — تحطيم معلومات خاطئة، البحث عن الفلسفة، حديث مع فيلسوف، ومعضلات أخلاقية تفاعلية.">
     <meta property="og:image" content="https://mahabatlhikma.pages.dev/assets/logo/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -23,7 +23,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://mahabatlhikma.pages.dev/games">
     <meta name="twitter:title" content="الألعاب التعليمية | محبة الحكمة">
-    <meta name="twitter:description" content="ألعاب تعليمية تجعل الفلسفة تُعاش لا تُحفظ — تحطيم معلومات خاطئة، البحث عن الفلسفة، وحديث مع فيلسوف.">
+    <meta name="twitter:description" content="ألعاب تعليمية تجعل الفلسفة تُعاش لا تُحفظ — تحطيم معلومات خاطئة، البحث عن الفلسفة، حديث مع فيلسوف، ومعضلات أخلاقية تفاعلية.">
     <meta name="twitter:image" content="https://mahabatlhikma.pages.dev/assets/logo/og-image.png">
 
     <!-- Favicons -->
@@ -62,7 +62,7 @@
           "@type": "WebApplication",
           "@id": "https://mahabatlhikma.pages.dev/games#app",
           "name": "ألعاب الفلسفة التفاعلية",
-          "description": "ألعاب وتطبيقات تفاعلية تجعل الفلسفة تُعاش وتُمارس — تحطيم معلومات خاطئة، البحث عن الفلسفة، وتحدث مع فيلسوف.",
+          "description": "ألعاب وتطبيقات تفاعلية تجعل الفلسفة تُعاش وتُمارس — تحطيم معلومات خاطئة، البحث عن الفلسفة، حدّث مع فيلسوف، ومعضلات أخلاقية تفاعلية.",
           "url": "https://mahabatlhikma.pages.dev/games",
           "inLanguage": "ar",
           "applicationCategory": "EducationalGame",
@@ -117,7 +117,7 @@
         </div>
         <h1 class="text-3xl md:text-4xl font-black">الألعاب التعليمية — الفلسفة تُلعب، لا تُحفظ فقط</h1>
         <p class="text-slate-500 font-medium leading-relaxed">
-            ثلاث ألعاب تحوّل مفاهيم وسير الفلاسفة إلى تجربة تُعاش. اضغط على أي بطاقة لتتعرف على فكرتها، وكيف تُلعب، وكيف تفيد المعلم والمتعلم.
+            أربع ألعاب تحوّل مفاهيم وسير الفلاسفة إلى تجربة تُعاش. اضغط على أي بطاقة لتتعرف على فكرتها، وكيف تُلعب، وكيف تفيد المعلم والمتعلم.
         </p>
     </header>
 
@@ -193,6 +193,10 @@
                         <p id="modal-student" class="text-slate-600 text-sm leading-relaxed"></p>
                     </div>
                 </div>
+                <div id="modal-credit" class="hidden items-center justify-center gap-1.5 text-xs text-slate-400 font-medium pt-1">
+                    <i data-lucide="pen-line" class="w-3.5 h-3.5 shrink-0"></i>
+                    <span id="modal-credit-text"></span>
+                </div>
             </div>
             <div class="p-6 pt-0">
                 <a id="modal-play" href="#" target="_blank" rel="noopener noreferrer" class="hidden w-full bg-slate-900 text-white py-3.5 rounded-xl font-bold hover:bg-slate-800 transition-colors items-center justify-center gap-2">
@@ -250,6 +254,22 @@
                 teacher: 'يحوّل تقديم سيرة فيلسوف ونصوصه إلى مغامرة بصرية بدل عرض تقديمي تقليدي — مدخل ممتاز لتحفيز فضول الطلاب قبل الدخول في تفاصيل الفيلسوف النظرية.',
                 student: 'التعلّم مدمج في اللعب لا منفصل عنه — يكتسب المتعلم معلومات حقيقية أثناء اللعب دون أن يشعر أنه "يذاكر"، وتحويل تجاوز العقبات إلى استعارة عن تجاوز التحيّز يرسّخ الفكرة الفلسفية ضمنياً.',
             },
+            {
+                id: 'the-choice',
+                title: 'الاختيار',
+                subtitle: 'The Choice',
+                icon: 'scale',
+                gradient: 'from-slate-700 to-slate-900',
+                thumb: 'assets/games/the-choice.jpg',
+                status: 'متاحة الآن',
+                statusClass: 'bg-emerald-500 text-white',
+                url: 'https://thechoice.quest/ar',
+                credit: 'من إنشاء Alex Shlykov، وبترجمة عربية من Mohamed Elyousfi',
+                idea: 'قصة تفاعلية قصيرة (حوالي 17 دقيقة) عن العدالة والأخلاق والقرارات الصعبة: تُعرض عليك معضلات أخلاقية حقيقية بلا إجابة جاهزة، وتُطالب بالحكم فيها بنفسك — فتكتشف أن كل اختيار يحمل في طياته فلسفة أخلاقية كاملة.',
+                howto: 'تقدّم لك القصة مواقف ومُعضلات تباعاً، وفي كل موقف تختار قرارك من بين بدائل صعبة لا يوجد فيها خيار مثالي. ومع تقدّم الرحلة تُدعى إلى مقارنة اختياراتك بالرؤى الأخلاقية الكبرى: أين يقع خيارك بين النفعية التي تحكم بالنتائج، وأخلاق الواجب التي تحكم بالمبدأ، وحسّ العدالة الذي يوازن بينهما؟',
+                teacher: 'مدخل مثالي لدرس الأخلاق ومحور العدالة والإنصاف (النفعية مقابل الواجب): يجعل المتعلم يتخذ موقفاً بنفسه من معضلة حقيقية قبل دراسة النظريات، فيتحول الدرس إلى مناقشة اختيارات التلاميذ أنفسهم بالحجة والمفهوم بدل تلقين المواقف جاهزة.',
+                student: 'يعيش المتعلم المعضلة بنفسه ويتخذ موقفاً فعلياً بدل حفظ المواقف الفلسفية جاهزة، ويكتشف أن ما يبدو له "بديهياً" تخالفه رؤى أخلاقية كاملة — فيتعلم أن الموقف الأخلاقي يُبنى بالحجة لا بالتلقين.',
+            },
         ];
 
         function renderGrid() {
@@ -266,6 +286,7 @@
                     <div class="p-6 space-y-2">
                         <h3 class="text-lg font-black">${g.title}</h3>
                         <p class="text-slate-500 text-sm font-medium line-clamp-2">${g.idea}</p>
+                        ${g.credit ? `<p class="text-[11px] text-slate-400 font-medium">${g.credit}</p>` : ''}
                         <div class="pt-2 text-primary font-bold text-sm flex items-center gap-1">
                             التفاصيل <i data-lucide="arrow-left" class="w-4 h-4"></i>
                         </div>
@@ -289,6 +310,16 @@
             document.getElementById('modal-howto').textContent = g.howto;
             document.getElementById('modal-teacher').textContent = g.teacher;
             document.getElementById('modal-student').textContent = g.student;
+
+            const creditBox = document.getElementById('modal-credit');
+            if (g.credit) {
+                document.getElementById('modal-credit-text').textContent = g.credit;
+                creditBox.classList.remove('hidden');
+                creditBox.classList.add('flex');
+            } else {
+                creditBox.classList.add('hidden');
+                creditBox.classList.remove('flex');
+            }
 
             const playBtn = document.getElementById('modal-play');
             if (g.url) {
@@ -318,7 +349,7 @@
     </script>
 
     <footer class="text-center text-slate-400 text-xs py-6 border-t border-slate-100 mt-10">
-        <p>آخر تحديث: <time datetime="2026-08-15">١٥ غشت ٢٠٢٦</time> — <a href="/" class="underline hover:text-slate-600">محبة الحكمة</a></p>
+        <p>آخر تحديث: <time datetime="2026-08-16">١٦ غشت ٢٠٢٦</time> — <a href="/" class="underline hover:text-slate-600">محبة الحكمة</a></p>
     </footer>
 </body>
 </html>
