@@ -13,6 +13,7 @@ Mohamed Elyousfi — philosophy educator and AI integration specialist.
 ## Sections
 
 - **Homepage** (https://mahabatlhikma.pages.dev/): Platform overview with all interactive sections.
+- **Philosophy Lessons** (https://mahabatlhikma.pages.dev/lessons): Interactive philosophy lessons following the Moroccan curriculum, organized by level, module, and concept — from problematique to philosophers' positions to synthesis. Starts with Personal Identity (2ème Baccalauréat).
 - **Philomedia** (https://mahabatlhikma.pages.dev/philomedia): Curated philosophical media library — videos, podcasts, and visual content.
 - **AI Prompts** (https://mahabatlhikma.pages.dev/prompts): Ready-to-use prompts that turn any AI model into a philosophy tutor or debate coach.
 - **Skills** (https://mahabatlhikma.pages.dev/skills): Claude-ready educational skills for lesson building, research, and interactive learning.

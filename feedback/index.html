@@ -27,9 +27,9 @@
     <meta name="twitter:image" content="https://mahabatlhikma.pages.dev/assets/logo/og-image.png">
 
     <!-- Favicons -->
-    <link rel="icon" type="image/svg+xml" href="assets/logo/logo-mark.svg">
-    <link rel="apple-touch-icon" href="assets/logo/logo-mark.svg">
-    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/svg+xml" href="/assets/logo/logo-mark.svg">
+    <link rel="apple-touch-icon" href="/assets/logo/logo-mark.svg">
+    <link rel="manifest" href="/manifest.json">
 
     <!-- Performance & Font Resource Hints -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -75,8 +75,8 @@
     }
     </script>
 
-    <link rel="stylesheet" href="assets/css/tailwind.css">
-    <script src="assets/js/lucide.min.js"></script>
+    <link rel="stylesheet" href="/assets/css/tailwind.css">
+    <script defer src="/assets/js/lucide.min.js"></script>
     <style>
         body { background-color: #fcfbf7; }
         .glass { background: rgba(255,255,255,0.8); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.3); }
@@ -224,7 +224,7 @@
             <i data-lucide="compass" class="w-5 h-5 text-primary"></i> استكشف منصة محبة الحكمة
         </h2>
         <div class="grid sm:grid-cols-2 gap-4">
-            <a href="skills" class="group bg-white rounded-2xl border border-slate-100 p-4 shadow-sm hover:shadow-md transition-all">
+            <a href="/skills" class="group bg-white rounded-2xl border border-slate-100 p-4 shadow-sm hover:shadow-md transition-all">
                 <div class="flex items-center gap-3">
                     <div class="w-10 h-10 rounded-xl bg-amber-50 text-accent flex items-center justify-center"><i data-lucide="graduation-cap" class="w-5 h-5"></i></div>
                     <div>
@@ -233,7 +233,7 @@
                     </div>
                 </div>
             </a>
-            <a href="prompts" class="group bg-white rounded-2xl border border-slate-100 p-4 shadow-sm hover:shadow-md transition-all">
+            <a href="/prompts" class="group bg-white rounded-2xl border border-slate-100 p-4 shadow-sm hover:shadow-md transition-all">
                 <div class="flex items-center gap-3">
                     <div class="w-10 h-10 rounded-xl bg-teal-50 text-primary flex items-center justify-center"><i data-lucide="wand-2" class="w-5 h-5"></i></div>
                     <div>
@@ -246,7 +246,9 @@
     </section>
 
     <script>
-        lucide.createIcons();
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
 
         /* -----------------------------------------------------------------
          * TODO(Mohamed): paste your Google Apps Script Web App URL below.

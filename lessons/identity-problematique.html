@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>هوية الشخص — المدخل الإشكالي | محبة الحكمة</title>
+    <meta name="description" content="المدخل الإشكالي لدرس هوية الشخص — ريلز، قصة قصيرة، ولعبة فلسفية حول سؤال: من أنا؟">
+    <link rel="canonical" href="https://mahabatlhikma.pages.dev/lessons/identity-problematique">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mahabatlhikma.pages.dev/lessons/identity-problematique">
+    <meta property="og:site_name" content="محبة الحكمة | Mahabat Lhikma">
+    <meta property="og:title" content="هوية الشخص — المدخل الإشكالي | محبة الحكمة">
+    <meta property="og:description" content="المدخل الإشكالي لدرس هوية الشخص — ريلز، قصة قصيرة، ولعبة فلسفية حول سؤال: من أنا؟">
+    <meta property="og:image" content="https://mahabatlhikma.pages.dev/assets/lessons/identity-cover.jpg">
+    <meta property="og:locale" content="ar_AR">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://mahabatlhikma.pages.dev/lessons/identity-problematique">
+    <meta name="twitter:title" content="هوية الشخص — المدخل الإشكالي | محبة الحكمة">
+    <meta name="twitter:description" content="المدخل الإشكالي لدرس هوية الشخص — ريلز، قصة قصيرة، ولعبة فلسفية حول سؤال: من أنا؟">
+    <meta name="twitter:image" content="https://mahabatlhikma.pages.dev/assets/lessons/identity-cover.jpg">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/assets/logo/logo-mark.svg">
+    <link rel="apple-touch-icon" href="/assets/logo/logo-mark.svg">
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- Performance & Font Resource Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Schema.org JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://mahabatlhikma.pages.dev/" },
+            { "@type": "ListItem", "position": 2, "name": "دروس الفلسفة", "item": "https://mahabatlhikma.pages.dev/lessons" },
+            { "@type": "ListItem", "position": 3, "name": "درس هوية الشخص — المدخل الإشكالي", "item": "https://mahabatlhikma.pages.dev/lessons/identity-problematique" }
+          ]
+        },
+        {
+          "@type": "LearningResource",
+          "name": "هوية الشخص — المدخل الإشكالي",
+          "description": "المدخل الإشكالي لدرس هوية الشخص — ريلز، قصة قصيرة، ولعبة فلسفية حول سؤال: من أنا؟",
+          "url": "https://mahabatlhikma.pages.dev/lessons/identity-problematique",
+          "inLanguage": "ar",
+          "learningResourceType": "درس فلسفي تفاعلي",
+          "teaches": "مفهوم الشخص — مجزوءة الوضع البشري",
+          "educationalLevel": "الثانية بكالوريا",
+          "publisher": { "@type": "EducationalOrganization", "name": "محبة الحكمة", "url": "https://mahabatlhikma.pages.dev/" }
+        }
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="/assets/css/tailwind.css">
+    <script defer src="/assets/js/lucide.min.js"></script>
+    <style>
+        * { scroll-behavior: smooth; }
+        body { background-color: #fcfbf7; overflow-x: hidden; }
+
+        .glass { background: rgba(255,255,255,0.72); backdrop-filter: blur(16px) saturate(180%); border: 1px solid rgba(255,255,255,0.35); }
+
+        .hero-bg {
+            background:
+                radial-gradient(ellipse 80% 60% at 20% 20%, rgba(15,118,110,0.12), transparent),
+                radial-gradient(ellipse 60% 50% at 80% 80%, rgba(124,58,237,0.08), transparent),
+                radial-gradient(ellipse 40% 40% at 50% 50%, rgba(217,119,6,0.05), transparent);
+        }
+
+        .card-glow { transition: all 0.5s cubic-bezier(0.4,0,0.2,1); }
+        .card-glow:hover { transform: translateY(-8px); box-shadow: 0 25px 60px -12px rgba(0,0,0,0.12); }
+
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.16,1,0.3,1); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #0f766e 0%, #7c3aed 50%, #d97706 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .sidebar-overlay { opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+        .sidebar-overlay.open { opacity: 1; pointer-events: all; }
+        .sidebar { transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.4,0,0.2,1); }
+        .sidebar.open { transform: translateX(0); }
+
+        .nav-scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.06); }
+
+        /* Reel phone frame */
+        .reel-frame { aspect-ratio: 9 / 16; position: relative; }
+        .reel-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; }
+    </style>
+</head>
+<body class="font-sans text-slate-900 antialiased">
+
+    <!-- ========== NAVBAR ========== -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 glass transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <a href="/" class="flex items-center gap-3 group">
+                    <img src="/assets/logo/logo-mark.svg" alt="محبة الحكمة" class="w-11 h-11 flex-shrink-0 group-hover:scale-105 transition-transform duration-300">
+                    <div>
+                        <h1 class="text-2xl font-black tracking-tight text-primary leading-none">محبة الحكمة</h1>
+                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] leading-none mt-1">Mahabat Lhikma</p>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav -->
+                <div class="hidden lg:flex items-center gap-1">
+                    <a href="/" class="px-4 py-2 rounded-xl text-slate-600 font-bold text-sm hover:text-primary hover:bg-primary/5 transition-all">الرئيسية</a>
+                    <a href="/lessons" class="px-4 py-2 rounded-xl text-primary font-bold text-sm bg-primary/5 transition-all">دروس الفلسفة</a>
+                    <a href="/philomedia" class="px-4 py-2 rounded-xl text-slate-600 font-bold text-sm hover:text-primary hover:bg-primary/5 transition-all">فيلوميديا</a>
+                    <a href="/prompts" class="px-4 py-2 rounded-xl text-slate-600 font-bold text-sm hover:text-primary hover:bg-primary/5 transition-all">أدوات الذكاء الفلسفي</a>
+                    <a href="/skills" class="px-4 py-2 rounded-xl text-slate-600 font-bold text-sm hover:text-primary hover:bg-primary/5 transition-all">المهارات التعليمية</a>
+                    <a href="/games" class="px-4 py-2 rounded-xl text-slate-600 font-bold text-sm hover:text-primary hover:bg-primary/5 transition-all">الألعاب</a>
+                    <a href="/notebooklm" class="px-4 py-2 rounded-xl text-slate-600 font-bold text-sm hover:text-primary hover:bg-primary/5 transition-all">دليل NotebookLM</a>
+                    <a href="/booklet" class="px-4 py-2 rounded-xl text-slate-600 font-bold text-sm hover:text-primary hover:bg-primary/5 transition-all">كتيّب الذكاء الاصطناعي</a>
+                    <a href="/feedback" class="px-4 py-2 rounded-xl text-slate-600 font-bold text-sm hover:text-rose-500 hover:bg-rose-50 transition-all flex items-center gap-1.5">
+                        <i data-lucide="message-square-heart" class="w-4 h-4"></i>شاركنا رأيك
+                    </a>
+                </div>
+
+                <!-- Mobile Toggle -->
+                <button onclick="toggleSidebar()" class="lg:hidden p-2.5 rounded-xl text-slate-600 hover:bg-slate-100 transition-colors" id="menu-toggle">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========== MOBILE SIDEBAR ========== -->
+    <div id="sidebar-overlay" class="fixed inset-0 z-[60] bg-black/40 sidebar-overlay" onclick="toggleSidebar()"></div>
+    <aside id="sidebar" class="fixed top-0 right-0 z-[70] w-80 h-full bg-white shadow-2xl sidebar">
+        <div class="p-6 space-y-6">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <img src="/assets/logo/logo-mark.svg" alt="محبة الحكمة" class="w-8 h-8">
+                    <span class="text-xl font-black text-primary">محبة الحكمة</span>
+                </div>
+                <button onclick="toggleSidebar()" class="p-2 rounded-xl hover:bg-slate-100"><i data-lucide="x" class="w-5 h-5 text-slate-500"></i></button>
+            </div>
+            <div class="space-y-1">
+                <a href="/" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-50 font-bold transition-colors"><i data-lucide="home" class="w-5 h-5"></i>الرئيسية</a>
+                <a href="/lessons" class="flex items-center gap-3 px-4 py-3 rounded-xl text-primary bg-primary/5 font-bold"><i data-lucide="library" class="w-5 h-5"></i>دروس الفلسفة</a>
+                <a href="/philomedia" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-50 font-bold transition-colors"><i data-lucide="video" class="w-5 h-5"></i>فيلوميديا</a>
+                <a href="/prompts" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-50 font-bold transition-colors"><i data-lucide="wand-2" class="w-5 h-5"></i>أدوات الذكاء الفلسفي</a>
+                <a href="/skills" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-50 font-bold transition-colors"><i data-lucide="graduation-cap" class="w-5 h-5"></i>المهارات التعليمية</a>
+                <a href="/games" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-50 font-bold transition-colors"><i data-lucide="gamepad-2" class="w-5 h-5"></i>الألعاب</a>
+                <a href="/notebooklm" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-50 font-bold transition-colors"><i data-lucide="notebook-pen" class="w-5 h-5"></i>دليل NotebookLM</a>
+                <a href="/booklet" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-50 font-bold transition-colors"><i data-lucide="book-open-check" class="w-5 h-5"></i>كتيّب الذكاء الاصطناعي</a>
+                <a href="/feedback" class="flex items-center gap-3 px-4 py-3 rounded-xl text-white bg-gradient-to-r from-primary to-primary-dark font-bold mt-4 shadow-lg shadow-primary/20"><i data-lucide="message-square-heart" class="w-5 h-5"></i>شاركنا رأيك</a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- ========== LESSON HEADER ========== -->
+    <header class="relative pt-32 pb-14 md:pt-36 md:pb-16 overflow-hidden hero-bg">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Breadcrumb -->
+            <nav class="flex items-center flex-wrap gap-2 text-sm font-bold text-slate-400 mb-8 reveal">
+                <a href="/" class="hover:text-primary transition-colors">الرئيسية</a>
+                <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                <a href="/lessons" class="hover:text-primary transition-colors">دروس الفلسفة</a>
+                <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                <span class="text-primary">هوية الشخص</span>
+            </nav>
+
+            <div class="reveal space-y-5 max-w-3xl">
+                <div class="flex items-center gap-2 text-xs font-bold text-slate-400 uppercase tracking-widest">
+                    <span>مجزوءة الوضع البشري</span>
+                    <span class="w-1 h-1 rounded-full bg-slate-300"></span>
+                    <span>محور الشخص</span>
+                </div>
+                <h2 class="text-4xl sm:text-5xl md:text-6xl font-black text-slate-900 leading-[1.15] tracking-tight">
+                    المدخل <span class="gradient-text">الإشكالي</span>
+                </h2>
+                <p class="text-lg md:text-xl text-slate-500 font-medium leading-relaxed">
+                    القسم الأول من درس «هوية الشخص» — قبل أي جواب، لنطرح السؤال كما يستحق أن يُطرح.
+                </p>
+            </div>
+        </div>
+
+        <div class="absolute top-10 right-0 w-[400px] h-[400px] bg-primary/[0.08] rounded-full blur-[100px] -z-[1]"></div>
+        <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-secondary/[0.06] rounded-full blur-[120px] -z-[1]"></div>
+    </header>
+
+    <!-- ========== SECTION 1: REEL + TEXT ========== -->
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div class="grid lg:grid-cols-[420px_1fr] gap-10 lg:gap-14 items-center">
+
+            <!-- Reel -->
+            <div class="reveal mx-auto w-full">
+                <div class="relative w-full max-w-[420px] mx-auto reel-frame rounded-[2.5rem] border-[10px] border-slate-900 shadow-2xl overflow-hidden bg-black">
+                    <iframe
+                        class="absolute inset-0 w-full h-full"
+                        src="https://www.youtube-nocookie.com/embed/ia1v9tgQDIA?autoplay=1&mute=0&playsinline=1&rel=0&modestbranding=1&loop=1&playlist=ia1v9tgQDIA"
+                        title="ريلز: تعقيد سؤال هوية الشخص"
+                        frameborder="0"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allow="autoplay; encrypted-media; picture-in-picture"
+                        allowfullscreen
+                        loading="eager">
+                    </iframe>
+                </div>
+                <p class="text-center text-xs font-bold text-slate-400 mt-3 flex items-center justify-center gap-1.5">
+                    <i data-lucide="clapperboard" class="w-3.5 h-3.5"></i>
+                    ريلز تعليمية
+                </p>
+            </div>
+
+            <!-- Text -->
+            <div class="reveal space-y-4">
+                <h3 class="text-2xl md:text-3xl font-black text-slate-900">سؤال أعقد مما يبدو</h3>
+                <p class="text-lg text-slate-600 font-medium leading-loose">
+                    للوهلة الأولى يبدو السؤال بسيطًا: أنا هو الاسم الذي أحمله، والجسد الذي أراه في المرآة. لكنّ الجسد يتغيّر خلية خلية عبر السنين، والذكريات تتلاشى أو تُعاد كتابتها، وقد لا يشبه الانطباع الذي يكوّنه الناس عنك اليوم ما كنته بالأمس، ولا ما تطمح أن تكونه غدًا. فهل ما يجعلك أنت هو استمرارية جسدك؟ أم خيط الذاكرة الذي يربط طفولتك بحاضرك؟ أم القيم والاختيارات التي تصرّ عليها رغم كل ضغط؟ وحين يتصادم ما تفعله كل يوم إرضاءً للآخرين مع ما تحلم أن تكونه في سرّك، أيّهما يستحق أن يُسمّى «هويتك الحقيقية»؟
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 2: STORY IMAGE + STORY ========== -->
+    <section class="py-16 mt-6 bg-primary/[0.035] border-y border-primary/5">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-[1fr_1.15fr] gap-10 lg:gap-14 items-center">
+
+                <!-- Image -->
+                <div class="reveal">
+                    <img src="/assets/lessons/identity-story.jpg" alt="مفترق طرق: الحياة التي يريدها الآخرون أم الحياة التي أريدها أنا" class="w-full rounded-[32px] shadow-xl border border-white">
+                </div>
+
+                <!-- Story -->
+                <div class="reveal space-y-5">
+                    <div class="inline-flex items-center gap-2 bg-secondary/10 px-4 py-1.5 rounded-full text-secondary font-bold text-xs">
+                        <i data-lucide="book-open" class="w-3.5 h-3.5"></i>
+                        قصة قصيرة
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-black text-slate-900">قصة سليم</h3>
+                    <div class="space-y-4 font-serif text-slate-700 text-lg leading-loose">
+                        <p>كان سليم يعيش في مدينة لا يعرف فيها أحد ماضيه. في النهار كان موظفًا هادئًا، يبتسم للجميع ويؤدي عمله بإتقان. لكن كلما عاد إلى منزله، وقف أمام المرآة طويلًا، وكأنه ينتظر أن تعرّفه على الشخص الذي يراه.</p>
+                        <p>ذات يوم، صادف ألبومًا قديمًا مليئًا بصور طفولته. رأى طفلًا يضحك بثقة ويحلم بأن يصبح رسامًا. ابتسم بحزن، فقد أدرك أنه تخلّى عن أحلامه ليعيش حياة رسمها الآخرون له.</p>
+                        <p>بدأ يسأل نفسه: هل هويتي هي ما أفعله كل يوم؟ أم ما كنت أحلم أن أكونه؟ وهل يحددني رأي الناس فيّ، أم اختياراتي التي أخفيتها خوفًا من الفشل؟</p>
+                        <p>في اليوم التالي، حمل فرشاته القديمة ورسم أول لوحة منذ سنوات. لم تتغير ملامحه، لكن شيئًا في داخله عاد إلى الحياة. فهم أخيرًا أن الهوية ليست قناعًا نرتديه لإرضاء الآخرين، بل رحلة مستمرة لاكتشاف ذواتنا الحقيقية، وأن الإنسان قد يضيع حين يعيش كما يريده الناس، ويجد نفسه حين يجرؤ على أن يكون كما يريد هو.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 3: PHILOSOPHICAL GAME CTA ========== -->
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="reveal relative bg-gradient-to-br from-slate-900 to-slate-800 rounded-[40px] p-10 md:p-14 text-center text-white overflow-hidden">
+            <div class="relative z-10 max-w-2xl mx-auto space-y-6">
+                <div class="inline-flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full text-teal-300 font-bold text-sm border border-white/10">
+                    <i data-lucide="gamepad-2" class="w-4 h-4"></i>
+                    لعبة فلسفية
+                </div>
+                <h3 class="text-3xl md:text-4xl font-black">جرّب الإشكالية بنفسك</h3>
+                <p class="text-lg text-slate-300 font-medium leading-relaxed">
+                    في «الانتقال الأخير»، آلة تعرض عليك نسخ وعيك بالكامل، أو نقله تدريجيًا، أو رفض التجربة والبقاء كما أنت. جرّب القرار بنفسك، ثم اسأل: هل الذي يخرج من الآلة هو أنت فعلًا، أم مجرد نسخة تحمل ذكرياتك؟
+                </p>
+                <a href="https://the-last-transfer.pages.dev/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-primary to-teal-400 text-white px-10 py-5 rounded-2xl text-xl font-black shadow-xl hover:scale-105 transition-all">
+                    <i data-lucide="gamepad-2" class="w-6 h-6"></i>
+                    ابدأ لعبة فلسفية
+                </a>
+            </div>
+            <div class="absolute top-0 right-0 w-72 h-72 bg-teal-500/10 rounded-full blur-[100px]"></div>
+            <div class="absolute bottom-0 left-0 w-72 h-72 bg-purple-500/10 rounded-full blur-[80px]"></div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 4: GO-DEEPER VIDEO ========== -->
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+        <div class="reveal flex flex-col md:flex-row items-center justify-between gap-6 bg-white rounded-[32px] border border-slate-100 shadow-sm p-8 md:p-10">
+            <div class="flex items-center gap-4 text-center md:text-right flex-col md:flex-row">
+                <div class="w-14 h-14 bg-amber-50 rounded-2xl flex items-center justify-center text-accent flex-shrink-0">
+                    <i data-lucide="play-circle" class="w-7 h-7"></i>
+                </div>
+                <div>
+                    <h4 class="text-xl font-black text-slate-900 mb-1">لمزيد من التعمّق</h4>
+                    <p class="text-slate-500 font-medium leading-relaxed max-w-xl">فيديو يوسّع النقاش انطلاقًا من «الأوديسة» وأسئلة العودة والتعرّف على الذات عبر الزمن.</p>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/watch?v=gNaHKxyv4AY" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 inline-flex items-center gap-2 bg-slate-900 text-white px-7 py-4 rounded-2xl font-black hover:bg-slate-800 transition-all">
+                <i data-lucide="play-circle" class="w-5 h-5"></i>
+                شاهد للتعمق أكثر
+            </a>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 5: PHILOSOPHERS CTA ========== -->
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+        <div class="reveal relative overflow-hidden rounded-[40px] bg-gradient-to-br from-primary via-primary to-primary-dark p-10 md:p-16 text-center text-white">
+            <div class="relative z-10 max-w-2xl mx-auto space-y-6">
+                <div class="inline-flex items-center gap-2 bg-white/15 px-4 py-2 rounded-full text-white font-bold text-sm border border-white/20 backdrop-blur-sm">
+                    <i data-lucide="users" class="w-4 h-4"></i>
+                    الخطوة التالية
+                </div>
+                <h3 class="text-3xl md:text-5xl font-black leading-tight">مواقف الفلاسفة<br>من هوية الشخص</h3>
+                <p class="text-lg md:text-xl text-white/85 font-medium leading-relaxed">
+                    بعد الإشكالية، حان وقت استكشاف كيف أجاب ثلاثة من كبار الفلاسفة — جون لوك، شوبنهاور، وفرويد — عن سؤال «من أنا؟». نصوص أصلية مع تحليل حجاجي تفاعلي يبرز الدعوى والمجيز والبينة.
+                </p>
+                <a href="/lessons/identity-philosophers" class="inline-flex items-center justify-center gap-3 bg-white text-primary px-10 py-5 rounded-2xl text-xl font-black shadow-2xl hover:scale-105 hover:bg-slate-50 transition-all">
+                    <i data-lucide="arrow-left" class="w-6 h-6"></i>
+                    ادخل مواقف الفلاسفة
+                </a>
+                <div class="flex items-center justify-center gap-6 pt-2 text-white/80 font-bold text-sm flex-wrap">
+                    <span class="flex items-center gap-1.5"><i data-lucide="book-open" class="w-4 h-4"></i> ٣ نصوص فلسفية</span>
+                    <span class="flex items-center gap-1.5"><i data-lucide="lightbulb" class="w-4 h-4"></i> تحليل حجاجي تفاعلي</span>
+                    <span class="flex items-center gap-1.5"><i data-lucide="video" class="w-4 h-4"></i> ريلز للمراجعة</span>
+                </div>
+            </div>
+            <div class="absolute top-0 left-0 w-80 h-80 bg-white/10 rounded-full blur-[100px]"></div>
+            <div class="absolute bottom-0 right-0 w-72 h-72 bg-secondary/20 rounded-full blur-[90px]"></div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="bg-slate-900 text-white pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 pb-16 border-b border-white/10">
+                <!-- Brand -->
+                <div class="lg:col-span-1 space-y-6">
+                    <div class="flex items-center gap-3">
+                        <img src="/assets/logo/logo-mark-white.svg" alt="محبة الحكمة" class="w-10 h-10">
+                        <div>
+                            <h3 class="text-xl font-black text-white">محبة الحكمة</h3>
+                            <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Mahabat Lhikma</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 font-medium leading-relaxed text-sm">
+                        مشروع طموح يسعى لتقريب الفلسفة من الشباب العربي عبر أدوات حديثة وتجارب تفاعلية.
+                    </p>
+                </div>
+
+                <!-- Sections -->
+                <div class="space-y-6">
+                    <h4 class="font-black text-white uppercase tracking-widest text-xs">الأقسام</h4>
+                    <ul class="space-y-3 text-slate-400 font-bold text-sm">
+                        <li><a href="/lessons" class="hover:text-teal-400 transition-colors flex items-center gap-2"><i data-lucide="library" class="w-4 h-4"></i>دروس الفلسفة</a></li>
+                        <li><a href="/philomedia" class="hover:text-teal-400 transition-colors flex items-center gap-2"><i data-lucide="video" class="w-4 h-4"></i>فيلوميديا</a></li>
+                        <li><a href="/prompts" class="hover:text-teal-400 transition-colors flex items-center gap-2"><i data-lucide="wand-2" class="w-4 h-4"></i>أدوات الذكاء الفلسفي</a></li>
+                        <li><a href="/skills" class="hover:text-teal-400 transition-colors flex items-center gap-2"><i data-lucide="graduation-cap" class="w-4 h-4"></i>المهارات التعليمية</a></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-6">
+                    <h4 class="font-black text-white uppercase tracking-widest text-xs">المزيد</h4>
+                    <ul class="space-y-3 text-slate-400 font-bold text-sm">
+                        <li><a href="/games" class="hover:text-teal-400 transition-colors flex items-center gap-2"><i data-lucide="gamepad-2" class="w-4 h-4"></i>الألعاب</a></li>
+                        <li><a href="/notebooklm" class="hover:text-teal-400 transition-colors flex items-center gap-2"><i data-lucide="notebook-pen" class="w-4 h-4"></i>دليل NotebookLM</a></li>
+                        <li><a href="/booklet" class="hover:text-teal-400 transition-colors flex items-center gap-2"><i data-lucide="book-open-check" class="w-4 h-4"></i>كتيّب الذكاء الاصطناعي</a></li>
+                        <li><a href="/feedback" class="hover:text-teal-400 transition-colors flex items-center gap-2"><i data-lucide="message-square-heart" class="w-4 h-4"></i>شاركنا رأيك</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="space-y-6">
+                    <h4 class="font-black text-white uppercase tracking-widest text-xs">ابقَ على اطلاع</h4>
+                    <p class="text-slate-400 font-medium text-sm leading-relaxed">اشترك ليصلك كل جديد عن محبة الحكمة</p>
+                    <div class="flex gap-2">
+                        <input id="newsletter-email" type="email" placeholder="بريدك الإلكتروني" class="flex-1 px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white text-sm font-medium placeholder:text-slate-500 focus:outline-none focus:border-teal-400 transition-colors">
+                        <button id="newsletter-btn" class="bg-gradient-to-r from-primary to-teal-400 px-5 py-3 rounded-xl font-bold text-sm hover:scale-105 transition-transform">اشترك</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-10 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 font-bold text-sm text-center md:text-right">
+                    جميع الحقوق محفوظة © ٢٠٢٦ محبة الحكمة. صُنع بشغف لنشر النور والمعرفة.
+                </p>
+                <div class="flex items-center gap-2 text-slate-500 text-sm font-bold">
+                    <span>صُنع بـ</span>
+                    <i data-lucide="heart" class="w-4 h-4 text-rose-500 fill-current"></i>
+                    <span>وحب الحكمة</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== SCRIPTS ========== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
+
+        // Sidebar
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('open');
+            document.getElementById('sidebar-overlay').classList.toggle('open');
+            document.body.style.overflow = document.getElementById('sidebar').classList.contains('open') ? 'hidden' : '';
+        }
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('nav-scrolled', window.scrollY > 50);
+        });
+
+        // Scroll reveal
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 80);
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // Newsletter
+        const NEWSLETTER_ENDPOINT = 'PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE';
+
+        document.getElementById('newsletter-btn').addEventListener('click', async () => {
+            const email = document.getElementById('newsletter-email').value.trim();
+            if (!email) { alert('يرجى إدخال البريد الإلكتروني'); return; }
+
+            if (!NEWSLETTER_ENDPOINT || NEWSLETTER_ENDPOINT.includes('PASTE_YOUR')) {
+                alert('الاشتراك غير مفعّل بعد على هذه الصفحة.');
+                return;
+            }
+
+            const btn = document.getElementById('newsletter-btn');
+            const original = btn.textContent;
+            btn.textContent = 'جاري...';
+            btn.disabled = true;
+            try {
+                const formData = new FormData();
+                formData.append('form_type', 'newsletter');
+                formData.append('email', email);
+                formData.append('timestamp', new Date().toISOString());
+                await fetch(NEWSLETTER_ENDPOINT, { method: 'POST', mode: 'no-cors', body: formData });
+                alert('شكراً لاشتراكك!');
+                document.getElementById('newsletter-email').value = '';
+            } catch {
+                alert('تعذّر الإرسال — تحقق من اتصالك بالإنترنت وحاول مرة أخرى.');
+            } finally {
+                btn.textContent = original;
+                btn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1802 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>التركيب: هوية الشخص | محبة الحكمة</title>
+    <meta name="description" content="أنشطة تفاعلية لتركيب درس هوية الشخص: استرجع، ميّز، جرّب تجربة فكرية، طبّق، ناقش الأطروحة ونقيضها، ثم اكتب تركيبك الفلسفي وتأمل في تعلمك.">
+    <link rel="canonical" href="https://mahabatlhikma.pages.dev/lessons/identity-synthesis">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mahabatlhikma.pages.dev/lessons/identity-synthesis">
+    <meta property="og:site_name" content="محبة الحكمة | Mahabat Lhikma">
+    <meta property="og:title" content="التركيب: هوية الشخص | محبة الحكمة">
+    <meta property="og:description" content="أنشطة تفاعلية لتركيب درس هوية الشخص: استرجع، ميّز، جرّب تجربة فكرية، طبّق، ناقش الأطروحة ونقيضها، ثم اكتب تركيبك الفلسفي وتأمل في تعلمك.">
+    <meta property="og:image" content="https://mahabatlhikma.pages.dev/assets/lessons/identity-cover.jpg">
+    <meta property="og:locale" content="ar_AR">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://mahabatlhikma.pages.dev/lessons/identity-synthesis">
+    <meta name="twitter:title" content="التركيب: هوية الشخص | محبة الحكمة">
+    <meta name="twitter:description" content="أنشطة تفاعلية لتركيب درس هوية الشخص: استرجع، ميّز، جرّب تجربة فكرية، طبّق، ناقش الأطروحة ونقيضها، ثم اكتب تركيبك الفلسفي وتأمل في تعلمك.">
+    <meta name="twitter:image" content="https://mahabatlhikma.pages.dev/assets/lessons/identity-cover.jpg">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/assets/logo/logo-mark.svg">
+    <link rel="apple-touch-icon" href="/assets/logo/logo-mark.svg">
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- Performance & Font Resource Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Schema.org JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://mahabatlhikma.pages.dev/" },
+            { "@type": "ListItem", "position": 2, "name": "دروس الفلسفة", "item": "https://mahabatlhikma.pages.dev/lessons" },
+            { "@type": "ListItem", "position": 3, "name": "التركيب: هوية الشخص", "item": "https://mahabatlhikma.pages.dev/lessons/identity-synthesis" }
+          ]
+        },
+        {
+          "@type": "LearningResource",
+          "name": "التركيب: هوية الشخص",
+          "description": "أنشطة تفاعلية لتركيب درس هوية الشخص: استرجع، ميّز، جرّب تجربة فكرية، طبّق، ناقش الأطروحة ونقيضها، ثم اكتب تركيبك الفلسفي وتأمل في تعلمك.",
+          "url": "https://mahabatlhikma.pages.dev/lessons/identity-synthesis",
+          "inLanguage": "ar",
+          "learningResourceType": "أنشطة تفاعلية لتركيب الدرس",
+          "teaches": "مفهوم الشخص — مجزوءة الوضع البشري",
+          "educationalLevel": "الثانية بكالوريا",
+          "publisher": { "@type": "EducationalOrganization", "name": "محبة الحكمة", "url": "https://mahabatlhikma.pages.dev/" }
+        }
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="/assets/css/tailwind.css">
+    <script defer src="/assets/js/lucide.min.js"></script>
+    <style>
+        :root {
+            --paper: oklch(0.995 0.005 88);
+            --surface: oklch(0.985 0.008 88);
+            --ink: oklch(0.25 0.025 245);
+            --primary: oklch(0.50 0.09 186);
+            --primary-soft: oklch(0.95 0.025 186);
+            --secondary: oklch(0.54 0.24 293);
+            --accent: oklch(0.63 0.15 58);
+            --success: oklch(0.55 0.13 150);
+            --success-soft: oklch(0.96 0.035 150);
+            --danger: oklch(0.55 0.18 27);
+            --danger-soft: oklch(0.96 0.035 27);
+            --line: oklch(0.91 0.012 245);
+        }
+
+        * { box-sizing: border-box; scroll-behavior: smooth; }
+        body { background-color: #fcfbf7; color: var(--ink); overflow-x: hidden; }
+        h1, h2, h3 { text-wrap: balance; }
+        p { text-wrap: pretty; }
+
+        .skip-link {
+            position: fixed;
+            top: 0.75rem;
+            right: 1rem;
+            z-index: 100;
+            transform: translateY(-150%);
+            background: var(--ink);
+            color: var(--paper);
+            padding: 0.75rem 1rem;
+            border-radius: 0.75rem;
+            font-weight: 800;
+        }
+        .skip-link:focus { transform: translateY(0); }
+
+        .glass { background: rgba(255,255,255,0.72); backdrop-filter: blur(16px) saturate(180%); border: 1px solid rgba(255,255,255,0.35); }
+        .sidebar-overlay { opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+        .sidebar-overlay.open { opacity: 1; pointer-events: all; }
+        .sidebar { transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.4,0,0.2,1); }
+        .sidebar.open { transform: translateX(0); }
+        .nav-scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.06); }
+
+        .hero-bg {
+            background:
+                radial-gradient(ellipse 80% 60% at 20% 20%, rgba(15,118,110,0.12), transparent),
+                radial-gradient(ellipse 60% 50% at 80% 80%, rgba(124,58,237,0.08), transparent),
+                radial-gradient(ellipse 40% 40% at 50% 50%, rgba(217,119,6,0.05), transparent);
+        }
+
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.16,1,0.3,1); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        .activity-surface {
+            background: var(--paper);
+            border: 1px solid oklch(0.96 0.008 245);
+            box-shadow: 0 12px 35px -28px rgba(15,23,42,0.25);
+        }
+
+        .choice {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            min-height: 3.25rem;
+            padding: 0.85rem 1rem;
+            border: 1px solid var(--line);
+            border-radius: 1rem;
+            background: var(--paper);
+            color: oklch(0.39 0.025 245);
+            cursor: pointer;
+            transition: border-color 180ms cubic-bezier(0.16, 1, 0.3, 1), background-color 180ms cubic-bezier(0.16, 1, 0.3, 1), transform 180ms cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .choice:hover { border-color: color-mix(in oklch, var(--primary) 55%, var(--line)); }
+        .choice:active { transform: scale(0.99); }
+        .choice:has(input:checked) {
+            border-color: var(--primary);
+            background: var(--primary-soft);
+            color: oklch(0.34 0.065 186);
+        }
+        .choice input { margin-top: 0.2rem; accent-color: var(--primary); flex: 0 0 auto; }
+        .choice.correct {
+            border-color: var(--success);
+            background: var(--success-soft);
+            color: oklch(0.35 0.09 150);
+        }
+        .choice.incorrect {
+            border-color: var(--danger);
+            background: var(--danger-soft);
+            color: oklch(0.40 0.13 27);
+        }
+
+        .feedback {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            margin-top: 0.75rem;
+            padding: 0.8rem 1rem;
+            border-radius: 0.9rem;
+            font-size: 0.925rem;
+            font-weight: 700;
+            line-height: 1.7;
+        }
+        .feedback.success { background: var(--success-soft); color: oklch(0.36 0.10 150); }
+        .feedback.error { background: var(--danger-soft); color: oklch(0.41 0.14 27); }
+
+        .primary-button,
+        .secondary-button,
+        .accent-button,
+        .quiet-button {
+            display: inline-flex;
+            min-height: 3rem;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            border-radius: 0.9rem;
+            padding: 0.75rem 1.2rem;
+            font-weight: 900;
+            transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1), background-color 180ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 180ms cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .primary-button {
+            background: linear-gradient(135deg, #0f766e, #14b8a6);
+            color: var(--paper);
+            box-shadow: 0 12px 28px -18px #0f766e;
+        }
+        .primary-button:hover { transform: translateY(-2px); box-shadow: 0 16px 32px -18px #0f766e; }
+        .secondary-button { background: #7c3aed; color: var(--paper); box-shadow: 0 12px 28px -20px #7c3aed; }
+        .secondary-button:hover { background: #5b21b6; transform: translateY(-2px); }
+        .accent-button { background: linear-gradient(135deg, #d97706, #fbbf24); color: #fffdf8; box-shadow: 0 12px 28px -18px #b45309; }
+        .accent-button:hover { transform: translateY(-2px); }
+        .quiet-button { border: 1px solid #e2e8f0; background: var(--paper); color: #334155; }
+        .quiet-button:hover { border-color: #0f766e; color: #0f766e; }
+
+        button:disabled { cursor: not-allowed; opacity: 0.55; transform: none !important; }
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible,
+        summary:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 3px;
+        }
+
+        .step-link[data-state="complete"] .step-number {
+            background: var(--success);
+            color: var(--paper);
+        }
+        .step-link[data-state="current"] .step-number {
+            background: var(--primary);
+            color: var(--paper);
+            box-shadow: 0 0 0 5px var(--primary-soft);
+        }
+
+        .criterion[data-met="true"] .criterion-icon {
+            background: var(--success);
+            border-color: var(--success);
+            color: var(--paper);
+        }
+        .criterion[data-met="true"] { color: oklch(0.36 0.09 150); }
+
+        .completion-panel {
+            background:
+                radial-gradient(circle at 85% 10%, rgba(20,184,166,0.18), transparent 35%),
+                radial-gradient(circle at 5% 90%, rgba(124,58,237,0.16), transparent 35%),
+                linear-gradient(135deg, #0f172a, #1e293b);
+        }
+
+        textarea { resize: vertical; }
+        textarea::placeholder { color: oklch(0.66 0.02 245); }
+
+        .socratic-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            min-height: 2.75rem;
+            padding: 0.6rem 1rem;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            background: var(--paper);
+            color: oklch(0.39 0.025 245);
+            font-weight: 800;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: border-color 180ms cubic-bezier(0.16, 1, 0.3, 1), background-color 180ms cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .socratic-chip:hover { border-color: color-mix(in oklch, var(--accent) 60%, var(--line)); }
+        .socratic-chip[aria-expanded="true"] {
+            border-color: var(--accent);
+            background: oklch(0.96 0.04 58);
+            color: oklch(0.45 0.12 58);
+        }
+
+        .move-badge {
+            display: inline-block;
+            padding: 0.15rem 0.7rem;
+            border-radius: 999px;
+            font-size: 0.7rem;
+            font-weight: 900;
+            letter-spacing: 0.02em;
+        }
+
+        @media (pointer: coarse) {
+            .choice, .primary-button, .secondary-button, .accent-button, .quiet-button { min-height: 3.5rem; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+                animation-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-900 antialiased">
+    <a href="#main-content" class="skip-link">انتقل إلى الأنشطة</a>
+
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 glass transition-all duration-300" aria-label="التنقل الرئيسي">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <a href="/" class="flex items-center gap-3 group">
+                    <img src="/assets/logo/logo-mark.svg" alt="محبة الحكمة" class="w-11 h-11 flex-shrink-0 group-hover:scale-105 transition-transform duration-300">
+                    <div>
+                        <div class="text-2xl font-black tracking-tight text-primary leading-none">محبة الحكمة</div>
+                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] leading-none mt-1">Mahabat Lhikma</p>
+                    </div>
+                </a>
+
+                <div class="hidden lg:flex items-center gap-1">
+                    <a href="/" class="px-4 py-2 rounded-xl text-slate-600 font-bold text-sm hover:text-primary hover:bg-primary/5 transition-all">الرئيسية</a>
+                    <a href="/lessons" class="px-4 py-2 rounded-xl text-primary font-bold text-sm bg-primary/5 transition-all">دروس الفلسفة</a>
+                    <a href="/philomedia" class="px-4 py-2 rounded-xl text-slate-600 font-bold text-sm hover:text-primary hover:bg-primary/5 transition-all">فيلوميديا</a>
+                    <a href="/prompts" class="px-4 py-2 rounded-xl text-slate-600 font-bold text-sm hover:text-primary hover:bg-primary/5 transition-all">أدوات الذكاء الفلسفي</a>
+                    <a href="/skills" class="px-4 py-2 rounded-xl text-slate-600 font-bold text-sm hover:text-primary hover:bg-primary/5 transition-all">المهارات التعليمية</a>
+                    <a href="/games" class="px-4 py-2 rounded-xl text-slate-600 font-bold text-sm hover:text-primary hover:bg-primary/5 transition-all">الألعاب</a>
+                    <a href="/notebooklm" class="px-4 py-2 rounded-xl text-slate-600 font-bold text-sm hover:text-primary hover:bg-primary/5 transition-all">دليل NotebookLM</a>
+                    <a href="/booklet" class="px-4 py-2 rounded-xl text-slate-600 font-bold text-sm hover:text-primary hover:bg-primary/5 transition-all">كتيّب الذكاء الاصطناعي</a>
+                    <a href="/feedback" class="px-4 py-2 rounded-xl text-slate-600 font-bold text-sm hover:text-rose-500 hover:bg-rose-50 transition-all flex items-center gap-1.5">
+                        <i data-lucide="message-square-heart" class="w-4 h-4" aria-hidden="true"></i>شاركنا رأيك
+                    </a>
+                </div>
+
+                <button type="button" onclick="toggleSidebar()" class="lg:hidden p-2.5 rounded-xl text-slate-600 hover:bg-slate-100 transition-colors" id="menu-toggle" aria-label="فتح قائمة التنقل" aria-controls="sidebar" aria-expanded="false">
+                    <i data-lucide="menu" class="w-6 h-6" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div id="sidebar-overlay" class="fixed inset-0 z-[60] bg-black/40 sidebar-overlay" onclick="toggleSidebar()"></div>
+    <aside id="sidebar" class="fixed top-0 right-0 z-[70] w-80 max-w-[88vw] h-full bg-white shadow-2xl sidebar" aria-label="قائمة التنقل">
+        <div class="p-6 space-y-6">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <img src="/assets/logo/logo-mark.svg" alt="" class="w-8 h-8">
+                    <span class="text-xl font-black text-primary">محبة الحكمة</span>
+                </div>
+                <button type="button" onclick="toggleSidebar()" class="p-2 rounded-xl hover:bg-slate-100" aria-label="إغلاق قائمة التنقل"><i data-lucide="x" class="w-5 h-5 text-slate-500" aria-hidden="true"></i></button>
+            </div>
+            <div class="space-y-1">
+                <a href="/" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-50 font-bold transition-colors"><i data-lucide="home" class="w-5 h-5" aria-hidden="true"></i>الرئيسية</a>
+                <a href="/lessons" class="flex items-center gap-3 px-4 py-3 rounded-xl text-primary bg-primary/5 font-bold"><i data-lucide="library" class="w-5 h-5" aria-hidden="true"></i>دروس الفلسفة</a>
+                <a href="/philomedia" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-50 font-bold transition-colors"><i data-lucide="video" class="w-5 h-5" aria-hidden="true"></i>فيلوميديا</a>
+                <a href="/prompts" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-50 font-bold transition-colors"><i data-lucide="wand-2" class="w-5 h-5" aria-hidden="true"></i>أدوات الذكاء الفلسفي</a>
+                <a href="/skills" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-50 font-bold transition-colors"><i data-lucide="graduation-cap" class="w-5 h-5" aria-hidden="true"></i>المهارات التعليمية</a>
+                <a href="/games" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-50 font-bold transition-colors"><i data-lucide="gamepad-2" class="w-5 h-5" aria-hidden="true"></i>الألعاب</a>
+                <a href="/notebooklm" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-50 font-bold transition-colors"><i data-lucide="notebook-pen" class="w-5 h-5" aria-hidden="true"></i>دليل NotebookLM</a>
+                <a href="/booklet" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-50 font-bold transition-colors"><i data-lucide="book-open-check" class="w-5 h-5" aria-hidden="true"></i>كتيّب الذكاء الاصطناعي</a>
+                <a href="/feedback" class="flex items-center gap-3 px-4 py-3 rounded-xl text-white bg-gradient-to-r from-primary to-primary-dark font-bold mt-4 shadow-lg shadow-primary/20"><i data-lucide="message-square-heart" class="w-5 h-5" aria-hidden="true"></i>شاركنا رأيك</a>
+            </div>
+        </div>
+    </aside>
+
+    <header class="relative pt-32 pb-14 md:pt-36 md:pb-16 overflow-hidden hero-bg">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <nav class="flex items-center flex-wrap gap-2 text-sm font-bold text-slate-400 mb-8 reveal" aria-label="مسار التنقل">
+                <a href="/" class="hover:text-primary transition-colors">الرئيسية</a>
+                <i data-lucide="chevron-left" class="w-4 h-4" aria-hidden="true"></i>
+                <a href="/lessons" class="hover:text-primary transition-colors">دروس الفلسفة</a>
+                <i data-lucide="chevron-left" class="w-4 h-4" aria-hidden="true"></i>
+                <a href="/lessons/identity-problematique" class="hover:text-primary transition-colors">هوية الشخص</a>
+                <i data-lucide="chevron-left" class="w-4 h-4" aria-hidden="true"></i>
+                <span class="text-primary" aria-current="page">التركيب</span>
+            </nav>
+
+            <div class="reveal space-y-5 max-w-3xl">
+                <div class="flex items-center gap-2 text-xs font-bold text-slate-400 uppercase tracking-widest flex-wrap">
+                    <span>مجزوءة الوضع البشري</span>
+                    <span class="w-1 h-1 rounded-full bg-slate-300"></span>
+                    <span>محور الشخص</span>
+                    <span class="w-1 h-1 rounded-full bg-slate-300"></span>
+                    <span class="text-primary">المرحلة الثالثة</span>
+                </div>
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-black text-slate-900 leading-[1.15] tracking-tight">
+                    التركيب <span class="text-primary">والتقويم</span>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-500 font-medium leading-relaxed max-w-2xl">
+                    استرجع من ذاكرتك، ميّز بين مواقف لوك وشوبنهاور وفرويد، خُض تجربة فكرية، طبّق المفاهيم، ابنِ المناقشة بنقيضها، ثم اكتب خلاصة فلسفية بصوتك الخاص وتأمل في تعلمك.
+                </p>
+                <div class="flex flex-wrap gap-x-6 gap-y-3 pt-1 text-sm font-bold text-slate-500">
+                    <span class="inline-flex items-center gap-2"><i data-lucide="clock-3" class="w-4 h-4 text-primary" aria-hidden="true"></i>من ٣٠ إلى ٣٥ دقيقة</span>
+                    <span class="inline-flex items-center gap-2"><i data-lucide="refresh-cw" class="w-4 h-4 text-primary" aria-hidden="true"></i>محاولات غير محدودة</span>
+                    <span class="inline-flex items-center gap-2"><i data-lucide="message-circle-more" class="w-4 h-4 text-primary" aria-hidden="true"></i>تفسير فوري لكل إجابة</span>
+                </div>
+                <p class="text-sm text-slate-400 font-medium leading-relaxed max-w-xl">
+                    ستُحفظ كتاباتك وإجاباتك في متصفحك تلقائيًا، ويمكنك العودة لاحقًا لتُكمل من حيث توقفت.
+                </p>
+            </div>
+        </div>
+
+        <div class="absolute top-10 right-0 w-[400px] h-[400px] bg-primary/[0.08] rounded-full blur-[100px] -z-[1]"></div>
+        <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-secondary/[0.06] rounded-full blur-[120px] -z-[1]"></div>
+    </header>
+
+    <div class="sticky top-20 z-30 glass border-y border-slate-100/80">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex items-center justify-between gap-4 mb-3">
+                <p id="progress-label" class="font-black text-sm text-slate-700">لم تبدأ الأنشطة بعد</p>
+                <span id="progress-count" class="text-xs font-black text-primary">٠ من ٧</span>
+            </div>
+            <div class="h-2 bg-slate-200 rounded-full overflow-hidden" role="progressbar" aria-labelledby="progress-label" aria-valuemin="0" aria-valuemax="7" aria-valuenow="0" id="progress-bar">
+                <div id="progress-fill" class="h-full bg-primary rounded-full transition-[width] duration-200" style="width: 0%"></div>
+            </div>
+            <ol class="grid grid-cols-4 md:grid-cols-7 gap-2 mt-4" aria-label="مراحل التركيب">
+                <li>
+                    <a href="#retrieve" class="step-link flex items-center gap-2 text-sm font-black text-slate-600" data-step="retrieve" data-state="current">
+                        <span class="step-number w-7 h-7 rounded-full bg-slate-200 flex items-center justify-center text-xs flex-shrink-0">١</span>
+                        <span>استرجع</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#distinguish" class="step-link flex items-center gap-2 text-sm font-black text-slate-600" data-step="distinguish" data-state="pending">
+                        <span class="step-number w-7 h-7 rounded-full bg-slate-200 flex items-center justify-center text-xs flex-shrink-0">٢</span>
+                        <span>ميّز</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#experiment" class="step-link flex items-center gap-2 text-sm font-black text-slate-600" data-step="experiment" data-state="pending">
+                        <span class="step-number w-7 h-7 rounded-full bg-slate-200 flex items-center justify-center text-xs flex-shrink-0">٣</span>
+                        <span>جرّب</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#apply" class="step-link flex items-center gap-2 text-sm font-black text-slate-600" data-step="apply" data-state="pending">
+                        <span class="step-number w-7 h-7 rounded-full bg-slate-200 flex items-center justify-center text-xs flex-shrink-0">٤</span>
+                        <span>طبّق</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#discuss" class="step-link flex items-center gap-2 text-sm font-black text-slate-600" data-step="discuss" data-state="pending">
+                        <span class="step-number w-7 h-7 rounded-full bg-slate-200 flex items-center justify-center text-xs flex-shrink-0">٥</span>
+                        <span>ناقش</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#synthesize" class="step-link flex items-center gap-2 text-sm font-black text-slate-600" data-step="synthesize" data-state="pending">
+                        <span class="step-number w-7 h-7 rounded-full bg-slate-200 flex items-center justify-center text-xs flex-shrink-0">٦</span>
+                        <span>ركّب</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#reflect" class="step-link flex items-center gap-2 text-sm font-black text-slate-600" data-step="reflect" data-state="pending">
+                        <span class="step-number w-7 h-7 rounded-full bg-slate-200 flex items-center justify-center text-xs flex-shrink-0">٧</span>
+                        <span>تأمل</span>
+                    </a>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <main id="main-content" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 space-y-14">
+
+        <!-- ========== STEP 1: FREE RECALL ========== -->
+        <section id="retrieve" class="reveal activity-surface rounded-[32px] overflow-hidden shadow-sm scroll-mt-48" aria-labelledby="retrieve-title">
+            <div class="p-6 sm:p-8 md:p-10 border-b border-slate-200/70">
+                <div class="flex flex-col sm:flex-row sm:items-start gap-5">
+                    <span class="w-12 h-12 rounded-2xl bg-slate-800 text-paper flex items-center justify-center font-black text-xl flex-shrink-0">١</span>
+                    <div class="space-y-2">
+                        <p class="text-sm font-black text-slate-600">الخطوة الأولى، ٣ دقائق</p>
+                        <h2 id="retrieve-title" class="text-2xl md:text-3xl font-black">استرجع قبل أن تبدأ</h2>
+                        <p class="text-slate-600 font-medium leading-relaxed max-w-[65ch]">أغلق الدرس في ذهنك، واكتب من ذاكرتك وحدها كل ما تتذكره عن مواقف الفلاسفة الثلاثة من هوية الشخص: دعوى كل فيلسوف، حجته، ومثاله الذي درسته.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-6 sm:p-8 md:p-10 space-y-6">
+                <div class="bg-amber-50 border border-amber-100 rounded-2xl p-4 flex gap-3 items-start">
+                    <i data-lucide="info" class="w-5 h-5 text-accent-dark mt-0.5 flex-shrink-0" aria-hidden="true"></i>
+                    <p class="text-sm font-bold text-amber-900 leading-relaxed">قد تجد الخطوة أصعب من إعادة قراءة الملخص — وهذه الصعوبة مقصودة: محاولة الاسترجاع قبل المراجعة تثبّت الفهم في الذاكرة أضعاف ما تثبته إعادة القراءة. ما لم تتذكره ليس فشلًا، بل هو بالضبط ما ستقوّيه الأنشطة التالية.</p>
+                </div>
+
+                <form id="retrieve-form" novalidate>
+                    <label for="retrieve-text" class="font-black text-slate-800 block mb-3">اكتب هنا كل ما تتذكره، بكلمات متفرقة أو جمل كاملة</label>
+                    <textarea id="retrieve-text" rows="6" class="w-full rounded-2xl border border-slate-300 bg-surface px-5 py-4 text-base leading-loose font-medium text-slate-800 focus:border-primary" aria-describedby="retrieve-count retrieve-summary" placeholder="لوك يرى أن... / شوبنهاور يعترض بأن... / فرويد يكشف أن..."></textarea>
+                    <div class="flex flex-wrap items-center justify-between gap-3 mt-3 text-sm font-bold">
+                        <p id="retrieve-summary" aria-live="polite" class="text-slate-500">اكتب أولًا من ذاكرتك، ثم اكشف خريطة المواقف لتقارن — الترتيب مهم.</p>
+                        <p id="retrieve-count" class="text-slate-500" aria-live="polite">٠ كلمة</p>
+                    </div>
+                    <div class="mt-5">
+                        <button type="button" id="reveal-map" class="primary-button">
+                            <i data-lucide="map" class="w-5 h-5" aria-hidden="true"></i>
+                            قارن بخريطة المواقف
+                        </button>
+                    </div>
+                </form>
+
+                <div id="concept-map" class="hidden" aria-labelledby="concept-map-title">
+                    <h3 id="concept-map-title" class="text-xl font-black mb-4">خريطة المواقف — قارنها بما كتبت</h3>
+                    <dl class="border-y border-slate-200 divide-y divide-slate-200">
+                        <div class="grid sm:grid-cols-[9rem_1fr] gap-2 sm:gap-5 py-4">
+                            <dt class="font-black text-primary">جون لوك</dt>
+                            <dd class="text-slate-600 font-medium leading-relaxed">هوية الشخص تقوم على الوعي الذي يصل الحاضر بالماضي. الدعوى: الوعي الممتد وحده يجعل الشخص «هو هو». البينة: التذكر الحاضر لأفعال ماضية صادرة عن الذات نفسها.</dd>
+                        </div>
+                        <div class="grid sm:grid-cols-[9rem_1fr] gap-2 sm:gap-5 py-4">
+                            <dt class="font-black text-secondary">شوبنهاور</dt>
+                            <dd class="text-slate-600 font-medium leading-relaxed">الهوية تقوم على الإرادة والطبع الثابت، لا على الذاكرة المتغيرة. الدعوى: نواة وجودنا خارجة عن الزمان. البينة: فقدان الذاكرة لا يُلغي الهوية، بينما يبقى الطبع نفسه.</dd>
+                        </div>
+                        <div class="grid sm:grid-cols-[9rem_1fr] gap-2 sm:gap-5 py-4">
+                            <dt class="font-black text-accent-dark">سيغموند فرويد</dt>
+                            <dd class="text-slate-600 font-medium leading-relaxed">الأنا ليست وحدة مستقلة، بل تتشكل داخل صراع الهو والأنا الأعلى والواقع. لا يبحث عن أساس ثابت للهوية بل يفكك فكرة الأنا الشفافة.</dd>
+                        </div>
+                    </dl>
+                    <p class="mt-4 text-sm font-bold text-slate-500 leading-relaxed">راجع ما فاتك في الخريطة، ثم تابع — سيعود الاسترجاع مرة أخرى في الخطوة الأخيرة لتقيس الفرق بنفسك.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== STEP 2: DISTINGUISH ========== -->
+        <section id="distinguish" class="reveal activity-surface rounded-[32px] overflow-hidden shadow-sm scroll-mt-48" aria-labelledby="distinguish-title">
+            <div class="p-6 sm:p-8 md:p-10 border-b border-slate-200/70">
+                <div class="flex flex-col sm:flex-row sm:items-start gap-5">
+                    <span class="w-12 h-12 rounded-2xl bg-primary text-paper flex items-center justify-center font-black text-xl flex-shrink-0">٢</span>
+                    <div class="space-y-2">
+                        <p class="text-sm font-black text-primary">الخطوة الثانية، ٤ دقائق</p>
+                        <h2 id="distinguish-title" class="text-2xl md:text-3xl font-black">اربط الموقف بصاحبه</h2>
+                        <p class="text-slate-600 font-medium leading-relaxed max-w-[65ch]">اختر الفيلسوف الذي يعبّر عنه كل موقف. لا بأس إن أخطأت، ستحصل على تفسير يساعدك على المحاولة من جديد.</p>
+                    </div>
+                </div>
+            </div>
+
+            <form id="distinguish-form" class="divide-y divide-slate-200/70" novalidate>
+                <div id="distinguish-questions"></div>
+                <div class="p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center gap-4">
+                    <button type="submit" class="primary-button">
+                        <i data-lucide="scan-search" class="w-5 h-5" aria-hidden="true"></i>
+                        تحقّق من الربط
+                    </button>
+                    <p id="distinguish-summary" class="text-sm font-bold text-slate-500" aria-live="polite">أجب عن العبارات الست، ثم تحقّق من فهمك.</p>
+                </div>
+            </form>
+        </section>
+
+        <!-- ========== STEP 3: THOUGHT EXPERIMENT ========== -->
+        <section id="experiment" class="reveal activity-surface rounded-[32px] overflow-hidden shadow-sm scroll-mt-48" aria-labelledby="experiment-title">
+            <div class="p-6 sm:p-8 md:p-10 border-b border-slate-200/70">
+                <div class="flex flex-col sm:flex-row sm:items-start gap-5">
+                    <span class="w-12 h-12 rounded-2xl bg-secondary text-paper flex items-center justify-center font-black text-xl flex-shrink-0">٣</span>
+                    <div class="space-y-2">
+                        <p class="text-sm font-black text-secondary">الخطوة الثالثة، ٤ دقائق</p>
+                        <h2 id="experiment-title" class="text-2xl md:text-3xl font-black">تجربة فكرية: من الذي يخرج من الآلة؟</h2>
+                        <p class="text-slate-600 font-medium leading-relaxed max-w-[65ch]">ليست هنا إجابة صحيحة خاطئة — أنت تلتزم بحكم، ثم تواجهه بمواقف الفلاسفة، ثم تسجل حكمك النهائي. هكذا يعمل التفكير الفلسفي.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-6 sm:p-8 md:p-10 space-y-8">
+                <div class="bg-secondary/5 border border-secondary/10 rounded-2xl p-5 sm:p-6 space-y-4">
+                    <div class="flex items-center gap-2 text-secondary font-black text-sm">
+                        <i data-lucide="flask-conical" class="w-4 h-4" aria-hidden="true"></i>
+                        آلة «الانتقال الأخير»
+                    </div>
+                    <p class="text-lg text-slate-700 font-bold leading-loose">
+                        س تدخل آلة تنسخ وعيك وذكرياتك بالكامل إلى جسد مطابق لجسدك، ثم يُفنَّد جسدك الأصلي. الكائن الذي سيخرج من الآلة يتذكر طفولتك، يحمل أحلامك، ويجيب عن سؤال «من أنا؟» كما تجيب أنت تمامًا.
+                    </p>
+                    <p class="text-lg text-slate-900 font-black leading-loose">هل الكائن الذي يخرج من الآلة هو أنت فعلًا؟</p>
+                </div>
+
+                <fieldset>
+                    <legend class="font-black text-slate-800 mb-4">التزم بحكمك الأول قبل أن ترى أي موقف</legend>
+                    <div class="grid gap-3">
+                        <label class="choice">
+                            <input type="radio" name="experiment-commitment" value="same">
+                            <span class="font-bold leading-relaxed">نعم، هو أنا — ما دام وعيه وذكرياته هي نفسها.</span>
+                        </label>
+                        <label class="choice">
+                            <input type="radio" name="experiment-commitment" value="copy">
+                            <span class="font-bold leading-relaxed">لا، هو نسخة أخرى — الأنا أكثر من ذكريات.</span>
+                        </label>
+                        <label class="choice">
+                            <input type="radio" name="experiment-commitment" value="unsure">
+                            <span class="font-bold leading-relaxed">أتردد — أحتاج إلى التمييز بين عناصر هويتي أولًا.</span>
+                        </label>
+                    </div>
+                </fieldset>
+
+                <div id="experiment-perspectives" class="hidden space-y-4" aria-live="polite">
+                    <h3 class="text-xl font-black">هكذا ينظر الفلاسفة الثلاثة إلى حكمك</h3>
+                    <p class="text-sm font-bold text-slate-500 leading-relaxed">اقرأ المواقف الثلاثة بتمعّن — كل واحد سيجعلك ترى التجربة من زاوية مختلفة.</p>
+                    <div class="border-r-4 border-primary bg-primary/5 rounded-2xl p-5">
+                        <p class="font-black text-primary mb-2">لو سُئل لوك</p>
+                        <p class="text-slate-700 font-medium leading-loose">العبرة عندي بالوعي الممتد، لا بمادة الجسد: جسدك نفسه يتبدل خلية خلية منذ طفولتك وأنت تعد نفسك أنت. ما دامت سلسلة الوعي والذكريات متصلة، فالذي يتذكر ماضيك بوعيك هو أنت — أما الجسد فليس شرطًا في الهوية الشخصية أصلًا.</p>
+                    </div>
+                    <div class="border-r-4 border-secondary bg-secondary/5 rounded-2xl p-5">
+                        <p class="font-black text-secondary mb-2">لو سُئل شوبنهاور</p>
+                        <p class="text-slate-700 font-medium leading-loose">هويتك ليست ذكرياتك ولا جسدك، بل إرادتك وطبعك الثابت — نواة وجودك التي لا تسكن الزمان. السؤال الحاسم إذن: هل انتقلت «إرادتك أنت» إلى النسخة، أم نشأت فيها إرادة شبيهة بها؟ الذاكرة وحدها لا تجيب عن هذا السؤال.</p>
+                    </div>
+                    <div class="border-r-4 border-accent bg-accent/5 rounded-2xl p-5">
+                        <p class="font-black text-accent-dark mb-2">لو سُئل فرويد</p>
+                        <p class="text-slate-700 font-medium leading-loose">السؤال نفسه يفترض «أنا» موحدًا شفافًا يُنقل كما يُنقل وعاء. لكن الأنا عندي محاصر بين الهو والأنا الأعلى والواقع، ويستخدم التمويه والمساومة ليستمر — فأي «أنا» الذي خرج من الآلة إذن؟ ربما يجب أن نسأل: من الذي كان يسأل أصلًا؟</p>
+                    </div>
+
+                    <fieldset class="pt-2">
+                        <legend class="font-black text-slate-800 mb-4">بعد مواجهة المواقف الثلاثة: هل تعدّل حكمك؟</legend>
+                        <div class="grid sm:grid-cols-2 gap-3">
+                            <label class="choice">
+                                <input type="radio" name="experiment-revision" value="keep">
+                                <span class="font-bold leading-relaxed">أُبقي على حكمي الأول — المواقف عززته.</span>
+                            </label>
+                            <label class="choice">
+                                <input type="radio" name="experiment-revision" value="revise">
+                                <span class="font-bold leading-relaxed">أُعدّل حكمي — رؤية جديدة قنعتني.</span>
+                            </label>
+                        </div>
+                        <div class="feedback success hidden mt-4" id="experiment-feedback">
+                            <i data-lucide="circle-check" class="w-5 h-5 mt-0.5 flex-shrink-0" aria-hidden="true"></i>
+                            <span>سُجّل حكمك النهائي. لاحظ ما حدث: مواجهة المواقف دفعتك إلى مساءلة حدسك الأول وتبرير موقفك — هذه هي حركة «المناقشة» الفلسفية بعينها، وهي قلب المقالة في الامتحان الوطني.</span>
+                        </div>
+                    </fieldset>
+
+                    <div class="pt-2">
+                        <label for="experiment-reason" class="font-black text-slate-800 block mb-3">بجملة واحدة: ما الذي جعلك تُبقي حكمك أو تُعدّله؟ <span class="font-bold text-slate-400">(اختياري لكنه يثبّت موقفك)</span></label>
+                        <textarea id="experiment-reason" rows="3" class="w-full rounded-2xl border border-slate-300 bg-surface px-5 py-4 text-base leading-loose font-medium text-slate-800 focus:border-secondary" placeholder="عدّلت حكمي لأن شوبنهاور جعلني ألاحظ أن..."></textarea>
+                    </div>
+                </div>
+
+                <p id="experiment-summary" class="text-sm font-bold text-slate-500" aria-live="polite">اختر حكمك الأول للكشف عن مواقف الفلاسفة الثلاثة.</p>
+            </div>
+        </section>
+
+        <!-- ========== STEP 4: APPLY ========== -->
+        <section id="apply" class="reveal activity-surface rounded-[32px] overflow-hidden shadow-sm scroll-mt-48" aria-labelledby="apply-title">
+            <div class="p-6 sm:p-8 md:p-10 border-b border-slate-200/70">
+                <div class="flex flex-col sm:flex-row sm:items-start gap-5">
+                    <span class="w-12 h-12 rounded-2xl bg-accent text-paper flex items-center justify-center font-black text-xl flex-shrink-0">٤</span>
+                    <div class="space-y-2">
+                        <p class="text-sm font-black text-accent-dark">الخطوة الرابعة، ٦ دقائق</p>
+                        <h2 id="apply-title" class="text-2xl md:text-3xl font-black">من يفسّر هذه الحالة؟</h2>
+                        <p class="text-slate-600 font-medium leading-relaxed max-w-[65ch]">لا تبحث عن اسم الفيلسوف فقط. اختر الجواب الذي يربط الحالة بالمفهوم المناسب.</p>
+                    </div>
+                </div>
+            </div>
+
+            <form id="apply-form" class="divide-y divide-slate-200/70" novalidate>
+                <div id="application-scenarios"></div>
+                <div class="p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center gap-4">
+                    <button type="submit" class="accent-button">
+                        <i data-lucide="lightbulb" class="w-5 h-5" aria-hidden="true"></i>
+                        تحقّق من التحليل
+                    </button>
+                    <p id="apply-summary" class="text-sm font-bold text-slate-500" aria-live="polite">حلّل الحالات الأربع قبل التحقّق.</p>
+                </div>
+            </form>
+        </section>
+
+        <!-- ========== STEP 5: DISCUSS (OBJECTION TRAINING) ========== -->
+        <section id="discuss" class="reveal activity-surface rounded-[32px] overflow-hidden shadow-sm scroll-mt-48" aria-labelledby="discuss-title">
+            <div class="p-6 sm:p-8 md:p-10 border-b border-slate-200/70">
+                <div class="flex flex-col sm:flex-row sm:items-start gap-5">
+                    <span class="w-12 h-12 rounded-2xl bg-primary-dark text-paper flex items-center justify-center font-black text-xl flex-shrink-0">٥</span>
+                    <div class="space-y-2">
+                        <p class="text-sm font-black text-primary-dark">الخطوة الخامسة، ٥ دقائق</p>
+                        <h2 id="discuss-title" class="text-2xl md:text-3xl font-black">ابنِ المناقشة: أطروحة، نقيض، تركيب</h2>
+                        <p class="text-slate-600 font-medium leading-relaxed max-w-[65ch]">أصعب ما في المقالة الفلسفية ليس عرض المواقف بل تحريكها: أن تعترض بحجة، وتدفع النقيض ببينة، وتتجاوز التقابل بحسم مبرر. تتدرّب هنا على الحركات الثلاث كما تنقّط بها شبكة الامتحان: التحليل، المناقشة، التركيب.</p>
+                    </div>
+                </div>
+            </div>
+
+            <form id="discuss-form" class="divide-y divide-slate-200/70" novalidate>
+                <div id="discuss-questions"></div>
+                <div class="p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center gap-4">
+                    <button type="submit" class="primary-button !bg-none !bg-primary-dark" style="background:#0d5f58">
+                        <i data-lucide="swords" class="w-5 h-5" aria-hidden="true"></i>
+                        تحقّق من بنائك المنهجي
+                    </button>
+                    <p id="discuss-summary" class="text-sm font-bold text-slate-500" aria-live="polite">أجب عن الأسئلة الأربعة، ثم تحقّق من حركاتك الحجاجية.</p>
+                </div>
+            </form>
+        </section>
+
+        <!-- ========== STEP 6: SYNTHESIZE ========== -->
+        <section id="synthesize" class="reveal activity-surface rounded-[32px] overflow-hidden shadow-sm scroll-mt-48" aria-labelledby="synthesize-title">
+            <div class="p-6 sm:p-8 md:p-10 border-b border-slate-200/70">
+                <div class="flex flex-col sm:flex-row sm:items-start gap-5">
+                    <span class="w-12 h-12 rounded-2xl bg-secondary-dark text-paper flex items-center justify-center font-black text-xl flex-shrink-0">٦</span>
+                    <div class="space-y-2">
+                        <p class="text-sm font-black text-secondary-dark">الخطوة السادسة، ٨ دقائق</p>
+                        <h2 id="synthesize-title" class="text-2xl md:text-3xl font-black">ابنِ تركيبك الفلسفي</h2>
+                        <p class="text-slate-600 font-medium leading-relaxed max-w-[65ch]">اجمع المواقف في جواب واحد منظم على طريقة المقالة: إشكال، أطروحة، نقيض، ثم حسم شخصي مبرر. نحن نتحقق من بنية الجواب، لا نحكم آليًا على رأيك الفلسفي.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-6 sm:p-8 md:p-10 space-y-8">
+                <div class="flex flex-wrap items-center justify-between gap-3">
+                    <a href="#concept-map" id="map-link" class="inline-flex items-center gap-2 text-sm font-black text-primary hover:underline">
+                        <i data-lucide="map" class="w-4 h-4" aria-hidden="true"></i>
+                        راجع خريطة المواقف قبل الكتابة
+                    </a>
+                    <span class="text-xs font-bold text-slate-400">الرابط يعيدك إلى الخطوة الأولى</span>
+                </div>
+
+                <form id="synthesis-form" novalidate>
+                    <fieldset>
+                        <legend class="text-xl font-black mb-3">سؤال التركيب</legend>
+                        <p class="text-lg text-slate-700 font-bold leading-loose mb-5">
+                            هل يمكن تفسير هوية الشخص بعنصر واحد، أم أنها نتيجة تفاعل الوعي والإرادة والقوى النفسية؟
+                        </p>
+
+                        <div class="flex flex-wrap items-center justify-between gap-3 mb-3">
+                            <label for="synthesis-text" class="font-black text-slate-800">اكتب جوابًا من ٩٠ إلى ١٤٠ كلمة</label>
+                            <button type="button" id="insert-scaffold" class="quiet-button text-sm">
+                                <i data-lucide="list-tree" class="w-4 h-4" aria-hidden="true"></i>
+                                استخدم الهيكل المقترح
+                            </button>
+                        </div>
+                        <textarea id="synthesis-text" rows="10" class="w-full rounded-2xl border border-slate-300 bg-surface px-5 py-4 text-base leading-loose font-medium text-slate-800 focus:border-primary" aria-describedby="word-count synthesis-guidance" placeholder="ابدأ بطرح الإشكال، ثم اعرض موقف لوك، وادفع نقيضه بشوبنهاور، وأدخل منظور فرويد، واختم بحسم مبرر..."></textarea>
+                        <div class="flex flex-wrap items-center justify-between gap-3 mt-3 text-sm font-bold">
+                            <p id="synthesis-guidance" class="text-slate-500">يمكنك تعديل الهيكل المقترح بحرية، المهم أن يبقى الجواب من صياغتك.</p>
+                            <p id="word-count" class="text-slate-500" aria-live="polite">٠ كلمة</p>
+                        </div>
+                    </fieldset>
+
+                    <div class="mt-8">
+                        <h3 class="font-black text-slate-800 mb-4">مؤشرات بناء الجواب</h3>
+                        <ul class="grid sm:grid-cols-2 gap-x-6 gap-y-3" id="criteria-list">
+                            <li class="criterion flex items-center gap-3 text-sm font-bold text-slate-500" data-criterion="philosophers" data-met="false">
+                                <span class="criterion-icon w-6 h-6 border-2 border-slate-300 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="check" class="w-3.5 h-3.5" aria-hidden="true"></i></span>
+                                عرضت موقف فيلسوفين على الأقل
+                            </li>
+                            <li class="criterion flex items-center gap-3 text-sm font-bold text-slate-500" data-criterion="comparison" data-met="false">
+                                <span class="criterion-icon w-6 h-6 border-2 border-slate-300 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="check" class="w-3.5 h-3.5" aria-hidden="true"></i></span>
+                                حرّكت النقيض والمقارنة بين المواقف
+                            </li>
+                            <li class="criterion flex items-center gap-3 text-sm font-bold text-slate-500" data-criterion="conclusion" data-met="false">
+                                <span class="criterion-icon w-6 h-6 border-2 border-slate-300 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="check" class="w-3.5 h-3.5" aria-hidden="true"></i></span>
+                                ختمت بحسم شخصي مبرر
+                            </li>
+                            <li class="criterion flex items-center gap-3 text-sm font-bold text-slate-500" data-criterion="length" data-met="false">
+                                <span class="criterion-icon w-6 h-6 border-2 border-slate-300 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="check" class="w-3.5 h-3.5" aria-hidden="true"></i></span>
+                                كتبت من ٩٠ إلى ١٤٠ كلمة
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-8">
+                        <h3 class="font-black text-slate-800 mb-2">عدسة سقراط: فحص تركيبك بست أسئلة</h3>
+                        <p class="text-sm font-bold text-slate-500 mb-4 leading-relaxed">أثناء الكتابة، اضغط على أي سؤال لتسائل جوابك كما يفعل الأستاذ في المناقشة — كل سؤال يفتح زاوية تفحص بها ما كتبت.</p>
+                        <div class="flex flex-wrap gap-2" id="socratic-bank">
+                            <button type="button" class="socratic-chip" data-socratic="clarify" aria-expanded="false" aria-controls="socratic-clarify"><i data-lucide="search" class="w-4 h-4" aria-hidden="true"></i>توضيح المعنى</button>
+                            <button type="button" class="socratic-chip" data-socratic="assumption" aria-expanded="false" aria-controls="socratic-assumption"><i data-lucide="eye-off" class="w-4 h-4" aria-hidden="true"></i>الافتراضات</button>
+                            <button type="button" class="socratic-chip" data-socratic="evidence" aria-expanded="false" aria-controls="socratic-evidence"><i data-lucide="scale" class="w-4 h-4" aria-hidden="true"></i>البينة والحجة</button>
+                            <button type="button" class="socratic-chip" data-socratic="viewpoint" aria-expanded="false" aria-controls="socratic-viewpoint"><i data-lucide="repeat" class="w-4 h-4" aria-hidden="true"></i>تغيير المنظور</button>
+                            <button type="button" class="socratic-chip" data-socratic="implication" aria-expanded="false" aria-controls="socratic-implication"><i data-lucide="git-branch" class="w-4 h-4" aria-hidden="true"></i>النتائج واللوازم</button>
+                            <button type="button" class="socratic-chip" data-socratic="question" aria-expanded="false" aria-controls="socratic-question"><i data-lucide="help-circle" class="w-4 h-4" aria-hidden="true"></i>مساءلة السؤال</button>
+                        </div>
+                        <div class="mt-4 space-y-2">
+                            <p id="socratic-clarify" class="hidden bg-accent/5 border border-accent/10 rounded-2xl px-5 py-4 text-slate-700 font-bold leading-loose" aria-live="polite">ما الذي أقصده تحديدًا بـ«الهوية» في جوابي؟ هل أميز بين هوية الجسد وهوية الشخص وهوية ما يظنه الناس عني؟</p>
+                            <p id="socratic-assumption" class="hidden bg-accent/5 border border-accent/10 rounded-2xl px-5 py-4 text-slate-700 font-bold leading-loose" aria-live="polite">ما الافتراض الضمني في موقف الفيلسوف الذي أعرضه؟ هل يفترض أن الذاكرة دقيقة؟ أن الإرادة ثابتة؟ أن الأنا وحدة؟</p>
+                            <p id="socratic-evidence" class="hidden bg-accent/5 border border-accent/10 rounded-2xl px-5 py-4 text-slate-700 font-bold leading-loose" aria-live="polite">ما البينة التي يسوقها كل فيلسوف؟ هل أذكرتها في جوابي (التذكر، فقدان الذاكرة، الصراع النفسي)؟</p>
+                            <p id="socratic-viewpoint" class="hidden bg-accent/5 border border-accent/10 rounded-2xl px-5 py-4 text-slate-700 font-bold leading-loose" aria-live="polite">لو كان الفيلسوف الذي أعترض عليه حاضرًا، ماذا سيجيب عن اعتراضي؟ هل جوابي ينصفه؟</p>
+                            <p id="socratic-implication" class="hidden bg-accent/5 border border-accent/10 rounded-2xl px-5 py-4 text-slate-700 font-bold leading-loose" aria-live="polite">إذا صدّقتُ هذا الموقف، فما نتائجه على مسؤوليتي عن أفعالي الماضية؟ وعلى من فقد ذاكرته؟</p>
+                            <p id="socratic-question" class="hidden bg-accent/5 border border-accent/10 rounded-2xl px-5 py-4 text-slate-700 font-bold leading-loose" aria-live="polite">لماذا افترض سؤال التركيب أصلًا أن للهوية «أساسًا» واحدًا يمكن العثور عليه؟ ماذا لو كان السؤال نفسه هو المشكل؟</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 flex flex-col sm:flex-row sm:items-center gap-4">
+                        <button type="submit" class="secondary-button">
+                            <i data-lucide="file-check-2" class="w-5 h-5" aria-hidden="true"></i>
+                            تحقّق من بنية التركيب
+                        </button>
+                        <p id="synthesis-feedback" class="text-sm font-bold text-slate-500" aria-live="polite">اكتب تركيبك، وستتحدث المؤشرات أثناء الكتابة.</p>
+                    </div>
+                </form>
+
+                <details id="model-answer" class="hidden border-t border-slate-200 pt-6 group">
+                    <summary class="cursor-pointer min-h-12 flex items-center justify-between gap-4 font-black text-primary rounded-lg">
+                        قارن جوابك بنموذج مُعلَّق بالحركات المنهجية
+                        <i data-lucide="chevron-down" class="w-5 h-5 transition-transform group-open:rotate-180" aria-hidden="true"></i>
+                    </summary>
+                    <div class="mt-4 bg-primary/5 rounded-2xl p-5 sm:p-6 space-y-5">
+                        <div class="space-y-2">
+                            <span class="move-badge bg-primary/10 text-primary">عرض الأطروحة</span>
+                            <p class="text-slate-700 font-medium leading-loose">اختلف الفلاسفة في تحديد أساس هوية الشخص. يرى جون لوك أن الشخص يحافظ على هويته بفضل الوعي الذي يربط تجاربه الحاضرة بماضيه، ولذلك تصبح الذاكرة شرطًا لاستمرار الأنا.</p>
+                        </div>
+                        <div class="space-y-2">
+                            <span class="move-badge bg-secondary/10 text-secondary">دفع نقيض الأطروحة</span>
+                            <p class="text-slate-700 font-medium leading-loose">بينما يعترض شوبنهاور على هذا التصور، لأن الذاكرة قد تضعف أو تزول دون أن يفقد الشخص هويته، ويرى أن الإرادة والطبع الثابت يشكلان نواتها الحقيقية.</p>
+                        </div>
+                        <div class="space-y-2">
+                            <span class="move-badge bg-accent/10 text-accent-dark">منظور ثالث يفكك السؤال</span>
+                            <p class="text-slate-700 font-medium leading-loose">أما فرويد فلا يبحث عن أساس ثابت للهوية، بل يكشف أن الأنا تتكون داخل صراع مستمر بين الهو والأنا الأعلى ومتطلبات الواقع.</p>
+                        </div>
+                        <div class="space-y-2">
+                            <span class="move-badge bg-emerald-100 text-emerald-700">التركيب والحسم</span>
+                            <p class="text-slate-700 font-medium leading-loose">وبناءً على ذلك، يصعب اختزال هوية الشخص في عنصر واحد، لأنها تتشكل من استمرارية الوعي وثبات بعض الميول، ومن الصراعات النفسية التي تؤثر في اختيارات الإنسان وسلوكه.</p>
+                        </div>
+                        <p class="text-sm font-bold text-slate-500 leading-relaxed border-t border-slate-200 pt-4">قارن بنية جوابك بهذه الحركات الأربع، ثم عد إلى نصك واحفظ صياغتك أنت — النموذج خريطة طريق لا إجابة تُستنسخ.</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <!-- ========== STEP 7: REFLECT ========== -->
+        <section id="reflect" class="reveal activity-surface rounded-[32px] overflow-hidden shadow-sm scroll-mt-48" aria-labelledby="reflect-title">
+            <div class="p-6 sm:p-8 md:p-10 border-b border-slate-200/70">
+                <div class="flex flex-col sm:flex-row sm:items-start gap-5">
+                    <span class="w-12 h-12 rounded-2xl bg-slate-800 text-paper flex items-center justify-center font-black text-xl flex-shrink-0">٧</span>
+                    <div class="space-y-2">
+                        <p class="text-sm font-black text-slate-600">الخطوة السابعة، ٣ دقائق</p>
+                        <h2 id="reflect-title" class="text-2xl md:text-3xl font-black">تأمل وتثبيت</h2>
+                        <p class="text-slate-600 font-medium leading-relaxed max-w-[65ch]">أعد الاسترجاع من جديد بالسؤال نفسه الذي بدأت به — ستقيس بنفسك الفرق الذي صنعته الأنشطة، ثم تحدد خطوتك القادمة.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-6 sm:p-8 md:p-10 space-y-8">
+                <form id="reflect-form" novalidate>
+                    <fieldset>
+                        <legend class="font-black text-slate-800 mb-3">الاسترجاع الثاني</legend>
+                        <p class="text-slate-600 font-medium leading-relaxed mb-4 max-w-[65ch]">اكتب من ذاكرتك — كما في الخطوة الأولى — كل ما تتذكره الآن عن مواقف الفلاسفة الثلاثة من هوية الشخص.</p>
+                        <label for="reflect-text" class="font-black text-slate-800 block mb-3 sr-only">اكتب ما تتذكره الآن</label>
+                        <textarea id="reflect-text" rows="6" class="w-full rounded-2xl border border-slate-300 bg-surface px-5 py-4 text-base leading-loose font-medium text-slate-800 focus:border-primary" aria-describedby="reflect-count reflect-summary" placeholder="اكتب الآن — ستلاحظ أنك تتذكر أكثر من المرة الأولى..."></textarea>
+                        <div class="flex flex-wrap items-center justify-between gap-3 mt-3 text-sm font-bold">
+                            <p id="reflect-summary" aria-live="polite" class="text-slate-500">عشر كلمات على الأقل تكفي لإنهاء هذه الخطوة.</p>
+                            <p id="reflect-count" class="text-slate-500" aria-live="polite">٠ كلمة</p>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="mt-8">
+                        <legend class="font-black text-slate-800 mb-3">كيف تقوّم فهمك اليوم؟</legend>
+                        <div class="grid gap-3">
+                            <label class="choice">
+                                <input type="radio" name="reflect-confidence" value="confident">
+                                <span class="font-bold leading-relaxed">أستطيع تمييز المواقف والمقارنة بينها بثقة، وأستطيع بناء مقالة كاملة.</span>
+                            </label>
+                            <label class="choice">
+                                <input type="radio" name="reflect-confidence" value="growing">
+                                <span class="font-bold leading-relaxed">أميّز المواقف جيدًا، لكن المقارنة وبناء المناقشة ما زالا يحتاجان تدريبًا.</span>
+                            </label>
+                            <label class="choice">
+                                <input type="radio" name="reflect-confidence" value="review">
+                                <span class="font-bold leading-relaxed">أحتاج إلى مراجعة النصوص الأصلية للفلاسفة من جديد.</span>
+                            </label>
+                        </div>
+                        <div id="reflect-advice" class="hidden mt-4" aria-live="polite"></div>
+                    </fieldset>
+                </form>
+
+                <div class="bg-primary/5 border border-primary/10 rounded-2xl p-5 flex gap-3 items-start">
+                    <i data-lucide="calendar-clock" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" aria-hidden="true"></i>
+                    <div class="space-y-2">
+                        <p class="font-black text-primary text-sm">خطة التثبيت — دقيقة واحدة تخطط لذاكرتك</p>
+                        <p class="text-sm text-slate-700 font-medium leading-loose">عُد إلى هذه الصفحة غدًا، وأعد فقط خطوة الاسترجاع الأولى ثم قارنها بالخريطة، وبعد ثلاثة أيام أعد نشاط «ناقش». التكرار المتباعد يضاعف ما بنيته اليوم أكثر من أي مراجعة طويلة.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="completion" class="completion-panel hidden rounded-[2rem] p-7 sm:p-10 md:p-12 text-slate-50 scroll-mt-48" aria-labelledby="completion-title" tabindex="-1">
+            <div class="max-w-2xl">
+                <div class="w-14 h-14 rounded-2xl bg-primary-light/20 text-teal-200 flex items-center justify-center mb-6">
+                    <i data-lucide="badge-check" class="w-8 h-8" aria-hidden="true"></i>
+                </div>
+                <p class="text-teal-200 font-black text-sm mb-2">اكتملت خطوات التركيب السبع</p>
+                <h2 id="completion-title" class="text-3xl md:text-4xl font-black leading-tight">أحسنت، لقد أنجزت تركيب درس هوية الشخص</h2>
+                <p class="text-slate-300 font-medium leading-loose mt-4 max-w-[65ch]">استرجعت من ذاكرتك مرتين، ميّزت المواقف وتطبيقها، خضت التجربة الفكرية وبنيت المناقشة بنقيضها، ثم كتبت خلاصة فلسفية خاصة بك. يمكنك الآن مراجعة عملك أو الاحتفاظ بتركيبك.</p>
+
+                <div class="flex flex-wrap gap-3 mt-8">
+                    <button type="button" id="review-answers" class="primary-button">
+                        <i data-lucide="scan-text" class="w-5 h-5" aria-hidden="true"></i>
+                        راجع إجاباتي
+                    </button>
+                    <button type="button" id="copy-synthesis" class="quiet-button !bg-slate-800 !border-slate-600 !text-slate-100">
+                        <i data-lucide="copy" class="w-5 h-5" aria-hidden="true"></i>
+                        انسخ تركيبي
+                    </button>
+                    <a href="/lessons" class="quiet-button !bg-slate-800 !border-slate-600 !text-slate-100">
+                        <i data-lucide="library" class="w-5 h-5" aria-hidden="true"></i>
+                        دروس الفلسفة
+                    </a>
+                </div>
+
+                <details class="mt-6 text-sm">
+                    <summary class="cursor-pointer min-h-11 inline-flex items-center text-slate-300 font-bold rounded-lg">أريد إعادة نشاط من البداية</summary>
+                    <div class="flex flex-wrap gap-2 mt-3">
+                        <button type="button" class="reset-activity quiet-button !bg-slate-800 !border-slate-600 !text-slate-100 text-sm" data-reset="retrieve">أعد الاسترجاع الأول</button>
+                        <button type="button" class="reset-activity quiet-button !bg-slate-800 !border-slate-600 !text-slate-100 text-sm" data-reset="distinguish">أعد نشاط التمييز</button>
+                        <button type="button" class="reset-activity quiet-button !bg-slate-800 !border-slate-600 !text-slate-100 text-sm" data-reset="experiment">أعد التجربة الفكرية</button>
+                        <button type="button" class="reset-activity quiet-button !bg-slate-800 !border-slate-600 !text-slate-100 text-sm" data-reset="apply">أعد نشاط التطبيق</button>
+                        <button type="button" class="reset-activity quiet-button !bg-slate-800 !border-slate-600 !text-slate-100 text-sm" data-reset="discuss">أعد نشاط المناقشة</button>
+                        <button type="button" class="reset-activity quiet-button !bg-slate-800 !border-slate-600 !text-slate-100 text-sm" data-reset="synthesize">أعد نشاط التركيب</button>
+                        <button type="button" class="reset-activity quiet-button !bg-slate-800 !border-slate-600 !text-slate-100 text-sm" data-reset="reflect">أعد نشاط التأمل</button>
+                    </div>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-900 text-white pt-20 pb-10 mt-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 pb-16 border-b border-white/10">
+                <div class="lg:col-span-1 space-y-6">
+                    <div class="flex items-center gap-3">
+                        <img src="/assets/logo/logo-mark-white.svg" alt="محبة الحكمة" class="w-10 h-10">
+                        <div>
+                            <h3 class="text-xl font-black text-white">محبة الحكمة</h3>
+                            <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Mahabat Lhikma</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 font-medium leading-relaxed text-sm">مشروع طموح يسعى لتقريب الفلسفة من الشباب العربي عبر أدوات حديثة وتجارب تفاعلية.</p>
+                </div>
+
+                <div class="space-y-6">
+                    <h4 class="font-black text-white uppercase tracking-widest text-xs">الأقسام</h4>
+                    <ul class="space-y-3 text-slate-400 font-bold text-sm">
+                        <li><a href="/lessons" class="hover:text-teal-400 transition-colors flex items-center gap-2"><i data-lucide="library" class="w-4 h-4" aria-hidden="true"></i>دروس الفلسفة</a></li>
+                        <li><a href="/philomedia" class="hover:text-teal-400 transition-colors flex items-center gap-2"><i data-lucide="video" class="w-4 h-4" aria-hidden="true"></i>فيلوميديا</a></li>
+                        <li><a href="/prompts" class="hover:text-teal-400 transition-colors flex items-center gap-2"><i data-lucide="wand-2" class="w-4 h-4" aria-hidden="true"></i>أدوات الذكاء الفلسفي</a></li>
+                        <li><a href="/skills" class="hover:text-teal-400 transition-colors flex items-center gap-2"><i data-lucide="graduation-cap" class="w-4 h-4" aria-hidden="true"></i>المهارات التعليمية</a></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-6">
+                    <h4 class="font-black text-white uppercase tracking-widest text-xs">المزيد</h4>
+                    <ul class="space-y-3 text-slate-400 font-bold text-sm">
+                        <li><a href="/games" class="hover:text-teal-400 transition-colors flex items-center gap-2"><i data-lucide="gamepad-2" class="w-4 h-4" aria-hidden="true"></i>الألعاب</a></li>
+                        <li><a href="/notebooklm" class="hover:text-teal-400 transition-colors flex items-center gap-2"><i data-lucide="notebook-pen" class="w-4 h-4" aria-hidden="true"></i>دليل NotebookLM</a></li>
+                        <li><a href="/booklet" class="hover:text-teal-400 transition-colors flex items-center gap-2"><i data-lucide="book-open-check" class="w-4 h-4" aria-hidden="true"></i>كتيّب الذكاء الاصطناعي</a></li>
+                        <li><a href="/feedback" class="hover:text-teal-400 transition-colors flex items-center gap-2"><i data-lucide="message-square-heart" class="w-4 h-4" aria-hidden="true"></i>شاركنا رأيك</a></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-6">
+                    <h4 class="font-black text-white uppercase tracking-widest text-xs">ابقَ على اطلاع</h4>
+                    <p class="text-slate-400 font-medium text-sm leading-relaxed">اشترك ليصلك كل جديد عن محبة الحكمة</p>
+                    <div class="flex gap-2">
+                        <label for="newsletter-email" class="sr-only">بريدك الإلكتروني</label>
+                        <input id="newsletter-email" type="email" placeholder="بريدك الإلكتروني" class="flex-1 min-w-0 px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white text-sm font-medium placeholder:text-slate-500 focus:outline-none focus:border-teal-400 transition-colors">
+                        <button type="button" id="newsletter-btn" class="bg-gradient-to-r from-primary to-teal-400 px-5 py-3 rounded-xl font-bold text-sm hover:scale-105 transition-transform">اشترك</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-10 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 font-bold text-sm text-center md:text-right">جميع الحقوق محفوظة © ٢٠٢٦ محبة الحكمة. صُنع بشغف لنشر النور والمعرفة.</p>
+                <div class="flex items-center gap-2 text-slate-500 text-sm font-bold">
+                    <span>صُنع بـ</span>
+                    <i data-lucide="heart" class="w-4 h-4 text-rose-500 fill-current" aria-hidden="true"></i>
+                    <span>وحب الحكمة</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="status-toast" class="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 hidden max-w-[calc(100%_-_2rem)] rounded-xl bg-slate-900 text-slate-50 px-5 py-3 text-sm font-bold shadow-xl" role="status" aria-live="polite"></div>
+
+    <script>
+        const STORAGE_KEY = 'mahabat-lhikma:identity-synthesis:v2';
+        const stepOrder = ['retrieve', 'distinguish', 'experiment', 'apply', 'discuss', 'synthesize', 'reflect'];
+        const stepNumbers = { retrieve: '١', distinguish: '٢', experiment: '٣', apply: '٤', discuss: '٥', synthesize: '٦', reflect: '٧' };
+
+        const philosophers = [
+            { value: 'locke', label: 'جون لوك' },
+            { value: 'schopenhauer', label: 'شوبنهاور' },
+            { value: 'freud', label: 'فرويد' }
+        ];
+
+        const distinguishItems = [
+            {
+                id: 'd1',
+                statement: 'الوعي الممتد نحو الماضي هو أساس الهوية الشخصية.',
+                answer: 'locke',
+                explanation: 'يربط جون لوك الهوية باستمرار الوعي وقدرته على امتلاك التجارب الماضية.'
+            },
+            {
+                id: 'd2',
+                statement: 'الشخص يبقى هو نفسه بفضل إرادته وطبعه الثابت.',
+                answer: 'schopenhauer',
+                explanation: 'يعتبر شوبنهاور الإرادة والطبع الثابت نواة الهوية رغم تغير الجسد والذاكرة.'
+            },
+            {
+                id: 'd3',
+                statement: 'الأنا محاصرة بين مطالب الهو والأنا الأعلى والواقع.',
+                answer: 'freud',
+                explanation: 'يصف فرويد الأنا بوصفها وسيطًا يحاول التوفيق بين قوى نفسية وواقعية متعارضة.'
+            },
+            {
+                id: 'd4',
+                statement: 'فقدان الذاكرة يهدد استمرارية الهوية.',
+                answer: 'locke',
+                explanation: 'عند لوك، ضعف امتداد الوعي نحو الماضي يضعف الرابط الذي يجعل الشخص هو نفسه عبر الزمن.'
+            },
+            {
+                id: 'd5',
+                statement: 'فقدان الذاكرة لا يلغي بالضرورة هوية الشخص.',
+                answer: 'schopenhauer',
+                explanation: 'ينتقد شوبنهاور الذاكرة لأنها متغيرة، ويرى أن الإرادة قد تستمر حتى عندما تزول الذكريات.'
+            },
+            {
+                id: 'd6',
+                statement: 'الأنا ليست وحدة مستقلة وشفافة تمامًا أمام نفسها.',
+                answer: 'freud',
+                explanation: 'يكشف فرويد أن الأنا تتأثر بقوى لاشعورية وبضغط الأنا الأعلى والواقع، لذلك لا تسيطر على ذاتها سيطرة كاملة.'
+            }
+        ];
+
+        const applicationItems = [
+            {
+                id: 'a1',
+                title: 'الحالة الأولى: ذاكرة الطفولة',
+                text: 'استعادت مريم حادثة من طفولتها وشعرت أن التجربة الماضية تخص الشخص نفسه الذي هي عليه اليوم.',
+                options: [
+                    { value: 'locke', label: 'لوك، لأن الوعي يصل التجربة الماضية بالأنا الحاضرة.' },
+                    { value: 'schopenhauer', label: 'شوبنهاور، لأن الطبع لا يتأثر بمرور الزمن.' },
+                    { value: 'freud', label: 'فرويد، لأن الأنا تخضع لمطلب الأنا الأعلى.' }
+                ],
+                answer: 'locke',
+                explanation: 'الحالة تبرز امتداد الوعي نحو الماضي، وهو المعيار الذي يجعل التجربة القديمة جزءًا من هوية الشخص عند لوك.'
+            },
+            {
+                id: 'a2',
+                title: 'الحالة الثانية: ذاكرة غائبة وطبع مستمر',
+                text: 'فقد أمين معظم ذكرياته بعد المرض، لكنه حافظ على طبعه القوي وطريقته المعتادة في اتخاذ القرارات.',
+                options: [
+                    { value: 'freud', label: 'فرويد، لأن الواقع الخارجي يحدد جميع قرارات الأنا.' },
+                    { value: 'locke', label: 'لوك، لأن استمرار الجسد يكفي وحده لاستمرار الهوية.' },
+                    { value: 'schopenhauer', label: 'شوبنهاور، لأن الإرادة والطبع قد يستمران رغم فقدان الذاكرة.' }
+                ],
+                answer: 'schopenhauer',
+                explanation: 'استمرار الطبع رغم غياب الذكريات يدعم موقف شوبنهاور القائل إن الإرادة، لا الذاكرة، هي أساس الهوية.'
+            },
+            {
+                id: 'a3',
+                title: 'الحالة الثالثة: قرار تحت الضغط',
+                text: 'يريد يوسف القيام بما يمنحه متعة فورية، لكنه يشعر بالذنب ويخشى نتائج فعله في الواقع.',
+                options: [
+                    { value: 'schopenhauer', label: 'شوبنهاور، لأن الإرادة تحقق دائمًا ما تريده دون مقاومة.' },
+                    { value: 'freud', label: 'فرويد، لأن الأنا توازن بين الهو والأنا الأعلى ومتطلبات الواقع.' },
+                    { value: 'locke', label: 'لوك، لأن الذاكرة وحدها تفسر الصراع النفسي.' }
+                ],
+                answer: 'freud',
+                explanation: 'الرغبة الفورية تمثل مطلب الهو، والشعور بالذنب يرتبط بالأنا الأعلى، والخوف من النتائج يمثل ضغط الواقع.'
+            },
+            {
+                id: 'a4',
+                title: 'تحدي المقارنة: فقدان الذاكرة',
+                text: 'كيف سيختلف لوك وشوبنهاور في تفسير شخص فقد ذاكرته لكنه حافظ على طبعه؟',
+                options: [
+                    { value: 'correct', label: 'يرى لوك أن استمرارية هويته مهددة، بينما يرى شوبنهاور أن هويته قد تستمر بفضل طبعه وإرادته.' },
+                    { value: 'reverse', label: 'يرى شوبنهاور أن هويته مهددة، بينما يرى لوك أن طبعه يكفي لاستمرارها.' },
+                    { value: 'both-lost', label: 'يتفق الاثنان على أن هويته زالت كليًا بسبب فقدان الذاكرة.' },
+                    { value: 'both-same', label: 'يتفق الاثنان على أن فقدان الذاكرة لا يؤثر في الهوية.' }
+                ],
+                answer: 'correct',
+                explanation: 'يكشف المثال الخلاف المركزي: لوك يجعل الوعي والذاكرة أساسًا للاستمرار، بينما يرفض شوبنهاور ذلك ويعتمد الإرادة والطبع.'
+            }
+        ];
+
+        const discussionItems = [
+            {
+                id: 'n1',
+                statement: 'أيُّ العبارات التالية تصلح اعتراضًا حجاجيًا يوجَّه ضد موقف لوك؟',
+                options: [
+                    { value: 'correct', label: 'الذاكرة يبتلع النسيانُ أجزاءً واسعة منها، وقد يُفقدها المرضُ كليًا، ومع ذلك تبقى هوية الشخص قائمة؛ فلا تصلح إذن أساسًا لها.' },
+                    { value: 'wrong-consciousness', label: 'الوعي لا يرافق الفكر إلا نادرًا، ولذلك يخطئ لوك.' },
+                    { value: 'wrong-body', label: 'جسد الإنسان يتغير خلية خلية، ولذلك لا أساس للهوية أصلًا.' }
+                ],
+                answer: 'correct',
+                explanation: 'هذا هو الاعتراض المركزي الذي يسوقه شوبنهاور نفسه: ما دام فقد الذاكرة لا يُلغي الهوية، فالذاكرة ليست أساسها — وهو من صلب النص الذي درسته.',
+                optionNotes: {
+                    'wrong-consciousness': 'هذا عكس ما يقرره لوك: عنده الوعي يلازم الفكر ملازمة دائمة، فالاعتراض ينقض نفسه.',
+                    'wrong-body': 'صحيح أن الجسد يتغير، لكن لوك نفسه استبعد الجسد أساسًا للهوية لذلك، فالاعتراض لا يمس دعواه عن الوعي.'
+                }
+            },
+            {
+                id: 'n2',
+                statement: 'ما الفرضية المشتركة بين لوك وشوبنهاور التي يشكك فيها فرويد؟',
+                options: [
+                    { value: 'correct', label: 'كلتاهما تفترض أن في الإنسان نواة ثابتة — وعيًا أو إرادة — تصلح أساسًا لهوية مستقرة.' },
+                    { value: 'wrong-unconscious', label: 'كلتاهما تنكر وجود اللاشعور في الحياة النفسية.' },
+                    { value: 'wrong-body', label: 'كلتاهما تربط الهوية بالجسد لا بالنفس.' }
+                ],
+                answer: 'correct',
+                explanation: 'فرويد لا يقترح أساسًا ثالثًا للهوية، بل يشكك في فكرة «الأنا» الموحدة الشفافة التي يفترضها الاثنان: الأنا عنده بنية وسيطة تحت ضغط قوى متصارعة.',
+                optionNotes: {
+                    'wrong-unconscious': 'لم يطرق لوك وشوبنهاور مسألة اللاشعور أصلًا؛ اعتراض فرويد أعمق من ذلك: إنه يمس فكرة الأنا المستقرة ذاتها.',
+                    'wrong-body': 'على العكس، كلاهما يستبعد الجسد المتغير من أساس الهوية: لوك يستبدله بالوعي، وشوبنهاور بالإرادة.'
+                }
+            },
+            {
+                id: 'n3',
+                statement: 'معك أطروحة لوك: «أساس الهوية امتداد الوعي نحو الماضي». أيُّ جملة تصلح نقيضًا للأطروحة مدعومًا بحجاج؟',
+                options: [
+                    { value: 'correct', label: 'غير أن الذاكرة يبتلع النسيانُ أجزاءً واسعة منها، وقد يزيلها المرضُ كليًا دون أن تفقد الهوية؛ فالأصل إذن الإرادة والطبع الثابت لا الوعي.' },
+                    { value: 'wrong-bio', label: 'غير أن لوك فيلسوف تجريبي إنجليزي عاش في القرن السابع عشر.' },
+                    { value: 'wrong-neutral', label: 'غير أن لكل إنسان حرية اختيار رأيه في هذه المسألة.' }
+                ],
+                answer: 'correct',
+                explanation: 'نقيض الأطروحة حركة منهجية: تعارض الدعوى بدعوى مضادة مدعومة ببينة — كما فعل شوبنهاور تمامًا مع لوك. هذه الحركة هي ما تكافئه شبكة التنقيط تحت «المناقشة».',
+                optionNotes: {
+                    'wrong-bio': 'التعريف بالفيلسوف لا يعارض دعواه؛ نقيض الأطروحة يُدفع بحجة فلسفية لا بسيرة صاحبها.',
+                    'wrong-neutral': 'الحياد هنا تهرب من الحجاج؛ الامتحان يطلب موقفًا مضادًا مبررًا لا إحالة على حرية الرأي.'
+                }
+            },
+            {
+                id: 'n4',
+                statement: 'أيُّ عبارة تصلح تركيبًا يتجاوز التقابل بين المواقف الثلاثة؟',
+                options: [
+                    { value: 'correct', label: 'وهكذا لا تُختزل هوية الشخص في عنصر واحد: الوعي يمنحها امتدادها، والإرادة تمنحها ثباتها، والصراع النفسي يمنحها حركتها وتحولاتها.' },
+                    { value: 'wrong-float', label: 'ولذلك يبقى لكل فيلسوف رأيه، وكل الآراء محترمة ومتساوية.' },
+                    { value: 'wrong-verdict', label: 'ولذلك كان لوك على صواب وشوبنهاور وفرويد على خطأ.' }
+                ],
+                answer: 'correct',
+                explanation: 'التركيب الذي يكافؤه الامتحان يحمل موقفًا شخصيًا مبررًا يستوعب ما في كل أطروحة من وجاهة وحدود، فيتجاوز التقابل بدل أن يلغيه.',
+                optionNotes: {
+                    'wrong-float': 'هذا ليس تركيبًا بل تعويم للمسألة؛ التركيب يحسم بحجة بدل أن يُوكل الحسم إلى «احترام الآراء».',
+                    'wrong-verdict': 'هذا حسم لأحد الأطراف لا تجاوز للتقابل؛ لاحظ أن التركيب الجيد يستفيد من الجميع بدل إسقاط اثنين.'
+                }
+            }
+        ];
+
+        const confidenceAdvice = {
+            confident: 'ممتاز — الخطوة القادمة: طبّق المنهجية نفسها على محور آخر، وعُد غدًا إلى استرجاع هذا الدرس لتثبيته نهائيًا.',
+            growing: 'تقدم حقيقي — أعد نشاط «ناقش» و«ركّب» مرة أخرى بعد يوم أو يومين: تكرار الحركات الحجاجية هو أسرع طريق إلى إتقان المقارنة.',
+            review: 'قرار حكيم — عد إلى صفحة «مواقف الفلاسفة» واقرأ نصًا واحدًا في كل جلسة مع تفعيل التحليل الحجاجي، ثم أعد هذه الأنشطة.'
+        };
+
+        const defaultState = {
+            retrieve: { text: '', revealed: false, complete: false },
+            distinguish: { answers: {}, complete: false },
+            experiment: { commitment: null, revision: null, reason: '', complete: false },
+            apply: { answers: {}, complete: false },
+            discuss: { answers: {}, complete: false },
+            synthesize: { text: '', complete: false },
+            reflect: { text: '', confidence: null, complete: false }
+        };
+
+        let persistenceEnabled = true;
+        let state = loadState();
+        let toastTimer;
+
+        function loadState() {
+            try {
+                const savedState = JSON.parse(localStorage.getItem(STORAGE_KEY));
+                return Object.fromEntries(Object.entries(defaultState).map(([activityName, defaults]) => [
+                    activityName,
+                    { ...defaults, ...(savedState?.[activityName] || {}) }
+                ]));
+            } catch (storageError) {
+                if (storageError instanceof SyntaxError) return structuredClone(defaultState);
+                if (!(storageError instanceof DOMException)) throw storageError;
+                persistenceEnabled = false;
+                return structuredClone(defaultState);
+            }
+        }
+
+        function saveState() {
+            if (!persistenceEnabled) return;
+            try {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+            } catch (storageError) {
+                if (!(storageError instanceof DOMException)) throw storageError;
+                persistenceEnabled = false;
+                showToast('تعذّر حفظ التقدم في هذا المتصفح، لكن يمكنك متابعة الأنشطة.');
+            }
+        }
+
+        function toArabicNumber(number) {
+            return String(number).replace(/\d/g, digit => '٠١٢٣٤٥٦٧٨٩'[digit]);
+        }
+
+        function getWordCount(text) {
+            return text.trim() ? text.trim().split(/\s+/).length : 0;
+        }
+
+        function prefersReducedMotion() {
+            return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('status-toast');
+            clearTimeout(toastTimer);
+            toast.textContent = message;
+            toast.classList.remove('hidden');
+            toastTimer = setTimeout(() => toast.classList.add('hidden'), 2800);
+        }
+
+        /* ---------- Generic choice-based activity (distinguish / apply / discuss) ---------- */
+
+        function createChoiceActivity(config) {
+            const container = document.getElementById(config.containerId);
+
+            function renderItems() {
+                container.innerHTML = config.items.map((item, index) => `
+                    <fieldset class="p-6 sm:p-8 ${config.blockClass}" data-question="${item.id}">
+                        <legend class="${config.legendClass} leading-relaxed ${item.text ? 'mb-2' : 'mb-4'}">
+                            <span class="${config.indexColor} ml-2">${toArabicNumber(index + 1)}.</span>${item.statement || item.title}
+                        </legend>
+                        ${item.text ? `<p class="text-lg text-slate-700 font-bold leading-loose mb-5">${item.text}</p>` : ''}
+                        <div class="${config.optionGridClass} gap-3">
+                            ${(item.options || config.sharedOptions).map(option => `
+                                <label class="choice">
+                                    <input type="radio" name="${item.id}" value="${option.value}" ${state[config.stateKey].answers[item.id] === option.value ? 'checked' : ''}>
+                                    <span class="${config.optionTextClass}">${option.label}</span>
+                                </label>
+                            `).join('')}
+                        </div>
+                        <div class="activity-feedback" aria-live="polite"></div>
+                    </fieldset>
+                `).join('');
+            }
+
+            function assessItem(item) {
+                const block = container.querySelector(`[data-question="${item.id}"]`);
+                const feedbackContainer = block.querySelector('.activity-feedback');
+                const selectedAnswer = state[config.stateKey].answers[item.id];
+                if (!selectedAnswer) {
+                    setFeedback(feedbackContainer, 'error', 'اختر جوابًا لهذه العنصر قبل التحقّق.');
+                    return { isCorrect: false, block };
+                }
+                markSelectedChoice(block, selectedAnswer, item.answer);
+                const isCorrect = selectedAnswer === item.answer;
+                let message;
+                if (isCorrect) {
+                    message = item.explanation;
+                } else {
+                    const optionNote = item.optionNotes?.[selectedAnswer];
+                    message = `ليس تمامًا. ${optionNote ? `${optionNote} ` : ''}${item.explanation} حاول مرة أخرى.`;
+                }
+                setFeedback(feedbackContainer, isCorrect ? 'success' : 'error', message);
+                return { isCorrect, block };
+            }
+
+            config.form.addEventListener('change', event => {
+                if (!event.target.matches('input[type="radio"]')) return;
+                state[config.stateKey].answers[event.target.name] = event.target.value;
+                const block = event.target.closest(`.${config.blockClass}`);
+                block.querySelectorAll('.choice').forEach(choice => choice.classList.remove('correct', 'incorrect'));
+                block.querySelector('.activity-feedback').innerHTML = '';
+                saveState();
+            });
+
+            config.form.addEventListener('submit', event => {
+                event.preventDefault();
+                const assessments = config.items.map(assessItem);
+                const correctCount = assessments.filter(assessment => assessment.isCorrect).length;
+                const firstProblemBlock = assessments.find(assessment => !assessment.isCorrect)?.block;
+                state[config.stateKey].complete = correctCount === config.items.length;
+                updateSummary(correctCount, firstProblemBlock);
+                saveState();
+                updateProgress();
+            });
+
+            function updateSummary(correctCount, firstProblemBlock) {
+                const summary = document.getElementById(config.summaryId);
+                if (state[config.stateKey].complete) {
+                    summary.textContent = config.successText;
+                    summary.className = 'text-sm font-black text-emerald-700';
+                    showToast(config.successToast);
+                    return;
+                }
+                summary.textContent = `أجبت عن ${toArabicNumber(correctCount)} من ${toArabicNumber(config.items.length)} إجابات بشكل صحيح. راجع التفسيرات وحاول مجددًا.`;
+                summary.className = 'text-sm font-bold text-rose-700';
+                firstProblemBlock?.scrollIntoView({ behavior: prefersReducedMotion() ? 'auto' : 'smooth', block: 'center' });
+            }
+
+            renderItems();
+            return { renderItems };
+        }
+
+        function setFeedback(feedbackContainer, feedbackType, message) {
+            const iconName = feedbackType === 'success' ? 'circle-check' : 'circle-help';
+            feedbackContainer.innerHTML = `<div class="feedback ${feedbackType}"><i data-lucide="${iconName}" class="w-5 h-5 mt-0.5 flex-shrink-0" aria-hidden="true"></i><span>${message}</span></div>`;
+            lucide.createIcons();
+        }
+
+        function markSelectedChoice(block, selectedAnswer, correctAnswer) {
+            block.querySelectorAll('.choice').forEach(choice => {
+                choice.classList.remove('correct', 'incorrect');
+                const choiceInput = choice.querySelector('input');
+                if (choiceInput.value === selectedAnswer) {
+                    choice.classList.add(selectedAnswer === correctAnswer ? 'correct' : 'incorrect');
+                }
+            });
+        }
+
+        const distinguishActivity = createChoiceActivity({
+            form: document.getElementById('distinguish-form'),
+            containerId: 'distinguish-questions',
+            stateKey: 'distinguish',
+            items: distinguishItems,
+            sharedOptions: philosophers,
+            blockClass: 'question-block',
+            legendClass: 'font-black text-slate-800',
+            indexColor: 'text-primary',
+            optionGridClass: 'grid sm:grid-cols-3',
+            optionTextClass: 'font-bold',
+            summaryId: 'distinguish-summary',
+            successText: 'أحسنت، ميّزت المواقف الستة. انتقل الآن إلى التجربة الفكرية.',
+            successToast: 'اكتمل نشاط التمييز'
+        });
+
+        const applyActivity = createChoiceActivity({
+            form: document.getElementById('apply-form'),
+            containerId: 'application-scenarios',
+            stateKey: 'apply',
+            items: applicationItems,
+            blockClass: 'scenario-block',
+            legendClass: 'font-black text-accent-dark',
+            indexColor: 'text-accent-dark',
+            optionGridClass: 'grid',
+            optionTextClass: 'font-medium leading-relaxed',
+            summaryId: 'apply-summary',
+            successText: 'ممتاز، طبّقت المواقف على الحالات الأربع بنجاح.',
+            successToast: 'اكتمل نشاط التطبيق'
+        });
+
+        const discussActivity = createChoiceActivity({
+            form: document.getElementById('discuss-form'),
+            containerId: 'discuss-questions',
+            stateKey: 'discuss',
+            items: discussionItems,
+            blockClass: 'discussion-block',
+            legendClass: 'font-black text-slate-800',
+            indexColor: 'text-primary-dark',
+            optionGridClass: 'grid',
+            optionTextClass: 'font-medium leading-relaxed',
+            summaryId: 'discuss-summary',
+            successText: 'ممتاز، أتقنت الحركات الثلاث: الاعتراض، دفع النقيض، والتركيب المتجاوز.',
+            successToast: 'اكتمل نشاط المناقشة'
+        });
+
+        /* ---------- Step 1: retrieve (free recall) ---------- */
+
+        const retrieveText = document.getElementById('retrieve-text');
+        retrieveText.value = state.retrieve.text;
+
+        function updateRetrieveStatus(skipToast) {
+            document.getElementById('retrieve-count').textContent = `${toArabicNumber(getWordCount(retrieveText.value))} كلمة`;
+            const summary = document.getElementById('retrieve-summary');
+            const words = getWordCount(retrieveText.value);
+            if (state.retrieve.complete) {
+                summary.textContent = 'أُنجز الاسترجاع الأول — تابع إلى نشاط التمييز.';
+                summary.className = 'text-sm font-black text-emerald-700';
+                return;
+            }
+            if (!state.retrieve.revealed) {
+                summary.textContent = words >= 10
+                    ? 'جيد. اكشف الآن خريطة المواقف لتقارن بما كتبت.'
+                    : 'اكتب أولًا من ذاكرتك، ثم اكشف الخريطة لتقارن — الترتيب مهم.';
+            } else if (words < 10) {
+                summary.textContent = 'أكمل إلى عشر كلمات على الأقل — كلمات متفرقة تكفي، ثم تابع.';
+            } else {
+                state.retrieve.complete = true;
+                summary.textContent = 'أُنجز الاسترجاع الأول — ما نسيتَه ستعيد الأنشطة بناءه.';
+                summary.className = 'text-sm font-black text-emerald-700';
+                if (!skipToast) showToast('اكتمل نشاط الاسترجاع الأول');
+                saveState();
+                updateProgress();
+                return;
+            }
+            summary.className = 'text-sm font-bold text-slate-500';
+        }
+
+        retrieveText.addEventListener('input', () => {
+            state.retrieve.text = retrieveText.value;
+            saveState();
+            updateRetrieveStatus();
+        });
+
+        document.getElementById('reveal-map').addEventListener('click', () => {
+            state.retrieve.revealed = true;
+            document.getElementById('concept-map').classList.remove('hidden');
+            document.getElementById('reveal-map').classList.add('hidden');
+            saveState();
+            updateRetrieveStatus();
+            document.getElementById('concept-map').scrollIntoView({ behavior: prefersReducedMotion() ? 'auto' : 'smooth', block: 'nearest' });
+        });
+
+        document.getElementById('map-link').addEventListener('click', () => {
+            if (!state.retrieve.revealed) document.getElementById('reveal-map').click();
+        });
+
+        if (state.retrieve.revealed) {
+            document.getElementById('concept-map').classList.remove('hidden');
+            document.getElementById('reveal-map').classList.add('hidden');
+        }
+
+        /* ---------- Step 3: thought experiment ---------- */
+
+        const experimentSummary = document.getElementById('experiment-summary');
+
+        function updateExperimentSummary() {
+            if (state.experiment.complete) {
+                experimentSummary.textContent = 'أنجزت التجربة الفكرية — سجّلت حكمًا، وواجهته بالمواقف، ثم حسمت.';
+                experimentSummary.className = 'text-sm font-black text-emerald-700';
+                return;
+            }
+            if (!state.experiment.commitment) {
+                experimentSummary.textContent = 'اختر حكمك الأول للكشف عن مواقف الفلاسفة الثلاثة.';
+            } else if (!state.experiment.revision) {
+                experimentSummary.textContent = 'اقرأ المواقف الثلاثة، ثم سجّل حكمك النهائي: تُبقيه أم تُعدّله؟';
+            }
+            experimentSummary.className = 'text-sm font-bold text-slate-500';
+        }
+
+        document.getElementById('experiment').addEventListener('change', event => {
+            if (event.target.name === 'experiment-commitment') {
+                state.experiment.commitment = event.target.value;
+                document.getElementById('experiment-perspectives').classList.remove('hidden');
+                saveState();
+                updateExperimentSummary();
+                document.getElementById('experiment-perspectives').scrollIntoView({ behavior: prefersReducedMotion() ? 'auto' : 'smooth', block: 'nearest' });
+            }
+            if (event.target.name === 'experiment-revision') {
+                state.experiment.revision = event.target.value;
+                if (state.experiment.commitment && state.experiment.revision && !state.experiment.complete) {
+                    state.experiment.complete = true;
+                    document.getElementById('experiment-feedback').classList.remove('hidden');
+                    showToast('اكتملت التجربة الفكرية');
+                }
+                saveState();
+                updateExperimentSummary();
+                updateProgress();
+            }
+        });
+
+        const experimentReason = document.getElementById('experiment-reason');
+        experimentReason.value = state.experiment.reason;
+        experimentReason.addEventListener('input', () => {
+            state.experiment.reason = experimentReason.value;
+            saveState();
+        });
+
+        if (state.experiment.commitment) {
+            document.getElementById('experiment-perspectives').classList.remove('hidden');
+            const commitmentInput = document.querySelector(`input[name="experiment-commitment"][value="${state.experiment.commitment}"]`);
+            if (commitmentInput) commitmentInput.checked = true;
+        }
+        if (state.experiment.complete) document.getElementById('experiment-feedback').classList.remove('hidden');
+        if (state.experiment.revision) {
+            const revisionInput = document.querySelector(`input[name="experiment-revision"][value="${state.experiment.revision}"]`);
+            if (revisionInput) revisionInput.checked = true;
+        }
+
+        /* ---------- Step 6: synthesis ---------- */
+
+        const synthesisText = document.getElementById('synthesis-text');
+        synthesisText.value = state.synthesize.text;
+
+        document.getElementById('word-count').textContent = `${toArabicNumber(getWordCount(synthesisText.value))} كلمة`;
+
+        function evaluateSynthesis(text) {
+            const normalized = text.trim();
+            const philosopherMentions = ['لوك', 'شوبنهاور', 'فرويد'].filter(name => normalized.includes(name)).length;
+            const comparisonWords = ['بينما', 'في حين', 'على خلاف', 'أما', 'لكن', 'بخلاف', 'غير أن'];
+            const conclusionWords = ['لذلك', 'بناءً على', 'بناء على', 'وعليه', 'يمكن القول', 'أستنتج', 'نخلص', 'أرى أن', 'خلاصة القول'];
+            const wordCount = getWordCount(normalized);
+
+            return {
+                philosophers: philosopherMentions >= 2,
+                comparison: comparisonWords.some(word => normalized.includes(word)),
+                conclusion: conclusionWords.some(word => normalized.includes(word)),
+                length: wordCount >= 90 && wordCount <= 140,
+                wordCount
+            };
+        }
+
+        function updateSynthesisIndicators() {
+            const synthesisEvaluation = evaluateSynthesis(synthesisText.value);
+            document.getElementById('word-count').textContent = `${toArabicNumber(synthesisEvaluation.wordCount)} كلمة`;
+            Object.entries(synthesisEvaluation).forEach(([criterion, isMet]) => {
+                if (criterion === 'wordCount') return;
+                const criterionElement = document.querySelector(`[data-criterion="${criterion}"]`);
+                criterionElement.dataset.met = String(isMet);
+            });
+            return synthesisEvaluation;
+        }
+
+        synthesisText.addEventListener('input', () => {
+            const progressChanged = state.synthesize.complete;
+            state.synthesize.text = synthesisText.value;
+            state.synthesize.complete = false;
+            document.getElementById('model-answer').classList.add('hidden');
+            document.getElementById('synthesis-feedback').textContent = 'استمر في الكتابة حتى تكتمل مؤشرات بناء الجواب.';
+            document.getElementById('synthesis-feedback').className = 'text-sm font-bold text-slate-500';
+            saveState();
+            updateSynthesisIndicators();
+            if (progressChanged) updateProgress();
+        });
+
+        document.getElementById('insert-scaffold').addEventListener('click', () => {
+            if (synthesisText.value.trim()) {
+                showToast('الهيكل متاح عندما يكون حقل الكتابة فارغًا');
+                synthesisText.focus();
+                return;
+            }
+            synthesisText.value = 'يطرح سؤال هوية الشخص إشكالًا حقيقيًا: هل يكفي وعيٌ يمتد نحو الماضي، أم أن للإرادة والطبع كلمة أخيرة، أم أن الأنا أصلًا بنية متنازعة؟\n\nيرى جون لوك أن...\n\nغير أن شوبنهاور يعترض بأن...\n\nأما فرويد فيكشف أن...\n\nوبناءً على ذلك، أرى أن...';
+            state.synthesize.text = synthesisText.value;
+            saveState();
+            updateSynthesisIndicators();
+            synthesisText.focus();
+        });
+
+        document.querySelectorAll('.socratic-chip').forEach(chip => {
+            chip.addEventListener('click', () => {
+                const answer = document.getElementById(`socratic-${chip.dataset.socratic}`);
+                const isNowVisible = answer.classList.toggle('hidden') === false;
+                chip.setAttribute('aria-expanded', String(isNowVisible));
+            });
+        });
+
+        function synthesisIssueMessages(synthesisEvaluation) {
+            return {
+                philosophers: 'اعرض موقف فيلسوفين على الأقل',
+                comparison: 'حرّك النقيض برابط مثل «غير أن» أو «بينما» أو «على خلاف»',
+                conclusion: 'اختم بحسم مبرر يبدأ مثلًا بـ «وبناءً على ذلك، أرى أن»',
+                length: synthesisEvaluation.wordCount < 90 ? 'وسّع جوابك ليبلغ ٩٠ كلمة على الأقل' : 'اختصر جوابك ليبقى في حدود ١٤٠ كلمة'
+            };
+        }
+
+        function showSynthesisIssues(synthesisEvaluation, unmetCriteria) {
+            const feedback = document.getElementById('synthesis-feedback');
+            const issueMessages = synthesisIssueMessages(synthesisEvaluation);
+            feedback.textContent = `يحتاج التركيب إلى تحسين بسيط: ${unmetCriteria.map(criterion => issueMessages[criterion]).join('، ')}.`;
+            feedback.className = 'text-sm font-bold text-rose-700';
+            state.synthesize.complete = false;
+        }
+
+        function completeSynthesis() {
+            const feedback = document.getElementById('synthesis-feedback');
+            state.synthesize.complete = true;
+            feedback.textContent = 'بنية تركيبك مكتملة. افتح النموذج المُعلَّق وقارن حركاتك الأربع به دون أن تستبدل صياغتك الخاصة.';
+            feedback.className = 'text-sm font-black text-emerald-700';
+            document.getElementById('model-answer').classList.remove('hidden');
+            showToast('اكتمل نشاط التركيب');
+        }
+
+        document.getElementById('synthesis-form').addEventListener('submit', event => {
+            event.preventDefault();
+            const synthesisEvaluation = updateSynthesisIndicators();
+            const unmetCriteria = Object.entries(synthesisEvaluation)
+                .filter(([criterion, isMet]) => criterion !== 'wordCount' && !isMet)
+                .map(([criterion]) => criterion);
+            if (unmetCriteria.length) showSynthesisIssues(synthesisEvaluation, unmetCriteria);
+            else completeSynthesis();
+            saveState();
+            updateProgress();
+        });
+
+        /* ---------- Step 7: reflect ---------- */
+
+        const reflectText = document.getElementById('reflect-text');
+        reflectText.value = state.reflect.text;
+
+        function updateReflectStatus() {
+            document.getElementById('reflect-count').textContent = `${toArabicNumber(getWordCount(reflectText.value))} كلمة`;
+            const summary = document.getElementById('reflect-summary');
+            const words = getWordCount(reflectText.value);
+            if (state.reflect.complete) {
+                summary.textContent = 'أُنجز التأمل — عُد غدًا لاسترجاع سريع يحسم التثبيت.';
+                summary.className = 'text-sm font-black text-emerald-700';
+                return;
+            }
+            if (!state.reflect.confidence) {
+                summary.textContent = words >= 10
+                    ? 'ممتاز — اختر الآن تقويمك لفهمك لإتمام الخطوة.'
+                    : 'عشر كلمات على الأقل تكفي لإنهاء هذه الخطوة.';
+            } else if (words < 10) {
+                summary.textContent = 'أضف قليلًا مما تتذكره (عشر كلمات تكفي) ثم تكتمل الخطوة.';
+            } else {
+                state.reflect.complete = true;
+                summary.textContent = 'أُنجز التأمل — عُد غدًا لاسترجاع سريع يحسم التثبيت.';
+                summary.className = 'text-sm font-black text-emerald-700';
+                showToast('اكتمل نشاط التأمل');
+                saveState();
+                updateProgress();
+                return;
+            }
+            summary.className = 'text-sm font-bold text-slate-500';
+        }
+
+        reflectText.addEventListener('input', () => {
+            state.reflect.text = reflectText.value;
+            saveState();
+            updateReflectStatus();
+        });
+
+        document.querySelectorAll('input[name="reflect-confidence"]').forEach(input => {
+            input.addEventListener('change', () => {
+                state.reflect.confidence = input.value;
+                const advice = document.getElementById('reflect-advice');
+                advice.innerHTML = `<div class="feedback success"><i data-lucide="compass" class="w-5 h-5 mt-0.5 flex-shrink-0" aria-hidden="true"></i><span>${confidenceAdvice[input.value]}</span></div>`;
+                lucide.createIcons();
+                advice.classList.remove('hidden');
+                saveState();
+                updateReflectStatus();
+                updateProgress();
+            });
+        });
+
+        if (state.reflect.confidence) {
+            const savedInput = document.querySelector(`input[name="reflect-confidence"][value="${state.reflect.confidence}"]`);
+            if (savedInput) {
+                savedInput.checked = true;
+                const advice = document.getElementById('reflect-advice');
+                advice.innerHTML = `<div class="feedback success"><i data-lucide="compass" class="w-5 h-5 mt-0.5 flex-shrink-0" aria-hidden="true"></i><span>${confidenceAdvice[state.reflect.confidence]}</span></div>`;
+                advice.classList.remove('hidden');
+            }
+        }
+
+        /* ---------- Progress tracking ---------- */
+
+        function updateProgressHeader(completedCount) {
+            document.getElementById('progress-label').textContent = completedCount === 0
+                ? 'لم تبدأ الأنشطة بعد'
+                : `أنجزت ${toArabicNumber(completedCount)} من ${toArabicNumber(stepOrder.length)} خطوات`;
+            document.getElementById('progress-count').textContent = `${toArabicNumber(completedCount)} من ${toArabicNumber(stepOrder.length)}`;
+            document.getElementById('progress-fill').style.width = `${(completedCount / stepOrder.length) * 100}%`;
+            document.getElementById('progress-bar').setAttribute('aria-valuenow', completedCount);
+        }
+
+        function updateStepLinks(firstPendingStep) {
+            document.querySelectorAll('.step-link').forEach(stepLink => {
+                const activityName = stepLink.dataset.step;
+                stepLink.dataset.state = state[activityName].complete ? 'complete' : activityName === firstPendingStep ? 'current' : 'pending';
+                const stepNumber = stepLink.querySelector('.step-number');
+                stepNumber.innerHTML = state[activityName].complete
+                    ? '<i data-lucide="check" class="w-4 h-4" aria-hidden="true"></i>'
+                    : stepNumbers[activityName];
+            });
+        }
+
+        function updateCompletionVisibility(completedCount) {
+            const completionPanel = document.getElementById('completion');
+            const wasHidden = completionPanel.classList.contains('hidden');
+            completionPanel.classList.toggle('hidden', completedCount !== stepOrder.length);
+            if (completedCount === stepOrder.length && wasHidden) {
+                setTimeout(() => completionPanel.focus({ preventScroll: true }), 0);
+            }
+        }
+
+        function updateProgress() {
+            const completedCount = stepOrder.filter(activityName => state[activityName].complete).length;
+            const firstPendingStep = stepOrder.find(activityName => !state[activityName].complete);
+            updateProgressHeader(completedCount);
+            updateStepLinks(firstPendingStep);
+            updateCompletionVisibility(completedCount);
+            lucide.createIcons();
+        }
+
+        document.getElementById('review-answers').addEventListener('click', () => {
+            document.getElementById('retrieve').scrollIntoView({ behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
+        });
+
+        async function copySynthesis() {
+            const synthesis = state.synthesize.text.trim();
+            if (!synthesis) {
+                showToast('لا يوجد تركيب لنسخه بعد');
+                return;
+            }
+            if (navigator.clipboard?.writeText) {
+                try {
+                    await navigator.clipboard.writeText(synthesis);
+                    showToast('تم نسخ تركيبك');
+                    return;
+                } catch (clipboardError) {
+                    if (!(clipboardError instanceof DOMException)) throw clipboardError;
+                }
+            }
+            synthesisText.focus();
+            synthesisText.select();
+            const copied = document.execCommand('copy');
+            showToast(copied ? 'تم نسخ تركيبي' : 'تعذّر النسخ التلقائي، حدّد النص وانسخه يدويًا.');
+        }
+
+        document.getElementById('copy-synthesis').addEventListener('click', copySynthesis);
+
+        /* ---------- Activity resets ---------- */
+
+        const resetActivity = {
+            retrieve() {
+                state.retrieve = { ...defaultState.retrieve };
+                retrieveText.value = '';
+                document.getElementById('concept-map').classList.add('hidden');
+                document.getElementById('reveal-map').classList.remove('hidden');
+                document.getElementById('retrieve-summary').textContent = 'اكتب أولًا من ذاكرتك، ثم اكشف الخريطة لتقارن — الترتيب مهم.';
+                document.getElementById('retrieve-summary').className = 'text-sm font-bold text-slate-500';
+                document.getElementById('retrieve-count').textContent = '٠ كلمة';
+            },
+            distinguish() {
+                state.distinguish = { ...defaultState.distinguish };
+                distinguishActivity.renderItems();
+                document.getElementById('distinguish-summary').textContent = 'أجب عن العبارات الست، ثم تحقّق من فهمك.';
+                document.getElementById('distinguish-summary').className = 'text-sm font-bold text-slate-500';
+            },
+            experiment() {
+                state.experiment = { ...defaultState.experiment };
+                document.querySelectorAll('input[name="experiment-commitment"], input[name="experiment-revision"]').forEach(input => input.checked = false);
+                document.getElementById('experiment-perspectives').classList.add('hidden');
+                document.getElementById('experiment-feedback').classList.add('hidden');
+                experimentReason.value = '';
+                experimentSummary.textContent = 'اختر حكمك الأول للكشف عن مواقف الفلاسفة الثلاثة.';
+                experimentSummary.className = 'text-sm font-bold text-slate-500';
+            },
+            apply() {
+                state.apply = { ...defaultState.apply };
+                applyActivity.renderItems();
+                document.getElementById('apply-summary').textContent = 'حلّل الحالات الأربع قبل التحقّق.';
+                document.getElementById('apply-summary').className = 'text-sm font-bold text-slate-500';
+            },
+            discuss() {
+                state.discuss = { ...defaultState.discuss };
+                discussActivity.renderItems();
+                document.getElementById('discuss-summary').textContent = 'أجب عن الأسئلة الأربعة، ثم تحقّق من حركاتك الحجاجية.';
+                document.getElementById('discuss-summary').className = 'text-sm font-bold text-slate-500';
+            },
+            synthesize() {
+                state.synthesize = { ...defaultState.synthesize };
+                synthesisText.value = '';
+                document.getElementById('model-answer').classList.add('hidden');
+                document.getElementById('synthesis-feedback').textContent = 'اكتب تركيبك، وستتحدث المؤشرات أثناء الكتابة.';
+                document.getElementById('synthesis-feedback').className = 'text-sm font-bold text-slate-500';
+                updateSynthesisIndicators();
+            },
+            reflect() {
+                state.reflect = { ...defaultState.reflect };
+                reflectText.value = '';
+                document.querySelectorAll('input[name="reflect-confidence"]').forEach(input => input.checked = false);
+                document.getElementById('reflect-advice').classList.add('hidden');
+                document.getElementById('reflect-summary').textContent = 'عشر كلمات على الأقل تكفي لإنهاء هذه الخطوة.';
+                document.getElementById('reflect-summary').className = 'text-sm font-bold text-slate-500';
+                document.getElementById('reflect-count').textContent = '٠ كلمة';
+            }
+        };
+
+        document.querySelectorAll('.reset-activity').forEach(resetButton => {
+            resetButton.addEventListener('click', () => {
+                const activityName = resetButton.dataset.reset;
+                resetActivity[activityName]();
+                saveState();
+                updateProgress();
+                document.getElementById(activityName).scrollIntoView({ behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
+                showToast('أصبح النشاط جاهزًا لمحاولة جديدة');
+            });
+        });
+
+        /* ---------- Shared page behavior ---------- */
+
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            const menuButton = document.getElementById('menu-toggle');
+            const isOpen = sidebar.classList.toggle('open');
+            overlay.classList.toggle('open', isOpen);
+            menuButton.setAttribute('aria-expanded', String(isOpen));
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        }
+
+        function observeRevealElements() {
+            const revealObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                });
+            }, { threshold: 0.01 });
+            document.querySelectorAll('.reveal').forEach(element => revealObserver.observe(element));
+        }
+
+        function startNewsletterLoading(button) {
+            button.dataset.originalLabel = button.textContent;
+            button.textContent = 'جاري...';
+            button.disabled = true;
+        }
+
+        function stopNewsletterLoading(button) {
+            button.textContent = button.dataset.originalLabel;
+            button.disabled = false;
+        }
+
+        async function subscribeToNewsletter() {
+            const endpoint = 'PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE';
+            const emailInput = document.getElementById('newsletter-email');
+            const email = emailInput.value.trim();
+            if (!email) { alert('يرجى إدخال البريد الإلكتروني'); return; }
+            if (endpoint.includes('PASTE_YOUR')) { alert('الاشتراك غير مفعّل بعد على هذه الصفحة.'); return; }
+            const button = document.getElementById('newsletter-btn');
+            const formData = new FormData();
+            formData.append('form_type', 'newsletter');
+            formData.append('email', email);
+            formData.append('timestamp', new Date().toISOString());
+            startNewsletterLoading(button);
+            try {
+                await fetch(endpoint, { method: 'POST', mode: 'no-cors', body: formData });
+                emailInput.value = '';
+                alert('شكراً لاشتراكك!');
+            } catch (networkError) {
+                if (!(networkError instanceof TypeError)) throw networkError;
+                alert('تعذّر الإرسال، تحقق من اتصالك بالإنترنت وحاول مرة أخرى.');
+            } finally {
+                stopNewsletterLoading(button);
+            }
+        }
+
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => navbar.classList.toggle('nav-scrolled', window.scrollY > 50));
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape' && document.getElementById('sidebar').classList.contains('open')) toggleSidebar();
+        });
+        document.getElementById('newsletter-btn').addEventListener('click', subscribeToNewsletter);
+
+        /* ---------- Initial paint ---------- */
+
+        document.addEventListener('DOMContentLoaded', () => {
+            updateRetrieveStatus(true);
+            updateExperimentSummary();
+            updateReflectStatus();
+            updateSynthesisIndicators();
+            updateProgress();
+            observeRevealElements();
+            if (state.synthesize.complete) document.getElementById('model-answer').classList.remove('hidden');
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>

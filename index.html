@@ -81,7 +81,7 @@
     </script>
     
     <link rel="stylesheet" href="assets/css/tailwind.css">
-    <script src="assets/js/lucide.min.js"></script>
+    <script defer src="assets/js/lucide.min.js"></script>
     <style>
         * { scroll-behavior: smooth; }
         body { background-color: #fcfbf7; overflow-x: hidden; }
@@ -167,6 +167,7 @@
                 <!-- Desktop Nav -->
                 <div class="hidden lg:flex items-center gap-1">
                     <a href="/" class="px-4 py-2 rounded-xl text-primary font-bold text-sm bg-primary/5 transition-all">الرئيسية</a>
+                    <a href="lessons" class="px-4 py-2 rounded-xl text-slate-600 font-bold text-sm hover:text-primary hover:bg-primary/5 transition-all">دروس الفلسفة</a>
                     <a href="philomedia" class="px-4 py-2 rounded-xl text-slate-600 font-bold text-sm hover:text-primary hover:bg-primary/5 transition-all">فيلوميديا</a>
                     <a href="prompts" class="px-4 py-2 rounded-xl text-slate-600 font-bold text-sm hover:text-primary hover:bg-primary/5 transition-all">أدوات الذكاء الفلسفي</a>
                     <a href="skills" class="px-4 py-2 rounded-xl text-slate-600 font-bold text-sm hover:text-primary hover:bg-primary/5 transition-all">المهارات التعليمية</a>
@@ -199,6 +200,7 @@
             </div>
             <div class="space-y-1">
                 <a href="/" class="flex items-center gap-3 px-4 py-3 rounded-xl text-primary bg-primary/5 font-bold"><i data-lucide="home" class="w-5 h-5"></i>الرئيسية</a>
+                <a href="lessons" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-50 font-bold transition-colors"><i data-lucide="library" class="w-5 h-5"></i>دروس الفلسفة</a>
                 <a href="philomedia" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-50 font-bold transition-colors"><i data-lucide="video" class="w-5 h-5"></i>فيلوميديا</a>
                 <a href="prompts" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-50 font-bold transition-colors"><i data-lucide="wand-2" class="w-5 h-5"></i>أدوات الذكاء الفلسفي</a>
                 <a href="skills" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-50 font-bold transition-colors"><i data-lucide="graduation-cap" class="w-5 h-5"></i>المهارات التعليمية</a>
@@ -254,7 +256,7 @@
                 <!-- Stats -->
                 <div class="flex flex-wrap justify-center gap-8 pt-8">
                     <div class="text-center px-6">
-                        <div class="text-3xl font-black text-primary">٥</div>
+                        <div class="text-3xl font-black text-primary">٦</div>
                         <div class="text-sm font-bold text-slate-400 mt-1">أقسام تفاعلية</div>
                     </div>
                     <div class="w-px h-12 bg-slate-200 hidden sm:block"></div>
@@ -272,8 +274,8 @@
         </div>
 
         <!-- Decorative blobs -->
-        <div class="absolute top-20 right-0 w-[500px] h-[500px] bg-primary/8 rounded-full blur-[100px] -z-[1]"></div>
-        <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-secondary/6 rounded-full blur-[120px] -z-[1]"></div>
+        <div class="absolute top-20 right-0 w-[500px] h-[500px] bg-primary/[0.08] rounded-full blur-[100px] -z-[1]"></div>
+        <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-secondary/[0.06] rounded-full blur-[120px] -z-[1]"></div>
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-accent/5 rounded-full blur-[80px] -z-[1]"></div>
 
         <!-- Scroll indicator -->
@@ -296,6 +298,21 @@
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Card: Philosophy Lessons -->
+            <div class="reveal card-glow group relative bg-white rounded-[32px] p-8 border border-slate-100 shadow-sm overflow-hidden">
+                <div class="relative z-10 space-y-5">
+                    <div class="w-14 h-14 bg-gradient-to-br from-teal-50 to-teal-100 rounded-2xl flex items-center justify-center text-primary group-hover:scale-110 transition-transform shadow-sm">
+                        <i data-lucide="library" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-black text-slate-900">دروس الفلسفة</h3>
+                    <p class="text-slate-500 font-medium leading-relaxed">دروس تفاعلية وفق المنهاج المغربي: من المدخل الإشكالي إلى مواقف الفلاسفة والتركيب الفلسفي.</p>
+                    <a href="lessons" class="inline-flex items-center gap-2 text-primary font-black hover:gap-4 transition-all">
+                        ابدأ التعلم <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                    </a>
+                </div>
+                <div class="absolute -bottom-6 -left-6 w-40 h-40 bg-primary/5 rounded-full blur-2xl group-hover:bg-primary/10 transition-colors"></div>
+            </div>
 
             <!-- Card: Philomedia -->
             <div class="reveal card-glow group relative bg-white rounded-[32px] p-8 border border-slate-100 shadow-sm overflow-hidden">
@@ -483,6 +500,7 @@
                 <div class="space-y-6">
                     <h4 class="font-black text-white uppercase tracking-widest text-xs">الأقسام</h4>
                     <ul class="space-y-3 text-slate-400 font-bold text-sm">
+                        <li><a href="lessons" class="hover:text-teal-400 transition-colors flex items-center gap-2"><i data-lucide="library" class="w-4 h-4"></i>دروس الفلسفة</a></li>
                         <li><a href="philomedia" class="hover:text-teal-400 transition-colors flex items-center gap-2"><i data-lucide="video" class="w-4 h-4"></i>فيلوميديا</a></li>
                         <li><a href="prompts" class="hover:text-teal-400 transition-colors flex items-center gap-2"><i data-lucide="wand-2" class="w-4 h-4"></i>أدوات الذكاء الفلسفي</a></li>
                         <li><a href="skills" class="hover:text-teal-400 transition-colors flex items-center gap-2"><i data-lucide="graduation-cap" class="w-4 h-4"></i>المهارات التعليمية</a></li>
@@ -527,7 +545,9 @@
     <!-- ========== SCRIPTS ========== -->
     <script>
         // Initialize Lucide
-        lucide.createIcons();
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
 
         // Sidebar
         function toggleSidebar() {
@@ -587,9 +607,9 @@
 
         // Newsletter
         // Reuses the same Google Apps Script Web App as the feedback form
-        // (see Code.gs) — no Cloudflare Function needed, since drag-and-drop
+        // (see google-apps-script/Code.gs) — no Cloudflare Function needed, since drag-and-drop
         // deploys can't serve those anyway. Add the same deployed /exec URL
-        // used in feedback.html below.
+        // used in feedback/index.html below.
         const NEWSLETTER_ENDPOINT = 'PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE';
 
         document.getElementById('newsletter-btn').addEventListener('click', async () => {

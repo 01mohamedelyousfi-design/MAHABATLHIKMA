@@ -27,9 +27,9 @@
     <meta name="twitter:image" content="https://mahabatlhikma.pages.dev/assets/logo/og-image.png">
 
     <!-- Favicons -->
-    <link rel="icon" type="image/svg+xml" href="assets/logo/logo-mark.svg">
-    <link rel="apple-touch-icon" href="assets/logo/logo-mark.svg">
-    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/svg+xml" href="/assets/logo/logo-mark.svg">
+    <link rel="apple-touch-icon" href="/assets/logo/logo-mark.svg">
+    <link rel="manifest" href="/manifest.json">
 
     <!-- Performance & Font Resource Hints -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -85,9 +85,9 @@
     }
     </script>
 
-    <link rel="stylesheet" href="assets/css/tailwind.css">
-    <script src="assets/js/lucide.min.js"></script>
-    <script src="assets/js/howto-video.js"></script>
+    <link rel="stylesheet" href="/assets/css/tailwind.css">
+    <script defer src="/assets/js/lucide.min.js"></script>
+    <script defer src="/assets/js/howto-video.js"></script>
     <style>
         body { background-color: #fcfbf7; }
         .glass { background: rgba(255,255,255,0.8); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.3); }
@@ -125,7 +125,7 @@
         <p class="text-slate-500 font-medium leading-relaxed">
             هذا الكتيّب خلاصة تجربة متواضعة راكمتها في توظيف هذه الأدوات لخدمة تدريس الفلسفة، أضعه بين يدي كل أستاذة وأستاذ فلسفة يرغب في الاستفادة من إمكانات منصة «محبة الحكمة» دون أن تقف الحواجز التقنية عائقًا أمامه. الهدف ليس أن تصبح خبيرًا في الذكاء الاصطناعي، بل أن تعرف الحد الأدنى الذي يمكّنك من استعمال الأداة الصحيحة، في الوقت الصحيح، وبالطريقة الصحيحة.
         </p>
-        <a href="assets/guides/ai-teaching-booklet.pdf" download class="inline-flex items-center gap-2 bg-slate-900 text-white px-5 py-3 rounded-xl font-bold hover:bg-slate-800 transition-colors">
+        <a href="/assets/guides/ai-teaching-booklet.pdf" download class="inline-flex items-center gap-2 bg-slate-900 text-white px-5 py-3 rounded-xl font-bold hover:bg-slate-800 transition-colors">
             <i data-lucide="download" class="w-4 h-4"></i> تحميل الكتيّب (PDF)
         </a>
     </header>
@@ -247,19 +247,19 @@
             <h3 class="text-2xl font-black flex items-center gap-2"><i data-lucide="compass" class="w-6 h-6 text-primary"></i> استكشف على المنصة</h3>
             <p class="text-slate-500 text-sm">الأقسام أدناه تُفصَّل بالكامل في صفحاتها الخاصة — إليك موجز سريع لكل واحد:</p>
             <div class="grid sm:grid-cols-3 gap-4">
-                <a href="prompts" class="group bg-white rounded-2xl border border-slate-100 shadow-sm p-5 hover:shadow-md transition-shadow">
+                <a href="/prompts" class="group bg-white rounded-2xl border border-slate-100 shadow-sm p-5 hover:shadow-md transition-shadow">
                     <i data-lucide="wand-2" class="w-6 h-6 text-primary mb-2"></i>
                     <h4 class="font-black mb-1">أدوات الذكاء الفلسفي</h4>
                     <p class="text-slate-500 text-xs leading-relaxed mb-3">أجب عن أسئلة موجّهة فتحصل على أمر جاهز: Philosophy Mode، مدرّب المناظرة، وPhilosimage.</p>
                     <span class="text-primary font-bold text-xs flex items-center gap-1">استكشف <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i></span>
                 </a>
-                <a href="skills" class="group bg-white rounded-2xl border border-slate-100 shadow-sm p-5 hover:shadow-md transition-shadow">
+                <a href="/skills" class="group bg-white rounded-2xl border border-slate-100 shadow-sm p-5 hover:shadow-md transition-shadow">
                     <i data-lucide="graduation-cap" class="w-6 h-6 text-accent mb-2"></i>
                     <h4 class="font-black mb-1">مهارات تعليمية جاهزة</h4>
                     <p class="text-slate-500 text-xs leading-relaxed mb-3">مهارات Claude جاهزة للرفع مباشرة: من بناء الدروس والبحث الموثّق إلى التعلّم التفاعلي والتوجيه الدراسي.</p>
                     <span class="text-accent font-bold text-xs flex items-center gap-1">استكشف <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i></span>
                 </a>
-                <a href="notebooklm" class="group bg-white rounded-2xl border border-slate-100 shadow-sm p-5 hover:shadow-md transition-shadow">
+                <a href="/notebooklm" class="group bg-white rounded-2xl border border-slate-100 shadow-sm p-5 hover:shadow-md transition-shadow">
                     <i data-lucide="notebook-pen" class="w-6 h-6 text-secondary mb-2"></i>
                     <h4 class="font-black mb-1">دليل NotebookLM</h4>
                     <p class="text-slate-500 text-xs leading-relaxed mb-3">حوّل نصوصك ووثائقك إلى عروض تقديمية وفيديوهات تعليمية جاهزة للقسم.</p>
@@ -278,14 +278,16 @@
                 <h4 class="font-black text-rose-600 flex items-center gap-2 mb-1"><i data-lucide="triangle-alert" class="w-4 h-4"></i> تنبيه تربوي</h4>
                 <p class="text-slate-600 text-sm leading-relaxed">الذكاء الاصطناعي أداة مساعدة، لا بديل عن التأمل الفلسفي والأستاذ. استثمروه لتوفير الوقت وإثراء الدرس، لكن حافظوا على الجوهر: التفكير النقدي، الحوار الصفي، والقراءة المباشرة للنصوص الفلسفية. التقنية في خدمة الفلسفة، لا العكس.</p>
             </div>
-            <p class="text-center text-slate-500 text-sm pt-4">هذا الكتيّب عمل مفتوح يتطوّر مع التجربة. لأي ملاحظة أو اقتراح، <a href="feedback" class="text-primary font-bold hover:underline">شاركنا رأيك</a>.</p>
+            <p class="text-center text-slate-500 text-sm pt-4">هذا الكتيّب عمل مفتوح يتطوّر مع التجربة. لأي ملاحظة أو اقتراح، <a href="/feedback" class="text-primary font-bold hover:underline">شاركنا رأيك</a>.</p>
         </section>
 
     </main>
 
     <script>
-        lucide.createIcons();
-        document.getElementById('howto-video-box').innerHTML = howtoVideoEmbedHtml(false);
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            document.getElementById('howto-video-box').innerHTML = howtoVideoEmbedHtml(false);
+        });
 
         function copyPrompt(btn) {
             const text = document.getElementById('example-prompt').textContent;

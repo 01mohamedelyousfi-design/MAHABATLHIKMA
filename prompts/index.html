@@ -27,9 +27,9 @@
     <meta name="twitter:image" content="https://mahabatlhikma.pages.dev/assets/logo/og-image.png">
 
     <!-- Favicons -->
-    <link rel="icon" type="image/svg+xml" href="assets/logo/logo-mark.svg">
-    <link rel="apple-touch-icon" href="assets/logo/logo-mark.svg">
-    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/svg+xml" href="/assets/logo/logo-mark.svg">
+    <link rel="apple-touch-icon" href="/assets/logo/logo-mark.svg">
+    <link rel="manifest" href="/manifest.json">
 
     <!-- Performance & Font Resource Hints -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -76,8 +76,8 @@
     }
     </script>
 
-    <link rel="stylesheet" href="assets/css/tailwind.css">
-    <script src="assets/js/lucide.min.js"></script>
+    <link rel="stylesheet" href="/assets/css/tailwind.css">
+    <script defer src="/assets/js/lucide.min.js"></script>
     <style>
         body { background-color: #fcfbf7; }
         .glass { background: rgba(255,255,255,0.8); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.3); }
@@ -126,8 +126,17 @@
         <h2 class="text-lg font-black text-slate-800 mb-4 flex items-center gap-2">
             <i data-lucide="compass" class="w-5 h-5 text-primary"></i> استكشف أيضاً في منصة محبة الحكمة
         </h2>
-        <div class="grid sm:grid-cols-3 gap-4">
-            <a href="skills" class="group bg-white rounded-2xl border border-slate-100 p-4 shadow-sm hover:shadow-md transition-all">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <a href="/lessons" class="group bg-white rounded-2xl border border-slate-100 p-4 shadow-sm hover:shadow-md transition-all">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-teal-50 text-primary flex items-center justify-center"><i data-lucide="library" class="w-5 h-5"></i></div>
+                    <div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-primary text-sm transition-colors">دروس الفلسفة</h3>
+                        <p class="text-xs text-slate-500">دروس تفاعلية وفق المنهاج المغربي</p>
+                    </div>
+                </div>
+            </a>
+            <a href="/skills" class="group bg-white rounded-2xl border border-slate-100 p-4 shadow-sm hover:shadow-md transition-all">
                 <div class="flex items-center gap-3">
                     <div class="w-10 h-10 rounded-xl bg-amber-50 text-accent flex items-center justify-center"><i data-lucide="graduation-cap" class="w-5 h-5"></i></div>
                     <div>
@@ -136,7 +145,7 @@
                     </div>
                 </div>
             </a>
-            <a href="notebooklm" class="group bg-white rounded-2xl border border-slate-100 p-4 shadow-sm hover:shadow-md transition-all">
+            <a href="/notebooklm" class="group bg-white rounded-2xl border border-slate-100 p-4 shadow-sm hover:shadow-md transition-all">
                 <div class="flex items-center gap-3">
                     <div class="w-10 h-10 rounded-xl bg-teal-50 text-primary flex items-center justify-center"><i data-lucide="notebook-pen" class="w-5 h-5"></i></div>
                     <div>
@@ -145,7 +154,7 @@
                     </div>
                 </div>
             </a>
-            <a href="philomedia" class="group bg-white rounded-2xl border border-slate-100 p-4 shadow-sm hover:shadow-md transition-all">
+            <a href="/philomedia" class="group bg-white rounded-2xl border border-slate-100 p-4 shadow-sm hover:shadow-md transition-all">
                 <div class="flex items-center gap-3">
                     <div class="w-10 h-10 rounded-xl bg-purple-50 text-secondary flex items-center justify-center"><i data-lucide="video" class="w-5 h-5"></i></div>
                     <div>
@@ -218,8 +227,6 @@
     </div>
 
     <script>
-        lucide.createIcons();
-
         const TOOLS = [
             {
                 id: 'philosophy-mode',
@@ -275,8 +282,8 @@
                 teacher: 'يتيح بناء نشاط صفي كامل حول مفهوم واحد: كل عنصر في الصورة قابل للمناقشة ("لماذا صندوق شفاف لا قفص؟")، بدل عرض صورة جاهزة بلا تفكيك يفهمه التلميذ فقط بالنظر.',
                 student: 'يدرّب المتعلم على أهم مهارة في التحليل الفلسفي: ترجمة فكرة مجردة إلى رمز ملموس ومعلَّل — وهي نفس مهارة بناء المثال أو التشبيه في الإنشاء الفلسفي.',
                 examples: [
-                    { src: 'assets/examples/philosimage/example-descartes.png', caption: 'منهج الشك عند ديكارت' },
-                    { src: 'assets/examples/philosimage/example-spinoza.png', caption: 'الحرية والضرورة عند سبينوزا' },
+                    { src: 'assets/examples/philosimage/example-descartes.webp', caption: 'منهج الشك عند ديكارت' },
+                    { src: 'assets/examples/philosimage/example-spinoza.webp', caption: 'الحرية والضرورة عند سبينوزا' },
                 ],
             },
         ];
@@ -354,7 +361,10 @@
             if (e.key === 'Escape') { closeToolModal(); closeExampleLightbox(); }
         });
 
-        renderGrid();
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            renderGrid();
+        });
     </script>
 
     <footer class="text-center text-slate-400 text-xs py-6 border-t border-slate-100 mt-10">
