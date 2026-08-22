@@ -1,68 +1,34 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>هوية الشخص — المدخل الإشكالي | محبة الحكمة</title>
     <meta name="description" content="المدخل الإشكالي لدرس هوية الشخص — ريلز، قصة قصيرة، ولعبة فلسفية حول سؤال: من أنا؟">
-    <link rel="canonical" href="https://mahabatlhikma.pages.dev/lessons/identity-problematique">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://mahabatlhikma.pages.dev/lessons/identity-problematique">
-    <meta property="og:site_name" content="محبة الحكمة | Mahabat Lhikma">
-    <meta property="og:title" content="هوية الشخص — المدخل الإشكالي | محبة الحكمة">
-    <meta property="og:description" content="المدخل الإشكالي لدرس هوية الشخص — ريلز، قصة قصيرة، ولعبة فلسفية حول سؤال: من أنا؟">
-    <meta property="og:image" content="https://mahabatlhikma.pages.dev/assets/lessons/identity-cover.jpg">
-    <meta property="og:locale" content="ar_AR">
-
-    <!-- Twitter Cards -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://mahabatlhikma.pages.dev/lessons/identity-problematique">
-    <meta name="twitter:title" content="هوية الشخص — المدخل الإشكالي | محبة الحكمة">
-    <meta name="twitter:description" content="المدخل الإشكالي لدرس هوية الشخص — ريلز، قصة قصيرة، ولعبة فلسفية حول سؤال: من أنا؟">
-    <meta name="twitter:image" content="https://mahabatlhikma.pages.dev/assets/lessons/identity-cover.jpg">
-
-    <!-- Favicons -->
-    <link rel="icon" type="image/svg+xml" href="/assets/logo/logo-mark.svg">
-    <link rel="apple-touch-icon" href="/assets/logo/logo-mark.svg">
-    <link rel="manifest" href="/manifest.json">
-
-    <!-- Performance & Font Resource Hints -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <link rel="icon" type="image/svg+xml" href="assets/logo/logo-mark.svg">
+    <link rel="apple-touch-icon" href="assets/logo/logo-mark.svg">
+    <link rel="stylesheet" href="assets/css/tailwind.css">
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-
-    <!-- Schema.org JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://mahabatlhikma.pages.dev/" },
-            { "@type": "ListItem", "position": 2, "name": "دروس الفلسفة", "item": "https://mahabatlhikma.pages.dev/lessons" },
-            { "@type": "ListItem", "position": 3, "name": "درس هوية الشخص — المدخل الإشكالي", "item": "https://mahabatlhikma.pages.dev/lessons/identity-problematique" }
-          ]
-        },
-        {
-          "@type": "LearningResource",
-          "name": "هوية الشخص — المدخل الإشكالي",
-          "description": "المدخل الإشكالي لدرس هوية الشخص — ريلز، قصة قصيرة، ولعبة فلسفية حول سؤال: من أنا؟",
-          "url": "https://mahabatlhikma.pages.dev/lessons/identity-problematique",
-          "inLanguage": "ar",
-          "learningResourceType": "درس فلسفي تفاعلي",
-          "teaches": "مفهوم الشخص — مجزوءة الوضع البشري",
-          "educationalLevel": "الثانية بكالوريا",
-          "publisher": { "@type": "EducationalOrganization", "name": "محبة الحكمة", "url": "https://mahabatlhikma.pages.dev/" }
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Tajawal', 'sans-serif'],
+                        serif: ['Amiri', 'serif'],
+                    },
+                    colors: {
+                        primary: { DEFAULT: '#0f766e', light: '#14b8a6', dark: '#0d5f58' },
+                        secondary: { DEFAULT: '#7c3aed', light: '#a78bfa', dark: '#5b21b6' },
+                        accent: { DEFAULT: '#d97706', light: '#fbbf24', dark: '#b45309' },
+                        surface: '#fcfbf7',
+                    }
+                }
+            }
         }
-      ]
-    }
     </script>
-
-    <link rel="stylesheet" href="/assets/css/tailwind.css">
-    <script defer src="/assets/js/lucide.min.js"></script>
     <style>
         * { scroll-behavior: smooth; }
         body { background-color: #fcfbf7; overflow-x: hidden; }
@@ -108,7 +74,7 @@
             <div class="flex justify-between h-20 items-center">
                 <!-- Logo -->
                 <a href="/" class="flex items-center gap-3 group">
-                    <img src="/assets/logo/logo-mark.svg" alt="محبة الحكمة" class="w-11 h-11 flex-shrink-0 group-hover:scale-105 transition-transform duration-300">
+                    <img src="assets/logo/logo-mark.svg" alt="محبة الحكمة" class="w-11 h-11 flex-shrink-0 group-hover:scale-105 transition-transform duration-300">
                     <div>
                         <h1 class="text-2xl font-black tracking-tight text-primary leading-none">محبة الحكمة</h1>
                         <p class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] leading-none mt-1">Mahabat Lhikma</p>
@@ -144,7 +110,7 @@
         <div class="p-6 space-y-6">
             <div class="flex items-center justify-between">
                 <div class="flex items-center gap-2">
-                    <img src="/assets/logo/logo-mark.svg" alt="محبة الحكمة" class="w-8 h-8">
+                    <img src="assets/logo/logo-mark.svg" alt="محبة الحكمة" class="w-8 h-8">
                     <span class="text-xl font-black text-primary">محبة الحكمة</span>
                 </div>
                 <button onclick="toggleSidebar()" class="p-2 rounded-xl hover:bg-slate-100"><i data-lucide="x" class="w-5 h-5 text-slate-500"></i></button>
@@ -190,8 +156,8 @@
             </div>
         </div>
 
-        <div class="absolute top-10 right-0 w-[400px] h-[400px] bg-primary/[0.08] rounded-full blur-[100px] -z-[1]"></div>
-        <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-secondary/[0.06] rounded-full blur-[120px] -z-[1]"></div>
+        <div class="absolute top-10 right-0 w-[400px] h-[400px] bg-primary/8 rounded-full blur-[100px] -z-[1]"></div>
+        <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-secondary/6 rounded-full blur-[120px] -z-[1]"></div>
     </header>
 
     <!-- ========== SECTION 1: REEL + TEXT ========== -->
@@ -235,7 +201,7 @@
 
                 <!-- Image -->
                 <div class="reveal">
-                    <img src="/assets/lessons/identity-story.jpg" alt="مفترق طرق: الحياة التي يريدها الآخرون أم الحياة التي أريدها أنا" class="w-full rounded-[32px] shadow-xl border border-white">
+                    <img src="assets/lessons/identity-story.jpg" alt="مفترق طرق: الحياة التي يريدها الآخرون أم الحياة التي أريدها أنا" class="w-full rounded-[32px] shadow-xl border border-white">
                 </div>
 
                 <!-- Story -->
@@ -309,7 +275,7 @@
                 <p class="text-lg md:text-xl text-white/85 font-medium leading-relaxed">
                     بعد الإشكالية، حان وقت استكشاف كيف أجاب ثلاثة من كبار الفلاسفة — جون لوك، شوبنهاور، وفرويد — عن سؤال «من أنا؟». نصوص أصلية مع تحليل حجاجي تفاعلي يبرز الدعوى والمجيز والبينة.
                 </p>
-                <a href="/lessons/identity-philosophers" class="inline-flex items-center justify-center gap-3 bg-white text-primary px-10 py-5 rounded-2xl text-xl font-black shadow-2xl hover:scale-105 hover:bg-slate-50 transition-all">
+                <a href="philosophers.html" class="inline-flex items-center justify-center gap-3 bg-white text-primary px-10 py-5 rounded-2xl text-xl font-black shadow-2xl hover:scale-105 hover:bg-slate-50 transition-all">
                     <i data-lucide="arrow-left" class="w-6 h-6"></i>
                     ادخل مواقف الفلاسفة
                 </a>
@@ -331,7 +297,7 @@
                 <!-- Brand -->
                 <div class="lg:col-span-1 space-y-6">
                     <div class="flex items-center gap-3">
-                        <img src="/assets/logo/logo-mark-white.svg" alt="محبة الحكمة" class="w-10 h-10">
+                        <img src="assets/logo/logo-mark-white.svg" alt="محبة الحكمة" class="w-10 h-10">
                         <div>
                             <h3 class="text-xl font-black text-white">محبة الحكمة</h3>
                             <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Mahabat Lhikma</p>
@@ -389,9 +355,7 @@
 
     <!-- ========== SCRIPTS ========== -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            lucide.createIcons();
-        });
+        lucide.createIcons();
 
         // Sidebar
         function toggleSidebar() {

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
 
@@ -7,64 +7,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>التركيب: هوية الشخص | محبة الحكمة</title>
     <meta name="description" content="أنشطة تفاعلية لتركيب درس هوية الشخص: استرجع، ميّز، جرّب تجربة فكرية، طبّق، ناقش الأطروحة ونقيضها، ثم اكتب تركيبك الفلسفي وتأمل في تعلمك.">
-    <link rel="canonical" href="https://mahabatlhikma.pages.dev/lessons/identity-synthesis">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://mahabatlhikma.pages.dev/lessons/identity-synthesis">
-    <meta property="og:site_name" content="محبة الحكمة | Mahabat Lhikma">
-    <meta property="og:title" content="التركيب: هوية الشخص | محبة الحكمة">
-    <meta property="og:description" content="أنشطة تفاعلية لتركيب درس هوية الشخص: استرجع، ميّز، جرّب تجربة فكرية، طبّق، ناقش الأطروحة ونقيضها، ثم اكتب تركيبك الفلسفي وتأمل في تعلمك.">
-    <meta property="og:image" content="https://mahabatlhikma.pages.dev/assets/lessons/identity-cover.jpg">
-    <meta property="og:locale" content="ar_AR">
-
-    <!-- Twitter Cards -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://mahabatlhikma.pages.dev/lessons/identity-synthesis">
-    <meta name="twitter:title" content="التركيب: هوية الشخص | محبة الحكمة">
-    <meta name="twitter:description" content="أنشطة تفاعلية لتركيب درس هوية الشخص: استرجع، ميّز، جرّب تجربة فكرية، طبّق، ناقش الأطروحة ونقيضها، ثم اكتب تركيبك الفلسفي وتأمل في تعلمك.">
-    <meta name="twitter:image" content="https://mahabatlhikma.pages.dev/assets/lessons/identity-cover.jpg">
-
-    <!-- Favicons -->
-    <link rel="icon" type="image/svg+xml" href="/assets/logo/logo-mark.svg">
-    <link rel="apple-touch-icon" href="/assets/logo/logo-mark.svg">
-    <link rel="manifest" href="/manifest.json">
-
-    <!-- Performance & Font Resource Hints -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/svg+xml" href="assets/logo/logo-mark.svg">
+    <link rel="apple-touch-icon" href="assets/logo/logo-mark.svg">
+    <link rel="stylesheet" href="assets/css/tailwind.css">
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-
-    <!-- Schema.org JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://mahabatlhikma.pages.dev/" },
-            { "@type": "ListItem", "position": 2, "name": "دروس الفلسفة", "item": "https://mahabatlhikma.pages.dev/lessons" },
-            { "@type": "ListItem", "position": 3, "name": "التركيب: هوية الشخص", "item": "https://mahabatlhikma.pages.dev/lessons/identity-synthesis" }
-          ]
-        },
-        {
-          "@type": "LearningResource",
-          "name": "التركيب: هوية الشخص",
-          "description": "أنشطة تفاعلية لتركيب درس هوية الشخص: استرجع، ميّز، جرّب تجربة فكرية، طبّق، ناقش الأطروحة ونقيضها، ثم اكتب تركيبك الفلسفي وتأمل في تعلمك.",
-          "url": "https://mahabatlhikma.pages.dev/lessons/identity-synthesis",
-          "inLanguage": "ar",
-          "learningResourceType": "أنشطة تفاعلية لتركيب الدرس",
-          "teaches": "مفهوم الشخص — مجزوءة الوضع البشري",
-          "educationalLevel": "الثانية بكالوريا",
-          "publisher": { "@type": "EducationalOrganization", "name": "محبة الحكمة", "url": "https://mahabatlhikma.pages.dev/" }
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Tajawal', 'sans-serif'],
+                        serif: ['Amiri', 'serif'],
+                    },
+                    colors: {
+                        primary: { DEFAULT: '#0f766e', light: '#14b8a6', dark: '#0d5f58' },
+                        secondary: { DEFAULT: '#7c3aed', light: '#a78bfa', dark: '#5b21b6' },
+                        accent: { DEFAULT: '#d97706', light: '#fbbf24', dark: '#b45309' },
+                        surface: '#fcfbf7',
+                        paper: '#fffdf8',
+                    }
+                }
+            }
         }
-      ]
-    }
     </script>
-
-    <link rel="stylesheet" href="/assets/css/tailwind.css">
-    <script defer src="/assets/js/lucide.min.js"></script>
     <style>
         :root {
             --paper: oklch(0.995 0.005 88);
@@ -284,7 +250,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
                 <a href="/" class="flex items-center gap-3 group">
-                    <img src="/assets/logo/logo-mark.svg" alt="محبة الحكمة" class="w-11 h-11 flex-shrink-0 group-hover:scale-105 transition-transform duration-300">
+                    <img src="assets/logo/logo-mark.svg" alt="محبة الحكمة" class="w-11 h-11 flex-shrink-0 group-hover:scale-105 transition-transform duration-300">
                     <div>
                         <div class="text-2xl font-black tracking-tight text-primary leading-none">محبة الحكمة</div>
                         <p class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] leading-none mt-1">Mahabat Lhikma</p>
@@ -317,7 +283,7 @@
         <div class="p-6 space-y-6">
             <div class="flex items-center justify-between">
                 <div class="flex items-center gap-2">
-                    <img src="/assets/logo/logo-mark.svg" alt="" class="w-8 h-8">
+                    <img src="assets/logo/logo-mark.svg" alt="" class="w-8 h-8">
                     <span class="text-xl font-black text-primary">محبة الحكمة</span>
                 </div>
                 <button type="button" onclick="toggleSidebar()" class="p-2 rounded-xl hover:bg-slate-100" aria-label="إغلاق قائمة التنقل"><i data-lucide="x" class="w-5 h-5 text-slate-500" aria-hidden="true"></i></button>
@@ -343,7 +309,7 @@
                 <i data-lucide="chevron-left" class="w-4 h-4" aria-hidden="true"></i>
                 <a href="/lessons" class="hover:text-primary transition-colors">دروس الفلسفة</a>
                 <i data-lucide="chevron-left" class="w-4 h-4" aria-hidden="true"></i>
-                <a href="/lessons/identity-problematique" class="hover:text-primary transition-colors">هوية الشخص</a>
+                <a href="lesson-identity.html" class="hover:text-primary transition-colors">هوية الشخص</a>
                 <i data-lucide="chevron-left" class="w-4 h-4" aria-hidden="true"></i>
                 <span class="text-primary" aria-current="page">التركيب</span>
             </nav>
@@ -373,8 +339,8 @@
             </div>
         </div>
 
-        <div class="absolute top-10 right-0 w-[400px] h-[400px] bg-primary/[0.08] rounded-full blur-[100px] -z-[1]"></div>
-        <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-secondary/[0.06] rounded-full blur-[120px] -z-[1]"></div>
+        <div class="absolute top-10 right-0 w-[400px] h-[400px] bg-primary/8 rounded-full blur-[100px] -z-[1]"></div>
+        <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-secondary/6 rounded-full blur-[120px] -z-[1]"></div>
     </header>
 
     <div class="sticky top-20 z-30 glass border-y border-slate-100/80">
@@ -876,7 +842,7 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 pb-16 border-b border-white/10">
                 <div class="lg:col-span-1 space-y-6">
                     <div class="flex items-center gap-3">
-                        <img src="/assets/logo/logo-mark-white.svg" alt="محبة الحكمة" class="w-10 h-10">
+                        <img src="assets/logo/logo-mark-white.svg" alt="محبة الحكمة" class="w-10 h-10">
                         <div>
                             <h3 class="text-xl font-black text-white">محبة الحكمة</h3>
                             <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Mahabat Lhikma</p>
@@ -927,7 +893,7 @@
         </div>
     </footer>
 
-    <div id="status-toast" class="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 hidden max-w-[calc(100%_-_2rem)] rounded-xl bg-slate-900 text-slate-50 px-5 py-3 text-sm font-bold shadow-xl" role="status" aria-live="polite"></div>
+    <div id="status-toast" class="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 hidden max-w-[calc(100%-2rem)] rounded-xl bg-slate-900 text-slate-50 px-5 py-3 text-sm font-bold shadow-xl" role="status" aria-live="polite"></div>
 
     <script>
         const STORAGE_KEY = 'mahabat-lhikma:identity-synthesis:v2';
@@ -1787,16 +1753,14 @@
 
         /* ---------- Initial paint ---------- */
 
-        document.addEventListener('DOMContentLoaded', () => {
-            updateRetrieveStatus(true);
-            updateExperimentSummary();
-            updateReflectStatus();
-            updateSynthesisIndicators();
-            updateProgress();
-            observeRevealElements();
-            if (state.synthesize.complete) document.getElementById('model-answer').classList.remove('hidden');
-            lucide.createIcons();
-        });
+        updateRetrieveStatus(true);
+        updateExperimentSummary();
+        updateReflectStatus();
+        updateSynthesisIndicators();
+        updateProgress();
+        observeRevealElements();
+        if (state.synthesize.complete) document.getElementById('model-answer').classList.remove('hidden');
+        lucide.createIcons();
     </script>
 </body>
 </html>

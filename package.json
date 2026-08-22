@@ -7,7 +7,7 @@
     "example": "examples"
   },
   "scripts": {
-    "build": "tailwindcss -c tailwind.config.js -i tailwind.input.css -o assets/css/tailwind.css --minify && tailwindcss -c tailwind.example.config.js -i tailwind.input.css -o examples/aflatoon-freedom-programming/tailwind.css --minify",
+    "build": "tailwindcss -c tailwind.config.js -i tailwind.input.css -o assets/css/tailwind.css --minify && tailwindcss -c tailwind.example.config.js -i tailwind.input.css -o examples/aflatoon-freedom-programming/tailwind.css --minify && tailwindcss -c tailwind.lessons.config.js -i tailwind.lessons.input.css -o lessons/assets/css/tailwind.css --minify",
     "serve": "node scripts/serve.js",
     "check-links": "node scripts/check-links.js",
     "images:webp": "node scripts/images-webp.js"

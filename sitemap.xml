@@ -29,24 +29,24 @@
 
     <!-- Lesson: Personal Identity — Problematique -->
     <url>
-        <loc>https://mahabatlhikma.pages.dev/lessons/identity-problematique</loc>
-        <lastmod>2026-08-20</lastmod>
+        <loc>https://mahabatlhikma.pages.dev/lessons/lesson-identity</loc>
+        <lastmod>2026-08-22</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <!-- Lesson: Personal Identity — Philosophers' Positions -->
     <url>
-        <loc>https://mahabatlhikma.pages.dev/lessons/identity-philosophers</loc>
-        <lastmod>2026-08-20</lastmod>
+        <loc>https://mahabatlhikma.pages.dev/lessons/philosophers</loc>
+        <lastmod>2026-08-22</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <!-- Lesson: Personal Identity — Interactive Synthesis -->
     <url>
-        <loc>https://mahabatlhikma.pages.dev/lessons/identity-synthesis</loc>
-        <lastmod>2026-08-20</lastmod>
+        <loc>https://mahabatlhikma.pages.dev/lessons/lesson-identity-synthesis</loc>
+        <lastmod>2026-08-22</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
