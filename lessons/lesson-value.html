@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قيمة الشخص — المدخل الإشكالي | محبة الحكمة</title>
+    <meta name="description" content="المدخل الإشكالي لدرس قيمة الشخص — فيديو تمهيدي، خلفية فلسفية حول الكرامة الإنسانية، ولعبة معضلة القطار حول سؤال: ما قيمة الإنسان؟">
+    <link rel="canonical" href="https://mahabatlhikma.pages.dev/lessons/lesson-value">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mahabatlhikma.pages.dev/lessons/lesson-value">
+    <meta property="og:site_name" content="محبة الحكمة | Mahabat Lhikma">
+    <meta property="og:title" content="قيمة الشخص — المدخل الإشكالي | محبة الحكمة">
+    <meta property="og:description" content="المدخل الإشكالي لدرس قيمة الشخص — فيديو تمهيدي، خلفية فلسفية حول الكرامة الإنسانية، ولعبة معضلة القطار حول سؤال: ما قيمة الإنسان؟">
+    <meta property="og:image" content="https://mahabatlhikma.pages.dev/assets/logo/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="شعار منصة محبة الحكمة">
+    <meta property="og:locale" content="ar_AR">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://mahabatlhikma.pages.dev/lessons/lesson-value">
+    <meta name="twitter:title" content="قيمة الشخص — المدخل الإشكالي | محبة الحكمة">
+    <meta name="twitter:description" content="المدخل الإشكالي لدرس قيمة الشخص — فيديو تمهيدي، خلفية فلسفية حول الكرامة الإنسانية، ولعبة معضلة القطار حول سؤال: ما قيمة الإنسان؟">
+    <meta name="twitter:image" content="https://mahabatlhikma.pages.dev/assets/logo/og-image.png">
+
+    <link rel="icon" type="image/svg+xml" href="assets/logo/logo-mark.svg">
+    <link rel="apple-touch-icon" href="assets/logo/logo-mark.svg">
+    <link rel="stylesheet" href="assets/css/tailwind.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="assets/js/lucide.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Tajawal', 'sans-serif'],
+                        serif: ['Amiri', 'serif'],
+                    },
+                    colors: {
+                        primary: { DEFAULT: '#0f766e', light: '#14b8a6', dark: '#0d5f58' },
+                        secondary: { DEFAULT: '#7c3aed', light: '#a78bfa', dark: '#5b21b6' },
+                        accent: { DEFAULT: '#d97706', light: '#fbbf24', dark: '#b45309' },
+                        surface: '#fcfbf7',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { scroll-behavior: smooth; }
+        body { background-color: #fcfbf7; overflow-x: hidden; }
+
+        .glass { background: rgba(255,255,255,0.72); backdrop-filter: blur(16px) saturate(180%); border: 1px solid rgba(255,255,255,0.35); }
+
+        .hero-bg {
+            background:
+                radial-gradient(ellipse 80% 60% at 20% 20%, rgba(15,118,110,0.12), transparent),
+                radial-gradient(ellipse 60% 50% at 80% 80%, rgba(124,58,237,0.08), transparent),
+                radial-gradient(ellipse 40% 40% at 50% 50%, rgba(217,119,6,0.05), transparent);
+        }
+
+        .card-glow { transition: all 0.5s cubic-bezier(0.4,0,0.2,1); }
+        .card-glow:hover { transform: translateY(-8px); box-shadow: 0 25px 60px -12px rgba(0,0,0,0.12); }
+
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.16,1,0.3,1); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #0f766e 0%, #7c3aed 50%, #d97706 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .sidebar-overlay { opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+        .sidebar-overlay.open { opacity: 1; pointer-events: all; }
+        .sidebar { transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.4,0,0.2,1); }
+        .sidebar.open { transform: translateX(0); }
+
+        .nav-scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.06); }
+
+        /* Intro video frame */
+        .video-frame video { display: block; width: 100%; height: 100%; object-fit: cover; }
+    </style>
+</head>
+<body class="font-sans text-slate-900 antialiased">
+
+    <!-- ========== NAVBAR ========== -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 glass transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <a href="/" class="flex items-center gap-3 group">
+                    <img src="assets/logo/logo-mark.svg" alt="محبة الحكمة" class="w-11 h-11 flex-shrink-0 group-hover:scale-105 transition-transform duration-300">
+                    <div>
+                        <h1 class="text-2xl font-black tracking-tight text-primary leading-none">محبة الحكمة</h1>
+                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] leading-none mt-1">Mahabat Lhikma</p>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav -->
+                <div class="hidden lg:flex items-center gap-1">
+                    <a href="/" class="px-4 py-2 rounded-xl text-slate-600 font-bold text-sm hover:text-primary hover:bg-primary/5 transition-all">الرئيسية</a>
+                    <a href="/lessons" class="px-4 py-2 rounded-xl text-primary font-bold text-sm bg-primary/5 transition-all">دروس الفلسفة</a>
+                    <a href="/philomedia" class="px-4 py-2 rounded-xl text-slate-600 font-bold text-sm hover:text-primary hover:bg-primary/5 transition-all">فيلوميديا</a>
+                    <a href="/prompts" class="px-4 py-2 rounded-xl text-slate-600 font-bold text-sm hover:text-primary hover:bg-primary/5 transition-all">أدوات الذكاء الفلسفي</a>
+                    <a href="/skills" class="px-4 py-2 rounded-xl text-slate-600 font-bold text-sm hover:text-primary hover:bg-primary/5 transition-all">المهارات التعليمية</a>
+                    <a href="/games" class="px-4 py-2 rounded-xl text-slate-600 font-bold text-sm hover:text-primary hover:bg-primary/5 transition-all">الألعاب</a>
+                    <a href="/notebooklm" class="px-4 py-2 rounded-xl text-slate-600 font-bold text-sm hover:text-primary hover:bg-primary/5 transition-all">دليل NotebookLM</a>
+                    <a href="/booklet" class="px-4 py-2 rounded-xl text-slate-600 font-bold text-sm hover:text-primary hover:bg-primary/5 transition-all">كتيّب الذكاء الاصطناعي</a>
+                    <a href="/feedback" class="px-4 py-2 rounded-xl text-slate-600 font-bold text-sm hover:text-rose-500 hover:bg-rose-50 transition-all flex items-center gap-1.5">
+                        <i data-lucide="message-square-heart" class="w-4 h-4"></i>شاركنا رأيك
+                    </a>
+                </div>
+
+                <!-- Mobile Toggle -->
+                <button onclick="toggleSidebar()" class="lg:hidden p-2.5 rounded-xl text-slate-600 hover:bg-slate-100 transition-colors" id="menu-toggle">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========== MOBILE SIDEBAR ========== -->
+    <div id="sidebar-overlay" class="fixed inset-0 z-[60] bg-black/40 sidebar-overlay" onclick="toggleSidebar()"></div>
+    <aside id="sidebar" class="fixed top-0 right-0 z-[70] w-80 h-full bg-white shadow-2xl sidebar">
+        <div class="p-6 space-y-6">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <img src="assets/logo/logo-mark.svg" alt="محبة الحكمة" class="w-8 h-8">
+                    <span class="text-xl font-black text-primary">محبة الحكمة</span>
+                </div>
+                <button onclick="toggleSidebar()" class="p-2 rounded-xl hover:bg-slate-100"><i data-lucide="x" class="w-5 h-5 text-slate-500"></i></button>
+            </div>
+            <div class="space-y-1">
+                <a href="/" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-50 font-bold transition-colors"><i data-lucide="home" class="w-5 h-5"></i>الرئيسية</a>
+                <a href="/lessons" class="flex items-center gap-3 px-4 py-3 rounded-xl text-primary bg-primary/5 font-bold"><i data-lucide="library" class="w-5 h-5"></i>دروس الفلسفة</a>
+                <a href="/philomedia" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-50 font-bold transition-colors"><i data-lucide="video" class="w-5 h-5"></i>فيلوميديا</a>
+                <a href="/prompts" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-50 font-bold transition-colors"><i data-lucide="wand-2" class="w-5 h-5"></i>أدوات الذكاء الفلسفي</a>
+                <a href="/skills" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-50 font-bold transition-colors"><i data-lucide="graduation-cap" class="w-5 h-5"></i>المهارات التعليمية</a>
+                <a href="/games" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-50 font-bold transition-colors"><i data-lucide="gamepad-2" class="w-5 h-5"></i>الألعاب</a>
+                <a href="/notebooklm" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-50 font-bold transition-colors"><i data-lucide="notebook-pen" class="w-5 h-5"></i>دليل NotebookLM</a>
+                <a href="/booklet" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-50 font-bold transition-colors"><i data-lucide="book-open-check" class="w-5 h-5"></i>كتيّب الذكاء الاصطناعي</a>
+                <a href="/feedback" class="flex items-center gap-3 px-4 py-3 rounded-xl text-white bg-gradient-to-r from-primary to-primary-dark font-bold mt-4 shadow-lg shadow-primary/20"><i data-lucide="message-square-heart" class="w-5 h-5"></i>شاركنا رأيك</a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- ========== LESSON HEADER ========== -->
+    <header class="relative pt-32 pb-14 md:pt-36 md:pb-16 overflow-hidden hero-bg">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Breadcrumb -->
+            <nav class="flex items-center flex-wrap gap-2 text-sm font-bold text-slate-400 mb-8 reveal">
+                <a href="/" class="hover:text-primary transition-colors">الرئيسية</a>
+                <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                <a href="/lessons" class="hover:text-primary transition-colors">دروس الفلسفة</a>
+                <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                <span class="text-primary">قيمة الشخص</span>
+            </nav>
+
+            <div class="reveal space-y-5 max-w-3xl">
+                <div class="flex items-center gap-2 text-xs font-bold text-slate-400 uppercase tracking-widest">
+                    <span>مجزوءة الوضع البشري</span>
+                    <span class="w-1 h-1 rounded-full bg-slate-300"></span>
+                    <span>محور الشخص</span>
+                </div>
+                <h2 class="text-4xl sm:text-5xl md:text-6xl font-black text-slate-900 leading-[1.15] tracking-tight">
+                    المدخل <span class="gradient-text">الإشكالي</span>
+                </h2>
+                <p class="text-lg md:text-xl text-slate-500 font-medium leading-relaxed">
+                    القسم الأول من درس «قيمة الشخص» — قبل أي جواب، لنطرح السؤال كما يستحق أن يُطرح.
+                </p>
+            </div>
+        </div>
+
+        <div class="absolute top-10 right-0 w-[400px] h-[400px] bg-primary/8 rounded-full blur-[100px] -z-[1]"></div>
+        <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-secondary/6 rounded-full blur-[120px] -z-[1]"></div>
+    </header>
+
+    <!-- ========== SECTION 1: INTRO VIDEO (RIGHT HALF) + TEXT ========== -->
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+
+            <!-- Video -->
+            <div class="reveal mx-auto w-full">
+                <div class="relative w-full video-frame aspect-video rounded-[2rem] border border-slate-200 shadow-xl overflow-hidden bg-black">
+                    <video
+                        id="intro-video"
+                        src="assets/reels/value-intro.mp4"
+                        controls
+                        autoplay
+                        loop
+                        playsinline
+                        preload="metadata"
+                        title="فيديو تمهيدي: تعقيد سؤال قيمة الشخص"></video>
+                </div>
+                <p class="text-center text-xs font-bold text-slate-400 mt-3 flex items-center justify-center gap-1.5">
+                    <i data-lucide="clapperboard" class="w-3.5 h-3.5"></i>
+                    فيديو تمهيدي
+                </p>
+            </div>
+
+            <!-- Text -->
+            <div class="reveal space-y-5">
+                <h3 class="text-2xl md:text-3xl font-black text-slate-900">سؤال أعقد مما يبدو</h3>
+                <div class="space-y-4 font-serif text-slate-700 text-lg leading-loose">
+                    <p>للوهلة الأولى يبدو السؤال بسيطًا: قيمة الشخص تكمن في كونه إنسانًا، وفي ما يمتلكه من قدرات أو صفات أو مكانة تجعل منه شخصًا جديرًا بالتقدير. لكن ما إن نطرح السؤال بجدية حتى تتعدد الإجابات وتتعارض: هل قيمة الإنسان في الثروة التي يملكها، أم في المكانة الاجتماعية التي يحتلها، أم في ذكائه وقدرته على الإنجاز، أم في أخلاقه وأفعاله؟</p>
+                    <p>وهل يصبح الإنسان أقل قيمة حين يفقد صحته أو قدرته أو مكانته؟ وإذا كان البشر يختلفون في مواهبهم ونجاحاتهم وظروفهم، فما الذي يجعل قيمة أحدهم مساوية لقيمة الآخر؟ ثم هل يجوز أن نقيس قيمة شخص بما يمكن أن يقدمه لنا، فنراه وسيلة لتحقيق أهدافنا، أم أن له قيمة في ذاته، مستقلة عن كل منفعة؟</p>
+                    <p>وبينما قد تدفعنا بعض التصورات إلى تقدير الإنسان بحسب ما يملك أو ينتج أو ينجز، تفتح تصورات أخرى الطريق أمام فكرة أكثر جذرية: أن للإنسان قيمة لا تُشترى ولا تُقاس، وأن كرامته لا تتوقف على ما يملكه من صفات أو أدوار أو نجاحات.</p>
+                </div>
+                <div class="bg-white border border-primary/10 border-r-4 border-r-accent rounded-2xl p-5 shadow-sm">
+                    <p class="font-serif text-slate-800 text-lg leading-loose">وهنا يتحول السؤال من مجرد بحث عن معايير لتقدير الأشخاص إلى سؤال فلسفي عن معنى أن يكون الإنسان شخصًا، وعن الأساس الذي يجعل احترامه واجبًا.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 2: PHILOSOPHICAL BACKGROUND IMAGE + TEXT ========== -->
+    <section class="py-16 mt-6 bg-primary/[0.035] border-y border-primary/5">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-[1.15fr_1fr] gap-10 lg:gap-14 items-center">
+
+                <!-- Text -->
+                <div class="reveal space-y-5">
+                    <div class="inline-flex items-center gap-2 bg-secondary/10 px-4 py-1.5 rounded-full text-secondary font-bold text-xs">
+                        <i data-lucide="book-open" class="w-3.5 h-3.5"></i>
+                        خلفية فلسفية
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-black text-slate-900">جذور فكرة الكرامة الإنسانية</h3>
+                    <div class="space-y-4 font-serif text-slate-700 text-lg leading-loose">
+                        <p>كان لأثر روسو دور بارز في بلورة تصور كانط للكرامة الإنسانية؛ فقد اطّلع كانط، وهو محاضر شاب، على أعمال جان جاك روسو التي توالى صدورها مطلع الستينيات، وملأ نسخته الخاصة من كتابه «ملاحظات حول الشعور بالجميل والسامي» (1764) بتعليقات مخطوطة تعكس تأثرًا عميقًا بروسو في تفكيره الأخلاقي.</p>
+                        <p>ويرى الباحث توماس هيل أن روسو كان الأبلغ صوتًا بين من أكدوا أن للإنسانية جمعاء كرامة مستقلة عن الطبقة الاجتماعية، وأنه أسهم بصورة فاعلة في إقناع كانط بجعل الكرامة الإنسانية في صميم نظريته الأخلاقية.</p>
+                        <p>وفي سياق آخر، تُرجع «الموسوعة الدولية للأخلاق» تركيز غوسدورف الفلسفي على منظور الفرد وكرامته إلى فظائع الحرب واعتقاله شخصيًا في أحد معسكرات الأسر خلالها، وهما عاملان مهّدا لهذا التوجه في فلسفته.</p>
+                        <p>وقد كتب غوسدورف في المناخ الفكري الفرنسي لما بعد الحرب، حيث برزت «الشخصانية» (Personalism)، التي قادها إيمانويل مونييه عبر مجلته «روح» (Esprit) منذ سنة 1932، بوصفها بديلًا عن خطأين متقابلين؛ إذ وصفها الفيلسوف جاك ماريتان بأنها رد فعل على كل من الشمولية والفردانية الذرية.</p>
+                        <p>فبينما تجعل الفردانية الأنا مركز كل شيء وتنظر إلى الغير بوصفه وسيلة لتحقيق مصلحتها، تسعى الشخصانية إلى إعادة الاعتبار للشخص باعتباره ذاتًا حرة وذات قيمة في حد ذاته، وتؤكد أن الذات ليست وجودًا منغلقًا على نفسه، بل هبة للآخر وعلاقة مسؤولة معه.</p>
+                    </div>
+                </div>
+
+                <!-- Image -->
+                <div class="reveal">
+                    <img src="assets/lessons/value-kant-gusdorf.webp" alt="كانط وغوسدورف — جذور فكرة الكرامة الإنسانية والشخصانية" loading="lazy" class="w-full rounded-[32px] shadow-xl border border-white">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 3: PHILOSOPHICAL GAME CTA ========== -->
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="reveal relative bg-gradient-to-br from-slate-900 to-slate-800 rounded-[40px] p-10 md:p-14 text-center text-white overflow-hidden">
+            <div class="relative z-10 max-w-2xl mx-auto space-y-6">
+                <div class="inline-flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full text-teal-300 font-bold text-sm border border-white/10">
+                    <i data-lucide="gamepad-2" class="w-4 h-4"></i>
+                    لعبة فلسفية
+                </div>
+                <h3 class="text-3xl md:text-4xl font-black">جرّب الإشكالية بنفسك</h3>
+                <p class="text-lg text-slate-300 font-medium leading-relaxed">
+                    في «معضلة القطار»، عربة بلا فرامل تنطلق نحو مجموعة من الناس، وأمامك قرار مصيري: هل تُحوّلها نحو مسار آخر؟ ومن سيدفع ثمن اختيارك؟ جرّب القرار بنفسك، ثم اسأل: هل قيمة الذين هم في طريق العربة متساوية فعلًا؟ وما الذي يمكن أن يجيز التضحية بشخص لإنقاذ غيره — عددهم أم كرامتهم؟
+                </p>
+                <a href="https://the-train-dilemma.pages.dev/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-primary to-teal-400 text-white px-10 py-5 rounded-2xl text-xl font-black shadow-xl hover:scale-105 transition-all">
+                    <i data-lucide="gamepad-2" class="w-6 h-6"></i>
+                    ابدأ لعبة فلسفية
+                </a>
+            </div>
+            <div class="absolute top-0 right-0 w-72 h-72 bg-teal-500/10 rounded-full blur-[100px]"></div>
+            <div class="absolute bottom-0 left-0 w-72 h-72 bg-purple-500/10 rounded-full blur-[80px]"></div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 4: GO-DEEPER VIDEO ========== -->
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+        <div class="reveal flex flex-col md:flex-row items-center justify-between gap-6 bg-white rounded-[32px] border border-slate-100 shadow-sm p-8 md:p-10">
+            <div class="flex items-center gap-4 text-center md:text-right flex-col md:flex-row">
+                <div class="w-14 h-14 bg-amber-50 rounded-2xl flex items-center justify-center text-accent flex-shrink-0">
+                    <i data-lucide="play-circle" class="w-7 h-7"></i>
+                </div>
+                <div>
+                    <h4 class="text-xl font-black text-slate-900 mb-1">لمزيد من التعمّق</h4>
+                    <p class="text-slate-500 font-medium leading-relaxed max-w-xl">فيديو مطوّل يوسّع النقاش حول أسس تقدير الإنسان: هل قيمته في ما يملك وينجز، أم في ذاته حيث لا تُشترى ولا تُقاس؟</p>
+                </div>
+            </div>
+            <a href="https://youtu.be/WyoscGICLzY" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 inline-flex items-center gap-2 bg-slate-900 text-white px-7 py-4 rounded-2xl font-black hover:bg-slate-800 transition-all">
+                <i data-lucide="play-circle" class="w-5 h-5"></i>
+                شاهد للتعمق أكثر
+            </a>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="bg-slate-900 text-white pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 pb-16 border-b border-white/10">
+                <!-- Brand -->
+                <div class="lg:col-span-1 space-y-6">
+                    <div class="flex items-center gap-3">
+                        <img src="assets/logo/logo-mark-white.svg" alt="محبة الحكمة" class="w-10 h-10">
+                        <div>
+                            <h3 class="text-xl font-black text-white">محبة الحكمة</h3>
+                            <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Mahabat Lhikma</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 font-medium leading-relaxed text-sm">
+                        مشروع طموح يسعى لتقريب الفلسفة من الشباب العربي عبر أدوات حديثة وتجارب تفاعلية.
+                    </p>
+                </div>
+
+                <!-- Sections -->
+                <div class="space-y-6">
+                    <h4 class="font-black text-white uppercase tracking-widest text-xs">الأقسام</h4>
+                    <ul class="space-y-3 text-slate-400 font-bold text-sm">
+                        <li><a href="/lessons" class="hover:text-teal-400 transition-colors flex items-center gap-2"><i data-lucide="library" class="w-4 h-4"></i>دروس الفلسفة</a></li>
+                        <li><a href="/philomedia" class="hover:text-teal-400 transition-colors flex items-center gap-2"><i data-lucide="video" class="w-4 h-4"></i>فيلوميديا</a></li>
+                        <li><a href="/prompts" class="hover:text-teal-400 transition-colors flex items-center gap-2"><i data-lucide="wand-2" class="w-4 h-4"></i>أدوات الذكاء الفلسفي</a></li>
+                        <li><a href="/skills" class="hover:text-teal-400 transition-colors flex items-center gap-2"><i data-lucide="graduation-cap" class="w-4 h-4"></i>المهارات التعليمية</a></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-6">
+                    <h4 class="font-black text-white uppercase tracking-widest text-xs">المزيد</h4>
+                    <ul class="space-y-3 text-slate-400 font-bold text-sm">
+                        <li><a href="/games" class="hover:text-teal-400 transition-colors flex items-center gap-2"><i data-lucide="gamepad-2" class="w-4 h-4"></i>الألعاب</a></li>
+                        <li><a href="/notebooklm" class="hover:text-teal-400 transition-colors flex items-center gap-2"><i data-lucide="notebook-pen" class="w-4 h-4"></i>دليل NotebookLM</a></li>
+                        <li><a href="/booklet" class="hover:text-teal-400 transition-colors flex items-center gap-2"><i data-lucide="book-open-check" class="w-4 h-4"></i>كتيّب الذكاء الاصطناعي</a></li>
+                        <li><a href="/feedback" class="hover:text-teal-400 transition-colors flex items-center gap-2"><i data-lucide="message-square-heart" class="w-4 h-4"></i>شاركنا رأيك</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="space-y-6">
+                    <h4 class="font-black text-white uppercase tracking-widest text-xs">ابقَ على اطلاع</h4>
+                    <p class="text-slate-400 font-medium text-sm leading-relaxed">اشترك ليصلك كل جديد عن محبة الحكمة</p>
+                    <div class="flex gap-2">
+                        <input id="newsletter-email" type="email" placeholder="بريدك الإلكتروني" class="flex-1 px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white text-sm font-medium placeholder:text-slate-500 focus:outline-none focus:border-teal-400 transition-colors">
+                        <button id="newsletter-btn" class="bg-gradient-to-r from-primary to-teal-400 px-5 py-3 rounded-xl font-bold text-sm hover:scale-105 transition-transform">اشترك</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-10 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 font-bold text-sm text-center md:text-right">
+                    جميع الحقوق محفوظة © ٢٠٢٦ محبة الحكمة. صُنع بشغف لنشر النور والمعرفة.
+                </p>
+                <div class="flex items-center gap-2 text-slate-500 text-sm font-bold">
+                    <span>صُنع بـ</span>
+                    <i data-lucide="heart" class="w-4 h-4 text-rose-500 fill-current"></i>
+                    <span>وحب الحكمة</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== SCRIPTS ========== -->
+    <script>
+        lucide.createIcons();
+
+        // Intro video: try unmuted autoplay, fall back to muted if the browser blocks it
+        const introVideo = document.getElementById('intro-video');
+        if (introVideo) {
+            const attempt = introVideo.play();
+            if (attempt !== undefined) {
+                attempt.catch(() => {
+                    introVideo.muted = true;
+                    const retry = introVideo.play();
+                    if (retry !== undefined) retry.catch(() => {});
+                });
+            }
+        }
+
+        // Sidebar
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('open');
+            document.getElementById('sidebar-overlay').classList.toggle('open');
+            document.body.style.overflow = document.getElementById('sidebar').classList.contains('open') ? 'hidden' : '';
+        }
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('nav-scrolled', window.scrollY > 50);
+        });
+
+        // Scroll reveal
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 80);
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // Newsletter
+        const NEWSLETTER_ENDPOINT = 'PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE';
+
+        document.getElementById('newsletter-btn').addEventListener('click', async () => {
+            const email = document.getElementById('newsletter-email').value.trim();
+            if (!email) { alert('يرجى إدخال البريد الإلكتروني'); return; }
+
+            if (!NEWSLETTER_ENDPOINT || NEWSLETTER_ENDPOINT.includes('PASTE_YOUR')) {
+                alert('الاشتراك غير مفعّل بعد على هذه الصفحة.');
+                return;
+            }
+
+            const btn = document.getElementById('newsletter-btn');
+            const original = btn.textContent;
+            btn.textContent = 'جاري...';
+            btn.disabled = true;
+            try {
+                const formData = new FormData();
+                formData.append('form_type', 'newsletter');
+                formData.append('email', email);
+                formData.append('timestamp', new Date().toISOString());
+                await fetch(NEWSLETTER_ENDPOINT, { method: 'POST', mode: 'no-cors', body: formData });
+                alert('شكراً لاشتراكك!');
+                document.getElementById('newsletter-email').value = '';
+            } catch {
+                alert('تعذّر الإرسال — تحقق من اتصالك بالإنترنت وحاول مرة أخرى.');
+            } finally {
+                btn.textContent = original;
+                btn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>

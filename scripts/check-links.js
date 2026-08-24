@@ -6,6 +6,7 @@ const ROOT = path.join(__dirname, '..');
 const pages = [
   'index.html', '404.html',
   'lessons/index.html', 'lessons/lesson-identity.html',
+  'lessons/lesson-value.html',
   'lessons/lesson-identity-synthesis.html', 'lessons/philosophers.html',
   'philomedia/index.html', 'prompts/index.html', 'skills/index.html',
   'games/index.html', 'notebooklm/index.html', 'booklet/index.html', 'feedback/index.html',
@@ -33,7 +34,7 @@ function head(urlPath) {
 (async () => {
   let failures = 0;
   const publicUrls = ['/', '/lessons', '/philomedia', '/prompts', '/skills', '/games', '/notebooklm', '/booklet', '/feedback',
-    '/lessons/lesson-identity', '/lessons/philosophers', '/lessons/lesson-identity-synthesis'];
+    '/lessons/lesson-identity', '/lessons/lesson-value', '/lessons/philosophers', '/lessons/lesson-identity-synthesis'];
   for (const u of publicUrls) {
     const r = await head(u);
     const ok = r.status === 200 && r.type.includes('text/html');

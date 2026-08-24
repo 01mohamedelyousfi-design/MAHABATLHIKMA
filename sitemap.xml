@@ -35,6 +35,14 @@
         <priority>0.8</priority>
     </url>
 
+    <!-- Lesson: Value of the Person — Problematique -->
+    <url>
+        <loc>https://mahabatlhikma.pages.dev/lessons/lesson-value</loc>
+        <lastmod>2026-08-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
     <!-- Lesson: Personal Identity — Philosophers' Positions -->
     <url>
         <loc>https://mahabatlhikma.pages.dev/lessons/philosophers</loc>
