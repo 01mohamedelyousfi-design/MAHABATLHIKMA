@@ -59,6 +59,22 @@
         <priority>0.8</priority>
     </url>
 
+    <!-- Lesson: Value of the Person — Philosophers' Positions -->
+    <url>
+        <loc>https://mahabatlhikma.pages.dev/lessons/philosophers-value</loc>
+        <lastmod>2026-08-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Lesson: Value of the Person — Interactive Synthesis -->
+    <url>
+        <loc>https://mahabatlhikma.pages.dev/lessons/lesson-value-synthesis</loc>
+        <lastmod>2026-08-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
     <!-- AI Philosophy Tools / Prompts -->
     <url>
         <loc>https://mahabatlhikma.pages.dev/prompts</loc>
