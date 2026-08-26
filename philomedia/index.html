@@ -260,17 +260,15 @@
          * Used until /api/philomedia (a future backend) is deployed.
          *
          * MEDIA SOURCING:
-         * Songs are now hosted directly as static files in assets/songs/ —
-         * Drive's direct-link format turned out to return 403 Forbidden
-         * even with correct sharing settings (Google appears to be
-         * restricting this unofficial download pattern), so audio was
-         * moved off Drive entirely for reliability.
-         *
-         * Manga still uses Google Drive's public thumbnail link (no API
-         * key needed, only "Anyone with the link" sharing):
-         *   https://drive.google.com/thumbnail?id=FILE_ID&sz=w1000
-         * If this ever breaks the same way, move the image to
-         * assets/manga/ too, following the same pattern as the songs.
+          * Songs stream straight from Google Drive (folder
+          * 1-tJs4gQN4E3e17jkpWQQG6UFotegeFAO) via the usercontent endpoint —
+          *   https://drive.usercontent.google.com/download?id=FILE_ID&export=download&confirm=t
+          * which serves the raw audio/mpeg bytes and honours Range requests,
+          * so scrubbing works. (The old /uc?export=download format 403'd.)
+          *
+          * Manga uses Google Drive's public thumbnail link (no API key
+          * needed, only "Anyone with the link" sharing):
+          *   https://drive.google.com/thumbnail?id=FILE_ID&sz=w1000
          *
          * Moments/Dialogues videos stay on YouTube (unlisted) — too large
          * (70-166MB each) to reasonably host as static site assets.
@@ -302,10 +300,10 @@
 
                 { id: 'manga-01', category: 'manga', type: 'image', title: 'أوطيفرون: ما هي التقوى؟', file: 'https://drive.google.com/thumbnail?id=1AOX_GMSFrFJ5c6AS6SnH6Ow-L68TQbF3&sz=w1000' },
 
-                { id: 'song-01', category: 'songs', type: 'audio', title: 'جادل', isOriginal: true, file: 'assets/songs/jadel.mp3' },
-                { id: 'song-02', category: 'songs', type: 'audio', title: 'هبطت إليك من المحل الأرفع', isOriginal: true, file: 'assets/songs/habatat-ilayka.mp3' },
-                { id: 'song-03', category: 'songs', type: 'audio', title: 'اعطني الناي وغني — فيروز', isOriginal: false, file: 'assets/songs/aatini-al-nay-fairuz.mp3' },
-                { id: 'song-04', category: 'songs', type: 'audio', title: 'كن صديقي — ماجدة الرومي', isOriginal: false, file: 'assets/songs/kun-sadiqi-majida.mp3' },
+                { id: 'song-01', category: 'songs', type: 'audio', title: 'جادل', isOriginal: true, file: 'https://drive.usercontent.google.com/download?id=1lwrlkPqfCGdSrDzz0yyZkNQU2A12XFhb&export=download&confirm=t' },
+                { id: 'song-02', category: 'songs', type: 'audio', title: 'هبطت إليك من المحل الأرفع', isOriginal: true, file: 'https://drive.usercontent.google.com/download?id=1JQTvd3ylchWAYM2uDcnB0cxW9fDThgqR&export=download&confirm=t' },
+                { id: 'song-03', category: 'songs', type: 'audio', title: 'اعطني الناي وغني — فيروز', isOriginal: false, file: 'https://drive.usercontent.google.com/download?id=15qMl209ArqeCy9ZWGMxSHBcBc81DeZTk&export=download&confirm=t' },
+                { id: 'song-04', category: 'songs', type: 'audio', title: 'كن صديقي — ماجدة الرومي', isOriginal: false, file: 'https://drive.usercontent.google.com/download?id=14ucUqhpz9clX1-fmtDLUVtAfPkhnEB3v&export=download&confirm=t' },
             ]
         };
 
