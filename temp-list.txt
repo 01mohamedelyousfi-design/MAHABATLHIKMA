@@ -1,0 +1,8 @@
+﻿assets
+قيمة الشخص
+index.html
+lesson-identity-synthesis.html
+lesson-identity.html
+lesson-value.html
+philosophers.html
+PRODUCT.md

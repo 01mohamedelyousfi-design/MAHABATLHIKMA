@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>أدوات الذكاء الفلسفي | محبة الحكمة</title>
-    <meta name="description" content="أدوات جاهزة لتخصيص أي نموذج ذكاء اصطناعي كمعلّم أو مدرّب فلسفي — Philosophy Mode ومدرّب المناظرة الفلسفية.">
+    <meta name="description" content="أدوات جاهزة لتخصيص أي نموذج ذكاء اصطناعي كمعلّم أو مدرّب فلسفي — حكيم المساعد الفلسفي، Philosophy Mode، مدرّب المناظرة، وPhilosImage.">
     <link rel="canonical" href="https://mahabatlhikma.pages.dev/prompts">
 
     <!-- Open Graph / Facebook -->
@@ -12,7 +12,7 @@
     <meta property="og:url" content="https://mahabatlhikma.pages.dev/prompts">
     <meta property="og:site_name" content="محبة الحكمة | Mahabat Lhikma">
     <meta property="og:title" content="أدوات الذكاء الفلسفي | محبة الحكمة">
-    <meta property="og:description" content="أدوات جاهزة لتخصيص أي نموذج ذكاء اصطناعي كمعلّم أو مدرّب فلسفي — Philosophy Mode ومدرّب المناظرة الفلسفية.">
+    <meta property="og:description" content="أدوات جاهزة لتخصيص أي نموذج ذكاء اصطناعي كمعلّم أو مدرّب فلسفي — حكيم المساعد الفلسفي، Philosophy Mode، مدرّب المناظرة، وPhilosImage.">
     <meta property="og:image" content="https://mahabatlhikma.pages.dev/assets/logo/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -23,7 +23,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://mahabatlhikma.pages.dev/prompts">
     <meta name="twitter:title" content="أدوات الذكاء الفلسفي | محبة الحكمة">
-    <meta name="twitter:description" content="أدوات جاهزة لتخصيص أي نموذج ذكاء اصطناعي كمعلّم أو مدرّب فلسفي — Philosophy Mode ومدرّب المناظرة الفلسفية.">
+    <meta name="twitter:description" content="أدوات جاهزة لتخصيص أي نموذج ذكاء اصطناعي كمعلّم أو مدرّب فلسفي — حكيم المساعد الفلسفي، Philosophy Mode، مدرّب المناظرة، وPhilosImage.">
     <meta name="twitter:image" content="https://mahabatlhikma.pages.dev/assets/logo/og-image.png">
 
     <!-- Favicons -->
@@ -62,7 +62,7 @@
           "@type": "LearningResource",
           "@id": "https://mahabatlhikma.pages.dev/prompts#resource",
           "name": "أدوات الذكاء الفلسفي",
-          "description": "أدوات متخصصة لتخصيص نماذج الذكاء الاصطناعي (ChatGPT, Claude, Gemini) للعمل كمعلم فلسفة منهجي أو خصم مناظرة.",
+          "description": "أدوات متخصصة لتخصيص نماذج الذكاء الاصطناعي (ChatGPT, Claude, Gemini) للعمل كمعلم فلسفة منهجي أو خصم مناظرة، إضافة إلى المساعد الفلسفي الجاهز 'حكيم' للمحادثة المباشرة بالعربية.",
           "url": "https://mahabatlhikma.pages.dev/prompts",
           "inLanguage": "ar",
           "learningResourceType": "System Prompts & AI Tools",
@@ -228,6 +228,24 @@
 
     <script>
         const TOOLS = [
+            {
+                id: 'hakeem-chat',
+                title: 'حكيم — المساعد الفلسفي',
+                subtitle: 'وكيل ذكي للمحادثة الفلسفية بالعربية',
+                icon: 'bot',
+                gradient: 'from-cyan-500 to-blue-700',
+                url: 'https://philosophy-ai.pages.dev/',
+                explain: 'تطبيق ويب جاهز يعمل كوكيل فلسفي متعدد الوضعيات يجيبك ويكاورك ويبني معك الدروس بالعربية — من تطوير منصة محبة الحكمة نفسها. يتيح لك الاختيار بين أربع وضعيات: المدرّب الفلسفي (شرح منهجي خطوة بخطوة)، السفسطائي (مناظرة بأسلوب الخصم الإغريقي)، أفلاطون (حوار سقراطي مايوتيكي يطرح عليك أسئلة بدل الإجابة)، ومساعد التوجيه (إجابات مركّزة على أسئلة امتحان الباكالوريا المغربية). يستند إلى نماذج لغوية كبيرة عبر OpenRouter، يفعّل البحث على الويب عند الحاجة، ويستشهد بالمصادر في كل إجابة مع رقم الصفحة والقسم — فتحصل على مرجع قابل للتحقق بدل إجابة عشوائية.',
+                usage: [
+                    'افتح التطبيق مباشرة على philosophy-ai.pages.dev — لا يحتاج تسجيلاً ولا تثبيتاً.',
+                    'اختر الوضعية المناسبة من قائمة (+) أعلى يمين حقل الكتابة: المدرّب الفلسفي للشرح، السفسطائي للمناظرة، أفلاطون للأسئلة السقراطية، أو مساعد التوجيه لأسئلة الامتحان. أو اتركها على "تلقائي" فيختار النظام الوضعية الأنسب من خلال تحليل كلماتك.',
+                    'اكتب سؤالك بالعربية الفصحى في الحقل السفلي ثم اضغط Enter أو زر الإرسال.',
+                    'فعّل خيار "البحث على الويب" من الإعدادات (⚙) إن كان سؤالك يحتاج مراجع أو أحداثاً حديثة.',
+                    'انسخ إجابة حكيم، أعد توليدها إن لم تعجبك، أو ابدأ محادثة جديدة من أيقونة القلم في الأعلى.',
+                ],
+                teacher: 'يوفّر للمعلم "مختبراً حوارياً" جاهزاً للاستخدام داخل القسم أو خارجه: يطلب من حكيم صياغة شرح متدرّج أو مناظرة افتراضية حول مفهوم ما، فيحصل على نموذج مكتوب موثّق المصادر (مع الصفحات والأقسام) يمكن اعتماده مباشرة في جذاذة أو بطاقة تقنية، أو استخدامه كسند لتوضيح إشكالية ما خلال الحصة.',
+                student: 'يمنح المتعلم محاوراً فلسفياً صبوراً على مدار الساعة: يسأله ما يشاء، يطلب أمثلة من التراث الإسلامي (ابن رشد، ابن سينا، ابن خلدون) أو الفلسفة الغربية، يناظر بأسلوب سقراطي فيتعلم بناء الحجة، ويحصل على استشهادات محدّدة من كتب الفلسفة — تمرين ممتاز للمراجعة الذاتية أو للتحضير لأسئلة الفرض المحروس.',
+            },
             {
                 id: 'philosophy-mode',
                 title: 'Philosophy Mode',
