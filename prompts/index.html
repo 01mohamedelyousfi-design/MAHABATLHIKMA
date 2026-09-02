@@ -234,6 +234,7 @@
                 subtitle: 'وكيل ذكي للمحادثة الفلسفية بالعربية',
                 icon: 'bot',
                 gradient: 'from-cyan-500 to-blue-700',
+                image: 'assets/examples/hakeem/logo.webp',
                 url: 'https://philosophy-ai.pages.dev/',
                 explain: 'تطبيق ويب جاهز يعمل كوكيل فلسفي متعدد الوضعيات يجيبك ويكاورك ويبني معك الدروس بالعربية — من تطوير منصة محبة الحكمة نفسها. يتيح لك الاختيار بين أربع وضعيات: المدرّب الفلسفي (شرح منهجي خطوة بخطوة)، السفسطائي (مناظرة بأسلوب الخصم الإغريقي)، أفلاطون (حوار سقراطي مايوتيكي يطرح عليك أسئلة بدل الإجابة)، ومساعد التوجيه (إجابات مركّزة على أسئلة امتحان الباكالوريا المغربية). يستند إلى نماذج لغوية كبيرة عبر OpenRouter، يفعّل البحث على الويب عند الحاجة، ويستشهد بالمصادر في كل إجابة مع رقم الصفحة والقسم — فتحصل على مرجع قابل للتحقق بدل إجابة عشوائية.',
                 usage: [
@@ -310,8 +311,10 @@
             const grid = document.getElementById('tools-grid');
             grid.innerHTML = TOOLS.map(t => `
                 <div class="card-hover bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm cursor-pointer" onclick="openToolModal('${t.id}')">
-                    <div class="h-28 bg-gradient-to-br ${t.gradient} flex items-center justify-center">
-                        <i data-lucide="${t.icon}" class="w-12 h-12 text-white"></i>
+                    <div class="h-36 sm:h-40 ${t.image ? 'bg-slate-50 flex items-center justify-center p-3' : `bg-gradient-to-br ${t.gradient} flex items-center justify-center`}">
+                        ${t.image
+                            ? `<img src="${t.image}" alt="${t.title}" class="max-h-full max-w-full object-contain" loading="lazy" decoding="async">`
+                            : `<i data-lucide="${t.icon}" class="w-12 h-12 text-white"></i>`}
                     </div>
                     <div class="p-6 space-y-2">
                         <h3 class="text-lg font-black">${t.title}</h3>
