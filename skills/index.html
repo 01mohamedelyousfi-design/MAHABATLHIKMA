@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>المهارات التعليمية | محبة الحكمة</title>
-    <meta name="description" content="مهارات Claude جاهزة للمعلم والمتعلم — من بناء الدروس والبحث الموثّق إلى التعلّم التفاعلي والتوجيه الدراسي.">
+    <meta name="description" content="مهارات Claude جاهزة للمعلم والمتعلم — من بناء الدروس والبحث الموثّق إلى التعلّم التفاعلي والتوجيه الدراسي وكشف المغالطات السفسطائية.">
     <link rel="canonical" href="https://mahabatlhikma.pages.dev/skills">
 
     <!-- Open Graph / Facebook -->
@@ -12,7 +12,7 @@
     <meta property="og:url" content="https://mahabatlhikma.pages.dev/skills">
     <meta property="og:site_name" content="محبة الحكمة | Mahabat Lhikma">
     <meta property="og:title" content="المهارات التعليمية | محبة الحكمة">
-    <meta property="og:description" content="مهارات Claude جاهزة للمعلم والمتعلم — من بناء الدروس والبحث الموثّق إلى التعلّم التفاعلي والتوجيه الدراسي.">
+    <meta property="og:description" content="مهارات Claude جاهزة للمعلم والمتعلم — من بناء الدروس والبحث الموثّق إلى التعلّم التفاعلي والتوجيه الدراسي وكشف المغالطات السفسطائية.">
     <meta property="og:image" content="https://mahabatlhikma.pages.dev/assets/logo/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -23,7 +23,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://mahabatlhikma.pages.dev/skills">
     <meta name="twitter:title" content="المهارات التعليمية | محبة الحكمة">
-    <meta name="twitter:description" content="مهارات Claude جاهزة للمعلم والمتعلم — من بناء الدروس والبحث الموثّق إلى التعلّم التفاعلي والتوجيه الدراسي.">
+    <meta name="twitter:description" content="مهارات Claude جاهزة للمعلم والمتعلم — من بناء الدروس والبحث الموثّق إلى التعلّم التفاعلي والتوجيه الدراسي وكشف المغالطات السفسطائية.">
     <meta name="twitter:image" content="https://mahabatlhikma.pages.dev/assets/logo/og-image.png">
 
     <!-- Favicons -->
@@ -62,7 +62,7 @@
           "@type": "LearningResource",
           "@id": "https://mahabatlhikma.pages.dev/skills#resource",
           "name": "المهارات التعليمية لمنصة محبة الحكمة",
-          "description": "مهارات جاهزة للرفع داخل Claude لمساعدة أستاذ وتلميذ الفلسفة: بناء الدروس، البحث الموثق، التعلم التفاعلي، والتوجيه الدراسي.",
+          "description": "مهارات جاهزة للرفع داخل Claude لمساعدة أستاذ وتلميذ الفلسفة: بناء الدروس، البحث الموثق، التعلم التفاعلي، والتوجيه الدراسي، وكشف المغالطات السفسطائية.",
           "url": "https://mahabatlhikma.pages.dev/skills",
           "inLanguage": "ar",
           "educationalLevel": "Secondary Education / High School (الثانوية التأهيلية - الباكالوريا)",
@@ -339,6 +339,23 @@
                 ],
                 teacher: 'أداة يمكن لأستاذ الفلسفة أو مستشار التوجيه تقديمها مباشرة للتلاميذ المترددين قبل اختيار مسارهم، كتكملة للمقابلات الفردية لا كبديل عنها.',
                 student: 'يمنح التلميذ مساحة هادئة وخاصة يستكشف فيها شخصيته واهتماماته وتأمله الخاص في معنى النجاح، فيخرج بتوصيات مسندة لمسارات حقيقية بدل نصيحة عامة أو تخمين.',
+            },
+            {
+                id: 'sophist',
+                title: 'السفسطائي — مدرّب كشف المغالطات',
+                subtitle: 'sophist skill',
+                icon: 'drama',
+                gradient: 'from-primary to-primary-dark',
+                file: 'https://github.com/01mohamedelyousfi-design/sophist.skill/archive/refs/heads/main.zip',
+                explain: 'يحوّل أي سؤال فلسفي عام إلى عرض سفسطائي حي على طريقة القرن الخامس قبل الميلاد — نسبية بروتاغوراس (الإنسان مقياس كل شيء)، وأسلوب غورغياس الإيقاعي، ومغالطات أرسطو الثلاث عشرة من التفنيدات السفسطائية — ليرى المتعلم التلاعب الحجاجي وهو يُؤدَّى أمامه لا مجرد قائمة نظرية، عبر خمسة أوضاع: التمثيل الصامت، وكشف التقنية، والحجتين المتقابلتين، والمقارنة مع جواب فلسفي رصين، والاختبار التفاعلي.',
+                usage: [
+                    ...USAGE_STEPS,
+                    'اطرح سؤالاً فلسفياً عاماً (الحرية، العدالة، الحقيقة...) — سيجادلك السفسطائي بأسلوب غورغياس الواثق دون تسمية التقنيات، لتدريب عينك على رصدها بنفسك.',
+                    'اكتب "كشف / فكك / reveal" لتسمية كل تقنية استُعملت، أو "الحجتين" لسماع أقوى حجة سفسطائية مع نقيضها، أو "قارن مع فيلسوف حقيقي" لرؤية الجواب الرصين جنباً إلى جنب، أو "اختبرني" ليؤدي ويسألك أنت عن اسم المغالطة أولاً.',
+                    'تنبيه منهجي: مخصص للأسئلة العامة المجردة فقط — لا يُستخدم لإقناع شخص حقيقي مسمّى أو في نزاع شخصي حي، بل يُعاد تأطير أي طلب من هذا النوع في صيغته العامة.',
+                ],
+                teacher: 'أداة لتدريس المغالطات بالعرض الحي لا بالتلقين: تكشف للتلاميذ كيف تُبنى الحجة المموّهة (الالتباس، المصادرة على المطلوب، السؤال الملغوم، الرنجة الحمراء...) وفق تصنيف أرسطو، وتُغني دروس الحجاج ونظرية بيرلمان بخصم جدلي تفاعلي.',
+                student: 'يدرب المتعلم على رصد التلاعب بنفسه أولاً ثم التحقق عبر وضع الكشف، ويقارن بين الخطاب السفسطائي المؤثر والجواب الفلسفي الموثق، فيكتسب مناعة حجاجية بدل تصديق كل خطاب مقنع الشكل.',
             },
         ];
 
