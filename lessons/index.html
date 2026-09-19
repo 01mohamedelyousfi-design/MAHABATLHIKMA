@@ -229,6 +229,13 @@
                                             url: '/lessons/lesson-freedom',
                                             cover: '/assets/lessons/freedom-cover.webp',
                                         },
+                                        {
+                                            title: 'النشاط الختامي: لعبة نكسيس سيتي',
+                                            desc: 'النشاط الختامي لمفهوم الشخص: واجه حاكم المدينة في ٨ جولات ودافع عن الكرامة الإنسانية كغاية مطلقة.',
+                                            url: 'https://nexsis-city.pages.dev/',
+                                            cover: '/assets/lessons/nexsis-city.webp',
+                                            external: true,
+                                        },
                                     ],
                                 },
                                 { name: 'مفهوم الغير', lessons: [] },
@@ -329,18 +336,20 @@
 
         // ---- Concepts + lesson cards ----
         function lessonCard(lesson) {
+            const isExternal = lesson.external || /^https?:\/\//.test(lesson.url || '');
+            const linkAttrs = isExternal ? 'target="_blank" rel="noopener noreferrer"' : '';
             return `
-                <a href="${lesson.url}" class="group relative aspect-square bg-gradient-to-br from-teal-800 to-teal-950 rounded-xl md:rounded-2xl overflow-hidden card-hover transition-all">
+                <a href="${lesson.url}" ${linkAttrs} class="group relative aspect-square bg-gradient-to-br from-teal-800 to-teal-950 rounded-xl md:rounded-2xl overflow-hidden card-hover transition-all">
                     ${lesson.cover ? `<img src="${lesson.cover}" alt="${lesson.title}" class="absolute inset-0 w-full h-full object-cover" loading="lazy">` : ''}
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent"></div>
                     <div class="absolute top-3 right-3 text-white">
-                        <i data-lucide="book-open" class="w-5 h-5 drop-shadow-md"></i>
+                        <i data-lucide="${isExternal ? 'gamepad-2' : 'book-open'}" class="w-5 h-5 drop-shadow-md"></i>
                     </div>
                     <div class="absolute bottom-0 left-0 right-0 p-4 transform translate-y-2 group-hover:translate-y-0 transition-transform">
                         <h4 class="text-white font-black text-sm md:text-base leading-tight">${lesson.title}</h4>
                         ${lesson.desc ? `<p class="text-white/75 text-xs mt-1 leading-snug line-clamp-2">${lesson.desc}</p>` : ''}
                         <span class="inline-flex items-center gap-1 mt-2 text-[11px] font-black text-teal-200">
-                            ابدأ الدرس <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+                            ${isExternal ? 'العب الآن' : 'ابدأ الدرس'} <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
                         </span>
                     </div>
                 </a>
