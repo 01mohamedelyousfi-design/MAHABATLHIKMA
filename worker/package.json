@@ -1,0 +1,15 @@
+{
+  "name": "mahabatlhikma-memory-worker",
+  "private": true,
+  "version": "0.1.0",
+  "description": "WhatsApp spaced-repetition companion for MahabatLhikma (Cloudflare Worker + D1 + cron + optional Workers AI)",
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:migrate:local": "wrangler d1 execute mahabatlhikma-memory --local --file=migrations/0001_init.sql",
+    "db:migrate": "wrangler d1 execute mahabatlhikma-memory --remote --file=migrations/0001_init.sql"
+  },
+  "license": "ISC"
+}

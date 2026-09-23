@@ -1,0 +1,47 @@
+[
+  {
+    "id": "person-identity",
+    "title": "هوية الشخص",
+    "url": "/lessons/lesson-identity",
+    "pages": {
+      "intro": "/lessons/lesson-identity",
+      "philosophers": "/lessons/philosophers",
+      "synthesis": "/lessons/lesson-identity-synthesis"
+    },
+    "level": "2bac",
+    "levelName": "الثانية بكالوريا",
+    "moduleId": "wad3-bachari",
+    "module": "مجزوءة الوضع البشري",
+    "concept": "مفهوم الشخص"
+  },
+  {
+    "id": "person-value",
+    "title": "قيمة الشخص",
+    "url": "/lessons/lesson-value",
+    "pages": {
+      "intro": "/lessons/lesson-value",
+      "philosophers": "/lessons/philosophers-value",
+      "synthesis": "/lessons/lesson-value-synthesis"
+    },
+    "level": "2bac",
+    "levelName": "الثانية بكالوريا",
+    "moduleId": "wad3-bachari",
+    "module": "مجزوءة الوضع البشري",
+    "concept": "مفهوم الشخص"
+  },
+  {
+    "id": "necessity-freedom",
+    "title": "الشخص بين الضرورة والحرية",
+    "url": "/lessons/lesson-freedom",
+    "pages": {
+      "intro": "/lessons/lesson-freedom",
+      "philosophers": "/lessons/philosophers-freedom",
+      "synthesis": "/lessons/lesson-freedom-synthesis"
+    },
+    "level": "2bac",
+    "levelName": "الثانية بكالوريا",
+    "moduleId": "wad3-bachari",
+    "module": "مجزوءة الوضع البشري",
+    "concept": "مفهوم الشخص"
+  }
+]

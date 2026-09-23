@@ -1,0 +1,35 @@
+name = "mahabatlhikma-memory"
+main = "src/index.js"
+compatibility_date = "2024-09-25"
+compatibility_flags = ["nodejs_compat"]
+
+# Hourly reminder scan (free on Workers free plan).
+[triggers]
+crons = ["0 * * * *"]
+
+# Cloudflare D1 (SQLite at the edge) — free tier.
+# Create with:  npx wrangler d1 create mahabatlhikma-memory
+# then paste the returned database_id below.
+[[d1_databases]]
+binding = "DB"
+database_name = "mahabatlhikma-memory"
+database_id = "REPLACE_WITH_YOUR_D1_DATABASE_ID"
+
+# Cloudflare Workers AI — free daily allocation; the heuristic evaluator
+# takes over automatically if the binding or quota is unavailable.
+# Uncomment when you want semantic AI evaluation:
+# [ai]
+# binding = "AI"
+
+[vars]
+# 'mock' keeps everything local (messages are stored in whatsapp_events).
+# Switch to 'meta' after configuring the WhatsApp Business Cloud API.
+WHATSAPP_PROVIDER = "mock"
+SITE_URL = "https://mahabatlhikma.pages.dev"
+
+# Secrets (set via `npx wrangler secret put ...` — never commit them):
+#   ADMIN_SECRET            — protects /api/dev/message and /api/admin/*
+#   WHATSAPP_VERIFY_TOKEN   — Meta webhook verification string you choose
+#   WHATSAPP_TOKEN          — Meta system-user access token
+#   WHATSAPP_PHONE_NUMBER_ID— Meta phone number id
+#   WHATSAPP_APP_SECRET     — Meta app secret (X-Hub-Signature-256 checks)

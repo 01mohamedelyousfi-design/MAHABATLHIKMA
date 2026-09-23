@@ -5,11 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مواقف الفلاسفة — هوية الشخص | محبة الحكمة</title>
     <meta name="description" content="مواقف الفلاسفة الثلاثة من هوية الشخص: جون لوك، شوبنهاور، فرويد — مع تحليل حجاجي تفاعلي يبرز الدعوى والمجيز والبينة.">
+    <link rel="canonical" href="https://mahabatlhikma.pages.dev/lessons/philosophers">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mahabatlhikma.pages.dev/lessons/philosophers">
+    <meta property="og:site_name" content="محبة الحكمة | Mahabat Lhikma">
+    <meta property="og:title" content="مواقف الفلاسفة — هوية الشخص | محبة الحكمة">
+    <meta property="og:description" content="مواقف الفلاسفة الثلاثة من هوية الشخص: جون لوك، شوبنهاور، فرويد — مع تحليل حجاجي تفاعلي يبرز الدعوى والمجيز والبينة.">
+    <meta property="og:image" content="https://mahabatlhikma.pages.dev/assets/logo/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="شعار منصة محبة الحكمة">
+    <meta property="og:locale" content="ar_AR">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://mahabatlhikma.pages.dev/lessons/philosophers">
+    <meta name="twitter:title" content="مواقف الفلاسفة — هوية الشخص | محبة الحكمة">
+    <meta name="twitter:description" content="مواقف الفلاسفة الثلاثة من هوية الشخص: جون لوك، شوبنهاور، فرويد — مع تحليل حجاجي تفاعلي يبرز الدعوى والمجيز والبينة.">
+    <meta name="twitter:image" content="https://mahabatlhikma.pages.dev/assets/logo/og-image.png">
+
+    <!-- Schema.org JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://mahabatlhikma.pages.dev/" },
+            { "@type": "ListItem", "position": 2, "name": "دروس الفلسفة", "item": "https://mahabatlhikma.pages.dev/lessons/" },
+            { "@type": "ListItem", "position": 3, "name": "مواقف الفلاسفة — هوية الشخص" }
+          ]
+        },
+        {
+          "@type": "LearningResource",
+          "@id": "https://mahabatlhikma.pages.dev/lessons/philosophers#learningresource",
+          "name": "مواقف الفلاسفة — هوية الشخص",
+          "description": "مواقف الفلاسفة الثلاثة من هوية الشخص: جون لوك، شوبنهاور، فرويد — مع تحليل حجاجي تفاعلي يبرز الدعوى والمجيز والبينة.",
+          "url": "https://mahabatlhikma.pages.dev/lessons/philosophers",
+          "inLanguage": "ar",
+          "learningResourceType": "Lesson",
+          "educationalLevel": "الثانية باكالوريا",
+          "teaches": "مواقف لوك وشوبنهاور وفرويد من هوية الشخص",
+          "isPartOf": {
+            "@type": "CollectionPage",
+            "@id": "https://mahabatlhikma.pages.dev/lessons#collection",
+            "name": "دروس الفلسفة — مسار الدروس التفاعلية",
+            "url": "https://mahabatlhikma.pages.dev/lessons/"
+          },
+          "publisher": {
+            "@type": "EducationalOrganization",
+            "@id": "https://mahabatlhikma.pages.dev/#organization",
+            "name": "محبة الحكمة",
+            "url": "https://mahabatlhikma.pages.dev/"
+          },
+          "author": {
+            "@type": "Person",
+            "@id": "https://mahabatlhikma.pages.dev/#founder",
+            "name": "محمد اليوسفي"
+          }
+        }
+      ]
+    }
+    </script>
+
     <link rel="icon" type="image/svg+xml" href="assets/logo/logo-mark.svg">
     <link rel="apple-touch-icon" href="assets/logo/logo-mark.svg">
     <link rel="stylesheet" href="assets/css/tailwind.css">
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <script src="assets/js/lucide.min.js"></script>
+    <script defer src="assets/js/lucide.min.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -159,7 +225,7 @@
         .reel-video { aspect-ratio: 9 / 16; max-height: 70vh; }
     </style>
 </head>
-<body class="font-sans text-slate-900 antialiased">
+<body class="font-sans text-slate-900 antialiased" data-lesson-id="person-identity">
 
     <!-- ========== NAVBAR ========== -->
     <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 glass transition-all duration-300">
@@ -168,20 +234,20 @@
                 <a href="/" class="flex items-center gap-3 group">
                     <img src="assets/logo/logo-mark.svg" alt="محبة الحكمة" class="w-11 h-11 flex-shrink-0 group-hover:scale-105 transition-transform duration-300">
                     <div>
-                        <h1 class="text-2xl font-black tracking-tight text-primary leading-none">محبة الحكمة</h1>
+                        <div class="text-2xl font-black tracking-tight text-primary leading-none">محبة الحكمة</div>
                         <p class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] leading-none mt-1">Mahabat Lhikma</p>
                     </div>
                 </a>
                 <div class="hidden lg:flex items-center gap-1">
                     <a href="/" class="px-4 py-2 rounded-xl text-slate-600 font-bold text-sm hover:text-primary hover:bg-primary/5 transition-all">الرئيسية</a>
-                    <a href="/lessons" class="px-4 py-2 rounded-xl text-primary font-bold text-sm bg-primary/5 transition-all">دروس الفلسفة</a>
-                    <a href="/philomedia" class="px-4 py-2 rounded-xl text-slate-600 font-bold text-sm hover:text-primary hover:bg-primary/5 transition-all">فيلوميديا</a>
-                    <a href="/prompts" class="px-4 py-2 rounded-xl text-slate-600 font-bold text-sm hover:text-primary hover:bg-primary/5 transition-all">أدوات الذكاء الفلسفي</a>
-                    <a href="/skills" class="px-4 py-2 rounded-xl text-slate-600 font-bold text-sm hover:text-primary hover:bg-primary/5 transition-all">المهارات التعليمية</a>
-                    <a href="/games" class="px-4 py-2 rounded-xl text-slate-600 font-bold text-sm hover:text-primary hover:bg-primary/5 transition-all">الألعاب</a>
-                    <a href="/notebooklm" class="px-4 py-2 rounded-xl text-slate-600 font-bold text-sm hover:text-primary hover:bg-primary/5 transition-all">دليل NotebookLM</a>
-                    <a href="/booklet" class="px-4 py-2 rounded-xl text-slate-600 font-bold text-sm hover:text-primary hover:bg-primary/5 transition-all">كتيّب الذكاء الاصطناعي</a>
-                    <a href="/feedback" class="px-4 py-2 rounded-xl text-slate-600 font-bold text-sm hover:text-rose-500 hover:bg-rose-50 transition-all flex items-center gap-1.5">
+                    <a href="/lessons/" class="px-4 py-2 rounded-xl text-primary font-bold text-sm bg-primary/5 transition-all">دروس الفلسفة</a>
+                    <a href="/philomedia/" class="px-4 py-2 rounded-xl text-slate-600 font-bold text-sm hover:text-primary hover:bg-primary/5 transition-all">فيلوميديا</a>
+                    <a href="/prompts/" class="px-4 py-2 rounded-xl text-slate-600 font-bold text-sm hover:text-primary hover:bg-primary/5 transition-all">أدوات الذكاء الفلسفي</a>
+                    <a href="/skills/" class="px-4 py-2 rounded-xl text-slate-600 font-bold text-sm hover:text-primary hover:bg-primary/5 transition-all">المهارات التعليمية</a>
+                    <a href="/games/" class="px-4 py-2 rounded-xl text-slate-600 font-bold text-sm hover:text-primary hover:bg-primary/5 transition-all">الألعاب</a>
+                    <a href="/notebooklm/" class="px-4 py-2 rounded-xl text-slate-600 font-bold text-sm hover:text-primary hover:bg-primary/5 transition-all">دليل NotebookLM</a>
+                    <a href="/booklet/" class="px-4 py-2 rounded-xl text-slate-600 font-bold text-sm hover:text-primary hover:bg-primary/5 transition-all">كتيّب الذكاء الاصطناعي</a>
+                    <a href="/feedback/" class="px-4 py-2 rounded-xl text-slate-600 font-bold text-sm hover:text-rose-500 hover:bg-rose-50 transition-all flex items-center gap-1.5">
                         <i data-lucide="message-square-heart" class="w-4 h-4"></i>شاركنا رأيك
                     </a>
                 </div>
@@ -205,14 +271,14 @@
             </div>
             <div class="space-y-1">
                 <a href="/" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-50 font-bold transition-colors"><i data-lucide="home" class="w-5 h-5"></i>الرئيسية</a>
-                <a href="/lessons" class="flex items-center gap-3 px-4 py-3 rounded-xl text-primary bg-primary/5 font-bold"><i data-lucide="library" class="w-5 h-5"></i>دروس الفلسفة</a>
-                <a href="/philomedia" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-50 font-bold transition-colors"><i data-lucide="video" class="w-5 h-5"></i>فيلوميديا</a>
-                <a href="/prompts" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-50 font-bold transition-colors"><i data-lucide="wand-2" class="w-5 h-5"></i>أدوات الذكاء الفلسفي</a>
-                <a href="/skills" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-50 font-bold transition-colors"><i data-lucide="graduation-cap" class="w-5 h-5"></i>المهارات التعليمية</a>
-                <a href="/games" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-50 font-bold transition-colors"><i data-lucide="gamepad-2" class="w-5 h-5"></i>الألعاب</a>
-                <a href="/notebooklm" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-50 font-bold transition-colors"><i data-lucide="notebook-pen" class="w-5 h-5"></i>دليل NotebookLM</a>
-                <a href="/booklet" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-50 font-bold transition-colors"><i data-lucide="book-open-check" class="w-5 h-5"></i>كتيّب الذكاء الاصطناعي</a>
-                <a href="/feedback" class="flex items-center gap-3 px-4 py-3 rounded-xl text-white bg-gradient-to-r from-primary to-primary-dark font-bold mt-4 shadow-lg shadow-primary/20"><i data-lucide="message-square-heart" class="w-5 h-5"></i>شاركنا رأيك</a>
+                <a href="/lessons/" class="flex items-center gap-3 px-4 py-3 rounded-xl text-primary bg-primary/5 font-bold"><i data-lucide="library" class="w-5 h-5"></i>دروس الفلسفة</a>
+                <a href="/philomedia/" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-50 font-bold transition-colors"><i data-lucide="video" class="w-5 h-5"></i>فيلوميديا</a>
+                <a href="/prompts/" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-50 font-bold transition-colors"><i data-lucide="wand-2" class="w-5 h-5"></i>أدوات الذكاء الفلسفي</a>
+                <a href="/skills/" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-50 font-bold transition-colors"><i data-lucide="graduation-cap" class="w-5 h-5"></i>المهارات التعليمية</a>
+                <a href="/games/" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-50 font-bold transition-colors"><i data-lucide="gamepad-2" class="w-5 h-5"></i>الألعاب</a>
+                <a href="/notebooklm/" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-50 font-bold transition-colors"><i data-lucide="notebook-pen" class="w-5 h-5"></i>دليل NotebookLM</a>
+                <a href="/booklet/" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-50 font-bold transition-colors"><i data-lucide="book-open-check" class="w-5 h-5"></i>كتيّب الذكاء الاصطناعي</a>
+                <a href="/feedback/" class="flex items-center gap-3 px-4 py-3 rounded-xl text-white bg-gradient-to-r from-primary to-primary-dark font-bold mt-4 shadow-lg shadow-primary/20"><i data-lucide="message-square-heart" class="w-5 h-5"></i>شاركنا رأيك</a>
             </div>
         </div>
     </aside>
@@ -227,7 +293,7 @@
                     <nav class="flex items-center flex-wrap gap-2 text-sm font-bold text-white/70 mb-6 reveal">
                         <a href="/" class="hover:text-white transition-colors">الرئيسية</a>
                         <i data-lucide="chevron-left" class="w-4 h-4"></i>
-                        <a href="/lessons" class="hover:text-white transition-colors">دروس الفلسفة</a>
+                        <a href="/lessons/" class="hover:text-white transition-colors">دروس الفلسفة</a>
                         <i data-lucide="chevron-left" class="w-4 h-4"></i>
                         <a href="lesson-identity.html" class="hover:text-white transition-colors">هوية الشخص</a>
                         <i data-lucide="chevron-left" class="w-4 h-4"></i>
@@ -239,9 +305,9 @@
                             <span class="w-1 h-1 rounded-full bg-teal-300/60"></span>
                             <span>محور الشخص</span>
                         </div>
-                        <h2 class="text-4xl sm:text-5xl md:text-6xl font-black text-white leading-[1.15] tracking-tight">
+                        <h1 class="text-4xl sm:text-5xl md:text-6xl font-black text-white leading-[1.15] tracking-tight">
                             مواقف <span class="gradient-text">الفلاسفة</span>
-                        </h2>
+                        </h1>
                         <p class="text-lg md:text-xl text-white/80 font-medium leading-relaxed max-w-2xl">
                             ثلاثة نصوص فلسفية حول هوية الشخص — بين الوعي والإرادة والبنية النفسية — مع تحليل حجاجي تفاعلي.
                         </p>
@@ -634,19 +700,19 @@
                 <div class="space-y-6">
                     <h4 class="font-black text-white uppercase tracking-widest text-xs">الأقسام</h4>
                     <ul class="space-y-3 text-slate-400 font-bold text-sm">
-                        <li><a href="/lessons" class="hover:text-teal-400 transition-colors flex items-center gap-2"><i data-lucide="library" class="w-4 h-4"></i>دروس الفلسفة</a></li>
-                        <li><a href="/philomedia" class="hover:text-teal-400 transition-colors flex items-center gap-2"><i data-lucide="video" class="w-4 h-4"></i>فيلوميديا</a></li>
-                        <li><a href="/prompts" class="hover:text-teal-400 transition-colors flex items-center gap-2"><i data-lucide="wand-2" class="w-4 h-4"></i>أدوات الذكاء الفلسفي</a></li>
-                        <li><a href="/skills" class="hover:text-teal-400 transition-colors flex items-center gap-2"><i data-lucide="graduation-cap" class="w-4 h-4"></i>المهارات التعليمية</a></li>
+                        <li><a href="/lessons/" class="hover:text-teal-400 transition-colors flex items-center gap-2"><i data-lucide="library" class="w-4 h-4"></i>دروس الفلسفة</a></li>
+                        <li><a href="/philomedia/" class="hover:text-teal-400 transition-colors flex items-center gap-2"><i data-lucide="video" class="w-4 h-4"></i>فيلوميديا</a></li>
+                        <li><a href="/prompts/" class="hover:text-teal-400 transition-colors flex items-center gap-2"><i data-lucide="wand-2" class="w-4 h-4"></i>أدوات الذكاء الفلسفي</a></li>
+                        <li><a href="/skills/" class="hover:text-teal-400 transition-colors flex items-center gap-2"><i data-lucide="graduation-cap" class="w-4 h-4"></i>المهارات التعليمية</a></li>
                     </ul>
                 </div>
                 <div class="space-y-6">
                     <h4 class="font-black text-white uppercase tracking-widest text-xs">المزيد</h4>
                     <ul class="space-y-3 text-slate-400 font-bold text-sm">
-                        <li><a href="/games" class="hover:text-teal-400 transition-colors flex items-center gap-2"><i data-lucide="gamepad-2" class="w-4 h-4"></i>الألعاب</a></li>
-                        <li><a href="/notebooklm" class="hover:text-teal-400 transition-colors flex items-center gap-2"><i data-lucide="notebook-pen" class="w-4 h-4"></i>دليل NotebookLM</a></li>
-                        <li><a href="/booklet" class="hover:text-teal-400 transition-colors flex items-center gap-2"><i data-lucide="book-open-check" class="w-4 h-4"></i>كتيّب الذكاء الاصطناعي</a></li>
-                        <li><a href="/feedback" class="hover:text-teal-400 transition-colors flex items-center gap-2"><i data-lucide="message-square-heart" class="w-4 h-4"></i>شاركنا رأيك</a></li>
+                        <li><a href="/games/" class="hover:text-teal-400 transition-colors flex items-center gap-2"><i data-lucide="gamepad-2" class="w-4 h-4"></i>الألعاب</a></li>
+                        <li><a href="/notebooklm/" class="hover:text-teal-400 transition-colors flex items-center gap-2"><i data-lucide="notebook-pen" class="w-4 h-4"></i>دليل NotebookLM</a></li>
+                        <li><a href="/booklet/" class="hover:text-teal-400 transition-colors flex items-center gap-2"><i data-lucide="book-open-check" class="w-4 h-4"></i>كتيّب الذكاء الاصطناعي</a></li>
+                        <li><a href="/feedback/" class="hover:text-teal-400 transition-colors flex items-center gap-2"><i data-lucide="message-square-heart" class="w-4 h-4"></i>شاركنا رأيك</a></li>
                     </ul>
                 </div>
                 <div class="space-y-6">
@@ -673,7 +739,15 @@
 
     <!-- ========== SCRIPTS ========== -->
     <script>
-        lucide.createIcons();
+        // lucide.min.js is loaded with `defer`, so it is unavailable while this
+        // inline script parses. Render icons once the library and DOM are ready.
+        function renderIcons() {
+            if (window.lucide && typeof window.lucide.createIcons === 'function') {
+                window.lucide.createIcons();
+            }
+        }
+        document.addEventListener('DOMContentLoaded', renderIcons);
+        window.addEventListener('load', renderIcons);
 
         // Sidebar
         function toggleSidebar() {
@@ -763,5 +837,7 @@
             });
         });
     </script>
+    <!-- MahabatLhikma Memory Companion: add-to-memory button -->
+    <script src="/assets/js/memory-button.js" defer></script>
 </body>
 </html>

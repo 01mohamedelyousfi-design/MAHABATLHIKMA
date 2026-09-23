@@ -13,14 +13,14 @@ Mohamed Elyousfi — philosophy educator and AI integration specialist.
 ## Sections
 
 - **Homepage** (https://mahabatlhikma.pages.dev/): Platform overview with all interactive sections.
-- **Philosophy Lessons** (https://mahabatlhikma.pages.dev/lessons): Interactive philosophy lessons following the Moroccan curriculum, organized by level, module, and concept — from problematique to philosophers' positions to synthesis. Starts with Personal Identity (2ème Baccalauréat).
-- **Philomedia** (https://mahabatlhikma.pages.dev/philomedia): Curated philosophical media library — videos, podcasts, and visual content.
-- **AI Prompts** (https://mahabatlhikma.pages.dev/prompts): Ready-to-use prompts that turn any AI model into a philosophy tutor or debate coach.
-- **Skills** (https://mahabatlhikma.pages.dev/skills): Claude-ready educational skills for lesson building, research, and interactive learning.
-- **Games** (https://mahabatlhikma.pages.dev/games): Educational games — philosophy is played, not just memorized.
-- **NotebookLM Guide** (https://mahabatlhikma.pages.dev/notebooklm): Practical guide for teachers using NotebookLM, Gemini, and ChatGPT in philosophy lessons.
-- **AI Booklet** (https://mahabatlhikma.pages.dev/booklet): Concise AI guide for philosophy teachers — the three rules, effective prompting, and skills.
-- **Feedback** (https://mahabatlhikma.pages.dev/feedback): Share your feedback and help improve the platform.
+- **Philosophy Lessons** (https://mahabatlhikma.pages.dev/lessons/): Interactive philosophy lessons following the Moroccan curriculum, organized by level, module, and concept — from problematique to philosophers' positions to synthesis. Starts with Personal Identity (2ème Baccalauréat).
+- **Philomedia** (https://mahabatlhikma.pages.dev/philomedia/): Curated philosophical media library — videos, podcasts, and visual content.
+- **AI Prompts** (https://mahabatlhikma.pages.dev/prompts/): Ready-to-use prompts that turn any AI model into a philosophy tutor or debate coach.
+- **Skills** (https://mahabatlhikma.pages.dev/skills/): Claude-ready educational skills for lesson building, research, and interactive learning.
+- **Games** (https://mahabatlhikma.pages.dev/games/): Educational games — philosophy is played, not just memorized.
+- **NotebookLM Guide** (https://mahabatlhikma.pages.dev/notebooklm/): Practical guide for teachers using NotebookLM, Gemini, and ChatGPT in philosophy lessons.
+- **AI Booklet** (https://mahabatlhikma.pages.dev/booklet/): Concise AI guide for philosophy teachers — the three rules, effective prompting, and skills.
+- **Feedback** (https://mahabatlhikma.pages.dev/feedback/): Share your feedback and help improve the platform.
 
 ## Language
 

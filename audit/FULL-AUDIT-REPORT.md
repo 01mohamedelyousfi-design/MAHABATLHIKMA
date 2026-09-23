@@ -1,85 +1,90 @@
-# Full Website Audit Report — mahabatlhikma.pages.dev
+# Frontend & SEO Audit — mahabatlhikma.pages.dev
 
-**Date:** 2026-08-21 · **Type:** Education platform (Arabic/RTL, Moroccan Bac philosophy) · **Stack:** Static HTML + Cloudflare Pages + Pages Functions
-**Scope:** 14 HTML pages analyzed from source + live deployment header checks
+**Date:** 2026-09-19 (re-audit, v2 — supersedes v1 of 2026-08-21)
+**Type:** Arabic (RTL) educational platform — Moroccan Bac philosophy · **Stack:** Static HTML + Tailwind + vanilla JS on Cloudflare Pages
+**Method:** 19 HTML files audited from source + live production verification (curl)
 
 ---
 
-## Overall Health Score: **82 / 100**
+## Overall Health Score: **84 / 100** → **87 / 100** after the Phase 1 fixes applied below (was 82)
 
-| Category | Weight | Score | Weighted |
+| Category | Weight | v1 | v2 | **after Phase 1** | Notes |
+|---|---|---|---|---|---|
+| Technical SEO | 22% | 90 | 86 | **92** | Sitemap now matches production; canonical/redirect alignment fixed |
+| Content Quality / E-E-A-T | 23% | 85 | 87 | **87** | 3 lesson units published |
+| On-Page SEO | 20% | 82 | 74 | **90** | H1 semantics fixed, canonical + OG added to 3 pages |
+| Schema / Structured Data | 10% | 95 | 78 | **92** | LearningResource + BreadcrumbList on all 9 lesson pages |
+| AI Search Readiness (GEO) | 10% | 88 | 88 | **90** | Correct H1s + schema improve passage extraction; FAQ blocks still missing |
+| Performance (CWV) | 10% | 55 | 60 | **62** | lucide deferred; the 2.4 MB `lessons/assets` duplicates still load (Phase 2.1) |
+| Images | 5% | 50 | 90 | **90** | WebP everywhere, but heavy duplicates still referenced from `lessons/assets/` |
+
+## Phase 1 implemented — 2026-09-19
+
+| # | Change | Files | Verification |
 |---|---|---|---|
-| Technical SEO | 22% | 90 | 19.8 |
-| Content Quality / E-E-A-T | 23% | 85 | 19.6 |
-| On-Page SEO | 20% | 82 | 16.4 |
-| Schema / Structured Data | 10% | 95 | 9.5 |
-| AI Search Readiness (GEO) | 10% | 88 | 8.8 |
-| Performance (CWV) | 10% | 55 | 5.5 |
-| Images | 5% | 50 | 2.5 |
+| 1 | Sitemap: 3 missing freedom-lesson URLs added (19 total) | `sitemap.xml` | Well-formed XML, 19 `<loc>` entries |
+| 2 | H1 semantics: navbar brand `<h1>` → `<div>`, real page title `<h2>` → `<h1>` | 6 lesson pages (+3 already correct) | Script: exactly 1 `<h1>` per page, never the brand |
+| 3 | JSON-LD: `LearningResource` + `BreadcrumbList` (with `inLanguage`, `educationalLevel`, `learningResourceType`, `teaches`, `isPartOf`, `publisher`, `author`) | all 9 `lessons/*.html` | All blocks `JSON.parse`-validated |
+| 4 | `lucide.min.js` deferred + guarded `renderIcons()` helper (no `ReferenceError`) | all 9 `lessons/*.html` | 0 unguarded `lucide.createIcons()` calls |
+| 5 | Canonical + full OG/Twitter suite added where missing | `lesson-identity`, `lesson-identity-synthesis`, `philosophers` | Head scan |
+| 6 | Trailing-slash alignment (Cloudflare 308s): 8 section canonicals/`og:url`, 258 internal links, 65 metadata URLs, sitemap, `llms.txt` | 19 HTML files + `sitemap.xml` + `llms.txt` | `npm run check-links` → **ALL CHECKS PASSED** |
+| 7 | Link checker extended to all lesson pages + examples page | `scripts/check-links.js` | Full run passes |
 
 ---
 
-## Top 5 Issues
+## Top 6 Issues (current)
 
 | # | Severity | Issue | Evidence |
 |---|---|---|---|
-| 1 | **Critical** | `Code.gs` (Apps Script source) publicly served on production | Live check: `GET /Code.gs` → 200. Local `_redirects` fix exists but is **not yet deployed** |
-| 2 | **High** | 347 KB `lucide.min.js` loaded synchronously (render-blocking) on 12 pages | No `defer`/`async`; icon library blocks first paint → LCP/TBT penalty |
-| 3 | **High** | Unoptimized media (~74 MB total assets) | PNGs up to 2.6 MB (`philosophers-header.png` 2.4 MB), MP3s up to 17.8 MB ×4 (37 MB), MP4s 25.5 MB — no WebP/AVIF/compression |
-| 4 | **High** | SVG used as `og:image` on examples page | Facebook/X/WhatsApp scrapers don't render SVG → broken share card (`examples/aflatoon-freedom-programming/index.html`) |
-| 5 | **Medium** | Heading hierarchy breaks | `booklet/index.html`: zero H2 across 17 headings (H1→H3→H4); `feedback/index.html`: opens H3 before its single H2 |
-
-## Top 5 Quick Wins
-
-1. Deploy current branch (moves `Code.gs` + adds `_redirects` blocks) — closes issue #1 instantly
-2. Add `defer` to `lucide.min.js` script tag on all 12 pages (one-line change each)
-3. Swap examples page `og:image` SVG → existing `og-image.png`
-4. Convert philosopher/example PNGs → WebP (~70–80% size reduction expected)
-5. Fix H2 headings in booklet + feedback pages
+| 1 | ~~High~~ **FIXED** | Sitemap was missing 3 live freedom-lesson URLs | `sitemap.xml` now lists 19 URLs, matching production |
+| 2 | ~~High~~ **FIXED** | H1 misuse: navbar brand was the `<h1>` on all 9 lesson pages | All 9 now use the real page title as `<h1>`; brand demoted to `<div>` |
+| 3 | ~~High~~ **FIXED** | No JSON-LD on any of the 9 lesson pages | `LearningResource` + `BreadcrumbList` added and JSON-validated on all 9 |
+| 4 | ~~Medium~~ **FIXED** | `lucide.min.js` (356 KB) render-blocking on 9 lesson pages | Now `defer` + guarded `renderIcons()` helper |
+| 5 | **High (new)** | **8 of 19 sitemap URLs 308-redirect** to a trailing-slash URL while canonicals pointed at the redirecting URL; 258 internal links also hit a redirect | Live curl on every sitemap URL; fixed in Phase 1 |
+| 6 | **High (new)** | **Lesson pages load stale 2.4 MB PNG duplicates** from `lessons/assets/` instead of the optimised WebP copies in root `assets/` (live `philosophers`: 2.4 MB + 1.8 MB + 1.0 MB + 1.0 MB) | `GET /lessons/assets/philosophers/philosophers-header.png` → 200, 2 399 351 bytes vs 235 342 bytes for the root WebP |
+| 7 | **High (new)** | The 3 identity lesson pages had **no canonical, no OG, no Twitter card** at all | Verified by scanning their `<head>`; fixed in Phase 1 |
+| 8 | **Medium** | Heading hierarchy: `booklet/index.html` has 0×H2 (H1→H3×4→H4×11); `feedback/index.html` opens with H3 before its single H2 | Confirmed via heading scan — pending Phase 2 |
+| 9 | **Medium** | 9 uncommitted modified files + 5 untracked paths in the working tree (memory-button feature, catalog, worker) | `git status` — pending Phase 2.4 |
 
 ---
 
-## Category Findings
+## Category Details
 
-### Technical SEO — 90/100
-✅ robots.txt + sitemap.xml live (both 200), canonicals on all indexable pages matching sitemap exactly (13 URLs), security headers exemplary (HSTS preload, strict CSP, nosniff, XFO, Permissions-Policy), HTTP/3 enabled, immutable caching on `/assets/*`, HTML served UTF-8.
-⚠️ `/Code.gs` exposed on production (fix staged locally, undeployed). `Cache-Control: max-age=0, must-revalidate` on HTML — correct choice, no issue.
+### Technical SEO — 86/100
+✅ `robots.txt` + `sitemap.xml` live (200), canonicals correct & self-referencing on all checked pages, HSTS preload + strict CSP + nosniff + XFO, immutable caching on `/assets/*`, clean folder-URL architecture, `Code.gs` exposure fixed.
+⚠️ Sitemap missing 3 freedom-lesson URLs (issue #1). `_redirects` uses `/404.html 200` soft-404s instead of true 404 status — serving a 404 body with a 200 code can dilute crawl signals for genuinely missing URLs (acceptable trade-off on Cloudflare Pages, but `404` status would be cleaner).
 
-### Content Quality / E-E-A-T — 85/100
-✅ Strong author identity: Person schema (Mohamed Elyousfi) + EducationalOrganization on every content page; real profile photo; curriculum-aligned (2ème Bac Identity unit split problematique→philosophers→synthesis); llms.txt valid UTF-8 with section map.
-⚠️ Single lesson unit published (Identity) — topical depth thin vs. full Moroccan Bac curriculum; descriptions on some lesson pages are short (81c minimum).
+### Content Quality / E-E-A-T — 87/100
+✅ Real Person schema (Mohamed Elyousfi) + EducationalOrganization on hub pages, real profile photo, curriculum-aligned (3 units: Identity, Value of the Person, Necessity & Freedom — each split problématique→philosophers→synthesis), valid `llms.txt`, excellent meta descriptions on new pages (150+ chars, keyword-rich Arabic).
+⚠️ Coverage still partial vs. full Moroccan Bac curriculum (~8 modules); topical authority has room to grow.
 
-### On-Page SEO — 82/100
-✅ Exactly 1 H1 per page (all 14); titles 31–59 chars; meta descriptions 71–143 chars; viewport meta universal; 100% static-image alt coverage; uniform `lang="ar" dir="rtl"`.
-⚠️ Heading skips on booklet/feedback; 4 pages missing `og:image:width/height/alt`; mixed relative vs absolute asset paths (root index.html only); skills page links raw `index.html` path instead of directory URL.
+### On-Page SEO — 74/100
+✅ Titles unique & well-formed (bilingual brand suffix), meta descriptions 100% coverage, exactly 1 H1 per page, 100% alt-text coverage, `lang="ar" dir="rtl"` universal.
+❌ H1 is the navbar brand on 9 lesson pages instead of the page topic (issue #2). ⚠️ booklet/feedback heading skips (issue #5).
 
-### Schema / Structured Data — 95/100
-✅ Well-formed single-block JSON-LD `@graph` with stable `@id`s on every page: WebSite, EducationalOrganization, Person, Book, WebApplication, ContactPage, CollectionPage, LearningResource, BreadcrumbList. Appropriate type selection per page.
-⚠️ LearningResource pages could add `educationalLevel`, `inLanguage: "ar"`, `learningResourceType`; FAQ schema opportunity on prompts/booklet pages.
+### Schema / Structured Data — 78/100
+✅ Well-formed single-block `@graph` JSON-LD with stable `@id`s on homepage + 8 section pages (WebSite, EducationalOrganization, Person, Book, WebApplication, ContactPage, CollectionPage, BreadcrumbList).
+❌ Zero structured data on the 9 lesson pages — exactly where `LearningResource` (+ `BreadcrumbList`) would earn rich results (issue #3).
 
-### Performance (CWV) — 55/100
-⚠️ Render-blocking JS: `lucide.min.js` (347 KB) sync-loaded on 12 pages; `howto-video.js` also sync on 2 pages.
-⚠️ LCP images heavy: lesson covers 208 KB JPG (acceptable) but philosophers PNGs 1–2.4 MB; example PNGs 2.3–2.6 MB.
-⚠️ 37 MB MP3 + 25.5 MB MP4 self-hosted — inflates build size and bandwidth; no `preload` metadata hints on audio.
-✅ Tailwind CSS minified (46 KB single file); Google Fonts with preconnect + `display=swap`.
+### Performance — 60/100
+✅ Assets folder now **8.18 MB total** (was ~74 MB); Tailwind minified (46 KB); fonts preconnected with `display=swap`; posters small; largest image 0.99 MB.
+⚠️ 356 KB `lucide.min.js` sync in `<head>` on 9 pages (issue #4); 3.66 MB self-hosted MP4 (`value-intro.mp4`); two near-1 MB WebP covers (`value-kant-gusdorf.webp`, `value-cover.webp`) could be resized.
 
-### Images — 50/100
-✅ Alt text coverage 100% on static images.
-⚠️ Format: 11 MB across 8 PNGs where WebP/AVIF would cut ~75%; no `<picture>`/srcset responsive variants; poster images OK (61 KB).
+### Images — 90/100
+✅ WebP everywhere, 100% alt coverage, only one PNG left (4 KB).
+⚠️ No responsive `srcset`/`<picture>` variants; two ~1 MB covers could be halved at 1200px width.
 
 ### AI Search Readiness (GEO) — 88/100
-✅ llms.txt valid + descriptive; semantic HTML; passage-friendly headings on most pages; structured data aids entity extraction; fast TTFB via Cloudflare edge.
-⚠️ Heading breaks hurt passage-level extraction on 2 pages; no FAQ/Q&A blocks formatted for direct citation; Arabic content is an advantage (low competition in AI answers for this niche).
+✅ `llms.txt` valid & descriptive, semantic HTML, fast edge TTFB, structured data on hub pages, low-competition Arabic niche.
+⚠️ H1 regression + missing lesson schema hurt passage-level extraction on the highest-value pages; no FAQ blocks yet (big AI-citation opportunity).
 
 ---
 
-## Strengths (keep doing)
+## Strengths to keep
+- Clean canonical + OG + Twitter card implementation
+- Exemplary security headers without breaking functionality
+- Excellent Arabic meta descriptions on the new freedom lesson
+- Media optimization done right (74 MB → 8 MB)
+- Per-page tailored schema types on section pages
 
-- Clean URL architecture (folder/index.html pattern), consistent canonicals
-- Best-practice security headers incl. strict CSP without breaking functionality
-- Complete OG + Twitter card suite on 13/14 indexable pages
-- Per-page tailored schema types (not copy-paste boilerplate)
-- Zero broken internal links (link checker passes all 13 pages)
-- Free, fast global hosting with proper cache headers
-
-*Generated by automated audit — see ACTION-PLAN.md for the prioritized fix roadmap.*
+*See `ACTION-PLAN.md` (updated) for the prioritized fix roadmap.*
