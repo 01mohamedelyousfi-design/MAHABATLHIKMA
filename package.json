@@ -12,7 +12,9 @@
     "test": "cd worker && npm test",
     "serve": "node scripts/serve.js",
     "check-links": "node scripts/check-links.js",
-    "images:webp": "node scripts/images-webp.js"
+    "validate-schema": "node scripts/validate-schema.js",
+    "images:webp": "node scripts/images-webp.js",
+    "images:responsive": "node scripts/generate-responsive-images.js"
   },
   "repository": {
     "type": "git",

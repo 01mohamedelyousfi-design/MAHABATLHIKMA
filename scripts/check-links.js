@@ -20,6 +20,15 @@ function extractRefs(html) {
   const re = /(?:href|src)="([^"]+)"/g;
   let m;
   while ((m = re.exec(html)) !== null) refs.add(m[1]);
+  // srcset holds comma-separated "url width" candidates — check each URL too
+  const reSrcset = /srcset="([^"]+)"/g;
+  while ((m = reSrcset.exec(html)) !== null) {
+    if (m[1].includes('${')) continue; // dynamic JS template (lessons/index.html) — not statically checkable
+    for (const part of m[1].split(',')) {
+      const url = part.trim().split(/\s+/)[0];
+      if (url) refs.add(url);
+    }
+  }
   return [...refs].filter((r) => !/^(https?:|mailto:|data:|#|javascript:|\$\{)/.test(r) && r.length > 1);
 }
 

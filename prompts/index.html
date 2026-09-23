@@ -71,6 +71,53 @@
             "name": "محبة الحكمة",
             "url": "https://mahabatlhikma.pages.dev/"
           }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://mahabatlhikma.pages.dev/prompts#faq",
+          "inLanguage": "ar",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "كيف أستعمل إحدى هذه الأدوات؟",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "اضغط على بطاقة الأداة لعرض تفاصيلها، خصّص الخيارات المتاحة، ثم انسخ الـ System Prompt الجاهز والصقه في بداية محادثة جديدة مع ChatGPT أو Claude أو Gemini، فيتحوّل النموذج فوراً إلى معلّم فلسفة منهجي أو خصم مناظرة."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "هل أحتاج إلى اشتراكات مدفوعة لاستعمال هذه الأدوات؟",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "لا؛ الأدوات تولّد نصوصاً يمكن لصقها في النسخ المجانية من النماذج الشائعة، والمساعد الفلسفي «حكيم» يعمل مباشرة من المتصفح دون أي إعداد."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "ما الفرق بين «حكيم» وباقي الأدوات؟",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "«حكيم» مساعد فلسفي جاهز للمحادثة المباشرة بالعربية دون نسخ أو لصق، بينما تولّد باقي الأدوات System Prompt تخصّصه ثم تنقله إلى النموذج الذي تفضّله."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "هل تناسب هذه الأدوات تلاميذ الباكالوريا؟",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "نعم؛ صُمّمت الأدوات لخدمة دروس الفلسفة في الثانوي التأهيلي، وتصلح للأستاذ في تحضير الدروس وللتلميذ في المراجعة والتدرّب على المناظرة وتحليل الحجاج."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "هل تغني هذه الأدوات عن قراءة النصوص الفلسفية؟",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "لا؛ هي أدوات مساعدة على الفهم والتدريب وتوفير الوقت، ولا تعوّض القراءة المباشرة للنصوص الفلسفية والحوار الصفي مع الأستاذ."
+              }
+            }
+          ]
         }
       ]
     }
@@ -119,6 +166,48 @@
 
     <main class="max-w-4xl mx-auto px-4 py-10">
         <div id="tools-grid" class="grid sm:grid-cols-2 gap-6"></div>
+
+        <!-- FAQ -->
+        <section class="mt-16" aria-labelledby="faq-heading">
+            <h2 id="faq-heading" class="text-2xl font-black flex items-center gap-2 mb-6"><i data-lucide="help-circle" class="w-6 h-6 text-secondary"></i> أسئلة شائعة</h2>
+            <div class="space-y-3">
+                <details class="group bg-white rounded-2xl border border-slate-100 shadow-sm">
+                    <summary class="flex items-center justify-between gap-3 p-5 cursor-pointer list-none font-black text-slate-800 [&::-webkit-details-marker]:hidden">
+                        كيف أستعمل إحدى هذه الأدوات؟
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 flex-shrink-0 transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <p class="px-5 pb-5 text-slate-600 text-sm leading-relaxed">اضغط على بطاقة الأداة لعرض تفاصيلها، خصّص الخيارات المتاحة، ثم انسخ الـ System Prompt الجاهز والصقه في بداية محادثة جديدة مع ChatGPT أو Claude أو Gemini، فيتحوّل النموذج فوراً إلى معلّم فلسفة منهجي أو خصم مناظرة.</p>
+                </details>
+                <details class="group bg-white rounded-2xl border border-slate-100 shadow-sm">
+                    <summary class="flex items-center justify-between gap-3 p-5 cursor-pointer list-none font-black text-slate-800 [&::-webkit-details-marker]:hidden">
+                        هل أحتاج إلى اشتراكات مدفوعة لاستعمال هذه الأدوات؟
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 flex-shrink-0 transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <p class="px-5 pb-5 text-slate-600 text-sm leading-relaxed">لا؛ الأدوات تولّد نصوصاً يمكن لصقها في النسخ المجانية من النماذج الشائعة، والمساعد الفلسفي «حكيم» يعمل مباشرة من المتصفح دون أي إعداد.</p>
+                </details>
+                <details class="group bg-white rounded-2xl border border-slate-100 shadow-sm">
+                    <summary class="flex items-center justify-between gap-3 p-5 cursor-pointer list-none font-black text-slate-800 [&::-webkit-details-marker]:hidden">
+                        ما الفرق بين «حكيم» وباقي الأدوات؟
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 flex-shrink-0 transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <p class="px-5 pb-5 text-slate-600 text-sm leading-relaxed">«حكيم» مساعد فلسفي جاهز للمحادثة المباشرة بالعربية دون نسخ أو لصق، بينما تولّد باقي الأدوات System Prompt تخصّصه ثم تنقله إلى النموذج الذي تفضّله.</p>
+                </details>
+                <details class="group bg-white rounded-2xl border border-slate-100 shadow-sm">
+                    <summary class="flex items-center justify-between gap-3 p-5 cursor-pointer list-none font-black text-slate-800 [&::-webkit-details-marker]:hidden">
+                        هل تناسب هذه الأدوات تلاميذ الباكالوريا؟
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 flex-shrink-0 transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <p class="px-5 pb-5 text-slate-600 text-sm leading-relaxed">نعم؛ صُمّمت الأدوات لخدمة دروس الفلسفة في الثانوي التأهيلي، وتصلح للأستاذ في تحضير الدروس وللتلميذ في المراجعة والتدرّب على المناظرة وتحليل الحجاج.</p>
+                </details>
+                <details class="group bg-white rounded-2xl border border-slate-100 shadow-sm">
+                    <summary class="flex items-center justify-between gap-3 p-5 cursor-pointer list-none font-black text-slate-800 [&::-webkit-details-marker]:hidden">
+                        هل تغني هذه الأدوات عن قراءة النصوص الفلسفية؟
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 flex-shrink-0 transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <p class="px-5 pb-5 text-slate-600 text-sm leading-relaxed">لا؛ هي أدوات مساعدة على الفهم والتدريب وتوفير الوقت، ولا تعوّض القراءة المباشرة للنصوص الفلسفية والحوار الصفي مع الأستاذ.</p>
+                </details>
+            </div>
+        </section>
     </main>
 
     <!-- Related Sections Navigation -->

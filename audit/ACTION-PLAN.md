@@ -1,7 +1,7 @@
 # Improvement Action Plan — mahabatlhikma.pages.dev
 
 **Based on:** FULL-AUDIT-REPORT.md v2 (Health Score **84/100**, up from 82) · **Date:** 2026-09-19
-**Status:** ✅ **Phase 1 implemented** (2026-09-19) · ✅ **Phase 2 implemented** (2026-09-23) — see the completion logs below. Phases 3–4 pending.
+**Status:** ✅ **Phase 1 implemented** (2026-09-19) · ✅ **Phase 2 implemented** (2026-09-23) · Phase 3 partially implemented (2026-09-23: 3.3 + 3.4 done; 3.1 blocked on YouTube upload; 3.2 ongoing). Phase 4 pending.
 Effort: S = <1h · M = 1–4h · L = 1+ day
 
 ---
@@ -30,14 +30,14 @@ Effort: S = <1h · M = 1–4h · L = 1+ day
 
 Migration scripts kept for the record: `scripts/repoint-lesson-assets.js`, `scripts/optimize-lesson-images.js`, `scripts/fix-heading-hierarchy.js`.
 
-## Phase 3 — Content & media (month 2)
+## Phase 3 — Content & media (month 2) — 3.3 + 3.4 DONE (2026-09-23)
 
-| # | Action | Notes |
-|---|---|---|
-| 3.1 | Move the 3.66 MB `value-intro.mp4` (and `identity-reel.mp4`, 9.1 MB in the duplicate tree) to YouTube (unlisted embed) or Cloudflare Stream | Faster deploys, less bandwidth |
-| 3.2 | Keep expanding lesson coverage toward the full Bac curriculum (one module/month) | Topical authority for "فلسفة باك" queries |
-| 3.3 | Add FAQ blocks (visible + `FAQPage` schema) to prompts/booklet/skills pages | Strong AI-citation candidates in Arabic |
-| 3.4 | Responsive `srcset` for lesson cover images | Better mobile LCP |
+| # | Action | Status | Notes |
+|---|---|---|---|
+| 3.1 | Move the 3.66 MB `value-intro.mp4` to YouTube (unlisted embed) or Cloudflare Stream | ⏳ **blocked — needs the video uploaded to the site's YouTube channel**, then swap the `<video>` tag for a nocookie iframe (the pattern already exists in `assets/js/howto-video.js`). `identity-reel.mp4` no longer needs this: it was unreferenced and deleted with the duplicate tree in Phase 2.1 | Faster deploys, less bandwidth |
+| 3.2 | Keep expanding lesson coverage toward the full Bac curriculum (one module/month) | 🔁 ongoing content work, not a code task | Topical authority for "فلسفة باك" queries |
+| 3.3 | FAQ blocks (visible `<details>` accordions + `FAQPage` schema) added to prompts/booklet/skills pages — 5 Arabic Q&A per page, text-identical between markup and schema | ✅ done | New `npm run validate-schema`: 19 JSON-LD blocks parse; all 15 FAQ Q&A match visible content verbatim |
+| 3.4 | Responsive `srcset` for lesson cover images — extended to story images + philosophers hero headers (the real LCP elements) | ✅ done | 25 variants (480/768/1200w) via `scripts/generate-responsive-images.js` (`npm run images:responsive`); heroes got `fetchpriority="high"` + `sizes="100vw"`; story images got `width`/`height` (CLS) + lazy; covers handled in the `lessons/index.html` card template; `check-links.js` now validates `srcset` URLs too → **ALL CHECKS PASSED** |
 
 ## Phase 4 — Monitoring (ongoing)
 1. **Deploy** the current branch, then in Google Search Console: submit the updated sitemap, use "Validate fix" on the affected URLs, watch Coverage + CWV

@@ -340,7 +340,7 @@
             const linkAttrs = isExternal ? 'target="_blank" rel="noopener noreferrer"' : '';
             return `
                 <a href="${lesson.url}" ${linkAttrs} class="group relative aspect-square bg-gradient-to-br from-teal-800 to-teal-950 rounded-xl md:rounded-2xl overflow-hidden card-hover transition-all">
-                    ${lesson.cover ? `<img src="${lesson.cover}" alt="${lesson.title}" class="absolute inset-0 w-full h-full object-cover" loading="lazy">` : ''}
+                    ${lesson.cover ? `<img src="${lesson.cover}" srcset="${lesson.cover.replace(/\.(\w+)$/, '-480.$1')} 480w, ${lesson.cover.replace(/\.(\w+)$/, '-768.$1')} 768w, ${lesson.cover.replace(/\.(\w+)$/, '-1200.$1')} 1200w" sizes="(max-width: 768px) 50vw, 320px" alt="${lesson.title}" class="absolute inset-0 w-full h-full object-cover" loading="lazy">` : ''}
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent"></div>
                     <div class="absolute top-3 right-3 text-white">
                         <i data-lucide="${isExternal ? 'gamepad-2' : 'book-open'}" class="w-5 h-5 drop-shadow-md"></i>
