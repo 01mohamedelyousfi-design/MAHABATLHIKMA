@@ -1,7 +1,7 @@
 # Improvement Action Plan — mahabatlhikma.pages.dev
 
 **Based on:** FULL-AUDIT-REPORT.md v2 (Health Score **84/100**, up from 82) · **Date:** 2026-09-19
-**Status:** ✅ **Phase 1 implemented** (2026-09-19) · ✅ **Phase 2 implemented** (2026-09-23) · Phase 3 partially implemented (2026-09-23: 3.3 + 3.4 done; 3.1 blocked on YouTube upload; 3.2 ongoing). Phase 4 pending.
+**Status:** ✅ **Phase 1 implemented** (2026-09-19) · ✅ **Phase 2 implemented** (2026-09-23) · Phase 3 partially implemented (2026-09-23: 3.3 + 3.4 done; 3.1 deferred by owner; 3.2 ongoing). 🔁 **Phase 4 started** (2026-09-23: deployed + live-verified; GSC steps pending owner; re-audit scheduled 2026-10-28).
 Effort: S = <1h · M = 1–4h · L = 1+ day
 
 ---
@@ -39,10 +39,11 @@ Migration scripts kept for the record: `scripts/repoint-lesson-assets.js`, `scri
 | 3.3 | FAQ blocks (visible `<details>` accordions + `FAQPage` schema) added to prompts/booklet/skills pages — 5 Arabic Q&A per page, text-identical between markup and schema | ✅ done | New `npm run validate-schema`: 19 JSON-LD blocks parse; all 15 FAQ Q&A match visible content verbatim |
 | 3.4 | Responsive `srcset` for lesson cover images — extended to story images + philosophers hero headers (the real LCP elements) | ✅ done | 25 variants (480/768/1200w) via `scripts/generate-responsive-images.js` (`npm run images:responsive`); heroes got `fetchpriority="high"` + `sizes="100vw"`; story images got `width`/`height` (CLS) + lazy; covers handled in the `lessons/index.html` card template; `check-links.js` now validates `srcset` URLs too → **ALL CHECKS PASSED** |
 
-## Phase 4 — Monitoring (ongoing)
-1. **Deploy** the current branch, then in Google Search Console: submit the updated sitemap, use "Validate fix" on the affected URLs, watch Coverage + CWV
-2. Run `npm run check-links` (needs `npm run serve` on :8123) before each deploy
-3. Re-audit in 4–6 weeks — target **score ≥ 92**
+## Phase 4 — Monitoring (ongoing) — started 2026-09-23
+1. ✅ **Deployed** (2026-09-23): pushed `06df9b8..c403089` to `origin/main` → Cloudflare Pages auto-build. **Live verification passed:** all 19 sitemap URLs return 200 (sitemap ↔ canonical ↔ live parity confirmed; lesson pages 308 `/lessons/x/` → `/lessons/x` as expected for file-based routes, matching sitemap + canonicals), `FAQPage` schema live on prompts/skills/booklet, `LearningResource` live on all 9 lesson pages, 0 stale `lessons/assets/` refs, responsive `srcset` live, true 404 status live (`/this-page-does-not-exist/` → 404).
+   ⏳ **Owner action required (Google Search Console):** submit the updated sitemap, use "Validate fix" on the affected URLs, watch Coverage + CWV — needs the owner's Google account.
+2. ✅ Pre-deploy gate ran (2026-09-23): `npm run check-links` → **ALL CHECKS PASSED** (19/19 pages, all refs incl. srcset) + `npm run validate-schema` → **ALL SCHEMA CHECKS PASSED** (19 JSON-LD blocks, 3 FAQPage nodes). Keep running both (with `npm run serve` on :8123) before each deploy.
+3. 📅 **Re-audit scheduled for 2026-10-28** (5 weeks) — target **score ≥ 92**
 
 ---
 
