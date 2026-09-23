@@ -1,9 +1,9 @@
 # Block non-public files from being served (dev tooling, configs, backend sources)
-/Code.gs /404.html 200
-/google-apps-script/* /404.html 200
-/scripts/* /404.html 200
-/.zcode/* /404.html 200
-/tailwind* /404.html 200
-/package*.json /404.html 200
-/_redirects /404.html 200
-/audit/* /404.html 200
+/Code.gs /404.html 404
+/google-apps-script/* /404.html 404
+/scripts/* /404.html 404
+/.zcode/* /404.html 404
+/tailwind* /404.html 404
+/package*.json /404.html 404
+/_redirects /404.html 404
+/audit/* /404.html 404

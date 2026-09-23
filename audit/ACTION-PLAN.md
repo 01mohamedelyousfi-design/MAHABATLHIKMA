@@ -1,7 +1,7 @@
 # Improvement Action Plan — mahabatlhikma.pages.dev
 
 **Based on:** FULL-AUDIT-REPORT.md v2 (Health Score **84/100**, up from 82) · **Date:** 2026-09-19
-**Status:** ✅ **Phase 1 implemented** (2026-09-19) — see the completion log at the bottom. Phases 2–4 pending.
+**Status:** ✅ **Phase 1 implemented** (2026-09-19) · ✅ **Phase 2 implemented** (2026-09-23) — see the completion logs below. Phases 3–4 pending.
 Effort: S = <1h · M = 1–4h · L = 1+ day
 
 ---
@@ -18,15 +18,17 @@ Effort: S = <1h · M = 1–4h · L = 1+ day
 | 1.6 | **(new finding)** Canonical + full OG/Twitter suite added to the 3 identity lesson pages (they had none) | ✅ done | `lesson-identity`, `lesson-identity-synthesis`, `philosophers` now have canonical + OG + Twitter |
 | 1.7 | Link checker extended to cover the 3 new lesson pages + examples page | ✅ done | `scripts/check-links.js` |
 
-## Phase 2 — Medium (next)
+## ✅ Phase 2 — DONE (implemented 2026-09-23)
 
-| # | Fix | Files | Effort |
+| # | Fix | Status | Evidence |
 |---|---|---|---|
-| 2.1 | **Repoint lesson pages to the optimised root assets and delete the stale duplicate tree.** Live `philosophers` page still serves **2.4 MB `philosophers-header.png` + 1.8 MB `john-locke.png` + 1.0 MB ×2** from `lessons/assets/` while 235 KB WebP versions exist in root `assets/`. Change `assets/…` → `/assets/…` on the 9 lesson pages, then remove the duplicated media under `lessons/assets/` (keep `lessons/assets/css/tailwind.css`, which is the lessons-specific build) | `lessons/*.html`, `lessons/assets/*` | M |
-| 2.2 | Repair heading hierarchy: booklet section titles H3→H2, sub-items H4→H3; feedback page H2 before H3s | `booklet/index.html`, `feedback/index.html` | S |
-| 2.3 | Compress the two ~1 MB WebP covers (`value-*.webp`) to ≤1200px width | `assets/lessons/` | S |
-| 2.4 | Commit the pending working tree (memory-button feature, 9 lesson pages, catalog, worker) — currently 19 modified + 5 untracked paths | `git` | S |
-| 2.5 | Consider true 404 status in `_redirects` instead of `/404.html 200` soft-404s | `_redirects` | S |
+| 2.1 | Lesson pages repointed from the stale `lessons/assets/` duplicate tree to the optimised root `/assets/…` (72 refs across 9 pages; the 4 stale PNG names swapped for their WebP counterparts); the 6 philosopher images that existed only in the duplicate tree moved to `assets/philosophers/`; duplicate tree deleted — only `lessons/assets/css/tailwind.css` (lessons-specific build) remains | ✅ done | 19/19 `/assets/` refs resolve on disk; `npm run check-links` → **ALL CHECKS PASSED** (~17 MB of duplicates removed) |
+| 2.2 | Heading hierarchy repaired: booklet section titles H3→H2 (×5), sub-items H4→H3 (×12); feedback success heading H3→H2 so no H3 precedes the first H2 | ✅ done | Heading scan: booklet H1→H2×5→H3×12, feedback H1→H2×2→H3×2 — no level skips |
+| 2.3 | The two ~1 MB WebP covers recompressed to ≤1200px width | ✅ done | `value-cover.webp` 890→49 KB, `value-kant-gusdorf.webp` 1016→60 KB; also `georges-gusdorf.webp` 1148→84 KB and `immanuel-kant.webp` 1052→63 KB while moving them (same 1200px/q80 rule) |
+| 2.4 | Pending working tree committed | ✅ done | `4534aec` (Phase 1 + memory-button/catalog/worker) + Phase 2 commit |
+| 2.5 | True 404 status in `_redirects` instead of `/404.html 200` soft-404s | ✅ done | All 8 blocked paths now rewrite to `/404.html 404` |
+
+Migration scripts kept for the record: `scripts/repoint-lesson-assets.js`, `scripts/optimize-lesson-images.js`, `scripts/fix-heading-hierarchy.js`.
 
 ## Phase 3 — Content & media (month 2)
 
@@ -55,4 +57,4 @@ Effort: S = <1h · M = 1–4h · L = 1+ day
 | Render-blocking JS | 356 KB on 9 pages | **deferred** ✅ |
 | Internal links hitting a 308 redirect | 258 | **0** ✅ |
 | Canonical pointing at a redirecting URL | 8 | **0** ✅ |
-| Heavy duplicates still referenced | ~6 MB PNGs | ⚠️ pending Phase 2.1 |
+| Heavy duplicates still referenced | ~6 MB PNGs | **0 — duplicate tree deleted** ✅ |
