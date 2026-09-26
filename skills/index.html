@@ -91,7 +91,7 @@
               "name": "كيف أضيف مهارة إلى Claude؟",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "نزّل ملف المهارة من بطاقتها، ثم ارفعه من إعدادات Claude في قسم المهارات وفعّله؛ وتجد في الصفحة فيديو قصيراً بعنوان «كيف تضيف مهارة» يشرح الخطوات عملياً."
+                "text": "نزّل ملف المهارة من بطاقتها، ثم ارفعه من إعدادات Claude في قسم المهارات وفعّله؛ وتجد في الصفحة فيديو قصيراً بعنوان «كيف تضيف مهارة» يشرح الخطوات عملياً. وإن لم ترغب في تثبيتها، فزرّ «نسخ System Prompt» في البطاقة ينسخ نصّها كاملاً لتلصقه في أي أداة ذكاء اصطناعي."
               }
             },
             {
@@ -99,7 +99,7 @@
               "name": "ما الفرق بين المهارة والـ System Prompt؟",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "المهارة ملف يُرفع مرة واحدة فيلتزم به Claude تلقائياً عند الحاجة، بينما الـ System Prompt نص تلصقه يدوياً في بداية كل محادثة؛ وكلاهما متوفر في المنصة."
+                "text": "المهارة ملف يُرفع مرة واحدة فيلتزم به Claude تلقائياً عند الحاجة، بينما الـ System Prompt نص تلصقه يدوياً في بداية كل محادثة؛ وكلاهما متوفر في المنصة، ويمكنك نسخ نصّ الـ System Prompt بضغطة واحدة من أي بطاقة دون تثبيت المهارة."
               }
             },
             {
@@ -133,6 +133,10 @@
         .card-hover { transition: all 0.35s cubic-bezier(0.4,0,0.2,1); }
         .card-hover:hover { transform: translateY(-6px); box-shadow: 0 25px 50px -15px rgba(0,0,0,0.12); }
 
+        /* Copy feedback on the card/modal buttons has to beat the Tailwind bg-*/text-* classes they carry. */
+        .copy-state-ok { background-color: #ecfdf5 !important; color: #047857 !important; }
+        .copy-state-error { background-color: #fef2f2 !important; color: #b91c1c !important; }
+
         .modal-overlay { position: fixed; inset: 0; z-index: 100; background: rgba(15,23,42,0.75); backdrop-filter: blur(6px); display: flex; align-items: flex-start; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.25s ease; overflow-y: auto; padding: 2rem 1rem; }
         .modal-overlay.open { opacity: 1; pointer-events: auto; }
         .modal-box { transform: scale(0.96) translateY(10px); transition: transform 0.25s ease; }
@@ -162,7 +166,7 @@
         </div>
         <h1 class="text-3xl md:text-4xl font-black">المهارات التعليمية — مهارات جاهزة تُشغَّل داخل Claude</h1>
         <p class="text-slate-500 font-medium leading-relaxed">
-            كل بطاقة أدناه هي "مهارة" (Skill) جاهزة — ملف تعليمات ترفعه إلى Claude، فيتقن مهمة محددة فوراً بلا حاجة لكتابة طلب طويل في كل مرة. اضغط على أي بطاقة لتتعرف عليها، وكيف تستخدمها، وكيف تفيدك كمعلم أو كمتعلم.
+            كل بطاقة أدناه هي "مهارة" (Skill) جاهزة — ملف تعليمات ترفعه إلى Claude، فيتقن مهمة محددة فوراً بلا حاجة لكتابة طلب طويل في كل مرة. اضغط على أي بطاقة لتتعرف عليها، وكيف تستخدمها، وكيف تفيدك كمعلم أو كمتعلم — وإن لم ترغب في تثبيت المهارة، فزرّ «نسخ System Prompt» في كل بطاقة ينسخ نصّها كاملاً لتلصقه في أي أداة ذكاء اصطناعي.
         </p>
     </header>
 
@@ -185,14 +189,14 @@
                         كيف أضيف مهارة إلى Claude؟
                         <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 flex-shrink-0 transition-transform group-open:rotate-180"></i>
                     </summary>
-                    <p class="px-5 pb-5 text-slate-600 text-sm leading-relaxed">نزّل ملف المهارة من بطاقتها، ثم ارفعه من إعدادات Claude في قسم المهارات وفعّله؛ وتجد في الصفحة فيديو قصيراً بعنوان «كيف تضيف مهارة» يشرح الخطوات عملياً.</p>
+                    <p class="px-5 pb-5 text-slate-600 text-sm leading-relaxed">نزّل ملف المهارة من بطاقتها، ثم ارفعه من إعدادات Claude في قسم المهارات وفعّله؛ وتجد في الصفحة فيديو قصيراً بعنوان «كيف تضيف مهارة» يشرح الخطوات عملياً. وإن لم ترغب في تثبيتها، فزرّ «نسخ System Prompt» في البطاقة ينسخ نصّها كاملاً لتلصقه في أي أداة ذكاء اصطناعي.</p>
                 </details>
                 <details class="group bg-white rounded-2xl border border-slate-100 shadow-sm">
                     <summary class="flex items-center justify-between gap-3 p-5 cursor-pointer list-none font-black text-slate-800 [&::-webkit-details-marker]:hidden">
                         ما الفرق بين المهارة والـ System Prompt؟
                         <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 flex-shrink-0 transition-transform group-open:rotate-180"></i>
                     </summary>
-                    <p class="px-5 pb-5 text-slate-600 text-sm leading-relaxed">المهارة ملف يُرفع مرة واحدة فيلتزم به Claude تلقائياً عند الحاجة، بينما الـ System Prompt نص تلصقه يدوياً في بداية كل محادثة؛ وكلاهما متوفر في المنصة.</p>
+                    <p class="px-5 pb-5 text-slate-600 text-sm leading-relaxed">المهارة ملف يُرفع مرة واحدة فيلتزم به Claude تلقائياً عند الحاجة، بينما الـ System Prompt نص تلصقه يدوياً في بداية كل محادثة؛ وكلاهما متوفر في المنصة، ويمكنك نسخ نصّ الـ System Prompt بضغطة واحدة من أي بطاقة دون تثبيت المهارة.</p>
                 </details>
                 <details class="group bg-white rounded-2xl border border-slate-100 shadow-sm">
                     <summary class="flex items-center justify-between gap-3 p-5 cursor-pointer list-none font-black text-slate-800 [&::-webkit-details-marker]:hidden">
@@ -319,6 +323,9 @@
                 <a id="modal-example" href="#" target="_blank" rel="noopener noreferrer" class="hidden w-full bg-primary/10 text-primary py-3.5 rounded-xl font-bold hover:bg-primary/20 transition-colors items-center justify-center gap-2">
                     <i data-lucide="eye" class="w-4 h-4"></i> شاهد مثالاً حياً لدرس مبني بهذه المهارة
                 </a>
+                <button type="button" id="modal-copy-prompt" onclick="copySystemPrompt(this)" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-700 py-3.5 rounded-xl font-bold transition-colors flex items-center justify-center gap-2">
+                    <i data-lucide="clipboard-copy" class="w-4 h-4"></i> نسخ System Prompt
+                </button>
                 <a id="modal-download" href="#" download class="w-full bg-slate-900 text-white py-3.5 rounded-xl font-bold hover:bg-slate-800 transition-colors flex items-center justify-center gap-2">
                     <i data-lucide="download" class="w-4 h-4"></i> تحميل ملف المهارة (ZIP)
                 </a>
@@ -341,6 +348,7 @@
             'فعّل خاصية "تنفيذ الكود وإنشاء الملفات" من الإعدادات (Settings ← Capabilities) في حسابك على Claude.ai.',
             'اذهب إلى Customize ← Skills، اضغط "+" ثم "Create skill"، وارفع ملف الـ ZIP الخاص بهذه المهارة (زرّ التحميل أسفله).',
             'ابدأ محادثة جديدة واكتب طلبك مباشرة — Claude يكتشف المهارة تلقائياً من نوع الطلب.',
+            'وإن لم ترغب في تثبيت المهارة: اضغط «نسخ System Prompt» على البطاقة، وألصق النص في خانة System / التعليمات المخصّصة في أي أداة ذكاء اصطناعي.',
         ];
 
         const SKILLS = [
@@ -461,6 +469,11 @@
                         <div class="pt-2 text-primary font-bold text-sm flex items-center gap-1">
                             التفاصيل <i data-lucide="arrow-left" class="w-4 h-4"></i>
                         </div>
+                        <button type="button" data-skill="${s.id}" onclick="event.stopPropagation(); copySystemPrompt(this)"
+                            class="w-full flex items-center justify-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-bold py-2.5 rounded-xl transition-colors"
+                            aria-label="نسخ System Prompt لمهارة ${s.title}">
+                            <i data-lucide="clipboard-copy" class="w-4 h-4"></i> نسخ System Prompt
+                        </button>
                     </div>
                 </div>
             `).join('');
@@ -479,6 +492,7 @@
             document.getElementById('modal-teacher').textContent = s.teacher;
             document.getElementById('modal-student').textContent = s.student;
             document.getElementById('modal-download').href = s.file;
+            document.getElementById('modal-copy-prompt').dataset.skill = s.id;
             const exampleBtn = document.getElementById('modal-example');
             if (s.example) {
                 exampleBtn.href = s.example;
@@ -498,6 +512,61 @@
         document.getElementById('skill-modal').addEventListener('click', function (e) {
             if (e.target === this) closeSkillModal();
         });
+
+        const SYSTEM_PROMPTS_URL = '/assets/data/skill-system-prompts.json';
+        const COPY_FEEDBACK_MS = 1800;
+        let systemPromptsRequest = null;
+
+        /** Loads the generated prompts once per page view; revalidated because a rewritten prompt can keep its URL. */
+        function loadSystemPrompts() {
+            if (!systemPromptsRequest) {
+                systemPromptsRequest = fetch(SYSTEM_PROMPTS_URL, { cache: 'no-cache' })
+                    .then(res => res.ok ? res.json() : Promise.reject(new Error(`HTTP ${res.status}`)))
+                    .catch(() => { systemPromptsRequest = null; return null; });
+            }
+            return systemPromptsRequest;
+        }
+
+        /** Copies the full system prompt of the button's skill, so the visitor needs no ZIP install to use it. */
+        async function copySystemPrompt(btn) {
+            const prompts = await loadSystemPrompts();
+            const text = prompts && prompts[btn.dataset.skill];
+            showCopyFeedback(btn, text ? await writeClipboard(text) : false);
+        }
+
+        /** navigator.clipboard needs a secure context; plain-http or file:// previews fall back to a hidden textarea. */
+        async function writeClipboard(text) {
+            try {
+                await navigator.clipboard.writeText(text);
+                return true;
+            } catch (err) {
+                const area = document.createElement('textarea');
+                area.value = text;
+                area.setAttribute('readonly', '');
+                area.style.position = 'fixed';
+                area.style.top = '-1000px';
+                document.body.appendChild(area);
+                area.select();
+                let copied = false;
+                try { copied = document.execCommand('copy'); } catch (err2) { copied = false; }
+                document.body.removeChild(area);
+                return copied;
+            }
+        }
+
+        function showCopyFeedback(btn, copied) {
+            if (!btn.dataset.idleHtml) btn.dataset.idleHtml = btn.innerHTML;
+            clearTimeout(btn.dataset.feedbackTimer);
+            btn.classList.toggle('copy-state-ok', copied);
+            btn.classList.toggle('copy-state-error', !copied);
+            btn.innerHTML = `<i data-lucide="${copied ? 'check' : 'alert-triangle'}" class="w-4 h-4"></i> ${copied ? 'تم النسخ' : 'تعذّر النسخ، أعد المحاولة'}`;
+            lucide.createIcons();
+            btn.dataset.feedbackTimer = setTimeout(() => {
+                btn.innerHTML = btn.dataset.idleHtml;
+                btn.classList.remove('copy-state-ok', 'copy-state-error');
+                lucide.createIcons();
+            }, COPY_FEEDBACK_MS);
+        }
 
         function openHowToVideo() {
             document.getElementById('howto-video-box').innerHTML = howtoVideoEmbedHtml(true);
@@ -521,6 +590,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             lucide.createIcons();
             renderGrid();
+            loadSystemPrompts();
         });
     </script>
 
