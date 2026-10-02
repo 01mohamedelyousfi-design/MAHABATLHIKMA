@@ -257,8 +257,8 @@
                         <i data-lucide="message-square-heart" class="w-4 h-4"></i>شاركنا رأيك
                     </a>
                 </div>
-                <button onclick="toggleSidebar()" class="lg:hidden p-2.5 rounded-xl text-slate-600 hover:bg-slate-100 transition-colors" id="menu-toggle">
-                    <i data-lucide="menu" class="w-6 h-6"></i>
+                <button onclick="toggleSidebar()" class="lg:hidden p-2.5 rounded-xl text-slate-600 hover:bg-slate-100 transition-colors" id="menu-toggle" aria-label="فتح قائمة التنقل" aria-controls="sidebar" aria-expanded="false">
+                    <i aria-hidden="true" data-lucide="menu" class="w-6 h-6"></i>
                 </button>
             </div>
         </div>
@@ -273,7 +273,7 @@
                     <img src="/assets/logo/logo-mark.svg" alt="محبة الحكمة" class="w-8 h-8">
                     <span class="text-xl font-black text-primary">محبة الحكمة</span>
                 </div>
-                <button onclick="toggleSidebar()" class="p-2 rounded-xl hover:bg-slate-100"><i data-lucide="x" class="w-5 h-5 text-slate-500"></i></button>
+                <button onclick="toggleSidebar()" class="p-2 rounded-xl hover:bg-slate-100" aria-label="إغلاق قائمة التنقل"><i aria-hidden="true" data-lucide="x" class="w-5 h-5 text-slate-500"></i></button>
             </div>
             <div class="space-y-1">
                 <a href="/" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-50 font-bold transition-colors"><i data-lucide="home" class="w-5 h-5"></i>الرئيسية</a>
@@ -734,6 +734,7 @@
                     <h4 class="font-black text-white uppercase tracking-widest text-xs">ابقَ على اطلاع</h4>
                     <p class="text-slate-400 font-medium text-sm leading-relaxed">اشترك ليصلك كل جديد عن محبة الحكمة</p>
                     <div class="flex gap-2">
+                        <label for="newsletter-email" class="sr-only">بريدك الإلكتروني</label>
                         <input id="newsletter-email" type="email" placeholder="بريدك الإلكتروني" class="flex-1 px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white text-sm font-medium placeholder:text-slate-500 focus:outline-none focus:border-teal-400 transition-colors">
                         <button id="newsletter-btn" class="bg-gradient-to-r from-primary to-teal-400 px-5 py-3 rounded-xl font-bold text-sm hover:scale-105 transition-transform">اشترك</button>
                     </div>
@@ -766,9 +767,13 @@
 
         // Sidebar
         function toggleSidebar() {
-            document.getElementById('sidebar').classList.toggle('open');
-            document.getElementById('sidebar-overlay').classList.toggle('open');
-            document.body.style.overflow = document.getElementById('sidebar').classList.contains('open') ? 'hidden' : '';
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            const toggle = document.getElementById('menu-toggle');
+            const isOpen = sidebar.classList.toggle('open');
+            overlay.classList.toggle('open', isOpen);
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+            if (toggle) toggle.setAttribute('aria-expanded', String(isOpen));
         }
 
         // Navbar scroll effect

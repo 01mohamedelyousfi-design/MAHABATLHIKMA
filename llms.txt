@@ -1,30 +1,24 @@
 # محبة الحكمة | Mahabat Lhikma
 
-> منصة تعليمية تحوّل الفلسفة إلى تجربة تفاعلية ممتعة
-
-## About
-
-Mahabat Lhikma (محبة الحكمة) is an Arabic educational platform that transforms philosophy into an engaging interactive experience. It combines AI-powered teaching tools, interactive games, media resources, and structured learning paths for philosophy educators and students.
-
-## Creator
-
-Mohamed Elyousfi — philosophy educator and AI integration specialist.
+> Mahabat Lhikma (محبة الحكمة, "the love of wisdom") is an Arabic educational platform that turns philosophy into an interactive experience for Moroccan philosophy teachers and students. It combines interactive lessons aligned with the national curriculum, an AI prompt library, Claude-ready teaching skills, educational games, and a curated philosophical media library.
+> Created by Mohamed Elyousfi, philosophy educator and AI integration specialist. Primary content language: Arabic (ar). No login or account is required to read any section.
 
 ## Sections
 
-- **Homepage** (https://mahabatlhikma.pages.dev/): Platform overview with all interactive sections.
-- **Philosophy Lessons** (https://mahabatlhikma.pages.dev/lessons/): Interactive philosophy lessons following the Moroccan curriculum, organized by level, module, and concept — from problematique to philosophers' positions to synthesis. Starts with Personal Identity (2ème Baccalauréat).
-- **Philomedia** (https://mahabatlhikma.pages.dev/philomedia/): Curated philosophical media library — videos, podcasts, and visual content.
-- **AI Prompts** (https://mahabatlhikma.pages.dev/prompts/): Ready-to-use prompts that turn any AI model into a philosophy tutor or debate coach.
-- **Skills** (https://mahabatlhikma.pages.dev/skills/): Claude-ready educational skills for lesson building, research, and interactive learning.
-- **Games** (https://mahabatlhikma.pages.dev/games/): Educational games — philosophy is played, not just memorized.
-- **NotebookLM Guide** (https://mahabatlhikma.pages.dev/notebooklm/): Practical guide for teachers using NotebookLM, Gemini, and ChatGPT in philosophy lessons.
-- **AI Booklet** (https://mahabatlhikma.pages.dev/booklet/): Concise AI guide for philosophy teachers — the three rules, effective prompting, and skills.
-- **Feedback** (https://mahabatlhikma.pages.dev/feedback/): Share your feedback and help improve the platform.
+- [Philosophy Lessons](https://mahabatlhikma.pages.dev/lessons/): Interactive philosophy lessons following the Moroccan curriculum, organized by level, module, and concept — from the problematique, to the philosophers' positions, to the philosophical synthesis. Starts with Personal Identity (2ème Baccalauréat).
+- [Philomedia](https://mahabatlhikma.pages.dev/philomedia/): Curated philosophical media library — conversations, videos, reels, manga-style visuals, and songs.
+- [AI Prompts](https://mahabatlhikma.pages.dev/prompts/): Ready-to-use prompts that turn any AI model into a philosophy tutor, Socratic questioner, or debate coach.
+- [Educational Skills](https://mahabatlhikma.pages.dev/skills/): Claude-ready educational skills for building lessons, research, and interactive learning activities.
+- [Games](https://mahabatlhikma.pages.dev/games/): Educational philosophy games and thought experiments — philosophy is played, not only memorized.
+- [NotebookLM Guide](https://mahabatlhikma.pages.dev/notebooklm/): Practical guide for teachers using NotebookLM, Gemini, and ChatGPT in philosophy lessons.
+- [AI Booklet](https://mahabatlhikma.pages.dev/booklet/): A concise AI guide for philosophy teachers — the three rules, effective prompting, and reusable skills.
+- [Feedback](https://mahabatlhikma.pages.dev/feedback/): Share your feedback to help improve the platform.
 
-## Language
+## Optional
 
-Arabic (ar)
+- [Homepage](https://mahabatlhikma.pages.dev/): Platform overview with every interactive section in one place.
+- [Sitemap](https://mahabatlhikma.pages.dev/sitemap.xml): Canonical list of all indexable URLs.
+- [Source repository](https://github.com/01mohamedelyousfi-design/MAHABATLHIKMA): Static-site source (semantic HTML, Tailwind CSS, deployed on Cloudflare Pages).
 
 ## License
 

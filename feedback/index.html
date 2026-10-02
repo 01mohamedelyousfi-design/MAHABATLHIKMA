@@ -126,7 +126,7 @@
 
             <!-- Which section -->
             <div class="space-y-2">
-                <label class="font-black text-sm text-slate-900 flex items-center gap-2">
+                <label for="page-select" class="font-black text-sm text-slate-900 flex items-center gap-2">
                     <i data-lucide="target" class="w-4 h-4 text-primary"></i> ملاحظتك تخص
                 </label>
                 <select name="page" id="page-select" required class="w-full border-2 border-slate-200 rounded-xl px-4 py-3 font-bold text-slate-700 bg-white">
@@ -179,21 +179,21 @@
 
             <!-- Message -->
             <div class="space-y-2">
-                <label class="font-black text-sm text-slate-900 flex items-center gap-2">
+                <label for="message" class="font-black text-sm text-slate-900 flex items-center gap-2">
                     <i data-lucide="message-circle" class="w-4 h-4 text-primary"></i> ملاحظتك
                 </label>
-                <textarea name="message" required minlength="5" rows="5" placeholder="اكتب رأيك بحرية هنا..." class="w-full border-2 border-slate-200 rounded-xl px-4 py-3 font-medium text-slate-700"></textarea>
+                <textarea id="message" name="message" required minlength="5" rows="5" placeholder="اكتب رأيك بحرية هنا..." class="w-full border-2 border-slate-200 rounded-xl px-4 py-3 font-medium text-slate-700"></textarea>
             </div>
 
             <!-- Optional contact -->
             <div class="grid sm:grid-cols-2 gap-4">
                 <div class="space-y-2">
-                    <label class="font-bold text-xs text-slate-500">اسمك <span class="font-normal">(اختياري)</span></label>
-                    <input type="text" name="name" placeholder="اسمك" class="w-full border-2 border-slate-200 rounded-xl px-4 py-2.5 font-medium text-slate-700 text-sm">
+                    <label for="contact-name" class="font-bold text-xs text-slate-500">اسمك <span class="font-normal">(اختياري)</span></label>
+                    <input id="contact-name" type="text" name="name" placeholder="اسمك" class="w-full border-2 border-slate-200 rounded-xl px-4 py-2.5 font-medium text-slate-700 text-sm">
                 </div>
                 <div class="space-y-2">
-                    <label class="font-bold text-xs text-slate-500">بريدك الإلكتروني <span class="font-normal">(إن أردت رداً)</span></label>
-                    <input type="email" name="email" placeholder="you@example.com" class="w-full border-2 border-slate-200 rounded-xl px-4 py-2.5 font-medium text-slate-700 text-sm" dir="ltr">
+                    <label for="contact-email" class="font-bold text-xs text-slate-500">بريدك الإلكتروني <span class="font-normal">(إن أردت رداً)</span></label>
+                    <input id="contact-email" type="email" name="email" placeholder="you@example.com" class="w-full border-2 border-slate-200 rounded-xl px-4 py-2.5 font-medium text-slate-700 text-sm" dir="ltr">
                 </div>
             </div>
 

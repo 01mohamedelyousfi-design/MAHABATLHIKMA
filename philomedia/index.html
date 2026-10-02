@@ -216,8 +216,8 @@
     <!-- Video Modal -->
     <div class="modal-overlay" id="video-modal">
         <div class="modal-content">
-            <button class="modal-close" onclick="closeModal()">
-                <i data-lucide="x" class="w-8 h-8"></i>
+            <button class="modal-close" onclick="closeModal()" aria-label="إغلاق عرض الفيديو">
+                <i aria-hidden="true" data-lucide="x" class="w-8 h-8"></i>
             </button>
             <div id="modal-video-container"></div>
         </div>
@@ -226,8 +226,8 @@
     <!-- Image Lightbox (Manga) -->
     <div class="modal-overlay" id="image-modal">
         <div class="modal-content text-center">
-            <button class="modal-close" onclick="closeImageModal()">
-                <i data-lucide="x" class="w-8 h-8"></i>
+            <button class="modal-close" onclick="closeImageModal()" aria-label="إغلاق عرض الصورة">
+                <i aria-hidden="true" data-lucide="x" class="w-8 h-8"></i>
             </button>
             <img id="modal-image" src="" alt="" class="max-h-[80vh] max-w-full mx-auto rounded-xl">
             <p id="modal-image-caption" class="text-white/80 text-sm font-bold mt-3"></p>
@@ -236,8 +236,8 @@
 
     <!-- Audio Bar -->
     <div class="audio-bar items-center gap-4" id="audio-bar">
-        <button onclick="closeAudioBar()" class="text-white/60 hover:text-white shrink-0">
-            <i data-lucide="chevron-down" class="w-5 h-5"></i>
+        <button onclick="closeAudioBar()" class="text-white/60 hover:text-white shrink-0" aria-label="إغلاق شريط الصوت">
+            <i aria-hidden="true" data-lucide="chevron-down" class="w-5 h-5"></i>
         </button>
         <div class="text-white/80 text-sm font-bold truncate min-w-0 flex-1" id="audio-title">العنوان</div>
         <audio id="audio-player" controls playsinline class="max-w-[300px] w-full" style="height: 36px;"></audio>

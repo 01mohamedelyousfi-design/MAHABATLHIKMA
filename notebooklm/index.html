@@ -186,8 +186,8 @@
     <div class="modal-overlay" id="card-modal">
         <div class="modal-box bg-white rounded-3xl w-full max-w-2xl my-8 overflow-hidden shadow-2xl">
             <div id="modal-header" class="p-6 text-white relative">
-                <button onclick="closeCardModal()" class="absolute top-4 left-4 w-9 h-9 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-colors">
-                    <i data-lucide="x" class="w-5 h-5"></i>
+                <button onclick="closeCardModal()" class="absolute top-4 left-4 w-9 h-9 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-colors" aria-label="إغلاق تفاصيل الدليل">
+                    <i aria-hidden="true" data-lucide="x" class="w-5 h-5"></i>
                 </button>
                 <div class="flex items-center gap-4">
                     <div class="w-14 h-14 rounded-2xl bg-white/20 flex items-center justify-center flex-shrink-0">
@@ -211,8 +211,8 @@
                 <div>
                     <h4 class="font-black text-slate-900 flex items-center gap-2 mb-2"><i data-lucide="terminal" class="w-4 h-4 text-primary"></i> مثال جاهز للنسخ</h4>
                     <div class="prompt-box">
-                        <button class="copy-btn text-white/70 hover:text-white text-xs font-bold px-2 py-1 rounded-md bg-white/10" onclick="copyPrompt(this)">
-                            <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                        <button class="copy-btn text-white/70 hover:text-white text-xs font-bold px-2 py-1 rounded-md bg-white/10" onclick="copyPrompt(this)" aria-label="نسخ المثال">
+                            <i aria-hidden="true" data-lucide="copy" class="w-3.5 h-3.5"></i>
                         </button>
                         <span id="modal-prompt"></span>
                     </div>

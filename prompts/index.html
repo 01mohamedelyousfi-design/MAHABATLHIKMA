@@ -259,8 +259,8 @@
     <div class="modal-overlay" id="tool-modal">
         <div class="modal-box bg-white rounded-3xl w-full max-w-2xl my-8 overflow-hidden shadow-2xl">
             <div id="modal-header" class="p-6 text-white relative">
-                <button onclick="closeToolModal()" class="absolute top-4 left-4 w-9 h-9 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-colors">
-                    <i data-lucide="x" class="w-5 h-5"></i>
+                <button onclick="closeToolModal()" class="absolute top-4 left-4 w-9 h-9 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-colors" aria-label="إغلاق تفاصيل الأداة">
+                    <i aria-hidden="true" data-lucide="x" class="w-5 h-5"></i>
                 </button>
                 <div class="flex items-center gap-4">
                     <div class="w-14 h-14 rounded-2xl bg-white/20 flex items-center justify-center flex-shrink-0">
@@ -307,8 +307,8 @@
     <!-- Example image lightbox -->
     <div class="modal-overlay" id="example-lightbox">
         <div class="modal-box text-center my-8">
-            <button onclick="closeExampleLightbox()" class="absolute -top-12 left-0 w-9 h-9 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-colors">
-                <i data-lucide="x" class="w-5 h-5 text-white"></i>
+            <button onclick="closeExampleLightbox()" class="absolute -top-12 left-0 w-9 h-9 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-colors" aria-label="إغلاق عرض المثال">
+                <i aria-hidden="true" data-lucide="x" class="w-5 h-5 text-white"></i>
             </button>
             <img id="lightbox-img" src="" alt="" class="max-h-[80vh] max-w-full mx-auto rounded-2xl shadow-2xl">
             <p id="lightbox-caption" class="text-white font-bold mt-3"></p>
