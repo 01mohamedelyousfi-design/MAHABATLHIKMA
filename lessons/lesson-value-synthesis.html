@@ -155,6 +155,42 @@
             box-shadow: 0 12px 35px -28px rgba(15,23,42,0.25);
         }
 
+        /* Teach-back activity: «اقلب الأدوار — علّم أنت» */
+        .teach-prompt {
+            background: #0f172a;
+            color: #e2e8f0;
+            border-radius: 1rem;
+            padding: 1.25rem 1.4rem;
+            font-family: 'Tajawal', sans-serif;
+            font-size: 0.95rem;
+            line-height: 2.1;
+            white-space: pre-wrap;
+            word-break: break-word;
+            direction: rtl;
+            text-align: right;
+            max-height: 30rem;
+            overflow: auto;
+            margin: 0;
+        }
+        .teach-prompt::selection { background: rgba(20, 184, 166, 0.4); }
+        .teach-step {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 1.25rem;
+            padding: 1.1rem 1.25rem;
+            display: flex;
+            gap: 0.9rem;
+            align-items: flex-start;
+        }
+        .teach-step-num {
+            font-family: 'Amiri', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--accent);
+            flex-shrink: 0;
+            line-height: 1.3;
+        }
+
         .choice {
             display: flex;
             align-items: flex-start;
@@ -462,6 +498,10 @@
                     </a>
                 </li>
             </ol>
+            <a href="#teach-back" class="mt-3 inline-flex items-center gap-2 text-sm font-black text-accent-dark hover:underline">
+                <i data-lucide="graduation-cap" class="w-4 h-4" aria-hidden="true"></i>
+                <span>نشاط إضافي: علّم أنت (اقلب الأدوار)</span>
+            </a>
         </div>
     </div>
 
@@ -891,6 +931,117 @@
                         <button type="button" class="reset-activity quiet-button !bg-slate-800 !border-slate-600 !text-slate-100 text-sm" data-reset="reflect">أعد نشاط التأمل</button>
                     </div>
                 </details>
+            </div>
+        </section>
+    <!-- ========== نشاط إضافي: اقلب الأدوار — علّم أنت ========== -->
+        <section id="teach-back" class="reveal activity-surface rounded-[32px] overflow-hidden shadow-sm scroll-mt-48" aria-labelledby="teach-back-title">
+            <div class="p-6 sm:p-8 md:p-10 border-b border-slate-200/70">
+                <div class="flex flex-col sm:flex-row sm:items-start gap-5">
+                    <span class="w-12 h-12 rounded-2xl bg-accent text-paper flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="graduation-cap" class="w-6 h-6" aria-hidden="true"></i>
+                    </span>
+                    <div class="space-y-2">
+                        <p class="text-sm font-black text-accent-dark">نشاط إضافي — بلا مؤقّت وبلا نقاط</p>
+                        <h2 id="teach-back-title" class="text-2xl md:text-3xl font-black">اقلب الأدوار: علّم أنت</h2>
+                        <p class="text-slate-600 font-medium leading-relaxed max-w-[65ch]">أرسخُ ما نتعلمه هو ما نشرحه للآخرين، لا ما نقرؤه مرة أخرى. هنا ينقلب الوضع: <strong>أنت المعلّم</strong>، والنموذج يصبح <strong>تلميذًا فضوليًا</strong> يسألك ويستفسر ويرفض الإجابات الغامضة — فتكتشف بنفسك ما فهمته فعلًا وما تحفظه فقط.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-6 sm:p-8 md:p-10 space-y-7">
+                <ol class="grid gap-4 sm:grid-cols-2 list-none p-0 m-0">
+                    <li class="teach-step">
+                        <span class="teach-step-num" aria-hidden="true">١</span>
+                        <div>
+                            <h3 class="font-black mb-1">انسخ البرومبت</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">اضغط زر «انسخ البرومبت» في الأسفل. النصّ مكتوب خصيصًا لدرس قيمة الشخص ويعرّف النموذج بمضامينه وبمواقفه.</p>
+                        </div>
+                    </li>
+                    <li class="teach-step">
+                        <span class="teach-step-num" aria-hidden="true">٢</span>
+                        <div>
+                            <h3 class="font-black mb-1">الصقه في نموذج ذكاء اصطناعي</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">افتح ChatGPT أو Claude أو Gemini في محادثة جديدة، والصق النص كأول رسالة، ثم أرسله.</p>
+                        </div>
+                    </li>
+                    <li class="teach-step">
+                        <span class="teach-step-num" aria-hidden="true">٣</span>
+                        <div>
+                            <h3 class="font-black mb-1">اشرح بصوتك أنت</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">سيرسل لك النموذج رسالة تلميذ يطلب منك الشرح. اشرح من فهمك بجمل قصيرة: بيّن دعوى كل فيلسوف وبينته ومجيزه، واضرب مثالًا من عندك — ولا تقرأ الملخص حرفيًا.</p>
+                        </div>
+                    </li>
+                    <li class="teach-step">
+                        <span class="teach-step-num" aria-hidden="true">٤</span>
+                        <div>
+                            <h3 class="font-black mb-1">اصمد أمام أسئلته</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">أجب عن أسئلة التلميذ واحدة واحدة. كل ثغرة يكشفها في شرحك مكسبٌ لا خسارة: عُد إلى الخطوة المعنية في هذه الصفحة أو إلى صفحة «مواقف الفلاسفة»، ثم أكمل المحادثة.</p>
+                        </div>
+                    </li>
+                </ol>
+
+                <div class="bg-amber-50 border border-amber-100 rounded-2xl p-4 flex gap-3 items-start">
+                    <i data-lucide="info" class="w-5 h-5 text-accent-dark mt-0.5 flex-shrink-0" aria-hidden="true"></i>
+                    <p class="text-sm font-bold text-amber-900 leading-relaxed">قاعدة اللعب: النموذج لن يشرح لك الدرس ولن يلخّصه؛ دوره أن يسأل فقط. وإن ألحَّ عليك في سؤال لا تعرف جوابه، فاعتبره «بوصلة مراجعة» لا فشلًا: عُد إلى الدرس أو إلى خريطة المواقف، ثم استأنف المحادثة بقوة.</p>
+                </div>
+
+                <div>
+                    <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+                        <h3 class="text-xl font-black">برومبت درس قيمة الشخص — جاهز للنسخ</h3>
+                        <button type="button" id="teach-prompt-copy" class="quiet-button !bg-slate-900 !border-slate-700 !text-slate-100" aria-controls="teach-prompt">
+                            <i data-lucide="clipboard-copy" class="w-5 h-5" aria-hidden="true"></i>
+                            انسخ البرومبت
+                        </button>
+                    </div>
+                    <p class="text-sm font-bold text-slate-500 leading-relaxed mb-3 max-w-[75ch]">يمكنك تعديل أي سطر فيه قبل الإرسال: زد أسئلة، أو اطلب من التلميذ أن يركّز على نقطة بعينها في درسك.</p>
+                    <pre id="teach-prompt" class="teach-prompt" tabindex="0" aria-label="نص برومبت نشاط: علّم أنت — درس قيمة الشخص"># أنت التلميذ، وأنا المعلّم — درس: قيمة الشخص
+
+## من أنت ومن أنا
+- أنا معلّمك الآن: سأشرح لك درس «قيمة الشخص» (مجزوءة الوضع البشري) بصوتي ومن فهمي، لا بالقراءة من كتاب.
+- أنت تلميذي: تلميذ/ة في الثانية باكالوريا، ذكي وفضولي ومهذّب، لم تدرس هذا الدرس بعد، وستحاول أن تفهمه من شرحي وحدي.
+- لغتك: العربية الفصحى المبسّطة. جملك قصيرة، ونبرتك دافئة بلا تعالٍ ولا سخرية ولا أحكام على شخصي.
+
+## دورك (لا تخرج عنه أبدًا)
+1. لا تشرح لي الدرس، ولا تلخّصه، ولا تعطني «الإجابة النموذجية». مهمتك الوحيدة: السؤال والاستفسار.
+2. لا تنتظر أن أنتهي: اسألني من داخل الشرح، وقاطعني كلما غمضت عليك نقطة.
+3. في كل رد: سؤال واحد أو سؤالان فقط، في أقل من خمسة أسطر.
+4. درّج أسئلتك: سؤال عام في البداية («اشرح لي فكرة الدرس الأساسية») ← ثم عن معنى مصطلح ← ثم عن الحجة والدليل ← ثم اطلب مثالًا ← ثم اسأل عن الفرق بين موقفين ← ثم اسأل سؤالًا يكشف ثغرة أو تعميمًا مبالغًا فيه في شرحي.
+5. نوّع أدواتك: «لم أفهم معنى…» / «أعطني مثالًا من حياتي اليومية» / «ما الفرق بين… و…؟» / «ما دليلك على هذا؟» / «ماذا لو كان العكس صحيحًا؟» / «أعِد صياغة الفكرة في جملة واحدة».
+6. لا تقبل الجواب العام: إن قلت لك «الكرامة مهمة» فاطلب البيان: «لماذا؟ وما معنى الكرامة بدقة عند كانط؟».
+
+## قاعدة التصحيح غير المباشر
+- إن أخطأت خطأً فلسفيًا واضحًا، لا تصحّح لي مباشرة ولا تعطني المعلومة الصحيحة؛ اسألني سؤالًا مضادًا يدفعني لأن أنتبه وحدي (مثال: «هل تقبل الكرامة أن تُقاس أو تُقسم عند كانط؟»).
+- إن ألححتُ عليك وطلبتُ الجواب، ذكّرني بلطف أنك التلميذ، واطلب مني أن أبحث في الدرس وأشرح.
+- استثناء وحيد: إن سألتك عن معنى لغوي لكلمة عامة، اسألني أولًا، وإن لم أعرف فأجب في سطر واحد ثم عُد إلى دورك.
+
+## خريطة الدرس التي سأسألك عنها (استعملها لتوليد أسئلتك، ولا تُلقِها عليّ مُلقَّنة)
+الإشكال: ما أساس قيمة الشخص؟ هل قيمته في كونه كائنًا عاقلًا «غاية في ذاته» فتُعدّ مطلقة (كرامة)، أم في انفتاحه على الغير ومشاركته فتتحقق استقلاليته بالمشاركة؟
+- إمانويل كانط — الدعوى: الشخص غاية في ذاته، لا يجوز اختزاله في وسيلة، وقيمته مطلقة. البينة: التمييز بين «الأشياء» ذات القيمة المشروطة المرتبطة بالميول والحاجات، و«الأشخاص» ذوي القيمة المطلقة المسماة كرامة. المجيز: طبيعته العاقلة تجعله غاية موضوعية، والكرامة لا تدخل معادلة المنفعة.
+- جورج غوسدورف — الدعوى: الشخص الأخلاقي لا يوجد إلا بالمشاركة، وغناه في العطاء لا في التملك المنغلق. البينة: تأخر فكرة الاستقلال تاريخيًا، ونقد «الفرد-الإمبراطور» الذي يتصور نفسه بداية مطلقة، والتمييز بين الاستكفاء الوهمي والانفتاح على الغير. المجيز: وجود يكتمل بقدر ما يعطي ويمنح.
+- التجربة الفكرية «معضلة العربة»: هل يجوز تحويل العربة نحو العامل الواحد؟ كانط: لا، لأن التحويل يجعل العامل وسيلة لغيره، و«الكرامة لا تُقاس ولا تُقسم». غوسدورف: العمال ليسوا «أرقامًا»، والحساب المجرد ليس بديلًا عن المسؤولية.
+- حركات المناقشة الأربع: عرض الأطروحة ← دفع نقيضها (الاعتراض بحجة وبينة) ← تعميق المناقشة (التقاطع: كلاهما يرفض اختزال الشخص في وسيلة، لكن كانط يؤسّس ذلك في العقل المحض وغوسدورف في التجربة الوجودية المشتركة) ← التركيب والحسم (لا تُختزل القيمة في أساس واحد: كرامة غائية، واستقلالية لا تكتمل إلا بالمشاركة).
+- سؤال مفتوح للتعميق: لماذا افترض سؤال التركيب أن للقيمة «أساسًا» واحدًا يمكن العثور عليه؟ ماذا لو كانت القيمة بناءً مستمرًا لا جوهرًا سابقًا؟
+
+## أخطاء أطلب منك أن تكتشفها في شرحي
+- أن أقدّم الكرامة الكانطية كأنها قيمة تُقاس بالمنفعة أو تُقدَّر بالنفع.
+- أن أجعل غوسدورف نقيضًا تامًا لكانط ينفي قيمة الفرد.
+- أن أقول إن «التركيب» يعني اختيار أحد الموقفين ورفض الآخر.
+- أن أخلط بين «التقاطع» (اتفاق في الرفض) و«الاتفاق التام».
+
+## كيف نبدأ
+لا تشرح شيئًا. أرسل رسالة أولى قصيرة (خمسة أسطر كحد أقصى): عرّف نفسك كتلميذ في سطر واحد، ثم اطلب مني أن أبدأ الشرح من الإشكال: «ما أساس قيمة الشخص؟».
+
+## كيف نختم (حين أطلب منك ذلك)
+1. اطلب مني أن أصوغ تركيبًا في ستة أسطر: أطروحة، نقيض، ثم حسم مبرر بكلماتي.
+2. أخبِرني بصدق: ما الذي فهمته من شرحي؟ وما الذي ما زال غامضًا؟ وأين تناقضتُ أو تسرّعتُ؟
+3. سلّمني قائمة «ثلاث مراجعات» محدّدة أعود إليها في الدرس، دون أن تشرحها لي.
+
+## قبل أن ترسل كل رسالة، تحقّق
+- [ ] هل سألت ولم أشرح؟
+- [ ] هل درجت في السؤال (عام ← دقيق)؟
+- [ ] هل سؤالي مبني على ما قاله المعلّم في شرحه، لا على معلومة من خارج الدرس؟
+- [ ] هل بقيتُ في حدود خمسة أسطر، بسؤال أو سؤالين؟</pre>
+                </div>
             </div>
         </section>
     </main>
@@ -1826,6 +1977,54 @@
             if (event.key === 'Escape' && document.getElementById('sidebar').classList.contains('open')) toggleSidebar();
         });
         document.getElementById('newsletter-btn').addEventListener('click', subscribeToNewsletter);
+
+        /* ---------- Teach-back activity: «اقلب الأدوار — علّم أنت» ---------- */
+
+        const teachPrompt = document.getElementById('teach-prompt');
+        const teachPromptCopy = document.getElementById('teach-prompt-copy');
+
+        /** navigator.clipboard needs a secure context; plain-http or file:// previews fall back to a hidden textarea. */
+        async function writeTeachPromptToClipboard(text) {
+            if (navigator.clipboard?.writeText) {
+                try {
+                    await navigator.clipboard.writeText(text);
+                    return true;
+                } catch (clipboardError) {
+                    if (!(clipboardError instanceof DOMException)) throw clipboardError;
+                }
+            }
+            const area = document.createElement('textarea');
+            area.value = text;
+            area.setAttribute('readonly', '');
+            area.style.position = 'fixed';
+            area.style.top = '-1000px';
+            document.body.appendChild(area);
+            area.select();
+            let copied = false;
+            try { copied = document.execCommand('copy'); } catch (execError) { copied = false; }
+            document.body.removeChild(area);
+            return copied;
+        }
+
+        async function copyTeachPrompt() {
+            if (!teachPrompt) return;
+            const promptText = teachPrompt.textContent.trim();
+            if (!promptText) { showToast('تعذّر العثور على نص البرومبت.'); return; }
+            const copied = await writeTeachPromptToClipboard(promptText);
+            showToast(copied
+                ? 'تم نسخ البرومبت — الصقه الآن في نموذج الذكاء الاصطناعي'
+                : 'تعذّر النسخ التلقائي، حدّد النص وانسخه يدويًا.');
+            if (!copied) {
+                const range = document.createRange();
+                range.selectNodeContents(teachPrompt);
+                const selection = window.getSelection();
+                selection.removeAllRanges();
+                selection.addRange(range);
+                teachPrompt.focus();
+            }
+        }
+
+        if (teachPromptCopy) teachPromptCopy.addEventListener('click', copyTeachPrompt);
 
         /* ---------- Initial paint ---------- */
 
