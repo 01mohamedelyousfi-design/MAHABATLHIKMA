@@ -51,7 +51,8 @@ export const LESSON_CATALOG = [
     "title": "وجود الغير",
     "url": "/lessons/lesson-other-existence",
     "pages": {
-      "intro": "/lessons/lesson-other-existence"
+      "intro": "/lessons/lesson-other-existence",
+      "philosophers": "/lessons/philosophers-existence"
     },
     "level": "2bac",
     "levelName": "الثانية بكالوريا",

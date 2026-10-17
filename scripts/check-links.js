@@ -10,6 +10,7 @@ const pages = [
   'lessons/lesson-other-existence.html',
   'lessons/lesson-identity-synthesis.html', 'lessons/philosophers.html',
   'lessons/philosophers-value.html', 'lessons/philosophers-freedom.html',
+  'lessons/philosophers-existence.html',
   'lessons/lesson-value-synthesis.html', 'lessons/lesson-freedom-synthesis.html',
   'philomedia/index.html', 'prompts/index.html', 'skills/index.html',
   'games/index.html', 'notebooklm/index.html', 'booklet/index.html', 'feedback/index.html',
@@ -50,6 +51,7 @@ function head(urlPath) {
     '/lessons/lesson-identity', '/lessons/lesson-value', '/lessons/lesson-freedom',
     '/lessons/lesson-other-existence',
     '/lessons/philosophers', '/lessons/philosophers-value', '/lessons/philosophers-freedom',
+    '/lessons/philosophers-existence',
     '/lessons/lesson-identity-synthesis', '/lessons/lesson-value-synthesis', '/lessons/lesson-freedom-synthesis',
     '/examples/aflatoon-freedom-programming/'];
   for (const u of publicUrls) {
