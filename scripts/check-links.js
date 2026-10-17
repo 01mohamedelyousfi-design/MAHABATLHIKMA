@@ -7,6 +7,7 @@ const pages = [
   'index.html', '404.html',
   'lessons/index.html', 'lessons/lesson-identity.html',
   'lessons/lesson-value.html', 'lessons/lesson-freedom.html',
+  'lessons/lesson-other-existence.html',
   'lessons/lesson-identity-synthesis.html', 'lessons/philosophers.html',
   'lessons/philosophers-value.html', 'lessons/philosophers-freedom.html',
   'lessons/lesson-value-synthesis.html', 'lessons/lesson-freedom-synthesis.html',
@@ -47,6 +48,7 @@ function head(urlPath) {
   let failures = 0;
   const publicUrls = ['/', '/lessons/', '/philomedia/', '/prompts/', '/skills/', '/games/', '/notebooklm/', '/booklet/', '/feedback/',
     '/lessons/lesson-identity', '/lessons/lesson-value', '/lessons/lesson-freedom',
+    '/lessons/lesson-other-existence',
     '/lessons/philosophers', '/lessons/philosophers-value', '/lessons/philosophers-freedom',
     '/lessons/lesson-identity-synthesis', '/lessons/lesson-value-synthesis', '/lessons/lesson-freedom-synthesis',
     '/examples/aflatoon-freedom-programming/'];

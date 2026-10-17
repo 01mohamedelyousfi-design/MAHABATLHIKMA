@@ -45,5 +45,18 @@ export const LESSON_CATALOG = [
     "moduleId": "wad3-bachari",
     "module": "مجزوءة الوضع البشري",
     "concept": "مفهوم الشخص"
+  },
+  {
+    "id": "other-existence",
+    "title": "وجود الغير",
+    "url": "/lessons/lesson-other-existence",
+    "pages": {
+      "intro": "/lessons/lesson-other-existence"
+    },
+    "level": "2bac",
+    "levelName": "الثانية بكالوريا",
+    "moduleId": "wad3-bachari",
+    "module": "مجزوءة الوضع البشري",
+    "concept": "مفهوم الغير"
   }
 ];

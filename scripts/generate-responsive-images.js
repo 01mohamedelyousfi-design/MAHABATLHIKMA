@@ -21,11 +21,14 @@ const IMAGES = [
     { src: 'assets/lessons/identity-cover.jpg', widths: [480, 768, 1200] },
     { src: 'assets/lessons/value-cover.webp', widths: [480, 768, 1200] },
     { src: 'assets/lessons/freedom-cover.webp', widths: [480, 768, 1200] },
+    { src: 'assets/lessons/other-existence-cover.webp', widths: [480, 768, 1200] },
     { src: 'assets/lessons/nexsis-city.webp', widths: [480, 768, 1200] },
     // Story images (lesson intro pages)
     { src: 'assets/lessons/freedom-story.webp', widths: [480, 768, 1200] },
     { src: 'assets/lessons/identity-story.jpg', widths: [480, 768, 1200] },
     { src: 'assets/lessons/value-kant-gusdorf.webp', widths: [480, 768] },
+    { src: 'assets/lessons/other-existence-story.webp', widths: [480, 768] },
+    { src: 'assets/lessons/other-existence-questions.webp', widths: [480, 768] },
     // Hero headers (philosophers pages — LCP candidates)
     { src: 'assets/philosophers/philosophers-header.webp', widths: [768, 1200] },
     { src: 'assets/philosophers/necessity-freedom-header.webp', widths: [768, 1200] },

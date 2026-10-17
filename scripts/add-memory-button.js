@@ -20,6 +20,7 @@ const PAGES = {
   'lessons/lesson-freedom.html': 'necessity-freedom',
   'lessons/philosophers-freedom.html': 'necessity-freedom',
   'lessons/lesson-freedom-synthesis.html': 'necessity-freedom',
+  'lessons/lesson-other-existence.html': 'other-existence',
 };
 
 const SCRIPT_TAG =

@@ -51,6 +51,13 @@ const LESSON_ID_MAP = {
       synthesis: '/lessons/lesson-freedom-synthesis',
     },
   },
+  'lesson-other-existence': {
+    id: 'other-existence',
+    title: 'وجود الغير',
+    pages: {
+      intro: '/lessons/lesson-other-existence',
+    },
+  },
 };
 
 function extractLessonsData(html) {
