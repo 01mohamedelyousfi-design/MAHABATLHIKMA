@@ -1,4 +1,4 @@
--- MahabatLhikma Memory Companion — D1 schema (SQLite dialect)
+-- MahabatAlhikma Memory Companion — D1 schema (SQLite dialect)
 -- All access is server-side. Phone numbers (whatsapp_id) are sensitive.
 
 CREATE TABLE IF NOT EXISTS users (

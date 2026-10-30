@@ -1,5 +1,5 @@
 /**
- * lesson-seeds.js — curated review items for each canonical MahabatLhikma lesson.
+ * lesson-seeds.js — curated review items for each canonical MahabatAlhikma lesson.
  *
  * IMPORTANT PRODUCT RULE: every item is grounded in the actual lesson content
  * published on the site (philosophers' texts, simplified explanations and

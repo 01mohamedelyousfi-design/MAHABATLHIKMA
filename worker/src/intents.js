@@ -2,7 +2,7 @@
  * intents.js — natural-language intent parsing + fuzzy Arabic lesson matching.
  *
  * The bot never invents lessons: matching only happens against the catalog
- * that LessonRepository exposes (canonical MahabatLhikma lessons).
+ * that LessonRepository exposes (canonical MahabatAlhikma lessons).
  */
 
 const PREFIX_RE = /^(mahaba_review_lesson|mahaba_review)\s*[=:]?\s*/i;

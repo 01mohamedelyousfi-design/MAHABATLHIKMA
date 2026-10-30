@@ -72,7 +72,7 @@ test('Full review session: intro, questions, feedback, summary with lesson link'
   const last = await ctx.chat(wa, 'الوعي هو الذي يميز الشخص', t + 5000);
   const summary = last[last.length - 1];
   assert.ok(summary.includes('قوة ذاكرتك'), 'memory summary shown');
-  assert.ok(summary.includes('mahabatlhikma.pages.dev'), 'lesson link at end');
+  assert.ok(summary.includes('mahabatalhikma.app'), 'lesson link at end');
   assert.ok(summary.includes('تقدير داخلي'), 'disclaimer present');
 
   const events = await ctx.adapter.all('SELECT * FROM review_events');

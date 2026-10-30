@@ -1,10 +1,10 @@
-# 🧠 ذاكرة الحكمة — MahabatLhikma Memory Companion
+# 🧠 ذاكرة الحكمة — MahabatAlhikma Memory Companion
 
-> Study a lesson once on MahabatLhikma. The companion remembers it and brings
+> Study a lesson once on MahabatAlhikma. The companion remembers it and brings
 > it back through WhatsApp at the right time, as short concept-level quizzes.
 
 ```
-MahabatLhikma (Cloudflare Pages, static)
+MahabatAlhikma (Cloudflare Pages, static)
         │  🧠 أضف إلى ذاكرة الحكمة  →  wa.me deep link with `mahaba_review_lesson=<id>`
         ▼
 Cloudflare Worker (worker/)                ← zero paid infrastructure
@@ -101,4 +101,4 @@ src/db.js               D1 adapter; sqlite-adapter.node.js for tests
 ```
 
 **Hard rule:** the bot only ever registers lessons that exist in the catalog.
-Anything else is rejected with suggestions from the existing MahabatLhikma lessons.
+Anything else is rejected with suggestions from the existing MahabatAlhikma lessons.

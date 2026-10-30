@@ -1,6 +1,6 @@
 /**
  * templates.js — all learner-facing Arabic (فصحى) messages.
- * Warm, academic tone consistent with MahabatLhikma's editorial identity.
+ * Warm, academic tone consistent with MahabatAlhikma's editorial identity.
  */
 
 export const T = {
@@ -19,7 +19,7 @@ export const T = {
     '• «حذف الذاكرة» — لمسح بياناتك كليًا من النظام.\n' +
     '• «مساعدة» — لعرض هذه القائمة.\n\n' +
     'ملاحظة: هذه النسب تقدير داخلي لقوة تثبيت المفاهيم بناءً على مراجعاتك، وليست مقياسًا نفسيًا أو دراسيًا مطلقًا.\n\n' +
-    '📖 مستودع المعرفة: https://mahabatlhikma.pages.dev/lessons',
+    '📖 مستودع المعرفة: https://mahabatalhikma.app/lessons',
 
   welcomeNewUser:
     'أهلًا بك 🌿\n\nهذا رفيق المراجعة الخاص بمنصة محبة الحكمة.\n\nادرس الدرس مرة واحدة على المنصة، وسنتكفّل نحن بإعادته إليك على شكل أسئلة قصيرة في الوقت المناسب وفق نظام التكرار المتباعد.\n\nاكتب «مساعدة» لاستكشاف ما يمكنك فعله.',
@@ -87,7 +87,7 @@ export const T = {
   deleteConfirm:
     '⚠️ طلبتَ حذف ذاكرتك بالكامل.\n\nسيؤدي ذلك إلى مسح برنامج المراجعة وسجلّ إجاباتك نهائيًا.\n\nإن كنت متأكدًا اكتب: «نعم احذف ذاكرتي»',
   deleteDone:
-    'تم حذف بياناتك نهائيًا من نظام المراجعة.\n\nشكرًا لك، وتبقى دروس محبة الحكمة في خدمتك دائمًا 🌿\nhttps://mahabatlhikma.pages.dev/lessons',
+    'تم حذف بياناتك نهائيًا من نظام المراجعة.\n\nشكرًا لك، وتبقى دروس محبة الحكمة في خدمتك دائمًا 🌿\nhttps://mahabatalhikma.app/lessons',
   deleteCancelled: 'تم إلغاء طلب الحذف. بياناتك محفوظة كما هي.',
 
   fallback:

@@ -2,7 +2,7 @@
   "name": "mahabatlhikma-memory-worker",
   "private": true,
   "version": "0.1.0",
-  "description": "WhatsApp spaced-repetition companion for MahabatLhikma (Cloudflare Worker + D1 + cron + optional Workers AI)",
+  "description": "WhatsApp spaced-repetition companion for MahabatAlhikma (Cloudflare Worker + D1 + cron + optional Workers AI)",
   "type": "module",
   "scripts": {
     "test": "node --test test/*.test.js",

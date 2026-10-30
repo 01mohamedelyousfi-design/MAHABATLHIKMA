@@ -1,5 +1,5 @@
 /**
- * index.js — Cloudflare Worker entry for the MahabatLhikma Memory Companion.
+ * index.js — Cloudflare Worker entry for the MahabatAlhikma Memory Companion.
  *
  * Routes:
  *   GET  /api/health                      liveness
@@ -48,7 +48,7 @@ function makeBot(env) {
     reviews: new ReviewRepository(db),
     sessions: new SessionRepository(db),
     evaluator: buildEvaluator(env),
-    siteUrl: env.SITE_URL || 'https://mahabatlhikma.pages.dev',
+    siteUrl: env.SITE_URL || 'https://mahabatalhikma.app',
   });
 }
 
