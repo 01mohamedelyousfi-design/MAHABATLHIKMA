@@ -1,7 +1,7 @@
 /**
  * build-lesson-catalog.js
  *
- * Derives the machine-readable MahabatLhikma lesson catalog from the single
+ * Derives the machine-readable MahabatAlhikma lesson catalog from the single
  * source of truth: the LESSONS_DATA object embedded in lessons/index.html.
  *
  * Outputs:
@@ -56,6 +56,7 @@ const LESSON_ID_MAP = {
     title: 'وجود الغير',
     pages: {
       intro: '/lessons/lesson-other-existence',
+      philosophers: '/lessons/philosophers-existence',
     },
   },
 };

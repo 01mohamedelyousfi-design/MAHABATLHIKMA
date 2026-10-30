@@ -22,7 +22,7 @@
  *      restriction since this key is only ever used server-side, inside
  *      this function — never sent to the browser.)
  * 4. Make sure every file (and/or the parent folder) inside your
- *    MahabatLhikma-Media Drive folder is shared as:
+ *    MahabatAlhikma-Media Drive folder is shared as:
  *    "Anyone with the link" → Viewer.
  *    (An API key with no OAuth can only read files shared this way —
  *    it cannot read fully private files.)

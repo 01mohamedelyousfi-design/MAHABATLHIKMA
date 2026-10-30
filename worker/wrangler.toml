@@ -25,7 +25,7 @@ database_id = "REPLACE_WITH_YOUR_D1_DATABASE_ID"
 # 'mock' keeps everything local (messages are stored in whatsapp_events).
 # Switch to 'meta' after configuring the WhatsApp Business Cloud API.
 WHATSAPP_PROVIDER = "mock"
-SITE_URL = "https://mahabatlhikma.pages.dev"
+SITE_URL = "https://mahabatalhikma.app"
 
 # Secrets (set via `npx wrangler secret put ...` — never commit them):
 #   ADMIN_SECRET            — protects /api/dev/message and /api/admin/*

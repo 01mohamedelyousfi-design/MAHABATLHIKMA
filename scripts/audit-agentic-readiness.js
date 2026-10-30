@@ -1,5 +1,5 @@
 /**
- * Agentic-readiness audit for the Mahabat Lhikma static site.
+ * Agentic-readiness audit for the Mahabat Alhikma static site.
  *
  * Mirrors the Lighthouse "Agentic Browsing" checks this site fails:
  *   1. "Accessibility tree is not well-formed" — the Lighthouse subset of rules

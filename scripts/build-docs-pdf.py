@@ -175,7 +175,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
   <h1>__TITLE__</h1>
   <div class="divider"></div>
   <div class="tagline">__TAGLINE__</div>
-  <div class="meta">mahabatlhikma.pages.dev &nbsp;•&nbsp; ٢٠٢٦</div>
+  <div class="meta">mahabatalhikma.app &nbsp;•&nbsp; ٢٠٢٦</div>
 </section>
 
 <section class="toc">

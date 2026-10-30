@@ -52,7 +52,7 @@ export async function makeTestContext() {
   const bot = new Bot({
     lessons, users, reviews, sessions,
     evaluator: new HeuristicEvaluator(),
-    siteUrl: 'https://mahabatlhikma.pages.dev',
+    siteUrl: 'https://mahabatalhikma.app',
   });
 
   /** Send a message as a learner; returns replies and dispatches to mock WA. */

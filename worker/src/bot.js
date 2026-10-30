@@ -23,7 +23,7 @@ export class Bot {
     this.reviews = deps.reviews;
     this.sessions = deps.sessions;
     this.evaluator = deps.evaluator;
-    this.siteUrl = deps.siteUrl || 'https://mahabatlhikma.pages.dev';
+    this.siteUrl = deps.siteUrl || 'https://mahabatalhikma.app';
   }
 
   /**

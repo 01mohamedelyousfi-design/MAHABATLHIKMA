@@ -24,7 +24,7 @@ const PAGES = {
 };
 
 const SCRIPT_TAG =
-  '    <!-- MahabatLhikma Memory Companion: add-to-memory button -->\n' +
+  '    <!-- MahabatAlhikma Memory Companion: add-to-memory button -->\n' +
   '    <script src="/assets/js/memory-button.js" defer></script>\n';
 
 let changed = 0;
